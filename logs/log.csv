@@ -1,0 +1,12 @@
+date,book,chapter_slug,word_count,verify_flag_count,contested_claims_flagged,pantry_notes_found
+2026-06-03,quantum-mechanics-vol3,02-time-independent-perturbation-theory,3707,5,0,yes
+2026-06-03,quantum-mechanics-vol3,03-degenerate-perturbation-theory-and-fine-structure,5163,12,0,yes
+2026-06-03,quantum-mechanics-vol3,04-the-variational-principle,5447,8,0,yes
+2026-06-03,quantum-mechanics-vol3,05-the-wkb-approximation-and-tunneling,5948,16,0,yes
+2026-06-03,quantum-mechanics-vol3,06-time-dependent-perturbation-theory-and-transitions,4387,0,0,yes
+2026-06-03,quantum-mechanics-vol3,07-radiation-and-fermis-golden-rule,5903,2,0,yes
+2026-06-03,quantum-mechanics-vol3,08-scattering-i-partial-waves,5000,5,0,yes
+2026-06-03,quantum-mechanics-vol3,09-scattering-ii-the-born-approximation,5768,7,0,yes
+2026-06-03,quantum-mechanics-vol3,10-atoms-in-fields,5471,9,0,yes
+2026-06-03,quantum-mechanics-vol3,11-periodic-potentials-and-band-structure,6006,10,0,yes
+2026-06-03,quantum-mechanics-vol3,12-capstone-modeling-a-real-quantum-system,7761,15,0,yes
