@@ -1,312 +1,185 @@
 # Chapter 9 — Atoms in Fields: Zeeman, Stark, and Magnetic Resonance
+*What a strong magnet or a high-voltage field tells you about spin, symmetry, and why the "anomaly" was never anomalous.*
 
-## TL;DR
+Pieter Zeeman spent months in Leiden getting fired at. Not literally — but the institutional opposition felt that way. His supervisor, Hendrik Lorentz, had asked him not to pursue what seemed frivolous: whether a flame in a strong magnetic field would change the color of its spectral lines. Zeeman ran the experiment anyway in 1896, found that the lines split, and was promptly reprimanded for using unauthorized laboratory equipment. Lorentz, to his credit, immediately provided the theoretical explanation: if the line came from an oscillating charged particle, a magnetic field splits the oscillation into three frequencies. Theory and experiment matched. Three lines. Clean.
 
-- An external field breaks the rotational symmetry of the atom and lifts degeneracies in a way that reveals everything about spin and angular momentum.
-- In a weak magnetic field the Landé g-factor governs how fine-structure sublevels split (anomalous Zeeman effect); strong fields decouple spin from orbit (Paschen–Back).
-- An electric field shifts energy by a tiny amount quadratically in non-degenerate levels but linearly in degenerate ones — hydrogen's accidental degeneracy makes the n=2 splitting enormous.
-- Magnetic resonance (Rabi/NMR/ESR) is an exact two-state solution hiding inside the rotating-frame transformation; T₁ and T₂ describe how that exact solution gives way to the real world.
+Then the problem got harder. More complex atoms — atoms with unpaired electron spins — showed not a clean triplet but six lines, eight lines, asymmetric patterns with irrational spacing ratios. This was called the "anomalous" Zeeman effect, meaning: we have no idea what is happening.
 
----
+The anomaly lasted thirty years. Its resolution required electron spin, the quantum mechanics of angular momentum addition, and finally a single number called the Landé g-factor that encodes how orbital and spin angular momentum conspire to produce the observed pattern. Once you have the g-factor, the anomalous Zeeman effect is not anomalous at all. It is ordinary Zeeman, done correctly.
 
-## Learning Objectives
-
-By the end of this chapter you should be able to:
-
-1. **Apply** degenerate perturbation theory to compute the Zeeman splitting of hydrogen fine-structure levels in the weak-field limit, using the Landé g-factor formula. *(Apply — Bloom level 3)*
-
-2. **Explain** why the weak-field (anomalous) and strong-field (Paschen–Back) Zeeman patterns differ, identifying the good quantum numbers in each limit. *(Understand — Bloom level 2)*
-
-3. **Predict** whether a given atomic level will show a linear or quadratic Stark effect, and compute the linear splitting for the hydrogen n=2 manifold. *(Apply — Bloom level 3)*
-
-4. **Derive** the rotating-frame Hamiltonian for a spin-1/2 in combined static and oscillating magnetic fields and identify the resonance condition. *(Analyze — Bloom level 4)*
-
-5. **Design** a D3 simulation that shows energy-level splitting as a function of field strength, reproducing the qualitative crossover between Zeeman regimes. *(Create — Bloom level 6)*
+This chapter develops three related phenomena: the Zeeman effect (both limits), the Stark effect in electric fields, and magnetic resonance. The perturbation-theory machinery is the same throughout; what is new is the physical richness of what that machinery finds.
 
 ---
 
-## Scene Opening
+## The Magnetic Perturbation
 
-Pieter Zeeman spent months in Leiden getting fired at.
+Place a hydrogen-like atom in a uniform external magnetic field $\mathbf{B} = B\hat{z}$. Two contributions couple the atom to the field.
 
-Not literally — but the institutional opposition felt that way. His supervisor, the great Hendrik Lorentz, had asked him not to pursue what seemed like a frivolous experiment: whether a flame in a strong magnetic field would change the color of its spectral lines. Zeeman ran the experiment anyway, in 1896, found that the lines split, and was promptly reprimanded for using unauthorized laboratory equipment. Lorentz, to his credit, immediately provided the theoretical explanation: if the spectral line came from an oscillating charged particle, a magnetic field would split the oscillation frequency into three. Three lines. Theory and experiment matched.
+The orbital motion produces a magnetic moment $\boldsymbol{\mu}_L = -(e/2m_e)\mathbf{L}$, where $e > 0$ and the minus sign reflects the electron's negative charge. The electron's spin produces a different moment:
 
-Then the problem got harder. When experimenters looked at more complex atoms — atoms with unpaired electron spins — they did not find a clean triplet. They found six lines, eight lines, asymmetric patterns with irrational spacing ratios. They called this the "anomalous" Zeeman effect, by which they meant: we have no idea what is happening.
+$$\boldsymbol{\mu}_S = -\frac{e}{m_e}\mathbf{S}.$$
 
-The anomaly lasted thirty years. Its resolution required the concept of electron spin, then the quantum mechanics of angular momentum addition, and finally the Landé g-factor — a single number that encodes how orbital and spin angular momentum conspire to produce the observed pattern. Once you have the g-factor, the "anomalous" Zeeman effect is not anomalous at all. It is ordinary Zeeman, done correctly.
+The factor of 2 difference between orbital and spin contributions is the source of everything unusual in Zeeman physics. It comes from the Dirac equation — from the fact that the electron is not a tiny current loop but a fundamental spin-$\tfrac{1}{2}$ particle. (The true g-factor is $g_s = 2.002319\ldots$ rather than exactly 2; the small correction is a QED effect and appears in Still Puzzling.)
 
-This chapter is about what happens to atomic energy levels when you apply an external field. The perturbation-theory machinery is the same as before; what is new is the physical richness of what it finds.
+The perturbation Hamiltonian:
 
----
+$$\hat{H}' = -(\boldsymbol{\mu}_L + \boldsymbol{\mu}_S)\cdot\mathbf{B} = \frac{eB}{2m_e}(\hat{L}_z + 2\hat{S}_z) = \frac{\mu_B}{\hbar}B(\hat{L}_z + 2\hat{S}_z),$$
 
-## Core Development
-
-### The Magnetic Perturbation
-
-Place a hydrogen-like atom in a uniform external magnetic field $\mathbf{B} = B\hat{z}$. The interaction between the atom's magnetic moments and the field is the perturbation. There are two contributions.
-
-The orbital motion of the electron produces a magnetic moment
-$$\boldsymbol{\mu}_L = -\frac{e}{2m_e}\mathbf{L}$$
-where $e > 0$ is the elementary charge and the minus sign reflects the electron's negative charge.
-
-The electron's spin produces a magnetic moment
-$$\boldsymbol{\mu}_S = -\frac{e}{m_e}\mathbf{S}$$
-The factor of 2 difference between the orbital and spin contributions is the source of all the complexity in Zeeman physics. It comes from the Dirac equation — or, in more physical terms, from the fact that the electron is not a tiny current loop but a fundamental spin-1/2 particle. (The true g-factor for the electron spin is $g_s = 2.002319\ldots$ rather than exactly 2; the correction is a QED effect, the anomalous magnetic moment, and will appear in "Still Puzzling.")
-
-The perturbation Hamiltonian is
-$$\hat{H}' = -(\boldsymbol{\mu}_L + \boldsymbol{\mu}_S)\cdot\mathbf{B} = \frac{e B}{2m_e}(\hat{L}_z + 2\hat{S}_z)$$
-
-Written in terms of the total angular momentum $\hat{\mathbf{J}} = \hat{\mathbf{L}} + \hat{\mathbf{S}}$:
-$$\hat{H}' = \frac{e B}{2m_e}(\hat{J}_z + \hat{S}_z)$$
-
-The $\hat{J}_z$ piece is easy — it is diagonal in the $|j, m_j\rangle$ basis. The $\hat{S}_z$ piece is not, and that is the whole problem.
-
-**Notation.** The **Bohr magneton** is $\mu_B = e\hbar/2m_e \approx 9.274 \times 10^{-24}$ J/T $= 5.788 \times 10^{-5}$ eV/T. The perturbation is $\hat{H}' = (\mu_B/\hbar)B(\hat{L}_z + 2\hat{S}_z)$.
+where the **Bohr magneton** $\mu_B = e\hbar/2m_e \approx 5.788\times10^{-5}$ eV/T. Writing $\hat{L}_z + 2\hat{S}_z = \hat{J}_z + \hat{S}_z$: the $\hat{J}_z$ piece is diagonal in the $|j, m_j\rangle$ basis; the $\hat{S}_z$ piece is not. That leftover $\hat{S}_z$ is the whole problem.
 
 ---
 
-### The Weak-Field (Anomalous) Zeeman Effect
+## The Weak-Field Zeeman Effect
 
-When the external field is weak — weak meaning $\mu_B B \ll \Delta E_\text{fs}$, the fine-structure splitting — the spin-orbit coupling is the dominant internal interaction. The atom's angular momenta $\mathbf{L}$ and $\mathbf{S}$ are locked together, precessing rapidly around their sum $\mathbf{J}$. The external field then makes $\mathbf{J}$ precess slowly around $\hat{z}$.
+When the external field is weak — meaning $\mu_B B \ll \Delta E_\text{fs}$, the fine-structure splitting — the spin-orbit coupling dominates internally. The atom's $\mathbf{L}$ and $\mathbf{S}$ are locked together, precessing rapidly around their sum $\mathbf{J}$. The external field then makes $\mathbf{J}$ precess slowly around $\hat{z}$.
 
-In this regime the good quantum numbers are $n, \ell, j, m_j$ — the total-angular-momentum basis. The perturbation must be averaged over the rapid internal motion. Since $\mathbf{L}$ and $\mathbf{S}$ precess around $\mathbf{J}$, only the components of $\boldsymbol{\mu}_L + \boldsymbol{\mu}_S$ along $\mathbf{J}$ survive the average.
+In this regime the good quantum numbers are $n, \ell, j, m_j$. The perturbation must be averaged over the rapid internal precession. Only the components of $\boldsymbol{\mu}_L + \boldsymbol{\mu}_S$ along $\mathbf{J}$ survive. The projection is evaluated by writing $\hat{S}_z = \hat{J}_z - \hat{L}_z$ and using the identity:
 
-The projection onto $\mathbf{J}$ is evaluated by writing $\hat{S}_z = \hat{J}_z - \hat{L}_z$ and using the identity
-$$\langle \hat{\mathbf{S}}\cdot\hat{\mathbf{J}}\rangle = \frac{1}{2}\langle\hat{J}^2 + \hat{S}^2 - \hat{L}^2\rangle = \frac{\hbar^2}{2}[j(j+1) + s(s+1) - \ell(\ell+1)]$$
+$$\langle\hat{\mathbf{S}}\cdot\hat{\mathbf{J}}\rangle = \frac{\hbar^2}{2}[j(j+1) + s(s+1) - \ell(\ell+1)]$$
 
-to replace $\hat{S}_z$ by its projected value. The result for the energy shift is
+to replace $\hat{S}_z$ with its projected value. The energy shift:
 
-$$\boxed{\Delta E = g_J \mu_B B m_j}$$
+$$\boxed{\Delta E = g_J\,\mu_B\,B\,m_j,}$$
 
-where the **Landé g-factor** is
+with the **Landé g-factor**:
 
-$$\boxed{g_J = 1 + \frac{j(j+1) + s(s+1) - \ell(\ell+1)}{2j(j+1)}}$$
+$$\boxed{g_J = 1 + \frac{j(j+1) + s(s+1) - \ell(\ell+1)}{2j(j+1)}.}$$
 
-This formula is the heart of the anomalous Zeeman effect. Each fine-structure level — labeled by a particular $(n, \ell, j)$ — has its own $g_J$ and therefore its own pattern of $2j+1$ equally-spaced sublevels. The spacing is $g_J \mu_B B$, which depends on $\ell$ and $j$ in a way that varies from level to level. That is why the multi-line patterns look "anomalous" — the spacing is not the same for each original level.
+This formula is the heart of the anomalous Zeeman effect. Each fine-structure level — labeled by a particular $(n, \ell, j)$ — has its own $g_J$ and therefore its own pattern of equally-spaced sublevels. The spacing is $g_J\mu_B B$, which varies from level to level because $g_J$ depends on $\ell$ and $j$. That variation is why the multi-line patterns looked "anomalous" — the spacings differ because the g-factors differ. There is no anomaly once you know about spin.
 
-**Key values for hydrogen.** For $s = 1/2$:
+For hydrogen with $s = 1/2$:
 
-| State | $\ell$ | $j$ | $g_J$ |
-|-------|--------|-----|--------|
-| s-states ($\ell=0$) | 0 | 1/2 | 2 |
-| $2p_{1/2}$ | 1 | 1/2 | 2/3 |
-| $2p_{3/2}$ | 1 | 3/2 | 4/3 |
+<!-- → [TABLE: Landé g-factor values for s-states (ℓ=0, j=1/2, g_J=2), 2p_{1/2} (ℓ=1, j=1/2, g_J=2/3), and 2p_{3/2} (ℓ=1, j=3/2, g_J=4/3) — three columns: state, j, g_J] -->
 
-When $\ell = 0$, the electron has no orbital angular momentum; the magnetic moment is purely spin, and $g_J = 2$ (pure spin value). When $\ell \neq 0$, spin and orbital moments partially cancel or reinforce.
+When $\ell = 0$: no orbital angular momentum, $g_J = 2$ (pure spin). When $\ell \neq 0$: spin and orbital moments partially cancel or reinforce, giving a g-factor that is neither 1 (pure orbital) nor 2 (pure spin) but a mixture.
 
 ---
 
-### The Strong-Field (Paschen–Back) Effect
+## The Strong-Field Zeeman Effect (Paschen–Back)
 
-When $\mu_B B \gg \Delta E_\text{fs}$ — the external field overwhelms the spin-orbit coupling — the good quantum numbers change. Now the external field dominates the dynamics: $\mathbf{L}$ and $\mathbf{S}$ precess independently around $\hat{z}$, rather than jointly. The coupling between them is a weak perturbation on top of the strong Zeeman effect.
+When $\mu_B B \gg \Delta E_\text{fs}$, the external field overwhelms the spin-orbit coupling. Now $\mathbf{L}$ and $\mathbf{S}$ precess independently around $\hat{z}$ rather than jointly. The good quantum numbers change to $m_\ell$ and $m_s$ (the uncoupled basis), and the energy shift is simply:
 
-In this limit the good quantum numbers are $m_\ell$ and $m_s$ (uncoupled basis), and the first-order energy shift is simply
+$$\Delta E = \mu_B B(m_\ell + 2m_s).$$
 
-$$\Delta E = \mu_B B(m_\ell + 2m_s)$$
+The spin-orbit term $\hat{H}'_\text{SO} \propto \mathbf{L}\cdot\mathbf{S}$ becomes a small perturbation on top of this dominant Zeeman splitting — it adds a correction $\propto m_\ell m_s$ that lifts remaining degeneracies.
 
-The fine-structure spin-orbit term $\hat{H}'_\text{SO} \propto \mathbf{L}\cdot\mathbf{S}$ can then be treated as a small additional perturbation in this basis.
+The Paschen–Back pattern is simpler than the anomalous pattern: essentially a normal triplet from the $m_\ell$ splitting, with each line further split by spin. The irregular multi-line anomalous pattern collapses toward regularity as the field increases.
 
-The Paschen–Back pattern is simpler than the anomalous pattern: it is essentially a normal Zeeman triplet (from the $m_\ell$ splitting) with each line further split by spin. The many-line anomalous Zeeman pattern collapses to something more regular as the field increases.
+**The intermediate-field regime** — where $\mu_B B \sim \Delta E_\text{fs}$ — has no simple analytic form. Both external-field and spin-orbit terms must be diagonalized simultaneously. The resulting energy-versus-field curves cross and avoid-cross in a web of avoided-level-crossing diagrams: levels that start in the Zeeman pattern at weak field smoothly connect to levels in the Paschen–Back pattern at strong field, with the crossover requiring numerical diagonalization.
 
-**The intermediate-field regime** — where $\mu_B B \sim \Delta E_\text{fs}$ — has no simple analytic result. Both the external-field and spin-orbit terms must be diagonalized simultaneously in the full $n$-manifold. Griffiths works this out numerically for the hydrogen $n=2$ case; the resulting energy-vs.-field curves cross and avoid-cross in a pattern called an avoided-level-crossing diagram. The qualitative picture is that levels that start in the Zeeman pattern at weak field smoothly connect to levels in the Paschen–Back pattern at strong field, with the intermediate regime requiring numerical diagonalization.
+<!-- → [FIGURE: energy-vs.-B diagram for hydrogen 2p manifold from B=0 to ~10T, showing the weak-field Zeeman fan of six lines splitting into the Paschen-Back pattern, with the crossover region marked; m_j labels at right edge, m_ℓ and m_s labels at strong-field edge] -->
 
 ---
 
-### The Stark Effect
+## The Stark Effect
 
-Now apply an electric field $\mathcal{E}$ along $\hat{z}$ instead of a magnetic field. The perturbation is
+Now apply an electric field $\mathcal{E}$ along $\hat{z}$ instead of a magnetic field. The perturbation is $\hat{H}' = e\mathcal{E}\hat{z}$.
 
-$$\hat{H}' = e\mathcal{E}\hat{z}$$
+**The ground state: quadratic Stark effect.** The first-order shift $\langle 1s|e\mathcal{E}\hat{z}|1s\rangle$ vanishes: $|1s\rangle$ is parity-even, $\hat{z}$ is parity-odd, the integrand is parity-odd and integrates to zero over all space. The first nonvanishing correction is second-order:
 
-**The ground state and the quadratic Stark effect.** For $|1s\rangle$, the first-order shift is
+$$E^{(2)}_{1s} = \sum_{n\neq 1s}\frac{|\langle n|e\mathcal{E}\hat{z}|1s\rangle|^2}{E^{(0)}_{1s} - E^{(0)}_n} = -\frac{9}{2}a_0^3\mathcal{E}^2.$$
 
-$$E^{(1)}_{1s} = \langle 1s|e\mathcal{E}\hat{z}|1s\rangle = 0$$
+This defines the polarizability $\alpha_\text{pol} = 9a_0^3/2$. The shift is **quadratic in $\mathcal{E}$** — the ground state develops an induced dipole, lowering its energy.
 
-This vanishes because $|1s\rangle$ is parity-even and $\hat{z}$ is parity-odd; the integrand is parity-odd and integrates to zero over all space. The first non-vanishing correction is second-order:
+**The $n=2$ manifold: linear Stark effect.** The $n=2$ level of hydrogen is fourfold degenerate: $|2s\rangle$, $|2p_0\rangle$, $|2p_{+1}\rangle$, $|2p_{-1}\rangle$ all share $E^{(0)}_2 = -13.6/4$ eV. This is the *accidental degeneracy* of the Coulomb potential: states with the same $n$ but different $\ell$ happen to coincide because the $1/r$ potential has an extra conserved quantity — the Runge–Lenz vector.
 
-$$E^{(2)}_{1s} = \sum_{n\neq 1s}\frac{|\langle n|e\mathcal{E}\hat{z}|1s\rangle|^2}{E^{(0)}_{1s} - E^{(0)}_n}$$
+Degenerate perturbation theory requires constructing the $4\times 4$ matrix of $\hat{H}' = e\mathcal{E}\hat{z}$ in this subspace and diagonalizing.
 
-The result is $E^{(2)}_{1s} = -\frac{9}{2}a_0^3\mathcal{E}^2$ (in Gaussian units, with $e = 1$), which defines the static electric polarizability $\alpha_\text{pol} = \frac{9}{2}a_0^3 \approx 4.5 a_0^3$. The shift is **quadratic in $\mathcal{E}$** — a **quadratic Stark effect**. The ground state develops an induced dipole moment; the atom polarizes, lowering its energy.
+Selection rules do most of the work before any integral is computed. The operator $\hat{z}$ commutes with $\hat{L}_z$, so $\Delta m = 0$ exactly — any matrix element with $\Delta m \neq 0$ vanishes, zeroing out all entries involving $|2p_{\pm 1}\rangle$. Parity kills all diagonal elements: $\langle 2s|\hat{z}|2s\rangle = 0$ and $\langle 2p_0|\hat{z}|2p_0\rangle = 0$, because the states have definite parity, $\hat{z}$ is parity-odd, and the integrand is always odd.
 
-**The $n=2$ manifold and the linear Stark effect.** The $n=2$ level of hydrogen is fourfold degenerate: $|2s\rangle$, $|2p_0\rangle$, $|2p_{+1}\rangle$, $|2p_{-1}\rangle$ all share the energy $E^{(0)}_2 = -\frac{13.6\,\text{eV}}{4}$. This is the *accidental degeneracy* of the Coulomb potential — states with the same $n$ but different $\ell$ happen to be degenerate because the Coulomb $1/r$ potential has an extra conserved quantity (the Runge–Lenz vector).
+The only surviving entry is $\langle 2s|e\mathcal{E}\hat{z}|2p_0\rangle = -3a_0\,e\mathcal{E}$. The full perturbation matrix:
 
-We apply degenerate perturbation theory: construct the $4\times 4$ matrix of $\hat{H}' = e\mathcal{E}\hat{z}$ in this subspace, then diagonalize it.
+$$W = e\mathcal{E}\begin{pmatrix} 0 & -3a_0 & 0 & 0 \\ -3a_0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}, \quad \text{ordered }|2s\rangle, |2p_0\rangle, |2p_{+1}\rangle, |2p_{-1}\rangle.$$
 
-Selection rules do most of the work before any integral is computed. The operator $\hat{z}$ commutes with $\hat{L}_z$, so it cannot change $m$ — any matrix element with $\Delta m \neq 0$ vanishes. This zeroes out all entries involving $|2p_{\pm 1}\rangle$ coupling to either $|2s\rangle$ or $|2p_0\rangle$. Parity kills all diagonal elements: $\langle 2s|\hat{z}|2s\rangle = 0$ and $\langle 2p_0|\hat{z}|2p_0\rangle = 0$.
-
-The only surviving entry is $\langle 2s|e\mathcal{E}\hat{z}|2p_0\rangle$. From the radial and angular integrals of the hydrogen wave functions:
-
-$$\langle 2s|\hat{z}|2p_0\rangle = -3a_0$$
-
-The full $4\times 4$ perturbation matrix, ordered $\{|2s\rangle, |2p_0\rangle, |2p_{+1}\rangle, |2p_{-1}\rangle\}$:
-
-$$W = e\mathcal{E}\begin{pmatrix} 0 & -3a_0 & 0 & 0 \\ -3a_0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}$$
-
-This block-diagonalizes immediately. The lower $2\times 2$ block is zero: $|2p_{+1}\rangle$ and $|2p_{-1}\rangle$ are already good states, they do not shift at first order. The upper $2\times 2$ block has eigenvalues $\pm 3a_0 e\mathcal{E}$, with eigenstates $(|2s\rangle \mp |2p_0\rangle)/\sqrt{2}$.
+This block-diagonalizes immediately. The lower $2\times 2$ block is zero: $|2p_{\pm 1}\rangle$ do not shift. The upper $2\times 2$ has eigenvalues $\pm 3a_0\,e\mathcal{E}$, with eigenstates $(|2s\rangle \mp |2p_0\rangle)/\sqrt{2}$.
 
 The $n=2$ level splits into **three lines** from four states:
-- Up by $+3a_0 e\mathcal{E}$: eigenstate $(|2s\rangle - |2p_0\rangle)/\sqrt{2}$
-- Unshifted (doubly degenerate): $|2p_{+1}\rangle$, $|2p_{-1}\rangle$
-- Down by $-3a_0 e\mathcal{E}$: eigenstate $(|2s\rangle + |2p_0\rangle)/\sqrt{2}$
 
-This splitting is **linear in $\mathcal{E}$** — a **linear Stark effect** — because the degeneracy allows states to mix at first order. The "good" eigenstates are superpositions of $s$ and $p$ states with definite parity; they have permanent electric dipole moments oriented along $\hat{z}$, which is exactly what couples to the applied field.
+- Up by $+3a_0\,e\mathcal{E}$: eigenstate $(|2s\rangle - |2p_0\rangle)/\sqrt{2}$
+- Unshifted (doubly degenerate): $|2p_{+1}\rangle$, $|2p_{-1}\rangle$  
+- Down by $-3a_0\,e\mathcal{E}$: eigenstate $(|2s\rangle + |2p_0\rangle)/\sqrt{2}$
 
-**Why hydrogen is special.** The linear Stark effect requires degenerate states of opposite parity at the same energy. Hydrogen has this accidentally (the $2s$ and $2p$ levels share the same energy). In multi-electron atoms, $s$ and $p$ states at the same principal quantum number are split by the quantum defect — there is no accidental degeneracy, and the Stark effect is always quadratic. Rydberg atoms (large $n$) recover the near-degeneracy, and show enormous quadratic Stark shifts scaling as $n^7$.
+The splitting is **linear in $\mathcal{E}$** — a **linear Stark effect** — because the degeneracy allows mixing at first order. The good eigenstates are superpositions of $s$ and $p$ states; they have permanent electric dipole moments along $\hat{z}$ that couple directly to the applied field.
+
+<!-- → [FIGURE: Stark energy diagram for n=2 manifold — two splitting lines (±3a₀eℰ) diverging linearly with field, two flat lines; eigenstates labeled at right edge; contrast with the curved quadratic ground-state shift shown below] -->
+
+**Why hydrogen is special.** The linear Stark effect requires degenerate states of opposite parity at the same energy. Hydrogen's Coulomb degeneracy provides this. In multi-electron atoms, the quantum defect splits $s$ and $p$ states at the same principal quantum number — no accidental degeneracy, always quadratic Stark. Rydberg atoms (large $n$) recover near-degeneracy and show enormous quadratic Stark shifts scaling as $n^7$.
 
 ---
 
-### Magnetic Resonance
+## Magnetic Resonance
 
 The third phenomenon is qualitatively different: it is exact, not perturbative, and it involves time.
 
-**Setup.** Take a spin-1/2 particle (a nucleus or an electron) in a static magnetic field $B_0\hat{z}$. The Zeeman splitting is $\hbar\omega_0$ where $\omega_0 = \gamma B_0$ is the **Larmor frequency** ($\gamma$ is the gyromagnetic ratio of the particle). The spin precesses around $\hat{z}$ at frequency $\omega_0$.
+**Setup.** A spin-$\tfrac{1}{2}$ particle in a static field $B_0\hat{z}$ precesses at the **Larmor frequency** $\omega_0 = \gamma B_0$, where $\gamma$ is the gyromagnetic ratio. Now add a weak transverse rotating field:
 
-Now add a weak transverse oscillating field:
+$$\mathbf{B}_1(t) = B_1(\hat{x}\cos\omega t + \hat{y}\sin\omega t).$$
 
-$$\mathbf{B}_1(t) = B_1(\hat{x}\cos\omega t + \hat{y}\sin\omega t)$$
+This is a field rotating in the $xy$-plane at frequency $\omega$. In principle it requires time-dependent perturbation theory. But there is an exact solution hidden in a change of reference frame.
 
-This is a rotating field in the $xy$-plane at frequency $\omega$. The full Hamiltonian is time-dependent and in principle requires time-dependent perturbation theory. But there is an exact solution hidden in a change of reference frame.
+**The rotating frame.** Transform to a frame rotating at frequency $\omega$ around $\hat{z}$. In this frame: the static field $B_0$ appears reduced to an effective z-component $B_0 - \omega/\gamma$; the rotating transverse field appears stationary, pointing along $\hat{x}'$. The effective Hamiltonian:
 
-**The rotating frame.** Transform to a reference frame rotating at angular frequency $\omega$ around $\hat{z}$. In this frame:
+$$\hat{H}_R = -\hbar(\omega_0 - \omega)\hat{S}_z/\hbar - \hbar\omega_1\hat{S}_{x'}/\hbar,$$
 
-- The static field $B_0\hat{z}$ appears reduced: the effective z-component is $B_0 - \omega/\gamma$.
-- The rotating transverse field $B_1$ appears stationary — it is locked to the rotating frame, pointing along $\hat{x}'$.
+where $\omega_1 = \gamma B_1$ is the **Rabi frequency**.
 
-The effective Hamiltonian in the rotating frame is
+**At resonance** ($\omega = \omega_0$): the $\hat{S}_z$ term vanishes. The Hamiltonian reduces to a pure transverse field $-\hbar\omega_1\hat{S}_{x'}$, and the spin precesses around $\hat{x}'$ at frequency $\omega_1$. In the lab frame: starting from spin-up, the spin oscillates between up and down — **Rabi oscillations**:
 
-$$\hat{H}_R = -\hbar(\omega_0 - \omega)\hat{S}_z/\hbar - \hbar\omega_1\hat{S}_{x'}/\hbar$$
+$$P_\downarrow(t) = \sin^2\!\left(\frac{\omega_1 t}{2}\right).$$
 
-where $\omega_1 = \gamma B_1$ is the **Rabi frequency** and $\hat{S}_{x'}$ is the spin operator along the rotating-frame $x$-axis.
+At time $t = \pi/\omega_1$ (a "$\pi$ pulse") the spin has completely flipped. This is the basis of Rabi's 1938 molecular-beam experiment: sweep the RF frequency; when $\omega = \omega_0$, the spin flips and the beam is deflected. The resonance appears as a sharp dip in the detector count.
 
-**Resonance.** At $\omega = \omega_0$, the $\hat{S}_z$ term vanishes. The rotating-frame Hamiltonian reduces to $\hat{H}_R = -\hbar\omega_1\hat{S}_{x'}$ — a pure transverse field. The spin precesses around $\hat{x}'$ at frequency $\omega_1$.
+**Off resonance.** The effective field in the rotating frame has both $z$ and $x'$ components. The spin precesses around the tilted effective field with reduced flip probability:
 
-In the lab frame, this means: starting from spin-up ($|\!\uparrow\rangle$), the spin oscillates between up and down at frequency $\omega_1$. These are **Rabi oscillations**:
+$$P_\downarrow(t) = \frac{\omega_1^2}{\Omega^2}\sin^2\!\left(\frac{\Omega t}{2}\right), \qquad \Omega = \sqrt{(\omega-\omega_0)^2 + \omega_1^2}.$$
 
-$$P_\downarrow(t) = \sin^2\!\left(\frac{\omega_1 t}{2}\right)$$
+Far from resonance, $\Omega \gg \omega_1$ and the flip probability is small.
 
-At time $t = \pi/\omega_1$ (a "$\pi$ pulse"), the spin has completely flipped. This is the basis of Rabi's 1938 molecular-beam experiment: the RF frequency is swept; when $\omega = \omega_0$, the spin flips and the beam is deflected differently. The resonance appears as a sharp dip in the detector count.
+**The Bloch equations and relaxation.** In a macroscopic sample, the bulk magnetization $\mathbf{M}$ obeys:
 
-**Off-resonance.** When $\omega \neq \omega_0$, the effective field in the rotating frame has both $z$ and $x'$ components. The spin precesses around this tilted effective field; the probability of flipping is reduced. The full expression is
+$$\frac{d\mathbf{M}}{dt} = \gamma\mathbf{M}\times\mathbf{B} - \frac{M_x\hat{x} + M_y\hat{y}}{T_2} - \frac{(M_z - M_0)\hat{z}}{T_1}.$$
 
-$$P_\downarrow(t) = \frac{\omega_1^2}{\Omega^2}\sin^2\!\left(\frac{\Omega t}{2}\right), \qquad \Omega = \sqrt{(\omega-\omega_0)^2 + \omega_1^2}$$
+$T_1$ (longitudinal relaxation, spin-lattice) is the timescale for $M_z$ to return to equilibrium. $T_2$ (transverse relaxation, spin-spin) is the timescale for transverse magnetization to dephase. In general $T_1 \geq T_2$: transverse dephasing happens through spin-spin interactions and field inhomogeneity that do not affect $T_1$. MRI contrast exploits the fact that different tissues have different $T_1/T_2$ ratios.
 
-where $\Omega$ is the generalized Rabi frequency. Far from resonance, $\Omega \gg \omega_1$ and the flip probability is small.
+Pulsed NMR: a $\pi/2$ pulse tips the magnetization into the transverse plane; it precesses at $\omega_0$ and induces an oscillating EMF in a pickup coil — the **free induction decay**. A subsequent $\pi$ pulse at time $\tau$ reverses the dephasing, producing a **spin echo** at time $2\tau$ with amplitude $e^{-2\tau/T_2}$. Comparing echo amplitudes at different $\tau$ gives $T_2$ free of static field inhomogeneity. Adding a gradient field encodes spatial information as different Larmor frequencies — the basis of MRI.
 
-**NMR and T₁, T₂.** In a macroscopic sample, the Bloch equations describe the bulk magnetization $\mathbf{M}$:
+<!-- → [DIAGRAM: pulsed NMR sequence — π/2 pulse at t=0, magnetization tipping into transverse plane, FID envelope decaying as e^{-t/T₂*}, π pulse at t=τ, spin echo at t=2τ with amplitude e^{-2τ/T₂}; labeled] -->
 
-$$\frac{d\mathbf{M}}{dt} = \gamma\mathbf{M}\times\mathbf{B} - \frac{M_x\hat{x} + M_y\hat{y}}{T_2} - \frac{(M_z - M_0)\hat{z}}{T_1}$$
-
-Here $T_1$ (longitudinal relaxation, spin-lattice) is the timescale for $M_z$ to return to equilibrium $M_0$; $T_2$ (transverse relaxation, spin-spin) is the timescale for the transverse magnetization to dephase. Typical values in water: $T_1 \sim 1$–3 s, $T_2 \sim 0.1$–3 s.
-
-Pulsed NMR works as follows: a $\pi/2$ pulse tips the magnetization into the transverse plane; the transverse magnetization precesses at $\omega_0$ and induces an oscillating EMF in a pickup coil (the **free induction decay**, FID). The envelope of the FID decays at rate $1/T_2^*$ (which includes field inhomogeneity). A subsequent $\pi$ pulse reverses the dephasing and produces a **spin echo** at time $2\tau$, with amplitude $e^{-2\tau/T_2}$; comparing echo heights at different $\tau$ gives $T_2$ free of field inhomogeneity.
-
-**ESR.** The same physics at microwave frequencies. Because $\gamma_e/\gamma_N \approx 1836$, electron spin resonance (ESR, also called EPR) occurs at GHz rather than MHz for the same field. ESR is used to study radicals, transition-metal complexes, and spin-labeled proteins.
-
-**MRI.** By adding a gradient field $B_0 + G_z z$, the Larmor frequency varies with position. Selective RF pulses excite a thin slice; additional gradients during readout encode the 2D spatial information as different frequencies in the FID. Image contrast comes from spatial variation in proton density, $T_1$, and $T_2$ across tissues. Clinical MRI operates at 1.5–7 T (proton Larmor frequency 64–298 MHz); whole-body 11.7 T scanners now exist for research.
+**ESR.** The same physics at microwave frequencies. Because $\gamma_e/\gamma_N \approx 1836$, electron spin resonance occurs at GHz rather than MHz for the same field. Used to study radicals, transition-metal complexes, and spin-labeled proteins.
 
 ---
 
-## Worked Example: Weak-Field Zeeman Splitting of the Hydrogen 2p Levels
+## A Worked Calculation: Zeeman Splitting of the Hydrogen 2p Levels
 
-**The question.** Hydrogen is placed in a weak magnetic field $B = 0.5$ T. Compute the energy shifts of all sublevels in the $n = 2$, $\ell = 1$ manifold.
+A hydrogen atom in a field $B = 0.5$ T. Compute the energy shifts of all sublevels in the $n=2$, $\ell=1$ manifold.
 
-**The lesson.** Fine structure first splits the $2p$ manifold into $2p_{1/2}$ ($j = 1/2$, 2 states: $m_j = \pm 1/2$) and $2p_{3/2}$ ($j = 3/2$, 4 states: $m_j = -3/2, -1/2, +1/2, +3/2$). We are in the weak-field limit as long as $\mu_B B \ll \Delta E_\text{fs}$.
+Fine structure first: the $2p$ manifold splits into $2p_{1/2}$ ($j = 1/2$, states $m_j = \pm\tfrac{1}{2}$) and $2p_{3/2}$ ($j = 3/2$, states $m_j = -\tfrac{3}{2}, -\tfrac{1}{2}, +\tfrac{1}{2}, +\tfrac{3}{2}$), separated by $\Delta E_\text{fs}(2p) \approx 4.5\times10^{-5}$ eV.
 
-Check: $\mu_B B = (5.788\times 10^{-5}\,\text{eV/T})(0.5\,\text{T}) = 2.9\times 10^{-5}$ eV. The fine-structure splitting of the hydrogen $2p$ level is $\Delta E_{FS}(2p_{3/2} - 2p_{1/2}) \approx 4.5\times 10^{-5}$ eV (from the formula $E^\text{fs}_n = \frac{(E^{(0)}_n)^2}{2m_ec^2}\left(\frac{2n}{j+1/2} - \frac{3}{2}\right)$). So at 0.5 T the Zeeman energy is about 65% of the fine-structure splitting — we are already near the intermediate-field regime. For the purpose of this example we proceed with the weak-field formula and note the caveat.
+Check the weak-field condition: $\mu_B B = (5.788\times10^{-5})(0.5) = 2.9\times10^{-5}$ eV, which is about $65\%$ of $\Delta E_\text{fs}$. Strictly we are near the intermediate-field regime, but for this example we proceed with the weak-field formula and note the caveat.
 
-**Compute $g_J$ for each sublevel.** With $\ell = 1$, $s = 1/2$:
+**Compute $g_J$ for each sublevel.** With $\ell = 1$, $s = \tfrac{1}{2}$:
 
-For $2p_{3/2}$ ($j = 3/2$):
-$$g_J = 1 + \frac{(3/2)(5/2) + (1/2)(3/2) - (1)(2)}{2(3/2)(5/2)} = 1 + \frac{15/4 + 3/4 - 2}{15/2} = 1 + \frac{10/4}{15/2} = 1 + \frac{1}{3} = \frac{4}{3}$$
+For $2p_{3/2}$ ($j = \tfrac{3}{2}$):
+$$g_J = 1 + \frac{\frac{3}{2}\cdot\frac{5}{2} + \frac{1}{2}\cdot\frac{3}{2} - 1\cdot2}{2\cdot\frac{3}{2}\cdot\frac{5}{2}} = 1 + \frac{\frac{15}{4} + \frac{3}{4} - 2}{\frac{15}{2}} = 1 + \frac{\frac{10}{4}}{\frac{15}{2}} = 1 + \frac{1}{3} = \frac{4}{3}.$$
 
-For $2p_{1/2}$ ($j = 1/2$):
-$$g_J = 1 + \frac{(1/2)(3/2) + (1/2)(3/2) - (1)(2)}{2(1/2)(3/2)} = 1 + \frac{3/4 + 3/4 - 2}{3/2} = 1 + \frac{-1/2}{3/2} = 1 - \frac{1}{3} = \frac{2}{3}$$
+For $2p_{1/2}$ ($j = \tfrac{1}{2}$):
+$$g_J = 1 + \frac{\frac{1}{2}\cdot\frac{3}{2} + \frac{1}{2}\cdot\frac{3}{2} - 1\cdot2}{2\cdot\frac{1}{2}\cdot\frac{3}{2}} = 1 + \frac{\frac{3}{4} + \frac{3}{4} - 2}{\frac{3}{2}} = 1 - \frac{1}{3} = \frac{2}{3}.$$
 
-**Energy shifts $\Delta E = g_J \mu_B B m_j$, with $\mu_B B = 2.9\times 10^{-5}$ eV:**
+**Energy shifts $\Delta E = g_J\mu_B B\,m_j$**, with $\mu_B B = 2.9\times10^{-5}$ eV:
 
-For $2p_{3/2}$ ($g_J = 4/3$):
+For $2p_{3/2}$ ($g_J = \tfrac{4}{3}$): shifts are $+2\mu_B B$, $+\tfrac{2}{3}\mu_B B$, $-\tfrac{2}{3}\mu_B B$, $-2\mu_B B$ for $m_j = +\tfrac{3}{2}, +\tfrac{1}{2}, -\tfrac{1}{2}, -\tfrac{3}{2}$.
 
-| $m_j$ | $\Delta E$ |
-|--------|------------|
-| $+3/2$ | $+\frac{4}{3}\cdot\frac{3}{2}\,\mu_B B = +2\mu_B B \approx +5.8\times 10^{-5}$ eV |
-| $+1/2$ | $+\frac{4}{3}\cdot\frac{1}{2}\,\mu_B B = +\frac{2}{3}\mu_B B \approx +1.9\times 10^{-5}$ eV |
-| $-1/2$ | $-\frac{2}{3}\mu_B B \approx -1.9\times 10^{-5}$ eV |
-| $-3/2$ | $-2\mu_B B \approx -5.8\times 10^{-5}$ eV |
+For $2p_{1/2}$ ($g_J = \tfrac{2}{3}$): shifts are $+\tfrac{1}{3}\mu_B B$, $-\tfrac{1}{3}\mu_B B$ for $m_j = \pm\tfrac{1}{2}$.
 
-For $2p_{1/2}$ ($g_J = 2/3$):
+The result: six distinct energy levels from eight original states. The $2p_{3/2}$ quartet has adjacent spacing $\tfrac{2}{3}\mu_B B$; the $2p_{1/2}$ doublet has spacing $\tfrac{2}{3}\mu_B B$ — but the overall scale and arrangement differ. When optical transitions are allowed between these levels and the split $1s$ state, the emission pattern is an irregular multiplet with unequal spacings. This is the "anomalous" Zeeman pattern, and it has a complete, mechanical explanation.
 
-| $m_j$ | $\Delta E$ |
-|--------|------------|
-| $+1/2$ | $+\frac{1}{3}\mu_B B \approx +0.97\times 10^{-5}$ eV |
-| $-1/2$ | $-\frac{1}{3}\mu_B B \approx -0.97\times 10^{-5}$ eV |
-
-**The result.** Six distinct energy levels from eight original states. The $2p_{3/2}$ quartet has spacing $\frac{2}{3}\mu_B B$ between adjacent $m_j$ levels; the $2p_{1/2}$ doublet has spacing $\frac{2}{3}\mu_B B$ as well — but the overall scale differs by the ratio of $g_J$ values. When optical transitions are allowed between these levels and the split $1s$ state, the emission pattern is an irregular multiplet with unequal spacings: the anomalous Zeeman pattern.
-
-**The limit.** This calculation assumed the weak-field limit. At $B = 0.5$ T for hydrogen $2p$ states, $\mu_B B \approx 0.65\,\Delta E_{FS}$, so we are near the crossover. For an accurate treatment at intermediate fields, the Zeeman and fine-structure terms must be diagonalized together in the full $j$-manifold. There is no simple analytic formula for this crossover — it requires numerical diagonalization, which is exactly what the simulation exercise builds.
+For an accurate treatment at $B = 0.5$ T, the Zeeman and fine-structure terms must be diagonalized together in the full $j$-manifold. There is no simple analytic formula for the crossover — it requires numerical diagonalization, which is what the simulation exercise builds.
 
 ---
 
-## Common Misconceptions
+## LLM Exercises
 
-**"The anomalous Zeeman effect is anomalous because quantum mechanics fails there."** It is only anomalous historically, because it was discovered before electron spin. With spin, the Landé g-factor gives a complete account. The name stuck; the mystery did not.
-
-**"In the strong-field (Paschen–Back) limit, spin-orbit coupling disappears."** Spin-orbit coupling does not disappear — it becomes a small perturbation on top of the dominant Zeeman interaction. The good quantum numbers change (from $j, m_j$ to $m_\ell, m_s$), but the spin-orbit energy is still there as a small correction to the Paschen–Back pattern.
-
-**"The linear Stark effect is a general atomic phenomenon."** It is specific to hydrogen (and Rydberg atoms). The linear Stark effect requires degenerate states of opposite parity at the same energy. Hydrogen's Coulomb degeneracy provides this; multi-electron atoms do not have degenerate $s$ and $p$ states, and their Stark effect is always quadratic.
-
-**"The parity selection rule kills only off-diagonal matrix elements."** Parity kills diagonal elements too: $\langle n\ell m|\hat{z}|n\ell m\rangle = 0$ for any state of definite parity, because $|n\ell m\rangle^2$ is parity-even but $\hat{z}$ is parity-odd. The integrand is always parity-odd and integrates to zero. This is why the diagonal of the Stark matrix is identically zero.
-
-**"In magnetic resonance, resonance means something physically resonates."** At resonance $\omega = \omega_0$, the drive frequency matches the Larmor precession frequency. In the rotating frame this looks like a static field; the spin undergoes complete, periodic flips. "Resonance" here has its standard meaning of matching a natural frequency — not structural resonance of a macroscopic object.
-
-**"T₁ and T₂ are the same timescale."** In general $T_1 \geq T_2$. The transverse magnetization dephases partly through the same processes that restore $M_z$ (so $T_2 \leq T_1$) but also through additional spin-spin interactions and field inhomogeneity that do not affect $T_1$. MRI contrast exploits the fact that different tissues have different $T_1/T_2$ ratios.
-
----
-
-## Exercises
-
-### Warm-up
-
-**9.1** The Bohr magneton is $\mu_B = e\hbar/2m_e$. (a) Compute its value in eV/T. (b) A hydrogen atom in the $2s$ state ($\ell = 0$, $j = 1/2$) is placed in a field $B = 1.0$ T. Compute $g_J$ and the two energy shifts $\Delta E = g_J\mu_B B m_j$ for $m_j = \pm 1/2$. (c) What frequency of electromagnetic radiation would drive transitions between these two levels? In which part of the spectrum does this fall? *(Tests: Landé g-factor for a pure-spin state; numerical evaluation; spectral region identification.)*
-
-**9.2** State the selection rule that eliminates $\langle 2p_{+1}|e\mathcal{E}\hat{z}|2s\rangle$ from the Stark matrix. Then state the selection rule (or combination of rules) that eliminates $\langle 2p_0|e\mathcal{E}\hat{z}|2p_0\rangle$. For each, identify the conserved quantity that enforces the rule. *(Tests: identification of selection rules from physical symmetry; understanding which symmetry kills which entry.)*
-
-**9.3** For the Stark $n=2$ calculation, verify by explicit substitution that $(|2s\rangle - |2p_0\rangle)/\sqrt{2}$ is an eigenstate of $W$ with eigenvalue $+3a_0 e\mathcal{E}$. Then verify that its norm is 1. *(Tests: direct check of the diagonalization result; reinforces eigenvalue computation.)*
-
-### Application
-
-**9.4** A hydrogen atom is in the $3d_{3/2}$ state ($n=3$, $\ell=2$, $j=3/2$). (a) Compute the Landé g-factor $g_J$. (b) List all $m_j$ values and compute the energy shift of each in a field $B = 2.0$ T. (c) How many distinct spectral lines would appear in emission from $3d_{3/2} \to 2p_{1/2}$ in this field? (Use the selection rule $\Delta m_j = 0, \pm 1$; count distinct frequency differences.) *(Tests: g-factor calculation for $j = 3/2$; transition counting.)*
-
-**9.5** Magnetic resonance at off-resonance. A spin-1/2 nucleus has $\omega_0 = 300$ MHz (a 7.05 T field, typical clinical NMR). A weak oscillating field is applied at $\omega = 300.001$ MHz. (a) What is $\omega - \omega_0$ in Hz? (b) With $\omega_1 = \gamma B_1 = 2\pi \times 1$ kHz (a typical weak pulse), compute the generalized Rabi frequency $\Omega = \sqrt{(\omega-\omega_0)^2 + \omega_1^2}$. (c) What is the maximum flip probability $P_\downarrow^\text{max} = \omega_1^2/\Omega^2$? (d) If the experiment uses a hard $\pi$-pulse (duration $t_\pi = \pi/\omega_1$), but the RF is off-resonant by 1 kHz, what fraction of the target spins actually flip? *(Tests: rotating-frame and Rabi-oscillation formulas; off-resonance penalty; practical NMR pulse calibration.)*
-
-**9.6** The quadratic Stark effect for the hydrogen ground state has the result $\Delta E = -\frac{9}{2}a_0^3\mathcal{E}^2$ (in Gaussian units, or equivalently $\Delta E = -(9/2)(4\pi\epsilon_0)a_0^3\mathcal{E}^2$ in SI). (a) Express this as a polarizability $\alpha_\text{pol}$ such that $\Delta E = -\frac{1}{2}\alpha_\text{pol}\mathcal{E}^2$. (b) Estimate $\Delta E$ numerically for $\mathcal{E} = 10^7$ V/m (a laboratory electric field). (c) Compare this shift to the fine-structure splitting $\sim 10^{-4}$ eV. Is Stark perturbation theory valid at this field? *(Tests: polarizability definition; numerical evaluation; validity check.)*
-
-### Synthesis
-
-**9.7** Derive the Landé g-factor formula from the following steps. (a) Write $\hat{L}_z + 2\hat{S}_z = \hat{J}_z + \hat{S}_z$. (b) The projection theorem for the operator $\hat{S}_z$ onto the $\hat{J}$ direction gives $\langle \hat{S}_z\rangle = \langle \hat{\mathbf{S}}\cdot\hat{\mathbf{J}}\rangle\,m_j/[j(j+1)]$. Evaluate $\langle \hat{\mathbf{S}}\cdot\hat{\mathbf{J}}\rangle$ in terms of $j$, $\ell$, and $s$ using $\mathbf{J}^2 = (\mathbf{L}+\mathbf{S})^2$. (c) Substitute into $\langle\hat{L}_z + 2\hat{S}_z\rangle = m_j + \langle\hat{S}_z\rangle$ and factor out $m_j$ to read off $g_J$. *(Tests: derivation of a key result from basic angular-momentum identities; ability to use the projection theorem.)*
-
-**9.8** The Paschen–Back regime. Consider a hydrogen $2p$ state ($\ell=1$, $s=1/2$) in a very strong field where $\mu_B B \gg \Delta E_{FS}$. (a) List all possible values of $(m_\ell, m_s)$ and compute the energy shift $\mu_B B(m_\ell + 2m_s)$ for each. (b) How many distinct shift values are there? (Some $(m_\ell, m_s)$ combinations may give the same energy.) (c) Now add the spin-orbit correction as a small additional perturbation. The spin-orbit term is $\propto\langle m_\ell, m_s|\mathbf{L}\cdot\mathbf{S}|m_\ell, m_s\rangle = \hbar^2 m_\ell m_s$. How does this lift any remaining degeneracy? *(Tests: uncoupled-basis calculation; counting distinct Paschen–Back levels; spin-orbit as a perturbation in the strong-field limit.)*
-
-**9.9** Design a NMR spin-echo experiment. (a) A $\pi/2$ pulse tips the magnetization into the transverse plane. After a time $\tau$, different nuclear spins have accumulated different phase shifts due to static field inhomogeneity. Explain qualitatively why a $\pi$ pulse at time $\tau$ causes the spins to rephase at time $2\tau$. (b) The echo amplitude at time $2\tau$ is $M(2\tau) = M_0 e^{-2\tau/T_2}$. If you measure echo amplitudes at $2\tau = 50, 100, 200$ ms and get $M/M_0 = 0.85, 0.72, 0.52$, fit these to estimate $T_2$. (c) Why is the spin-echo $T_2$ measurement immune to static field inhomogeneity, while a simple FID measurement is not? *(Tests: conceptual understanding of spin echo; exponential fitting; distinction between $T_2$ and $T_2^*$.)*
-
----
-
-## Still Puzzling
-
-**The anomalous magnetic moment.** The true electron g-factor is $g_s = 2.002319304\ldots$, not exactly 2. The correction, $a_e = (g_s - 2)/2 \approx 1.16\times 10^{-3}$, is the **anomalous magnetic moment** and is one of the finest tests of quantum electrodynamics. The current theoretical prediction (Schwinger term plus higher-order QED diagrams) agrees with the experimental measurement of Hanneke, Fogwell, and Gabrielse (2008) to better than one part in $10^{12}$. This uses the same Landé formula as above with $g_J$ replaced by the QED-corrected $g_s$. The correction shifts the Zeeman levels by a tiny amount — in principle observable in precision spectroscopy.
-
-**Hydrogen 21 cm and hyperfine structure.** Each fine-structure level is further split by the interaction of the electron's magnetic moment with the nuclear magnetic moment. This **hyperfine splitting** is roughly a factor $m_e/m_p \approx 1/1836$ smaller than the fine-structure splitting. For the hydrogen ground state the hyperfine splitting is 1420 MHz ($\lambda = 21$ cm), the most famous line in radio astronomy — used to map the Milky Way, discovered the first external galaxy spiral arms, and is one of the candidate signals in SETI. Its physics is exactly the Zeeman effect of the electron's spin in the magnetic field of the proton, treated via degenerate perturbation theory with the nuclear moment.
-
-**Intermediate-field Zeeman.** The crossover between weak-field and strong-field Zeeman has no simple analytic form. It requires numerical diagonalization. The resulting energy-vs.-field curves show a dense web of avoided crossings. Selection rules allow some crossings (where states have different $m_j$ and cannot mix) and forbid others. The pattern is computed numerically for spectroscopy databases; it is beautiful and complex.
-
----
-
-## The +1 — Simulation Exercise
-
-### Context
-
-You are going to build a simulation of atomic energy-level splitting as a function of field strength, showing both the Zeeman weak-to-strong crossover and the Stark linear splitting of the $n = 2$ hydrogen manifold. The deliverable is `10-atoms-in-fields.html` in your working directory.
-
-### Part 1 — Update `PROJECT.md`
+### Part 1 — Update PROJECT.md
 
 ```
 Append a new entry to PROJECT.md describing this chapter's simulation:
@@ -381,15 +254,13 @@ their fine-structure baseline. At E_field=0, all Stark lines at 0.
 
 ### Part 3 — Exploration tasks
 
-Run the simulation and answer the following:
+**Task 1: Zeeman crossover.** Increase $B$ slowly from 0 to 5 T. At what value does the energy spread of the $j=3/2$ quartet equal the fine-structure splitting $\Delta E_{FS}$? This is approximately where the weak-field formula breaks down. (The actual crossover requires the full diagonalization, but the simulation shows the limiting formula continuing past its range of validity — which is a deliberate teaching point.)
 
-1. **Zeeman mode.** Increase $B$ slowly from 0 to 5 T. At what value of $B$ does the energy spread of the $j=3/2$ quartet ($m_j = \pm 3/2, \pm 1/2$) equal the fine-structure splitting $\Delta E_{FS}$? At this point, the weak-field approximation breaks down. (The actual crossover requires the full diagonalization, but the simulation shows the limiting formulas.)
+**Task 2: Level ordering at $B = 1$ T.** The $j=3/2$, $m_j = -\tfrac{1}{2}$ sublevel has $\Delta E = -\tfrac{4}{3}\cdot\tfrac{1}{2}\mu_B B$. The $j=1/2$, $m_j = +\tfrac{1}{2}$ sublevel has $\Delta E = +\tfrac{2}{3}\cdot\tfrac{1}{2}\mu_B B$. Do these ever cross? If the weak-field curves cross, what would a crossing mean physically, and why does the full calculation produce an avoided crossing instead?
 
-2. **Zeeman mode.** Set $B = 1$ T. The $j = 3/2$, $m_j = -1/2$ sublevel has $\Delta E = -\frac{4}{3}\cdot\frac{1}{2}\mu_B B$. The $j = 1/2$, $m_j = +1/2$ sublevel has $\Delta E = +\frac{2}{3}\cdot\frac{1}{2}\mu_B B$. Are these equal? If not, do they cross at some value of $B$ in the weak-field approximation? What would a crossing mean physically?
+**Task 3: Stark linear splitting.** Set $\mathcal{E} = 0.01$ a.u. Verify from the simulation that the upper eigenvalue is exactly $+0.03$ Hartree and the lower is $-0.03$ Hartree. Confirm the two middle lines remain at zero.
 
-3. **Stark mode.** Set $E_\text{field} = 0.01$ a.u. Verify from the simulation that the upper eigenvalue is exactly $+0.03$ Hartree and the lower is $-0.03$ Hartree. Confirm the two middle lines are at zero.
-
-4. **Stark mode.** Toggle the field up to $\mathcal{E} = 0.04$ a.u. At this field strength the outermost electron in hydrogen can classically escape over the Stark-tilted Coulomb barrier (Stark ionization threshold $\sim \mathcal{E}^4/16$ in atomic units). The simulation does not model ionization — its energy lines keep moving linearly. Note where the simulation physics ends and real physics begins.
+**Task 4: Stark ionization.** Push $\mathcal{E}$ to $0.04$ a.u. At this field strength the electron can classically escape over the Stark-tilted Coulomb barrier. The simulation continues showing linear splitting — its energy lines keep moving. Note where the simulation physics ends and real physics begins: above the ionization threshold, these are not bound-state energies.
 
 **Extension prompt:**
 
@@ -407,14 +278,72 @@ maximum flip probability is 1/5.
 
 ---
 
+## Still Puzzling
+
+The true electron g-factor is $g_s = 2.002319304\ldots$, not exactly 2. The correction $a_e = (g_s - 2)/2 \approx 1.16\times10^{-3}$ is the **anomalous magnetic moment** and is one of the finest tests of quantum electrodynamics. The current theoretical prediction (Schwinger term plus higher-order QED diagrams) agrees with the experimental measurement of Hanneke, Fogwell, and Gabrielse (2008) to better than one part in $10^{12}$. The correction shifts Zeeman levels by a tiny amount observable in precision spectroscopy. Using $g_J$ in the Landé formula with the exact QED-corrected $g_s$ rather than $g_s = 2$ accounts for this shift.
+
+The hydrogen ground state is also split by hyperfine interaction: the electron's magnetic moment couples to the proton's nuclear magnetic moment. This hyperfine splitting is roughly $m_e/m_p \approx 1/1836$ times smaller than the fine-structure splitting. For the hydrogen ground state it is 1420 MHz — a wavelength of 21 cm — the most famous line in radio astronomy. The 21-cm line was used to map the Milky Way's spiral arms, detect neutral hydrogen in external galaxies, and is a candidate signal in SETI searches. Its physics is exactly the Zeeman effect of the electron's spin in the magnetic field of the proton, treated via degenerate perturbation theory in the coupled $\{|F, m_F\rangle\}$ basis.
+
+The intermediate-field Zeeman crossover has no simple analytic form. The energy-versus-field curves form a dense web of avoided crossings that must be computed numerically. Selection rules allow some crossings (states with different $m_j$ that cannot mix) and forbid others (states that can mix produce avoided crossings). The full calculation is worked numerically in spectroscopy databases and is beautiful in its complexity.
+
+---
+
+## Exercises
+
+**Warm-up**
+
+1. *[Landé g-factor and Zeeman splitting]* A hydrogen atom in the $2s$ state ($\ell=0$, $j=\tfrac{1}{2}$) is placed in $B = 1.0$ T. (a) Compute $g_J$. (b) Compute the two energy shifts $\Delta E = g_J\mu_B B\,m_j$ for $m_j = \pm\tfrac{1}{2}$. (c) What frequency of radiation drives transitions between these two levels? In which part of the spectrum?
+*What this tests: Landé formula for a pure-spin state; connecting energy splitting to a photon frequency.*
+
+2. *[Stark selection rules]* State the selection rule eliminating $\langle 2p_{+1}|e\mathcal{E}\hat{z}|2s\rangle$ from the Stark matrix. State the rule eliminating $\langle 2p_0|e\mathcal{E}\hat{z}|2p_0\rangle$. For each, identify the conserved quantity that enforces it.
+*What this tests: tracing which physical symmetry kills which matrix element, without memorization.*
+
+3. *[Eigenstate verification]* Verify by explicit substitution that $(|2s\rangle - |2p_0\rangle)/\sqrt{2}$ is an eigenstate of $W$ with eigenvalue $+3a_0\,e\mathcal{E}$. Verify its norm is 1.
+*What this tests: direct check of the diagonalization result; reinforces what an eigenstate calculation actually involves.*
+
+**Application**
+
+4. *[$3d_{3/2}$ Zeeman splitting]* A hydrogen atom is in the $3d_{3/2}$ state ($n=3$, $\ell=2$, $j=\tfrac{3}{2}$). (a) Compute $g_J$. (b) List all $m_j$ values and compute the energy shift of each at $B = 2.0$ T. (c) How many distinct spectral lines appear in emission from $3d_{3/2} \to 2p_{1/2}$ in this field? Use $\Delta m_j = 0, \pm 1$; count distinct frequency differences.
+*What this tests: g-factor calculation for $j=\tfrac{3}{2}$; transition counting from the splitting pattern.*
+
+5. *[Off-resonance Rabi oscillations]* A spin-$\tfrac{1}{2}$ nucleus has $\omega_0 = 300$ MHz. A weak oscillating field is applied at $\omega = 300.001$ MHz with $\omega_1 = 2\pi\times 1$ kHz. (a) Compute $\omega - \omega_0$ in Hz. (b) Compute $\Omega = \sqrt{(\omega-\omega_0)^2 + \omega_1^2}$. (c) What is the maximum flip probability $\omega_1^2/\Omega^2$? (d) With a hard $\pi$-pulse of duration $\pi/\omega_1$ applied at this detuning, what fraction of the target spins actually flip?
+*What this tests: off-resonance Rabi formula; practical consequence of frequency error in NMR pulse calibration.*
+
+6. *[Quadratic Stark effect]* The hydrogen ground-state polarizability gives $\Delta E = -(9/2)a_0^3\mathcal{E}^2$ (Gaussian) $= -(9/2)(4\pi\epsilon_0)a_0^3\mathcal{E}^2$ (SI). (a) Express as a polarizability $\alpha_\text{pol}$ via $\Delta E = -\tfrac{1}{2}\alpha_\text{pol}\mathcal{E}^2$. (b) Estimate $\Delta E$ at $\mathcal{E} = 10^7$ V/m. (c) Compare to the fine-structure splitting $\sim 10^{-4}$ eV. Is Stark perturbation theory valid at this field?
+*What this tests: polarizability definition; numerical estimate; checking the validity condition for perturbation theory.*
+
+**Synthesis**
+
+7. *[Derivation of the Landé g-factor]* (a) Write $\hat{L}_z + 2\hat{S}_z = \hat{J}_z + \hat{S}_z$. (b) The projection theorem gives $\langle\hat{S}_z\rangle = \langle\hat{\mathbf{S}}\cdot\hat{\mathbf{J}}\rangle\,m_j/[j(j+1)]$. Evaluate $\langle\hat{\mathbf{S}}\cdot\hat{\mathbf{J}}\rangle$ using $\mathbf{J}^2 = (\mathbf{L}+\mathbf{S})^2$. (c) Substitute into $\langle\hat{L}_z + 2\hat{S}_z\rangle = m_j + \langle\hat{S}_z\rangle$ and factor out $m_j$ to read off $g_J$.
+*What this tests: deriving a key result from angular-momentum identities; using the projection theorem.*
+
+8. *[Paschen–Back regime]* Consider hydrogen $2p$ ($\ell=1$, $s=\tfrac{1}{2}$) in a very strong field. (a) List all $(m_\ell, m_s)$ combinations and compute $\mu_B B(m_\ell + 2m_s)$ for each. (b) How many distinct energy levels are there? (c) Add the spin-orbit correction $\propto m_\ell m_s$ as a small perturbation. How does this lift remaining degeneracies?
+*What this tests: uncoupled-basis calculation; counting Paschen–Back levels; spin-orbit as a perturbation in the strong-field limit.*
+
+9. *[Spin echo]* (a) After a $\pi/2$ pulse tips magnetization into the transverse plane, different spins accumulate different phases due to static field inhomogeneity. Explain qualitatively why a $\pi$ pulse at time $\tau$ causes rephasing at time $2\tau$. (b) Echo amplitudes at $2\tau = 50, 100, 200$ ms are $M/M_0 = 0.85, 0.72, 0.52$. Fit these to $e^{-2\tau/T_2}$ to estimate $T_2$. (c) Why is the spin-echo $T_2$ immune to static field inhomogeneity while a simple FID measurement is not?
+*What this tests: conceptual understanding of spin echo; exponential fitting; the $T_2$ vs. $T_2^*$ distinction.*
+
+**Challenge**
+
+10. *[Intermediate-field Zeeman via diagonalization]* For the hydrogen $2p$ manifold ($\ell=1$, $s=\tfrac{1}{2}$), write the $6\times 6$ Hamiltonian matrix in the uncoupled basis $|m_\ell, m_s\rangle$ as the sum of the fine-structure term $\hat{H}_\text{fs} = A\,\hat{\mathbf{L}}\cdot\hat{\mathbf{S}}$ and the Zeeman term $\hat{H}_Z = \mu_B B(\hat{L}_z + 2\hat{S}_z)/\hbar$. (a) Express the matrix elements of $\hat{\mathbf{L}}\cdot\hat{\mathbf{S}} = \hat{L}_z\hat{S}_z + \tfrac{1}{2}(\hat{L}_+\hat{S}_- + \hat{L}_-\hat{S}_+)$ in the $|m_\ell, m_s\rangle$ basis using the ladder formulas from Chapter 6. (b) Verify that at $B = 0$ the eigenvalues reproduce $E = A\hbar^2[\ell(\ell+1)/2 - j(j+1)/2 + s(s+1)/2]$ (the fine-structure splitting) for $j = \tfrac{1}{2}$ and $j = \tfrac{3}{2}$. (c) Diagonalize numerically at $\mu_B B = \Delta E_\text{fs}/2$ and at $\mu_B B = 5\Delta E_\text{fs}$, and verify that the weak-field and strong-field formulas respectively approximate the eigenvalues in these limits.
+*What this tests: constructing the full intermediate-field Hamiltonian; numerical diagonalization; verification of both limiting formulas.*
+
+---
+
 ## References
 
-- Griffiths, D. J. & Schroeter, D. F. *Introduction to Quantum Mechanics*, 3rd ed., Ch. 6. Cambridge University Press, 2018. [Standard undergraduate treatment of Zeeman, Stark, and fine structure.] `[verify]`
-- Likharev, K. K. *Essential Graduate Physics — Quantum Mechanics*, §6.4, "The Zeeman Effect." LibreTexts Physics. CC BY-NC-SA 4.0. https://phys.libretexts.org/Bookshelves/Quantum_Mechanics/Essential_Graduate_Physics_-_Quantum_Mechanics_(Likharev)/06:_Perturbative_Approaches/6.04:_The_Zeeman_Effect `[verify]`
-- Sakurai, J. J. & Napolitano, J. *Modern Quantum Mechanics*, 3rd ed., Ch. 5. Cambridge University Press, 2020. [Anomalous Zeeman, coupling schemes.] `[verify]`
-- Stephen, L., Fang, M. & Wilson, B. "Physical Principles of Nuclear Magnetic Resonance and Applications." UBC PHYS502 student project report (2016). https://phas.ubc.ca/~berciu/TEACHING/PHYS502/PROJECTS/NMR16.pdf [Rotating-frame derivation, Rabi oscillations, Bloch equations, spin echo, MRI.] `[verify]`
-- Zeeman, P. "On the influence of magnetism on the nature of the light emitted by a substance." *Philosophical Magazine*, 43, 226 (1897). `[verify]`
-- Rabi, I. I., Zacharias, J. R., Millman, S. & Kusch, P. "A new method of measuring nuclear magnetic moment." *Physical Review* 53, 318 (1938). [Original molecular-beam magnetic resonance.] `[verify]`
-- Bloch, F. "Nuclear induction." *Physical Review* 70, 460 (1946). [Bloch equations.] `[verify]`
-- Hanneke, D., Fogwell, S. & Gabrielse, G. "New measurement of the electron magnetic moment and the fine structure constant." *Physical Review Letters* 100, 120801 (2008). [Electron $g$-factor to 13 significant figures; QED test.] `[verify]`
-- Stark, J. "Beobachtungen über den Effekt des elektrischen Feldes auf Spektrallinien." *Annalen der Physik* 348, 965 (1914). `[verify]`
+Zeeman, P. (1897). On the influence of magnetism on the nature of the light emitted by a substance. *Philosophical Magazine*, 43, 226.
+
+Rabi, I. I., Zacharias, J. R., Millman, S., & Kusch, P. (1938). A new method of measuring nuclear magnetic moment. *Physical Review*, 53, 318.
+
+Bloch, F. (1946). Nuclear induction. *Physical Review*, 70, 460.
+
+Stark, J. (1914). Beobachtungen über den Effekt des elektrischen Feldes auf Spektrallinien. *Annalen der Physik*, 348, 965.
+
+Hanneke, D., Fogwell, S., & Gabrielse, G. (2008). New measurement of the electron magnetic moment and the fine structure constant. *Physical Review Letters*, 100, 120801.
+
+Griffiths, D. J., & Schroeter, D. F. (2018). *Introduction to Quantum Mechanics* (3rd ed.). Cambridge University Press. Chapter 6.
+
+Sakurai, J. J., & Napolitano, J. (2021). *Modern Quantum Mechanics* (3rd ed.). Cambridge University Press. Chapter 5.
+
+Townsend, J. S. (2012). *A Modern Approach to Quantum Mechanics* (2nd ed.). University Science Books.
