@@ -62,12 +62,12 @@ Every approximation method in Vol. 3 has a dimensionless small parameter $\epsil
 
 | Method | Small parameter $\epsilon$ | Breaks when |
 |---|---|---|
-| Non-degenerate perturbation theory (Ch. 2–3) | $|\langle m \vert \hat{H}' \vert n \rangle| / \vert E_n^{(0)} - E_m^{(0)} \vert$ | States nearly degenerate |
-| WKB (Ch. 5) | $\hbar \vert dp/dx \vert / p^2$ | Near classical turning points |
-| Variational (Ch. 4) | — (upper bound; no breakdown parameter) | Trial state poorly chosen |
-| Time-dependent PT / Rabi (Ch. 6) | $\Omega_R / \delta$ where $\delta$ is detuning | On-resonance (rotating-wave fixes this) |
-| Born approximation (Ch. 9) | $m \vert V \vert a^2 / \hbar^2$ for range $a$ | Strong or long-range potentials |
-| Tight-binding / KP (Ch. 11) | $\Delta / W$ where $\Delta$ is gap, $W$ is bandwidth | Wide bands, strong overlap |
+| Non-degenerate perturbation theory (Ch. 1–2) | $|\langle m \vert \hat{H}' \vert n \rangle| / \vert E_n^{(0)} - E_m^{(0)} \vert$ | States nearly degenerate |
+| WKB (Ch. 4) | $\hbar \vert dp/dx \vert / p^2$ | Near classical turning points |
+| Variational (Ch. 3) | — (upper bound; no breakdown parameter) | Trial state poorly chosen |
+| Time-dependent PT / Rabi (Ch. 5) | $\Omega_R / \delta$ where $\delta$ is detuning | On-resonance (rotating-wave fixes this) |
+| Born approximation (Ch. 8) | $m \vert V \vert a^2 / \hbar^2$ for range $a$ | Strong or long-range potentials |
+| Tight-binding / KP (Ch. 10) | $\Delta / W$ where $\Delta$ is gap, $W$ is bandwidth | Wide bands, strong overlap |
 
 Before you produce a number, compute $\epsilon$ for your system. If $\epsilon > 0.3$, caveat your answer. If $\epsilon > 1$, pick a different method.
 
@@ -79,7 +79,7 @@ Each system below maps to a different Vol. 3 method and comes with: the method i
 
 ---
 
-### System A — STM Tunneling Current via WKB (Ch. 5)
+### System A — STM Tunneling Current via WKB (Ch. 4)
 
 **The physics.** A scanning tunneling microscope holds a sharp metallic tip within a few ångströms of a conducting surface. A bias voltage $V$ drives electrons from tip to sample (or vice versa) through the vacuum gap. Vacuum is a classically forbidden region — the electron's energy is below the barrier height set by the work function $\phi$ — so the only mechanism is quantum tunneling.
 
@@ -119,7 +119,7 @@ The last term is a first-order Coulomb correction for the electron-hole interact
 
 ---
 
-### System C — Ammonia Inversion and the Maser (Time-Dependent PT / Two-Level System, Ch. 6)
+### System C — Ammonia Inversion and the Maser (Time-Dependent PT / Two-Level System, Ch. 5)
 
 **The physics.** The nitrogen atom in NH$_3$ sits above or below the plane of the three hydrogen atoms. These two configurations are classically equivalent (degenerate). Quantum tunneling through the barrier connecting them mixes the two classical configurations into symmetric ($|+\rangle$) and antisymmetric ($|-\rangle$) eigenstates separated in energy by $2A$, where $A$ is the tunneling matrix element. This is the same two-level diagonalization from degenerate perturbation theory — the structure is identical to the $2\times 2$ block in the Stark matrix.
 
@@ -135,7 +135,7 @@ Eigenvalues: $E_\pm = E_0 \mp A$. The tunneling splitting is $\Delta E = 2A$. Th
 
 ---
 
-### System D — NMR ${}^1$H Qubit via Rabi Oscillations (Ch. 6)
+### System D — NMR ${}^1$H Qubit via Rabi Oscillations (Ch. 5)
 
 **The physics.** A proton (spin-$\frac{1}{2}$) in a strong static field $B_0$ precesses at the Larmor frequency $\nu_0 = \gamma B_0 / 2\pi$, where $\gamma = 2.675 \times 10^8$ rad s$^{-1}$ T$^{-1}$ is the proton gyromagnetic ratio. An oscillating rf field $B_1\cos(\omega t)$ applied perpendicular to $B_0$ drives spin flips when $\omega \approx 2\pi\nu_0$. In the rotating frame (rotating-wave approximation), the effective Hamiltonian is time-independent and the spin undergoes Rabi oscillations between $|\!\uparrow\rangle$ and $|\!\downarrow\rangle$ at frequency:
 
@@ -149,7 +149,7 @@ $$\Omega_R = \gamma B_1 / 2$$
 
 ---
 
-### System E — Variational Helium Ground State (Ch. 4)
+### System E — Variational Helium Ground State (Ch. 3)
 
 **The physics.** The helium atom has two electrons, a nucleus of charge $Z = 2$, and an electron-electron repulsion that cannot be treated perturbatively without care (the repulsion is comparable in magnitude to the nuclear attraction at $r \sim a_0$). The ground-state energy, measured by ionization energy, is $E_\text{He} = -79.0$ eV. No exact closed-form solution exists.
 
@@ -175,11 +175,11 @@ The hydrogen molecule is a natural extension: vary the bond length $R$ in a tria
 
 ---
 
-### System F — Rutherford Scattering via the Born Approximation (Ch. 9)
+### System F — Rutherford Scattering via the Born Approximation (Ch. 8)
 
 **The physics.** Alpha particles ($^4$He nuclei, charge $2e$) are scattered by a gold nucleus (charge $79e$) at energies of order 5–8 MeV. The interaction is the Coulomb repulsion $V(r) = Z_1 Z_2 e^2 / (4\pi\epsilon_0 r)$. In 1911 Rutherford discovered that the scattering cross-section had a characteristic $1/\sin^4(\theta/2)$ angular dependence, revealing that nearly all the atomic mass was concentrated in a tiny nucleus.
 
-**The method.** Born approximation (Ch. 9). For a central potential $V(r)$, the differential cross-section in the Born approximation is:
+**The method.** Born approximation (Ch. 8). For a central potential $V(r)$, the differential cross-section in the Born approximation is:
 
 $$\frac{d\sigma}{d\Omega} = \left(\frac{m}{2\pi\hbar^2}\right)^2 \left|\tilde{V}(q)\right|^2$$
 
