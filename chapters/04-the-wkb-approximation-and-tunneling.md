@@ -283,3 +283,110 @@ Comments at every non-trivial physics step.
 ---
 
 *Chapter 5 follows: the variational principle. If perturbation theory requires a small correction to a known solution, the variational method requires only a guess — and guarantees that the guess is an upper bound on the ground-state energy. It is the method of choice when the perturbation is not small.*
+
+---
+
+## Running Project — Model a Real Quantum System, End to End
+
+**This chapter adds:** WKB tunneling to the toolkit, with the slowly-varying-potential small parameter $|d\lambda_\text{dB}/dx| \ll 1$ as a table row — and it supplies the complete quantitative model for the capstone's **System A — STM vacuum-gap tunneling** (and, in the same breath, alpha decay).
+
+Today's table entry: **WKB — $\varepsilon = |d\lambda_\text{dB}/dx| = \hbar|dp/dx|/p^2 \ll 1$ (potential varies slowly over a de Broglie wavelength) — breaks at classical turning points where $p\to0$ (fixed by Airy/connection formulas) and at the barrier top $E\to V_0$.** WKB is the method that nails the *exponent* $e^{-2\kappa d}$ but not the $O(1)$ prefactor — a distinction that becomes the heart of System A's breakdown analysis (the prefactor needs the Tersoff-Hamann density-of-states treatment).
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Computing $\kappa = \sqrt{2m_e\phi}/\hbar$ and the per-ångström current ratio $e^{2\kappa}$ for a chosen work function — *Why AI works here:* a one-line plug-in checkable against the $0.5123\sqrt{\phi[\text{eV}]}$ Å$^{-1}$ shortcut.
+- Setting up the Gamow integral $\gamma = \frac1\hbar\int_a^b\sqrt{2m(V-E)}\,dx$ for a given barrier shape and evaluating it numerically by Simpson's rule — *Why AI works here:* mechanical quadrature, checkable against the rectangular-barrier closed form.
+- Extracting $\kappa$ from a $\ln I$ vs $d$ slope (linear fit) — *Why AI works here:* standard regression with a physical check ($\phi = \hbar^2\kappa^2/2m_e$ should be a few eV).
+
+**The tell:** You are using AI well when you have an independent check — here, the rule of thumb "factor of 7–10 per ångström" and the parallel-on-a-log-plot relation between $T_\text{exact}$ and $T_\text{WKB}$.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding whether WKB is valid for *your* barrier — checking $\varepsilon = |d\lambda_\text{dB}/dx|$ against 1, and whether you are in the thick-barrier regime $\kappa L \gg 1$ — *Why AI fails here:* near the barrier top WKB silently fails (it predicts a kink where the exact $T$ is smooth), and the AI will apply the formula anyway. This is the small-parameter call.
+- Trusting the absolute current magnitude — *Why AI fails here:* WKB gives the exponent but misses the prefactor by $\sim 10^3$ for STM; an AI quoting an absolute current from WKB alone is fluently wrong, and judging that the *slope* is reliable but the *prefactor* is not is a physics call.
+- Attributing the residual error (image charge, 3D geometry, Fowler-Nordheim regime) — *Why AI fails here:* the breakdown analysis requires knowing which omitted physics dominates at your parameters, which it will guess at without estimating magnitudes.
+
+**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours.
+
+**Physics-judgment connection:** This trains the WKB-specific discipline — trust the exponential, distrust the prefactor — and checking it against a cited measured datum (the STM "factor of 7–10 per ångström" calibration, Binnig & Rohrer).
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of the capstone's System A (STM) — method selection by the WKB condition and the $\kappa$, $T(d)$, current-ratio calculation — plus the WKB table row.
+**Tool:** Claude Project — this is the second full five-move candidate; keep it beside helium.
+**The Prompt:**
+```
+I am drafting a five-move quantum model of STM vacuum-gap tunneling. Help me
+with moves 2-3 (method selection, calculation); I will write moves 1, 4, 5.
+
+METHOD SELECTION: argue in 3-4 sentences why WKB is appropriate for a vacuum
+gap. State the small parameter (|d lambda_dB / dx| << 1) and explain why it is
+satisfied in the barrier interior (constant imaginary momentum) and only
+marginally violated at the turning points (a prefactor of order unity, not an
+exponential error). State the thick-barrier condition kappa*d >> 1.
+
+CALCULATION: for a tungsten tip on gold, effective work function phi = 4.0 eV:
+compute kappa = sqrt(2 m_e phi)/hbar in inverse angstroms (use the shortcut
+0.5123*sqrt(phi[eV])); compute T(d)=exp(-2 kappa d) at d=5 A and d=6 A; report
+the current ratio I(5A)/I(6A). Show units throughout.
+
+Do NOT quote an absolute tunneling current from WKB alone — I know WKB misses
+the prefactor by ~10^3 and I will handle that in the breakdown move. Do NOT
+tell me whether my eventual percent error is acceptable.
+```
+**What this produces:** $\kappa \approx 1.025$ Å$^{-1}$, a current ratio $\approx 7.8$ per ångström, ready to validate against the STM calibration rule.
+**How to adapt:** *Your system:* for alpha decay, swap the rectangular barrier for the Coulomb barrier and integrate $\gamma$ analytically; the method-selection argument is identical. *ChatGPT/Gemini:* watch for it volunteering an absolute current — that is the prefactor trap. *Claude Project:* store this draft as System A.
+**Builds on:** Chapter 3's helium draft (your first complete candidate); now you have a second, in a different method.  **Next:** Chapter 5 adds time-dependent PT and the $\Omega t \ll 1$ Rabi condition.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the WKB table row and a script comparing $T_\text{WKB}$ to the exact rectangular-barrier $T$, plus extracting $\kappa$ from synthetic STM data.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–3 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "For WKB results, report the exponent (slope) as reliable and flag the prefactor as a separate, harder problem."
+**The Task:**
+```
+In the running-project directory:
+1. Append the WKB row to method-table.md.
+2. Create wkb_stm.py that:
+   - computes kappa for phi=4.0 eV (expect ~1.025 1/A),
+   - computes T_WKB=exp(-2 kappa L) and the EXACT rectangular-barrier T for
+     E=1 eV, V0=5 eV, L=5 A; prints both and their ratio T_exact/T_WKB,
+   - confirms that ratio matches 16 E (V0-E)/V0^2,
+   - given synthetic STM data d=[4,5,6,7] A, I=[12.3,1.62,0.213,0.028] nA,
+     fits ln(I) vs d, extracts kappa from slope (-2 kappa), and infers
+     phi = hbar^2 kappa^2 / (2 m_e); prints phi in eV.
+3. Run it. Confirm T_exact/T_WKB ~ 2.56 and the inferred phi is a few eV.
+Touch no files outside this directory. Report the ratio and the inferred phi.
+```
+**Expected output:** appended row; console showing $T_\text{exact}/T_\text{WKB}\approx 2.56$ matching $16E(V_0-E)/V_0^2$, and an inferred work function of order 4–5 eV from the synthetic data.
+**What to inspect:** the exact/WKB ratio is the analytic prefactor (an $O(1)$ number, not exponential); the extracted $\phi$ from the $\ln I$ slope is physically sane (a few eV).
+**If it goes wrong:** if the inferred $\phi$ comes out tens of eV or negative, the slope sign or the $\hbar^2\kappa^2/2m_e$ unit conversion is wrong — print $\kappa$ in Å$^{-1}$ and check it is near 1, not 10.
+**CLAUDE.md / AGENTS.md note:** add "WKB gives the slope $d\ln I/dd = -2\kappa$ reliably; never report an absolute STM current from WKB without flagging the missing density-of-states prefactor."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 WKB tunneling numbers — the current ratio and the work function extracted from data.
+**Validation type:** Numerical result
+**Risk level:** Medium — the exponent is robust; the danger is over-claiming the prefactor or mis-extracting $\phi$.
+**Setup:** use your R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — WKB and Tunneling
+□ Correctness: is kappa ~ 1.025 1/A for phi=4 eV (the 0.5123*sqrt(phi) rule)?
+□ Completeness: is the WKB validity condition (kappa*L >> 1, slow potential)
+  stated, and the barrier-top failure noted?
+□ Scope: is the absolute current NOT quoted from WKB alone (prefactor flagged)?
+□ Prefactor: does T_exact/T_WKB equal 16 E (V0-E)/V0^2 ~ 2.56 (an O(1) number)?
+□ Data extraction: is the inferred work function a physically reasonable few eV?
+□ Failure-mode check: any of —
+  - fluent but wrong (an absolute current reported as if WKB were complete)
+  - kappa off by 10x (eV/J or A/m unit slip)
+  - applying WKB at E ~ V0 where it has a kink and fails
+  - inferred phi negative or tens of eV (slope-sign or conversion error)
+```
+**What to do with findings:** pass → record the slope/ratio as System A's calculation move; note the prefactor gap for the breakdown move. one fail → fix units/slope, re-run, document. multiple fails → recompute $\kappa$ by hand from $0.5123\sqrt{\phi}$.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* What AI produced and how you used it.
+> *2:* One specific thing the AI could not determine that required your judgment.
+**Physics-judgment connection:** this validation trains separating what an approximation gets right (the exponent) from what it gets wrong (the prefactor), and comparing the reliable part against a cited measured calibration — the disciplined breakdown analysis the capstone requires.

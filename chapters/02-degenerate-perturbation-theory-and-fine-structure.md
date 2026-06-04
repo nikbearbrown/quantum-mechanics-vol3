@@ -41,6 +41,9 @@ For the Stark effect, the preferred directions turn out to be $(|2s\rangle \pm |
 
 <!-- → [FIGURE: geometric diagram of the degenerate subspace as a plane — showing the original basis vectors |a⟩ and |b⟩, the perturbation matrix W acting as an "arrow" in the plane, and the good states as the eigenvectors of W; the visual point is that W selects a preferred basis even though H₀ cannot] -->
 
+![geometric diagram of the degenerate subspace as a plane — showing the original basis vectors |a⟩ and |b⟩, the perturbation matrix W acting…](../images/02-degenerate-perturbation-theory-and-fine-structure-fig-01.png)
+*Figure 2.1 — geometric diagram of the degenerate subspace as a plane — showing the original basis vectors |a⟩ and |b⟩, the perturbation matrix W acting…*
+
 ---
 
 ## The Linear Stark Effect: Hydrogen $n=2$ in an Electric Field
@@ -80,6 +83,9 @@ Three lines from four states. The middle line contains two states — hence its 
 Compare to the ground state: $\langle 1s|e\mathcal{E}\hat{z}|1s\rangle = 0$ by parity. There is no partner at the same energy to mix with at first order. The ground state acquires a second-order (quadratic) shift — proportional to $\mathcal{E}^2$, tiny for ordinary laboratory fields. The linear Stark effect of $n=2$ versus the quadratic Stark effect of $n=1$ is a direct signature of degeneracy.
 
 <!-- → [FIGURE: energy-level diagram of the hydrogen n=2 Stark effect — showing all four states degenerate at ε=0 on the left, then splitting into three lines as ε increases on the right; label the good states (|2s⟩ ± |2p₀⟩)/√2 with their ±3a₀eε shifts, and the two unsplit |2p±₁⟩ states; note the double intensity of the middle line] -->
+
+![energy-level diagram of the hydrogen n=2 Stark effect — showing all four states degenerate at ε=0 on the left, then splitting into three…](../images/02-degenerate-perturbation-theory-and-fine-structure-fig-02.png)
+*Figure 2.2 — energy-level diagram of the hydrogen n=2 Stark effect — showing all four states degenerate at ε=0 on the left, then splitting into three…*
 
 ---
 
@@ -178,6 +184,9 @@ Each step is roughly an order of magnitude smaller. The fine-structure formula i
 
 <!-- → [FIGURE: n=2 hydrogen energy-level diagram showing three stages — (1) the unperturbed level with all 8 states degenerate, (2) after fine structure with 2p₃/₂ above 2s₁/₂/2p₁/₂, (3) after Lamb shift with 2s₁/₂ slightly above 2p₁/₂; annotate each splitting with its numerical value and physical origin; the Lamb shift arrow should be visibly much smaller than the fine-structure arrow] -->
 
+![n=2 hydrogen energy-level diagram showing three stages — (1) the unperturbed level with all 8 states degenerate, (2) after fine structure…](../images/02-degenerate-perturbation-theory-and-fine-structure-fig-03.png)
+*Figure 2.3 — n=2 hydrogen energy-level diagram showing three stages — (1) the unperturbed level with all 8 states degenerate, (2) after fine structure…*
+
 ---
 
 ## Exercises
@@ -257,3 +266,107 @@ Lamb, W. E., & Retherford, R. C. (1947). Fine structure of the hydrogen atom by 
 Stark, J. (1914). Beobachtungen über den Effekt des elektrischen Feldes auf Spektrallinien. *Annalen der Physik*, 348(7), 965–982.
 
 Zwiebach, B. (2018). *Quantum Physics III* (MIT OCW 8.06). Massachusetts Institute of Technology.
+
+---
+
+## Running Project — Model a Real Quantum System, End to End
+
+**This chapter adds:** degenerate perturbation theory to the toolkit, and the fine-structure scale $\varepsilon = \alpha^2 \approx (1/137)^2$ as a second row of the method-selection table — the row that governs any system whose leading splitting is set by relativistic/spin-orbit corrections (a candidate for the linear Stark and hydrogen-field systems in the capstone).
+
+Today's table entry: **degenerate PT — $\varepsilon = \alpha^2 = (e^2/4\pi\epsilon_0\hbar c)^2 \approx 5.3\times10^{-5}$ for fine structure — applies when the unperturbed level is degenerate and the splitting is small relative to the level itself; breaks at the next order (the Lamb shift), which needs QED.** The key discipline this chapter contributes to the capstone: when states are degenerate, you must *diagonalize $\hat{H}'$ in the subspace first* — applying the non-degenerate formula naively gives a zero denominator, the formula's way of telling you the basis was wrong.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Applying the two selection rules ($\Delta m_\ell = 0$, parity) to enumerate which of the six $n=2$ Stark matrix pairs survive — *Why AI works here:* it is a finite case check you can verify entry by entry against the symmetry argument.
+- Building and diagonalizing a small symbolic/numeric $W$ matrix and reading off eigenvalues $\pm 3a_0 e\mathcal{E}$ and eigenvectors $(|2s\rangle\mp|2p_0\rangle)/\sqrt2$ — *Why AI works here:* a $4\times4$ diagonalization is mechanical and checkable against the traceless-block structure.
+- Plugging numbers into $E_n^\text{fs}=-(E_n^{(0)})^2/(2mc^2)(4n/(j+\tfrac12)-3)$ — *Why AI works here:* arithmetic with a fixed formula, checkable by hand.
+
+**The tell:** You are using AI well when you have an independent check — here, the block-diagonal structure of $W$ and the $\ell$-independence of the combined fine-structure formula.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding whether the field is "weak" (use degenerate PT in the $j$ basis) or "strong" (Paschen-Back, uncoupled basis) for *your* parameters — *Why AI fails here:* it will pick a regime without checking $\mu_B B$ against $\Delta E_\text{fs}$, and the intermediate regime has no closed form at all. This is a small-parameter call.
+- Trusting the spin-orbit factor of $\tfrac12$ (Thomas precession) or the Darwin/spin-orbit complementarity — *Why AI fails here:* a factor-of-2 error here is exactly the kind of plausible-but-wrong mistake an LLM will not flag, and it doubles the predicted splitting.
+
+**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours.
+
+**Physics-judgment connection:** This trains comparing a computed splitting against the known hierarchy ($E^{(0)} \gg \Delta E_\text{fs} \sim \alpha^2 E^{(0)} \gg \Delta E_\text{Lamb}$) — checking that your number lands in the right decade before believing it.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the degenerate-PT row of the running table, plus a verified fine-structure splitting for hydrogen $n=2$.
+**Tool:** Claude Project — append to the same running table started in Chapter 1.
+**The Prompt:**
+```
+Append a second row to my method-selection table for DEGENERATE
+perturbation theory. Columns: method | small parameter epsilon | formula for
+epsilon | breaks when. For fine structure, epsilon = alpha^2 where
+alpha = e^2/(4 pi eps0 hbar c) ~ 1/137, so epsilon ~ 5.3e-5. "Breaks when":
+when the perturbation is NOT small relative to the level spacing, OR at the
+next order where QED (Lamb shift) enters. Note in the cell that the method
+requires diagonalizing H' in the degenerate subspace first.
+
+Then compute, showing all arithmetic, the hydrogen n=2 fine-structure
+energies from E_fs = -(E_n^0)^2/(2 m c^2) * (4n/(j+1/2) - 3) with
+E_2^0 = -3.4 eV and m c^2 = 0.511 MeV, for j=1/2 and j=3/2. Report the
+splitting Delta E_FS between them in eV, and express it as a multiple of
+alpha^2 |E_2^0|.
+
+Do NOT tell me whether a given external field is "weak" or "strong" for any
+particular B — I will check mu_B B against Delta E_fs myself. Do NOT silently
+change the Thomas factor of 1/2.
+```
+**What this produces:** the table's second row and a fine-structure splitting ($\approx 4.5\times10^{-5}$ eV) you check against the chapter's worked example.
+**How to adapt:** *Your system:* if your capstone is the ammonia/maser two-state splitting, note that the same $2\times2$ diagonalization structure recurs there. *ChatGPT/Gemini:* watch for the model dropping the Thomas $\tfrac12$ or mislabeling which state sits higher. *Claude Project:* keep the running table in project instructions so the row persists.
+**Builds on:** Chapter 1's table seed and the non-degenerate breakdown (zero denominator).  **Next:** Chapter 3 adds the variational row — the one method with *no* breakdown parameter, only an upper-bound guarantee.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** an appended table row and a script that diagonalizes the $4\times4$ Stark $W$ matrix and the hydrogen $n=2$ fine-structure levels.
+**Tool:** Claude Code
+**Skill level:** Beginner
+**Setup — confirm:**
+- [ ] `method-table.md` from Chapter 1 exists in the project directory.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule from Chapter 1 (append-only table) is present.
+**The Task:**
+```
+In the running-project directory:
+1. Append the degenerate-PT row to method-table.md (do not edit existing rows).
+2. Create check_degenerate.py that:
+   - builds the 4x4 Stark matrix W = e*E_field * [[0,-3a0,0,0],[-3a0,0,0,0],
+     [0,0,0,0],[0,0,0,0]] (use e=a0=E_field=1 for structure), diagonalizes it,
+     and prints eigenvalues and eigenvectors; confirm eigenvalues +/-3 and two 0s.
+   - computes E_fs for j=1/2 and j=3/2 from the fine-structure formula with
+     E_2^0=-3.4 eV, m c^2=0.511e6 eV; prints both and their difference.
+3. Run it. Confirm the W eigenvectors are (|2s> -/+ |2p0>)/sqrt(2) and that
+   Delta E_FS ~ 4.5e-5 eV.
+Touch no files outside this directory. Report the eigenvalues and the splitting.
+```
+**Expected output:** appended table row; console listing $W$ eigenvalues $\{+3,-3,0,0\}$, the good-state eigenvectors, and $\Delta E_\text{FS}\approx 4.5\times10^{-5}$ eV.
+**What to inspect:** the two shifted eigenvalues are equal and opposite (traceless block); the two unshifted states are $|2p_{\pm1}\rangle$; the splitting lands in the $10^{-5}$ eV decade.
+**If it goes wrong:** if the splitting comes out near $10^{-4}$ eV, the script likely doubled the spin-orbit term (missing Thomas $\tfrac12$) or used $j+\tfrac12$ wrong — print the $(4n/(j+\tfrac12)-3)$ factor for each $j$ and check against $5$ and $1$.
+**CLAUDE.md / AGENTS.md note:** add "When a level is degenerate, diagonalize the perturbation in the subspace; never apply the non-degenerate energy-denominator formula across a degeneracy."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R4 fine-structure splitting and Stark good-state eigenvectors.
+**Validation type:** Numerical result
+**Risk level:** Medium — the factor-of-2 Thomas error and the $j+\tfrac12$ vs $j$ confusion are classic silent mistakes.
+**Setup:** use your R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Degenerate PT and Fine Structure
+□ Correctness: are the W eigenvalues +/-3 a0 e E_field and 0, 0?
+□ Completeness: are the good states reported as (|2s> -/+ |2p0>)/sqrt(2),
+  and identified which sits higher?
+□ Scope: did the script append (not overwrite) the table row?
+□ Hierarchy: does Delta E_FS land near 4.5e-5 eV (the alpha^2 |E_2^0| decade)?
+□ Ordering: is 2p_{3/2} ABOVE the j=1/2 pair (both shifts negative, j=1/2 more)?
+□ Failure-mode check: any of —
+  - factor-of-2: spin-orbit term doubled (Thomas 1/2 dropped) -> splitting ~1e-4
+  - hallucinated constant: wrong m c^2 or alpha
+  - using j instead of j+1/2 in the formula
+```
+**What to do with findings:** pass → record $\Delta E_\text{FS}$ as a project datum and note the QED-Lamb-shift boundary. one fail → fix the formula, re-run, document. multiple fails → recompute the $(4n/(j+\tfrac12)-3)$ factor by hand.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* What AI produced and how you used it.
+> *2:* One specific thing the AI could not determine that required your judgment.
+**Physics-judgment connection:** this validation trains checking a result against a known energy hierarchy and against a level-ordering theorem before trusting it — the discipline of asking "is this number in the right decade, and does it have the right sign structure?"

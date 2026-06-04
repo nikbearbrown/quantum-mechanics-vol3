@@ -69,6 +69,9 @@ The Paschen–Back pattern is simpler than the anomalous pattern: essentially a 
 
 <!-- → [FIGURE: energy-vs.-B diagram for hydrogen 2p manifold from B=0 to ~10T, showing the weak-field Zeeman fan of six lines splitting into the Paschen-Back pattern, with the crossover region marked; m_j labels at right edge, m_ℓ and m_s labels at strong-field edge] -->
 
+![energy-vs.-B diagram for hydrogen 2p manifold from B=0 to ~10T, showing the weak-field Zeeman fan of six lines splitting into the…](../images/09-atoms-in-fields-fig-01.png)
+*Figure 9.1 — energy-vs.-B diagram for hydrogen 2p manifold from B=0 to ~10T, showing the weak-field Zeeman fan of six lines splitting into the…*
+
 ---
 
 ## The Stark Effect
@@ -102,6 +105,9 @@ The $n=2$ level splits into **three lines** from four states:
 The splitting is **linear in $\mathcal{E}$** — a **linear Stark effect** — because the degeneracy allows mixing at first order. The good eigenstates are superpositions of $s$ and $p$ states; they have permanent electric dipole moments along $\hat{z}$ that couple directly to the applied field.
 
 <!-- → [FIGURE: Stark energy diagram for n=2 manifold — two splitting lines (±3a₀eℰ) diverging linearly with field, two flat lines; eigenstates labeled at right edge; contrast with the curved quadratic ground-state shift shown below] -->
+
+![Stark energy diagram for n=2 manifold — two splitting lines (±3a₀eℰ) diverging linearly with field, two flat lines](../images/09-atoms-in-fields-fig-02.png)
+*Figure 9.2 — Stark energy diagram for n=2 manifold — two splitting lines (±3a₀eℰ) diverging linearly with field, two flat lines*
 
 **Why hydrogen is special.** The linear Stark effect requires degenerate states of opposite parity at the same energy. Hydrogen's Coulomb degeneracy provides this. In multi-electron atoms, the quantum defect splits $s$ and $p$ states at the same principal quantum number — no accidental degeneracy, always quadratic Stark. Rydberg atoms (large $n$) recover near-degeneracy and show enormous quadratic Stark shifts scaling as $n^7$.
 
@@ -144,6 +150,9 @@ $T_1$ (longitudinal relaxation, spin-lattice) is the timescale for $M_z$ to retu
 Pulsed NMR: a $\pi/2$ pulse tips the magnetization into the transverse plane; it precesses at $\omega_0$ and induces an oscillating EMF in a pickup coil — the **free induction decay**. A subsequent $\pi$ pulse at time $\tau$ reverses the dephasing, producing a **spin echo** at time $2\tau$ with amplitude $e^{-2\tau/T_2}$. Comparing echo amplitudes at different $\tau$ gives $T_2$ free of static field inhomogeneity. Adding a gradient field encodes spatial information as different Larmor frequencies — the basis of MRI.
 
 <!-- → [DIAGRAM: pulsed NMR sequence — π/2 pulse at t=0, magnetization tipping into transverse plane, FID envelope decaying as e^{-t/T₂*}, π pulse at t=τ, spin echo at t=2τ with amplitude e^{-2τ/T₂}; labeled] -->
+
+![pulsed NMR sequence — π/2 pulse at t=0, magnetization tipping into transverse plane, FID envelope decaying as e^{-t/T₂*}, π pulse at t=τ,…](../images/09-atoms-in-fields-fig-03.png)
+*Figure 9.3 — pulsed NMR sequence — π/2 pulse at t=0, magnetization tipping into transverse plane, FID envelope decaying as e^{-t/T₂*}, π pulse at t=τ,…*
 
 **ESR.** The same physics at microwave frequencies. Because $\gamma_e/\gamma_N \approx 1836$, electron spin resonance occurs at GHz rather than MHz for the same field. Used to study radicals, transition-metal complexes, and spin-labeled proteins.
 
@@ -347,3 +356,115 @@ Griffiths, D. J., & Schroeter, D. F. (2018). *Introduction to Quantum Mechanics*
 Sakurai, J. J., & Napolitano, J. (2021). *Modern Quantum Mechanics* (3rd ed.). Cambridge University Press. Chapter 5.
 
 Townsend, J. S. (2012). *A Modern Approach to Quantum Mechanics* (2nd ed.). University Science Books.
+
+---
+
+## Running Project — Model a Real Quantum System, End to End
+
+**This chapter adds:** the atoms-in-fields machinery (Zeeman, Stark, magnetic resonance) to the toolkit, with the regime small parameter $\mu_B B / \Delta E_\text{fs}$ as a table row — and it supplies the model for the capstone's **System C — ammonia inversion and the maser**, whose two-state $2\times2$ tunneling diagonalization is structurally identical to the Stark and weak-field Zeeman problems.
+
+Today's table entry: **atoms in fields — $\varepsilon = \mu_B B/\Delta E_\text{fs}$ — weak field ($\varepsilon\ll1$): Landé $g_J$ in the $|j,m_j\rangle$ basis; strong field ($\varepsilon\gg1$): Paschen-Back in the $|m_\ell,m_s\rangle$ basis; the intermediate regime $\varepsilon\sim1$ has no closed form and needs numerical diagonalization.** The capstone lesson: the same $2\times2$ structure ($E_0$ on the diagonal, a tunneling/coupling matrix element off-diagonal) recurs across the Stark effect, the ammonia maser, and any two-level splitting — recognizing it tells you which method to reach for.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Computing the Landé $g_J = 1 + [j(j+1)+s(s+1)-\ell(\ell+1)]/2j(j+1)$ and the Zeeman shifts $g_J\mu_B B m_j$ — *Why AI works here:* a formula plug-in checkable against the $g_J=2,\tfrac23,\tfrac43$ values for $s$, $2p_{1/2}$, $2p_{3/2}$.
+- Diagonalizing the $2\times2$ ammonia/Stark Hamiltonian to get $E_\pm=E_0\mp A$ and the splitting $2A$ — *Why AI works here:* a trivial diagonalization with a structural check (traceless off-diagonal block).
+- Converting the maser transition frequency 23.87 GHz to $\Delta E$ in eV — *Why AI works here:* a unit conversion ($\Delta E = h\nu$).
+
+**The tell:** You are using AI well when you have an independent check — here, the $2\times2$ block structure and the measured 23.87 GHz inversion line.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding which Zeeman regime applies for *your* field — checking $\mu_B B$ against $\Delta E_\text{fs}$ — *Why AI fails here:* at $B=0.5$ T the ratio is $\sim0.65$, right in the intermediate regime where neither limiting formula is valid, and the AI will apply the weak-field $g_J$ formula anyway without flagging that the small parameter is near 1. This is the small-parameter call.
+- Trusting a double-well barrier-shape model for the ammonia splitting — *Why AI fails here:* the tunneling matrix element $A$ is *exponentially* sensitive to the barrier shape, so a naive model can be off by 24% and a "better" shape by $<2\%$; judging which model is adequate is a physics call, and the AI will quote a splitting without owning that exponential sensitivity.
+- Attributing the maser model's residual error — *Why AI fails here:* the breakdown lives entirely in the barrier shape, which it will not estimate.
+
+**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours.
+
+**Physics-judgment connection:** This trains checking $\mu_B B/\Delta E_\text{fs}$ to pick the regime *before* applying a formula, and comparing a computed splitting against a cited measured line (the 23.87 GHz ammonia inversion) — with eyes open to exponential barrier-shape sensitivity.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of the capstone's System C (ammonia maser) — the two-state tunneling model and its splitting — plus the atoms-in-fields table row.
+**Tool:** Claude Project — store as System C alongside your other candidates.
+**The Prompt:**
+```
+I am drafting a five-move quantum model of the ammonia (NH3) inversion
+splitting that drives the maser. Help me with moves 2-3 (method selection,
+calculation); I will write moves 1, 4, 5.
+
+METHOD SELECTION: justify treating NH3 inversion as a TWO-STATE system: the
+nitrogen sits above or below the H3 plane (|L>, |R>), tunneling through a
+barrier mixes them. Write the 2x2 Hamiltonian [[E0, -A],[-A, E0]] and state
+that this is the SAME structure as the Stark and weak-field Zeeman 2x2 blocks.
+Emphasize that the tunneling matrix element A is EXPONENTIALLY sensitive to the
+barrier shape — this is the dominant model uncertainty.
+
+CALCULATION: diagonalize to get E_pm = E0 -/+ A and splitting Delta E = 2A.
+Convert the measured inversion frequency 23.87 GHz to Delta E in eV via
+Delta E = h nu (expect ~9.94e-5 eV). Show units.
+
+Do NOT tell me whether a given double-well barrier model's 24% error is
+"acceptable" — that is my judgment. Do NOT quote A from a barrier model without
+flagging its exponential sensitivity.
+```
+**What this produces:** the two-state splitting structure and $\Delta E\approx9.94\times10^{-5}$ eV from the measured line, ready for validation.
+**How to adapt:** *Your system:* for the weak-field Zeeman $g$-factor, reuse the $2\times2$ recognition but compute $g_J$ instead; same structural insight. *ChatGPT/Gemini:* check it flags the exponential barrier sensitivity rather than quoting a single confident $A$. *Claude Project:* store as System C.
+**Builds on:** Chapter 2's degenerate-PT $2\times2$ diagonalization (Stark) — now applied to a molecular tunneling doublet.  **Next:** Chapter 10 adds tight-binding / band structure and the hopping small parameter — the route to the quantum-dot band-gap candidate.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the atoms-in-fields table row and a script that diagonalizes the two-state ammonia Hamiltonian and computes Zeeman $g_J$ shifts, checking the regime parameter.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–8 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "Before applying a weak-field (g_J) or strong-field (Paschen-Back) Zeeman formula, compute mu_B B / Delta_E_fs and confirm it is << 1 or >> 1; if it is near 1, neither limiting formula is valid."
+**The Task:**
+```
+In the running-project directory:
+1. Append the atoms-in-fields row to method-table.md (epsilon = mu_B B/Delta_E_fs).
+2. Create atoms_in_fields.py that:
+   - diagonalizes [[E0,-A],[-A,E0]] symbolically/numerically; confirms
+     E_pm = E0 -/+ A and splitting 2A,
+   - converts nu=23.87 GHz to Delta E in eV (Delta E = h nu); prints it,
+   - computes g_J for 2s (g=2), 2p_1/2 (g=2/3), 2p_3/2 (g=4/3) and the Zeeman
+     shifts g_J mu_B B m_j at B=0.5 T,
+   - computes mu_B B / Delta_E_fs at B=0.5 T (Delta_E_fs=4.5e-5 eV) and prints a
+     WARNING if it is between 0.1 and 10 (intermediate regime).
+3. Run it. Confirm Delta E(maser) ~ 9.94e-5 eV and the intermediate-regime
+   warning fires at B=0.5 T.
+Touch no files outside this directory. Report Delta E(maser), the three g_J,
+and whether the regime warning fired.
+```
+**Expected output:** appended row; console showing $\Delta E\approx9.94\times10^{-5}$ eV, the three $g_J$ values, and an intermediate-regime warning at 0.5 T.
+**What to inspect:** the maser splitting matches $h\times23.87$ GHz; the $g_J$ values are $2,\tfrac23,\tfrac43$; the regime warning correctly fires because $\mu_B B/\Delta E_\text{fs}\approx0.65$.
+**If it goes wrong:** if $\Delta E$ comes out near $10^{-4}$ eV instead of $\sim10^{-4}$… check the GHz→Hz and $h$ in eV·s conversion; print $h\nu$ in joules then convert.
+**CLAUDE.md / AGENTS.md note:** add "A two-state splitting set by a tunneling matrix element is exponentially sensitive to barrier shape; report such splittings with that caveat, never as a single confident number from a crude barrier model."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 ammonia maser splitting and the Zeeman regime check.
+**Validation type:** Numerical result
+**Risk level:** Medium — the conversion is simple, but the regime call and the barrier-sensitivity caveat are where judgment is needed.
+**Setup:** use your R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Atoms in Fields
+□ Correctness: does Delta E(maser) = h * 23.87 GHz ~ 9.94e-5 eV?
+□ Completeness: is the 2x2 structure shown, and the exponential barrier-shape
+  sensitivity of A flagged?
+□ Scope: are the three g_J values (2, 2/3, 4/3) computed correctly?
+□ Regime: is mu_B B/Delta_E_fs computed at B=0.5 T, and the intermediate-regime
+  warning fired (ratio ~0.65, neither limit valid)?
+□ Structural insight: is it stated that Stark, weak-field Zeeman, and ammonia
+  share the SAME 2x2 diagonalization?
+□ Failure-mode check: any of —
+  - fluent but wrong (weak-field g_J formula applied at B=0.5 T without caveat)
+  - GHz/Hz or h-unit conversion slip
+  - quoting a barrier-model A without the exponential-sensitivity flag
+  - g_J formula errors (sign, j(j+1) factors)
+```
+**What to do with findings:** pass → record System C's splitting; cite Gordon-Zeiger-Townes for validation. one fail → fix the conversion/regime check, re-run, document. multiple fails → recompute $h\nu$ and one $g_J$ by hand.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* What AI produced and how you used it.
+> *2:* One specific thing the AI could not determine that required your judgment.
+**Physics-judgment connection:** this validation trains checking a regime parameter ($\mu_B B/\Delta E_\text{fs}$) before applying a limiting formula and comparing a computed splitting against a cited measured spectral line — while keeping the exponential barrier-shape sensitivity in view as a breakdown source.

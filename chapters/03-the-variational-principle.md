@@ -35,6 +35,9 @@ No small parameter needed. Perturbation theory requires $\lambda\hat{H}'$ to be 
 
 <!-- → [DIAGRAM: number line showing E_0 at left, E_V^* somewhere to the right, and the region "no trial state can reach" extending left of E_0 — illustrating the one-sided nature of the bound] -->
 
+![number line showing E_0 at left, E_V^* somewhere to the right, and the region "no trial state can reach" extending left of E_0 —…](../images/03-the-variational-principle-fig-01.png)
+*Figure 3.1 — number line showing E_0 at left, E_V^* somewhere to the right, and the region "no trial state can reach" extending left of E_0 —…*
+
 ---
 
 ## The Optimization Procedure
@@ -54,6 +57,9 @@ So $E_V(\alpha) = \hbar^2\alpha/(2m) + m\omega^2/(8\alpha)$. Minimize: $\partial
 The trial function gives the exact ground-state energy — not by accident, but because the true ground state of the harmonic oscillator is itself a Gaussian. The trial family contains the exact answer. When this happens, the variational method finds it exactly. It does not always happen.
 
 <!-- → [CHART: E_V(α) as a parabola-like curve for the harmonic oscillator, minimum marked at α* with E_V* = ℏω/2, the curve labeled to show it approaches ∞ on both ends — illustrating the optimization landscape] -->
+
+![E_V(α) as a parabola-like curve for the harmonic oscillator, minimum marked at α* with E_V* = ℏω/2, the curve labeled to show it approaches…](../images/03-the-variational-principle-fig-02.png)
+*Figure 3.2 — E_V(α) as a parabola-like curve for the harmonic oscillator, minimum marked at α* with E_V* = ℏω/2, the curve labeled to show it approaches…*
 
 ---
 
@@ -103,6 +109,9 @@ $$\boxed{\tilde{Z}^* = 2 - \frac{5}{16} = \frac{27}{16} \approx 1.6875.}$$
 
 <!-- → [CHART: E_V(Z̃) parabola for helium — x-axis from 1 to 2.5, y-axis in eV from -85 to -65, minimum marked at Z̃=27/16, horizontal dashed lines at -77.5 eV (variational), -78.98 eV (experimental), and -74.8 eV (first-order PT)] -->
 
+![E_V(Z̃) parabola for helium — x-axis from 1 to 2.5, y-axis in eV from -85 to -65, minimum marked at Z̃=27/16, horizontal dashed lines at…](../images/03-the-variational-principle-fig-03.png)
+*Figure 3.3 — E_V(Z̃) parabola for helium — x-axis from 1 to 2.5, y-axis in eV from -85 to -65, minimum marked at Z̃=27/16, horizontal dashed lines at…*
+
 **Physical interpretation.** Each electron sees an effective nuclear charge of $27/16$ rather than $2$. The reduction by $5/16$ is the screening contribution: the other electron shields approximately $5/16$ of a proton charge. This is the quantitative version of the electron-shielding concept that runs through all of atomic physics and chemistry. Hylleraas's calculation was the first time screening was derived from first principles rather than assumed.
 
 **The numerical result.**
@@ -140,6 +149,9 @@ Adding the proton-proton repulsion $e^2/(4\pi\epsilon_0 R)$ to get the total ene
 - $E_\text{total,-}(R)$: purely repulsive. No minimum. An electron in the antibonding orbital does not bind the two protons.
 
 <!-- → [CHART: E_total,+(R) (teal, solid) and E_total,-(R) (orange, solid) vs. R in Å, from 0.3 to 6 Å; horizontal dashed line at -13.6 eV; minimum of bonding curve marked; both curves converging to -13.6 eV at large R] -->
+
+![E_total,+(R) (teal, solid) and E_total,-(R) (orange, solid) vs. R in Å, from 0.3 to 6 Å](../images/03-the-variational-principle-fig-04.png)
+*Figure 3.4 — E_total,+(R) (teal, solid) and E_total,-(R) (orange, solid) vs. R in Å, from 0.3 to 6 Å*
 
 **Why does only one bind?** The bonding orbital $|+\rangle$ builds up electron density between the two protons — the wave function adds constructively in the midplane. That density is simultaneously attracted to both nuclei, pulling them together. The antibonding orbital $|-\rangle$ has a nodal plane between the protons where the wave function vanishes by destructive interference; the electron density is pushed outward, providing no glue and effectively increasing repulsion.
 
@@ -328,3 +340,112 @@ Townsend, J. S. (2012). *A Modern Approach to Quantum Mechanics* (2nd ed.). Univ
 Shankar, R. (1994). *Principles of Quantum Mechanics* (2nd ed.). Springer. Chapter 16.
 
 Jensen, F. (2017). *Introduction to Computational Chemistry* (3rd ed.). Wiley. Chapter 5. (Gaussian-type orbitals and the Rayleigh–Ritz method in practice.)
+
+---
+
+## Running Project — Model a Real Quantum System, End to End
+
+**This chapter adds:** the variational method to the toolkit — and a special row in the method-selection table, because variational is the one method here with **no breakdown small parameter**, only a one-sided upper-bound *guarantee*. It is the right tool exactly when no small parameter exists (helium, molecules), and it supplies the full quantitative model for the capstone's **System E — variational helium ground state**.
+
+Today's table entry: **variational method — $\varepsilon$: none (no perturbative small parameter); validity rests on the upper-bound theorem $\langle\psi|\hat H|\psi\rangle \ge E_0$ and on the quality of the trial family — "breaks" only in the sense that a poorly chosen family gives a loose bound, never a wrong-side one.** This is the chapter where the project's first *complete five-move candidate* becomes available: helium, where you identify the system (two electrons + repulsion), select variational (no small parameter — repulsion is $\sim 0.3$ of $|E_0|$), compute $-77.5$ eV, validate against the measured $-78.98$ eV (1.9% error), and analyze the breakdown (missing electron correlation, the $r_{12}$ cusp).
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Carrying out the screened-trial expectation values $\langle\hat T\rangle$, $\langle V_{ne}\rangle$, $\langle V_{ee}\rangle$ and assembling $E_V(\tilde Z) = 2\tilde Z^2 - 4Z\tilde Z + \tfrac54\tilde Z$ — *Why AI works here:* each integral has a known closed form ($\langle 1/r\rangle = \tilde Z/a_0$, $\langle V_{ee}\rangle = 5\tilde Z/8a_0$) you can check term by term.
+- Minimizing $E_V(\tilde Z)$ and recovering $\tilde Z^* = Z - 5/16$ — *Why AI works here:* one derivative, one root, checkable by hand.
+- Scaffolding the Rayleigh-Ritz generalized eigenvalue solve $\mathbf{Hc}=E_V\mathbf{Sc}$ — *Why AI works here:* standard linear algebra with a known answer for the test cases.
+
+**The tell:** You are using AI well when you have an independent check — here, the upper-bound theorem: any result *below* $-78.98$ eV is impossible and signals an error.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Choosing the trial family (its symmetry, nodal structure, asymptotic decay) for *your* system — *Why AI fails here:* a trial function that does not decay at infinity, or has the wrong parity, gives a meaningless bound, and the AI will not notice it chose a family that cannot contain the answer. This is a physical-validity call.
+- Judging whether a tight energy means a good wave function — *Why AI fails here:* the energy is second-order-accurate in the wavefunction error, so a 99%-of-binding-energy result can still have a 10%-wrong wavefunction. An AI asked "is this wavefunction good?" will conflate energy quality with state quality.
+- Deciding the variational result is "good enough" — *Why AI fails here:* whether 1.9% error is acceptable depends on what you need the number for (chemistry needs $\sim 0.04$ eV), and that is your call, not a lookup.
+
+**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours.
+
+**Physics-judgment connection:** This trains the strongest check in the volume — comparing a computed energy against a *cited measured value* with percent error, while knowing the bound's direction is guaranteed: the variational answer must sit above $-78.98$ eV, so a result below it is definitionally wrong.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a first full end-to-end draft of the helium five-move model — the capstone's System E in miniature — plus the variational row of the running table.
+**Tool:** Claude Project — this draft is the spine of your eventual capstone report; keep it in the project.
+**The Prompt:**
+```
+I am drafting a five-move quantum model of the helium ground state that I will
+finish as a capstone. Help me with moves 2-3 only (method selection and
+calculation); I will write moves 1, 4, 5 myself.
+
+METHOD SELECTION: explain in 3-4 sentences why the VARIATIONAL method is the
+right choice here and perturbation theory is not — specifically that the
+electron-electron repulsion is NOT a small perturbation (<V_ee>/|E_0| ~ 0.3),
+so there is no small parameter, and the variational upper-bound theorem still
+applies regardless.
+
+CALCULATION: using the screened trial wavefunction
+psi = (Zt^3 / pi a0^3) exp(-Zt (r1+r2)/a0) with variational parameter Zt,
+derive E_V(Zt) = 2 Zt^2 - 4 Z Zt + (5/4) Zt in Hartree. Show <T>, <V_ne>,
+and <V_ee> separately, each with its closed form. Minimize to get
+Zt* = Z - 5/16 = 27/16, and evaluate E_V* in eV for Z=2. Show all algebra.
+
+Do NOT tell me whether the resulting percent error is "good" — that is my
+judgment. Do NOT claim the wavefunction is accurate just because the energy is.
+```
+**What this produces:** a verified $E_V^* = -77.5$ eV with $\tilde Z^* = 27/16$, ready to slot into the capstone with your own moves 1/4/5.
+**How to adapt:** *Your system:* if your capstone is instead a quantum dot or H$_2^+$, swap in the relevant trial family but keep the same "why variational / no small parameter" argument. *ChatGPT/Gemini:* expect editorializing about accuracy — delete it; the percent-error judgment is yours. *Claude Project:* store the helium draft so Chapter 11's integration block can pull it.
+**Builds on:** Chapter 2's table (degenerate PT for atoms in fields); this chapter is the first to reach a *complete cited-datum comparison*.  **Next:** Chapter 4 adds WKB and the slowly-varying-potential condition.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the variational row in the table and a script that minimizes $E_V(\tilde Z)$ and reports the percent error against the measured helium energy.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with the Ch 1–2 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "Every model prediction must be reported with its percent error against a cited measured value."
+**The Task:**
+```
+In the running-project directory:
+1. Append the variational row to method-table.md (epsilon: none; validity =
+   upper-bound theorem + trial-family quality).
+2. Create helium_variational.py that:
+   - defines E_V(Zt) = (2*Zt**2 - 4*2*Zt + (5/4)*Zt) Hartree, Z=2,
+   - finds Zt* analytically (Z - 5/16) AND by numerical minimization; confirm
+     they agree to 1e-6,
+   - converts E_V* to eV (1 Hartree = 27.211 eV),
+   - prints E_V*, the measured value -78.98 eV, and the percent error,
+   - prints a one-line ASSERT that E_V* > -78.98 eV (upper-bound sanity).
+3. Run it. The assert must pass (variational result is ABOVE the true energy).
+Touch no files outside this directory. Report E_V*, the percent error, and
+whether the upper-bound assert held.
+```
+**Expected output:** appended row; console showing $\tilde Z^* = 1.6875$, $E_V^* \approx -77.5$ eV, percent error $\approx 1.9\%$, and the upper-bound assert passing.
+**What to inspect:** $\tilde Z^*$ matches $27/16$; the energy sits *above* $-78.98$ eV (never below); the percent error is the one you report — with units and a citation.
+**If it goes wrong:** if the assert fails (energy below $-78.98$ eV), a sign in $\langle V_{ee}\rangle$ or a wrong Hartree conversion flipped the result — print the three expectation values separately and check $\langle V_{ee}\rangle = +5\tilde Z/8$ is *positive* (repulsion).
+**CLAUDE.md / AGENTS.md note:** add "A variational energy below the cited true energy is always a bug, never a discovery — the bound is one-sided."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 helium variational energy and its percent error against the measured datum.
+**Validation type:** Numerical result
+**Risk level:** Medium — the headline number is robust, but a sign error in $\langle V_{ee}\rangle$ or treating the bound as two-sided produces a plausible wrong answer.
+**Setup:** use your R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — The Variational Principle
+□ Correctness: is Zt* = 27/16 = 1.6875 from both analytic and numeric minimization?
+□ Completeness: are <T>, <V_ne>, <V_ee> each shown with their closed forms?
+□ Scope: is the percent error reported against a CITED measured value (-78.98 eV)?
+□ One-sided bound: is E_V* ABOVE -78.98 eV (a value below it is impossible)?
+□ Sign of repulsion: is <V_ee> positive (+5 Zt/8 in Hartree)?
+□ Failure-mode check: any of —
+  - fluent but wrong (energy below the true value -> bound violated, must be a bug)
+  - sign error in V_ee (repulsion entered as attraction)
+  - wrong Hartree->eV conversion (off by ~1.85x)
+  - claiming the wavefunction is accurate because the energy is (energy converges
+    quadratically; the state does not)
+```
+**What to do with findings:** pass → this is your first complete five-move candidate; record it. one fail → fix the sign/conversion, re-run, document. multiple fails → redo the three expectation values by hand.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* What AI produced and how you used it.
+> *2:* One specific thing the AI could not determine that required your judgment.
+**Physics-judgment connection:** this validation trains comparison against a cited measured value with percent error *and* against a one-sided theorem (the bound's guaranteed direction) — the exact pair of checks the capstone's validation move demands.

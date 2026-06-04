@@ -71,6 +71,9 @@ The cause is the approximation $c_i(t) \approx 1$ throughout the integration. On
 
 <!-- → [CHART: sinc-squared lineshape P(δ, T) vs. detuning δ for three values of T — showing the central peak sharpening as T increases, with annotations for peak height ∝ T², width ∝ 1/T, and area ∝ T; the evolution toward a delta function should be visible; this is the key figure connecting finite-time perturbation to the Fermi golden rule limit] -->
 
+![sinc-squared lineshape P(δ, T) vs. detuning δ for three values of T — showing the central peak sharpening as T increases, with annotations…](../images/05-time-dependent-perturbation-theory-and-transitions-fig-01.png)
+*Figure 5.1 — sinc-squared lineshape P(δ, T) vs. detuning δ for three values of T — showing the central peak sharpening as T increases, with annotations…*
+
 ---
 
 ## The Exact Rabi Solution
@@ -106,6 +109,9 @@ The population oscillates between 0 and 1. At $t = \pi/\Omega$ — a **$\pi$-pul
 Why PT fails is worth stating precisely. PT assumes the amplitude in $|i\rangle$ is constant — $c_i(t) \approx 1$ — even as probability drains out of it. The exact solution feeds the depleted $|i\rangle$ population back in during the return half of the Rabi cycle; PT misses the return entirely. The regime of validity is $\Omega t \ll 1$: small coupling times short time. Outside that window, use the Rabi formula.
 
 <!-- → [CHART: Rabi oscillation vs. PT parabola — two-panel figure: (left) on resonance, showing sin²(Ωt/2) and (Ωt/2)² on the same axes with a dashed horizontal line at P=1, the PT curve rising above it, and a red label "PT invalid" after the crossing; (right) off resonance at Δ=2Ω, showing the capped oscillation at max P=1/5 from the Rabi formula vs. the PT approximation; this is the central diagnostic figure of the chapter] -->
+
+![Rabi oscillation vs. PT parabola — two-panel figure: (left) on resonance, showing sin²(Ωt/2) and (Ωt/2)² on the same axes with a dashed…](../images/05-time-dependent-perturbation-theory-and-transitions-fig-02.png)
+*Figure 5.2 — Rabi oscillation vs. PT parabola — two-panel figure: (left) on resonance, showing sin²(Ωt/2) and (Ωt/2)² on the same axes with a dashed…*
 
 ---
 
@@ -228,3 +234,113 @@ Bloch, F., & Siegert, A. (1940). Magnetic resonance for nonrotating fields. *Phy
 Landau, L. (1932). Zur Theorie der Energieübertragung. II. *Physik. Z. Sowjetunion*, 2, 46.
 
 Zener, C. (1932). Non-adiabatic crossing of energy levels. *Proceedings of the Royal Society of London A*, 137, 696–702.
+
+---
+
+## Running Project — Model a Real Quantum System, End to End
+
+**This chapter adds:** time-dependent perturbation theory and the exact Rabi solution to the toolkit, with two small parameters — the RWA condition $\Omega/\omega_0 \ll 1$ and the PT-validity window $\Omega t \ll 1$ — and it supplies the complete model for the capstone's **System D — NMR $^1$H qubit Rabi oscillations**.
+
+Today's table entry: **time-dependent PT / Rabi — $\varepsilon_\text{RWA} = \Omega/\omega_0 \ll 1$ (drop the counter-rotating term) and $\varepsilon_\text{PT} = \Omega t \ll 1$ (first-order PT) — first-order PT breaks when $\Omega t \sim 1$ (it predicts $P>1$); the exact Rabi formula stays valid within the RWA; the RWA itself breaks at large $\Omega/\omega_0$ via the Bloch-Siegert shift.** The crucial lesson for the capstone: *time matters as much as coupling strength* — PT fails not because $\Omega$ is "large" but because the product $\Omega t$ reaches 1.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Computing the Rabi frequency $\Omega_R = \gamma_p B_1/2$, the $\pi$-pulse time $t_\pi = \pi/\Omega_R$, and the generalized $\tilde\Omega = \sqrt{\Omega_R^2+\delta^2}$ for given fields — *Why AI works here:* direct plug-ins checkable against the published 400 MHz NMR $\pi$-pulse range (1–25 μs).
+- Plotting the exact Rabi $\sin^2(\tilde\Omega t/2)$ against the first-order PT parabola $(\Omega t/2)^2$ — *Why AI works here:* it scaffolds a plot whose crossing point you can verify analytically.
+- Computing the off-resonance ceiling $P_\text{max} = \Omega_R^2/\tilde\Omega^2$ — *Why AI works here:* a one-line formula, checkable by hand.
+
+**The tell:** You are using AI well when you have an independent check — here, the exact Rabi formula caps $P$ at 1, so any PT result exceeding 1 is a known diagnostic, not a surprise.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding whether to use first-order PT or the exact Rabi formula for *your* pulse — checking $\Omega t$ against 1 — *Why AI fails here:* it will apply first-order PT through a full $\pi$-pulse and report $P=(\pi/2)^2\approx 2.47$ without flagging that a probability of 247% means the method has broken. This is the small-parameter (here, $\Omega t$) call.
+- Judging whether the RWA holds — checking $\Omega/\omega_0$ — *Why AI fails here:* at $\Omega/\omega_0 \sim 0.5$ the RWA is marginal and the Bloch-Siegert shift ($\sim\Omega^2/\omega_0$) matters; the AI will keep using the RWA result silently.
+- Attributing the residual error in real NMR ($T_1$, $T_2$ relaxation, multi-spin complexity) — *Why AI fails here:* the breakdown analysis needs you to estimate which decoherence channel dominates at your sample, not a generic list.
+
+**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours.
+
+**Physics-judgment connection:** This trains checking a *product* small parameter ($\Omega t$, not $\Omega$ alone) before choosing a method, and comparing a computed $\pi$-pulse time against a cited measured range — the discipline that catches a "probability of 247%" before it reaches your report.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of the capstone's System D (NMR Rabi) — method selection by the RWA/$\Omega t$ conditions and the $t_\pi$ calculation — plus the Rabi table row.
+**Tool:** Claude Project — your third full five-move candidate.
+**The Prompt:**
+```
+I am drafting a five-move quantum model of NMR proton Rabi oscillations at a
+400 MHz instrument. Help me with moves 2-3 (method selection, calculation);
+I will write moves 1, 4, 5.
+
+METHOD SELECTION: justify the rotating-wave approximation by computing the
+small parameter Omega_R/omega_0 and showing it is ~0.003 << 1 for B0=9.4 T,
+B1=1e-2 T. Then state the SECOND condition that governs whether first-order
+PT (vs the exact Rabi formula) is valid: Omega_R * t << 1. Make clear that for
+a pi-pulse Omega_R*t = pi, so first-order PT is INVALID and the exact Rabi
+formula is required.
+
+CALCULATION: with gamma_p = 2.675e8 rad/s/T, B0=9.4 T, B1=1e-2 T:
+compute the Larmor frequency, Omega_R = gamma_p B1 / 2, and t_pi = pi/Omega_R
+in microseconds. Show units.
+
+Do NOT report a first-order PT probability for the full pi-pulse as if it were
+physical (it exceeds 1). Do NOT judge whether my final agreement with measured
+pi-pulse times is "good".
+```
+**What this produces:** $\Omega_R \approx 1.34\times10^6$ rad/s, $t_\pi \approx 2.3$ μs, ready to validate against the measured 1–25 μs range.
+**How to adapt:** *Your system:* for a transmon qubit, swap $\gamma_p B_1/2$ for the drive Rabi frequency but keep the same two-condition argument. *ChatGPT/Gemini:* watch for it reporting the $(\pi/2)^2$ PT value as a real probability. *Claude Project:* store as System D.
+**Builds on:** Chapters 3–4 (helium, STM) — three candidates now, three different methods.  **Next:** Chapter 6 takes the same first-order amplitude to a continuum (Fermi golden rule) and a decay rate.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the Rabi table row and a script that compares exact Rabi vs first-order PT and computes $t_\pi$.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–4 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "First-order TDPT is valid only while Omega*t << 1; report any P>1 as a method-breakdown flag, never as a probability."
+**The Task:**
+```
+In the running-project directory:
+1. Append the time-dependent-PT/Rabi row to method-table.md (note BOTH small
+   parameters: Omega/omega_0 for RWA, Omega*t for first-order PT).
+2. Create rabi_nmr.py that:
+   - computes Omega_R = gamma_p*B1/2 and t_pi = pi/Omega_R (gamma_p=2.675e8,
+     B1=1e-2 T); prints t_pi in microseconds,
+   - tabulates exact P=sin^2(Omega_R t/2) and PT P=(Omega_R t/2)^2 at
+     Omega_R t = pi/4, pi/2, pi, 3pi/2,
+   - flags the first Omega_R t at which the PT value exceeds 1,
+   - confirms Omega_R/omega_0 << 1 for the RWA (omega_0 = 2*pi*400e6).
+3. Run it. Confirm t_pi ~ 2.3 us, exact P caps at 1, and PT exceeds 1 near
+   Omega_R t = 2.
+Touch no files outside this directory. Report t_pi and the Omega_R t where PT
+first exceeds 1.
+```
+**Expected output:** appended row; console showing $t_\pi\approx 2.3$ μs, the exact/PT comparison table, and PT crossing 1 near $\Omega_R t = 2$.
+**What to inspect:** exact $P$ never exceeds 1; PT and exact agree for $\Omega_R t \ll 1$ and diverge by the $\pi$-pulse; $\Omega_R/\omega_0 \approx 0.003$ confirms the RWA.
+**If it goes wrong:** if $t_\pi$ comes out in nanoseconds or seconds, $\Omega_R$ used $\gamma_p B_1$ instead of $\gamma_p B_1/2$, or a factor of $2\pi$ slipped — print $\Omega_R$ in rad/s and check it is $\sim 10^6$.
+**CLAUDE.md / AGENTS.md note:** add "A transition probability greater than 1 is a breakdown signal of first-order TDPT, not a result — switch to the exact Rabi formula."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 Rabi numbers — $t_\pi$ and the exact-vs-PT comparison.
+**Validation type:** Numerical result
+**Risk level:** Medium — the formulas are exact within the RWA, but factor-of-2 and $2\pi$ slips in $\Omega_R$ are common and the PT-vs-exact distinction is easy to blur.
+**Setup:** use your R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Time-Dependent PT and Rabi
+□ Correctness: is t_pi ~ 2.3 us, consistent with the measured 1-25 us range?
+□ Completeness: are BOTH small parameters reported (Omega/omega_0 for RWA,
+  Omega*t for first-order PT)?
+□ Scope: is any P>1 flagged as a breakdown, not reported as a probability?
+□ Cap: does the exact Rabi P stay <= 1 at every tabulated Omega_R t?
+□ RWA: is Omega_R/omega_0 ~ 0.003 << 1 confirmed numerically?
+□ Failure-mode check: any of —
+  - fluent but wrong (PT value (pi/2)^2=2.47 reported as a real probability)
+  - factor-of-2: Omega_R = gamma_p B1 instead of gamma_p B1/2
+  - 2*pi slip between frequency (Hz) and angular frequency (rad/s)
+  - off-resonance ceiling Omega^2/(Omega^2+delta^2) omitted when delta != 0
+```
+**What to do with findings:** pass → record $t_\pi$ as System D's calculation move; cite the measured range. one fail → fix the factor/conversion, re-run, document. multiple fails → recompute $\Omega_R$ by hand.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* What AI produced and how you used it.
+> *2:* One specific thing the AI could not determine that required your judgment.
+**Physics-judgment connection:** this validation trains recognizing an unphysical result ($P>1$) as a method-breakdown signal and checking a computed timescale against a cited measured range — the discipline of knowing when your approximation has left its validity window.

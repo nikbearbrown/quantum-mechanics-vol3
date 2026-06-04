@@ -106,6 +106,9 @@ The probability density $|\psi_+|^2$ peaks at the ion positions; $|\psi_-|^2$ pe
 
 <!-- → [FIGURE: Standing waves at zone boundary — |ψ+|² peaks at ion sites (lower energy), |ψ−|² peaks between sites (higher energy), with periodic lattice potential shown below] -->
 
+![Standing waves at zone boundary — |ψ+|² peaks at ion sites (lower energy), |ψ−|² peaks between sites (higher energy), with periodic lattice…](../images/10-periodic-potentials-and-band-structure-fig-01.png)
+*Figure 10.1 — Standing waves at zone boundary — |ψ+|² peaks at ion sites (lower energy), |ψ−|² peaks between sites (higher energy), with periodic lattice…*
+
 ---
 
 ## The Tight-Binding Picture
@@ -143,6 +146,9 @@ Band filling is governed by Pauli: each $k$-state holds 2 electrons (spin up and
 The three models — Kronig-Penney, NFE, tight-binding — cover the same physics from different starting points. Kronig-Penney interpolates between the limits as $P$ varies: at $P = 0$ it is NFE; as $P \to \infty$ it approaches isolated atoms. Real materials sit between the extremes. Density functional theory (DFT) handles them self-consistently, but the Bloch-wave structure is the same.
 
 <!-- → [FIGURE: Band-filling schematic — three panels showing metal (Fermi level in band), semiconductor (small gap), and insulator (large gap), each with Fermi level marked] -->
+
+![Band-filling schematic — three panels showing metal (Fermi level in band), semiconductor (small gap), and insulator (large gap), each with…](../images/10-periodic-potentials-and-band-structure-fig-02.png)
+*Figure 10.2 — Band-filling schematic — three panels showing metal (Fermi level in band), semiconductor (small gap), and insulator (large gap), each with…*
 
 ---
 
@@ -270,3 +276,114 @@ Comments at every physics step.
 ---
 
 *Chapter 11 follows: scattering in periodic structures — the structure factor and the diffraction condition that recovers Bragg's law as a consequence of the same reciprocal-lattice geometry developed here.*
+
+---
+
+## Running Project — Model a Real Quantum System, End to End
+
+**This chapter adds:** the tight-binding and nearly-free-electron band-structure methods to the toolkit, with two small parameters — the tight-binding hopping ratio $t/E_0 \ll 1$ (atomic limit) and the NFE gap $2|V_{G}|$ relative to the bandwidth — as the last methods row before the capstone. It also supplies the confinement-energy scaling ($E\propto 1/R^2$) that anchors the capstone's **System B — CdSe quantum dot band gap**.
+
+Today's table entry: **tight-binding / band structure — $\varepsilon = t/E_0$ (hopping small vs on-site energy, atomic limit) or, in NFE, the gap $2|V_G|$ small vs the free-electron bandwidth — tight-binding "breaks" toward NFE as $t$ grows; the gap is $2|V_{G_1}|$, twice the relevant Fourier component of the potential.** *Honest mapping note:* the quantum dot in System B is modeled as a 3D spherical box (a confinement problem), and this chapter's direct contribution is the *scaling law* $E_\text{confine}\propto1/R^2$ and the band-gap concept; the effective mass that enters $E_{1s}=\hbar^2\pi^2/2m^*R^2$ is itself a band-structure quantity (inverse band curvature), which is precisely why System B's dominant error — effective-mass nonparabolicity at small $R$ — is a *band-structure* failure. The toolkit method recorded here is tight-binding; its conceptual gift to the capstone is the meaning of $m^*$ and the gap.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Computing the tight-binding dispersion $E(k)=E_0-2t\cos(ka)$, the bandwidth $4t$, and the effective mass $m^*=\hbar^2/2ta^2$ — *Why AI works here:* closed forms checkable against the band edges $E_0\mp2t$.
+- Evaluating the quantum-dot confinement energy $E_{1s}=\hbar^2\pi^2/2m^*R^2$ for given $R$, $m^*$ — *Why AI works here:* a plug-in checkable against the worked example's 1.28 eV at $R=1.5$ nm.
+- Computing the NFE gap $2|V_{G_1}|$ from a Fourier component — *Why AI works here:* a one-line relation.
+
+**The tell:** You are using AI well when you have an independent check — here, the band-edge values and the worked CdSe confinement energy.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Choosing the effective mass $m^*$ for *your* dot size — *Why AI fails here:* $m^*=0.13\,m_e$ holds at the band minimum ($k=0$), but at $k\sim\pi/R$ in a 1.5 nm dot the band is nonparabolic and $m^*$ is closer to $0.20\,m_e$; the AI will use the band-edge value and produce a 32% error, then not flag that the input parameter was used outside its regime. This is the central judgment of System B.
+- Deciding whether tight-binding or NFE is the right starting point for *your* material — checking $t/E_0$ — *Why AI fails here:* it will pick a model without estimating where the material sits between the atomic and free-electron limits.
+- Attributing the quantum-dot model's residual error — *Why AI fails here:* the breakdown (nonparabolicity, then Coulomb correlation) requires estimating *which* dominates at your $R$, an order-of-magnitude physics call.
+
+**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours.
+
+**Physics-judgment connection:** This trains the System B lesson directly — the box model gets the *scaling* ($E\propto1/R^2$) right while a single input parameter ($m^*$, used outside the $k=0$ regime where it was measured) drives the quantitative error; checking an input's regime of validity is as important as checking the method's.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of the capstone's System B (CdSe quantum dot) — the spherical-box confinement model and its known failure — plus the band-structure table row.
+**Tool:** Claude Project — store as System B; it is the candidate that best teaches "right structure, wrong input parameter."
+**The Prompt:**
+```
+I am drafting a five-move quantum model of the CdSe quantum-dot optical band
+gap. Help me with moves 2-3 (method selection, calculation); I will write moves
+1, 4, 5.
+
+METHOD SELECTION: justify modeling the lowest electron and hole states as a 3D
+spherical infinite square well (confinement), giving E_1s = hbar^2 pi^2 /
+(2 m* R^2). State that this gives the correct SCALING E ~ 1/R^2. Explain that
+the effective mass m* is a band-structure quantity (inverse band curvature at
+k=0) and that the small parameter governing its validity is how far k ~ pi/R is
+from the band minimum.
+
+CALCULATION: for R=1.5 nm, m_e*=0.13 m_e, m_h*=0.45 m_e, eps_r=10.6,
+E_bulk=1.74 eV: compute E_1s,e, E_1s,h, the Coulomb correction
+-1.8 e^2/(4 pi eps0 eps_r R), and the predicted gap. Show units.
+
+Do NOT silently use m_e*=0.13 as if it were valid at k~pi/R — I know the band
+is nonparabolic there and m* is closer to 0.20 m_e; I will handle that in the
+breakdown move. Do NOT judge whether the resulting ~32% error is "acceptable".
+```
+**What this produces:** the predicted gap ($\approx3.2$ eV with band-edge $m^*$), set up so the breakdown move can show the nonparabolicity correction bringing it to $\sim14\%$.
+**How to adapt:** *Your system:* for an InP dot, note the more complex valence band makes the box model fail differently. *ChatGPT/Gemini:* watch for it "correcting" $m^*$ silently and hiding the teaching point. *Claude Project:* store as System B.
+**Builds on:** the whole toolkit — by now the running table has eight method rows and several full candidates.  **Next:** Chapter 11 — the capstone integration: assemble one system through all five moves and validate it against a cited measured datum.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the band-structure table row and a script that computes the CdSe gap with band-edge $m^*$ and with the nonparabolicity-corrected $m^*$, reporting both percent errors.
+**Tool:** Claude Code
+**Skill level:** Advanced
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–9 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "An input parameter (e.g. effective mass) used outside the regime where it was measured is a silent error source; always report which regime the input is valid in."
+**The Task:**
+```
+In the running-project directory:
+1. Append the tight-binding/band-structure row to method-table.md (epsilon =
+   t/E0 atomic limit; NFE gap = 2|V_G1|). Add a note that the quantum-dot m* is
+   the inverse band curvature.
+2. Create quantum_dot.py that:
+   - computes E_1s,e = hbar^2 pi^2/(2 m_e* R^2), E_1s,h likewise, and the Coulomb
+     correction, for R=1.5 nm, m_e*=0.13 m_e, m_h*=0.45 m_e, eps_r=10.6,
+     E_bulk=1.74 eV; prints the predicted gap,
+   - prints percent error vs the measured 3 nm CdSe gap ~2.44 eV (expect ~32%),
+   - recomputes E_1s,e with the nonparabolicity-corrected m_e*=0.20 m_e and
+     prints the revised gap and percent error (expect ~14%).
+3. Run it. Confirm the band-edge m* gives ~32% error and the corrected m* gives
+   ~14%.
+Touch no files outside this directory. Report both gaps and both percent errors.
+```
+**Expected output:** appended row; console showing the band-edge prediction ($\sim3.2$ eV, $\sim32\%$ error) and the corrected prediction ($\sim2.78$ eV, $\sim14\%$ error) against the cited 2.44 eV.
+**What to inspect:** the $1/R^2$ scaling is correct; the band-edge $m^*$ overestimates the gap; the corrected $m^*$ roughly halves the error — demonstrating "right structure, wrong input."
+**If it goes wrong:** if $E_{1s,e}$ comes out near 4.6 eV (the chapter's own cautionary mis-step), the eV·Å² shortcut was applied without the $1/R^2$ in SI — recompute $E_{1s,e}$ in SI from $\hbar^2\pi^2/2m^*R^2$ and confirm $\approx1.28$ eV.
+**CLAUDE.md / AGENTS.md note:** add "Report the regime of validity of every input parameter, not just of the method; an in-regime method with an out-of-regime input still fails."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 CdSe quantum-dot gap with both effective-mass choices.
+**Validation type:** Numerical result
+**Risk level:** Medium — the formula is simple but unit slips (the 4.6 eV trap) and the $m^*$-regime judgment make this error-prone.
+**Setup:** use your R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Periodic Potentials and Band Structure
+□ Correctness: does E_1s,e ~ 1.28 eV at R=1.5 nm with m*=0.13 (SI computation)?
+□ Completeness: is the 1/R^2 scaling stated, and m* identified as a band-structure
+  quantity (inverse curvature)?
+□ Scope: are BOTH the band-edge (32%) and corrected (14%) errors reported vs the
+  cited 2.44 eV?
+□ Regime: is it made explicit that m*=0.13 is a k=0 value, invalid at k~pi/R?
+□ Coulomb: is the -1.8 e^2/(4 pi eps0 eps_r R) correction included?
+□ Failure-mode check: any of —
+  - fluent but wrong (E_1s,e ~ 4.6 eV from the eV*A^2 shortcut without 1/R^2)
+  - using corrected m* silently and hiding the teaching point
+  - dropping the Coulomb correction
+  - claiming 14% is "good" without owning that it is the reader's judgment
+```
+**What to do with findings:** pass → record System B with BOTH errors; this candidate teaches input-regime failure. one fail → fix the SI computation, re-run, document. multiple fails → recompute $E_{1s,e}$ in SI by hand.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* What AI produced and how you used it.
+> *2:* One specific thing the AI could not determine that required your judgment.
+**Physics-judgment connection:** this validation trains checking the regime of validity of an *input parameter* (the effective mass at $k\sim\pi/R$), not just of the method — and comparing the prediction against a cited measured gap with percent error, the exact validation discipline the capstone demands.

@@ -266,3 +266,107 @@ Comments at every physics step. Pure functions for delta_0 and sigma.
 ---
 
 *Chapter 8 follows: Born approximation. Instead of expanding in angular-momentum channels, expand in powers of the potential. The result is a Fourier transform of $V(\mathbf{r})$ evaluated at the momentum transfer $\mathbf{q} = \mathbf{k}_f - \mathbf{k}_i$ — Rutherford scattering falls out as the leading term.*
+
+---
+
+## Running Project — Model a Real Quantum System, End to End
+
+**This chapter adds:** the partial-wave method and the scattering length to the toolkit, with the low-energy small parameter $ka \ll 1$ (only $\ell=0$ survives) as a table row — and it supplies a cited candidate model: the low-energy total cross-section $\sigma \to 4\pi a_s^2$, validated against the measured neutron-proton scattering lengths ($a_t \approx 5.4$ fm, $a_s \approx -23.7$ fm).
+
+Today's table entry: **partial waves — $\varepsilon = ka$ (number of contributing channels $\sim ka$) — at $ka\ll1$ only the s-wave matters and $\sigma\to4\pi a_s^2$; the expansion "breaks" only in cost (many channels) at $ka\gg1$, and near a resonance $\delta_0$ passes through $\pi/2$ and the cross-section hits the unitarity bound.** The capstone lesson: the factor-of-four enhancement over the classical $\pi a^2$ is a genuine wave effect — checking your cross-section against the *classical* geometric value is itself a validity diagnostic.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Computing the s-wave phase shift $\delta_0=\arctan((k/\kappa)\tan\kappa a)-ka$ for a square well and the cross-section $\sigma=(4\pi/k^2)\sin^2\delta_0$ — *Why AI works here:* a formula plug-in checkable against the hard-sphere limit $\delta_0=-ka$.
+- Computing the scattering length $a_s=a[1-\tan(\kappa_0a)/\kappa_0a]$ and locating its threshold divergences — *Why AI works here:* a closed form whose poles at $\kappa_0a=(n+\tfrac12)\pi$ you can verify.
+- Verifying the optical theorem $\sigma_\text{tot}=(4\pi/k)\operatorname{Im}f(0)$ as a numerical cross-check — *Why AI works here:* a self-consistency identity it cannot fake.
+
+**The tell:** You are using AI well when you have an independent check — here, the optical theorem and the unitarity bound $\sigma_\ell\le4\pi(2\ell+1)/k^2$.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding how many partial waves *your* problem needs — checking $ka$ against 1 — *Why AI fails here:* it will truncate at $\ell=0$ for a problem where $ka\sim5$ and several channels contribute, or carry needless high-$\ell$ terms, without estimating $ka$ first. This is the small-parameter call.
+- Tracking the $\arctan$ branch across a resonance — *Why AI fails here:* $\arctan$ jumps by $\pi$ at $\delta_0=\pi/2$; a model that does not add the $n\pi$ correction reports a discontinuous, wrong phase shift, and it will not notice.
+- Interpreting a large/negative scattering length physically (virtual vs real bound state) — *Why AI fails here:* the sign and magnitude encode the bound-state spectrum (Levinson), a physics call it will state confidently and sometimes wrongly.
+
+**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours.
+
+**Physics-judgment connection:** This trains two checks at once — comparing the quantum cross-section against the classical geometric value (the factor-of-four tells you waves matter) and verifying the optical theorem before trusting a partial-wave sum.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of a candidate — the low-energy s-wave cross-section and scattering length for a model potential — plus the partial-wave table row.
+**Tool:** Claude chat — this is a self-contained calculation; a persistent project is optional.
+**The Prompt:**
+```
+Help me with moves 2-3 (method selection, calculation) of a five-move model of
+low-energy s-wave scattering from a spherical square well (depth V0, radius a).
+I will write moves 1, 4, 5.
+
+METHOD SELECTION: justify the partial-wave method and state the small parameter
+ka. Argue that at ka << 1 only the ell=0 (s-wave) channel contributes, so
+sigma -> 4 pi a_s^2 with a_s the scattering length. Note this is FOUR times the
+classical geometric pi a_s^2 and explain why (isotropic s-wave scattering).
+
+CALCULATION (natural units hbar=2m=1, a=1): for V0=5, compute
+kappa = sqrt(k^2 + V0), delta_0 = arctan((k/kappa) tan kappa) - k at ka=0.5,
+and sigma = (4 pi / k^2) sin^2(delta_0). Also compute the scattering length
+a_s = 1 - tan(sqrt(V0))/sqrt(V0). Show all steps and units.
+
+Do NOT truncate at ell=0 without stating that ka << 1 justifies it. Track the
+arctan branch carefully near any resonance and tell me if you crossed one.
+```
+**What this produces:** a verified s-wave $\delta_0$, cross-section, and scattering length, with the factor-of-four wave enhancement made explicit.
+**How to adapt:** *Your system:* for nuclear np scattering, use the measured $a_t,a_s$ and compute $\sigma\to4\pi a_s^2$ for comparison; the s-wave dominance argument is identical. *ChatGPT/Gemini:* check the $\arctan$ branch handling explicitly. *Claude Project:* optional — store only if you carry scattering as your capstone candidate.
+**Builds on:** the perturbative chapters' "check the small parameter first" habit, now applied to $ka$.  **Next:** Chapter 8 reorganizes scattering as an expansion in the potential (Born) — the route to Rutherford (System F).
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the partial-wave table row and a script that computes $\delta_0$, $\sigma$, $a_s$, and verifies the optical theorem.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–6 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "Always estimate ka before truncating the partial-wave sum; verify the optical theorem as a self-consistency check."
+**The Task:**
+```
+In the running-project directory:
+1. Append the partial-wave row to method-table.md (epsilon = ka).
+2. Create partial_waves.py (natural units hbar=2m=1, a=1) that:
+   - computes delta_0(k) = arctan((k/kappa) tan(kappa)) - k with
+     kappa=sqrt(k^2+V0), for V0=5, scanning ka in [0.01, 6] with branch tracking,
+   - computes sigma/(pi a^2) = 4 sin^2(delta_0)/k^2,
+   - computes a_s = 1 - tan(sqrt(V0))/sqrt(V0),
+   - at ka=0.1 confirms sigma/(pi a^2) -> ~4 (the factor of four),
+   - verifies the optical theorem sigma_tot = (4 pi/k) Im f(0) to 1e-6 at ka=1.
+3. Run it. Confirm the factor-of-four limit and the optical-theorem check pass.
+Touch no files outside this directory. Report a_s and the ka=0.1 cross-section ratio.
+```
+**Expected output:** appended row; console showing $\sigma/\pi a^2 \to 4$ at low $ka$, a finite $a_s$, and the optical theorem passing.
+**What to inspect:** the low-energy ratio approaches 4 (not 1); the optical theorem holds to numerical tolerance; the scattering length diverges as $V_0$ crosses $(\pi/2)^2$.
+**If it goes wrong:** if the cross-section is discontinuous in $ka$, the $\arctan$ branch was not tracked — detect $\tan\kappa>10^6$ and add $n\pi$ to keep $\delta_0(k)$ continuous.
+**CLAUDE.md / AGENTS.md note:** add "Partial-wave phase shifts require $\arctan$ branch tracking across resonances; a discontinuous $\delta_0(k)$ is a branch bug, not physics."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 s-wave cross-section, scattering length, and optical-theorem check.
+**Validation type:** Numerical result
+**Risk level:** Medium — the formulas are exact, but $\arctan$ branch bugs and confusing the factor-of-four with the classical value are common.
+**Setup:** use your R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Scattering I: Partial Waves
+□ Correctness: does sigma/(pi a^2) -> ~4 at ka << 1 (NOT 1, the classical value)?
+□ Completeness: is the small parameter ka stated and used to justify s-wave-only?
+□ Scope: is the optical theorem verified as a self-consistency check?
+□ Branch: is delta_0(k) continuous across resonances (n*pi corrections applied)?
+□ Threshold: does a_s diverge and change sign as V0 crosses (pi/2)^2?
+□ Failure-mode check: any of —
+  - fluent but wrong (cross-section reported as classical pi a^2, missing the 4x)
+  - arctan branch jump producing a discontinuous phase shift
+  - truncating at ell=0 when ka is not << 1
+  - optical theorem silently violated (a sign or factor error somewhere)
+```
+**What to do with findings:** pass → record the cross-section and $a_s$; if scattering is your capstone, validate against the cited np scattering lengths. one fail → fix the branch tracking, re-run, document. multiple fails → recompute $\delta_0$ at a single $ka$ by hand.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* What AI produced and how you used it.
+> *2:* One specific thing the AI could not determine that required your judgment.
+**Physics-judgment connection:** this validation trains checking a quantum result against its classical counterpart (the factor of four signals genuine wave physics) and against a unitarity identity (the optical theorem) — two independent guards before a cross-section is trusted.

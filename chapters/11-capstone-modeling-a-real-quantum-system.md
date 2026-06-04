@@ -185,6 +185,9 @@ The box model gives the right scaling ($E \propto 1/R^2$) and the right qualitat
 
 <!-- → [FIGURE: quantum dot band gap vs. radius — showing the spherical-box prediction curve alongside experimental data points from Norris-Bawendi for CdSe; x-axis R from 1 to 5 nm, y-axis E_dot from 1.7 to 3.5 eV; the theory curve should overestimate at small R where effective mass nonparabolicity is largest; annotate the 3 nm point showing the 32% error with simple m* and the 14% error with corrected m*] -->
 
+![quantum dot band gap vs. radius — showing the spherical-box prediction curve alongside experimental data points from Norris-Bawendi for CdSe](../images/11-capstone-modeling-a-real-quantum-system-fig-01.png)
+*Figure 11.1 — quantum dot band gap vs. radius — showing the spherical-box prediction curve alongside experimental data points from Norris-Bawendi for CdSe*
+
 ---
 
 ## The Project Rubric
@@ -298,3 +301,138 @@ Rutherford, E. (1911). The scattering of $\alpha$ and $\beta$ particles by matte
 Levitt, M. H. (2001). *Spin Dynamics: Basics of Nuclear Magnetic Resonance* (2nd ed.). Wiley.
 
 Griffiths, D. J. (2018). *Introduction to Quantum Mechanics* (3rd ed.). Cambridge University Press. §8.2.
+
+---
+
+## Running Project — Model a Real Quantum System, End to End
+
+**This chapter integrates everything.** The previous ten chapters each contributed one method to your toolkit and one row to the small-parameter selection table:
+
+| Ch | Method | Small parameter $\varepsilon$ | Capstone system it serves |
+|---|---|---|---|
+| 1 | Non-degenerate PT | $\lambda$; $\|\langle m\|\hat H'\|n\rangle\|/\|E_n^0-E_m^0\|$ | image-charge / anharmonic corrections |
+| 2 | Degenerate PT / fine structure | $\alpha^2\approx5.3\times10^{-5}$ | linear Stark; fine structure |
+| 3 | Variational | none — upper-bound guarantee only | E — helium ground state |
+| 4 | WKB / tunneling | $\|d\lambda_\text{dB}/dx\|\ll1$ | A — STM tunneling; alpha decay |
+| 5 | Time-dependent PT / Rabi | $\Omega/\omega_0\ll1$ and $\Omega t\ll1$ | D — NMR Rabi qubit |
+| 6 | Fermi golden rule | window $2\pi/\Delta\omega\ll t\ll\hbar/\|V\|$ | $2p\to1s$ lifetime |
+| 7 | Partial waves | $ka\ll1$ (s-wave only) | scattering length |
+| 8 | Born approximation | $\xi=2m\|V_0\|/\hbar^2\mu^2$ | F — Rutherford scattering |
+| 9 | Atoms in fields | $\mu_B B/\Delta E_\text{fs}$ | C — ammonia maser; Zeeman |
+| 10 | Tight-binding / band structure | $t/E_0$; gap $=2\|V_G\|$ | B — CdSe quantum dot |
+
+This block does not add a new piece. It assembles the whole deliverable: **one chosen system carried through all five moves — identify, select-method-by-checking-$\varepsilon$, calculate-a-number-with-units, validate-against-a-cited-datum-with-percent-error, analyze-breakdown** — and validates it. Pick one system (A–F, or your own subject to the feasibility check) and finish it.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In the capstone, AI assistance is appropriate for:
+- Assembling the method-selection table and computing each candidate's $\varepsilon$ at textbook parameters — *Why AI works here:* the $\varepsilon$ formulas are fixed and each value is checkable against the per-chapter rows you already built.
+- Carrying out the chosen system's calculation (the integral, the diagonalization, the unit conversion) once *you* have selected the method — *Why AI works here:* mechanical algebra with a measured datum to check against.
+- Drafting the prose of the report's five sections from your own bullet points, and formatting the percent-error and citation — *Why AI works here:* reformatting your content, not generating the physics.
+
+**The tell:** You are using AI well when you have an independent way to check the output — for the capstone, the *cited measured value* itself is the check: the model's job is to predict it without having fit it.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- **Picking the method.** *Why AI fails here:* this is the single most dangerous handoff in the whole volume. An LLM will apply a method outside its validity regime without flagging it — Born to a strong bound-state potential, WKB at the barrier top, first-order PT through a $\pi$-pulse, the weak-field $g_J$ formula in the intermediate Zeeman regime — and will report a confident number. You must compute $\varepsilon$ yourself and reject any method with $\varepsilon\gtrsim1$. The capstone exists to train exactly this refusal.
+- **Judging whether a percent error is "good."** *Why AI fails here:* a 10% error in a parameter-free first-principles model is excellent; a 3% error from a model with three fitted inputs is suspicious; an LLM has no principled way to weigh error against the number of free parameters, and will call any small number "good." Whether your residual is a triumph or a red flag is your call.
+- **The breakdown analysis.** *Why AI fails here:* naming the two dominant omitted effects and *estimating their magnitude by order of magnitude* requires knowing which physics your model threw away and how big it is at *your* parameters — image-charge vs 3D geometry for STM, nonparabolicity vs correlation for the dot, barrier shape for ammonia. An AI will produce a generic list without magnitudes, which is not a breakdown analysis.
+
+**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours. For the capstone specifically: if you cannot defend *why this method* and *why this error is acceptable* without the AI, you have not done the project.
+
+**Physics-judgment connection:** This integrates the volume's whole discipline — check the small parameter $\varepsilon$ before trusting a method, compute a number with units, compare to a cited measured datum with percent error, and name what the model ignores with its magnitude. The capstone is that discipline, end to end.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the full five-move written model for your chosen system — moves 2 and 3 (method selection with $\varepsilon$, and the complete derivation), pulling together the per-chapter drafts.
+**Tool:** Claude Project — the project holds your method table and all per-chapter candidate drafts; the capstone draws on all of them.
+**The Prompt:**
+```
+I am finishing a capstone: a defended quantitative model of ONE real quantum
+system, carried through five moves. I have chosen: [STATE YOUR SYSTEM, e.g.
+"System A — STM vacuum-gap tunneling via WKB"]. Use the method-selection table
+and the per-chapter draft for this system that are already in this project.
+
+Help me with MOVE 2 (method selection) and MOVE 3 (calculation) only. I will
+write moves 1 (system identification), 4 (validation), and 5 (breakdown) myself.
+
+MOVE 2: State the method. Compute its small parameter epsilon NUMERICALLY at my
+system's parameters from the table formula. State explicitly whether epsilon <<
+1 (valid), ~0.3 (marginal), or ~1 (broken). If epsilon is not << 1, STOP and
+tell me the method is inappropriate rather than proceeding.
+
+MOVE 3: Carry out the full derivation from the model Hamiltonian to a single
+number WITH UNITS. Show every step; do not quote a formula without deriving it.
+
+Do NOT tell me whether my percent error (move 4) will be "good" — that is my
+judgment. Do NOT write my breakdown analysis (move 5) — naming and sizing the
+omitted effects is mine. Do NOT switch methods to make the number come out
+nicer; if epsilon says the method is wrong, say so.
+```
+**What this produces:** a verified method-selection argument with a numerical $\varepsilon$ and a complete derivation ending in a number with units — the spine of moves 2–3, ready for you to wrap with your own moves 1, 4, 5.
+**How to adapt:** *Your system:* swap the bracketed system; the prompt structure is system-agnostic. *ChatGPT/Gemini:* these are more likely to plow ahead with a method even when $\varepsilon\sim1$ — watch for it and reject. *Claude Project:* keep the method table and candidate drafts in project context so the capstone pulls them automatically.
+**Builds on:** all ten per-chapter pieces — the toolkit and the small-parameter table.  **Next:** there is no next chapter; move 4 (validation) and move 5 (breakdown) are yours to finish in R5.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the complete capstone repository — a single script that reproduces your chosen system's number, plus a `report.md` assembling all five moves.
+**Tool:** Claude Code — it can read your method table and per-system scripts, run the chosen one, and assemble the report.
+**Skill level:** Advanced
+**Setup — confirm:**
+- [ ] `method-table.md` with all ten method rows.
+- [ ] The per-chapter script for your chosen system (e.g. `wkb_stm.py`, `rutherford.py`, `helium_variational.py`).
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "The capstone number must be reproduced by a committed script and reported with units, a percent error, and a cited measured value."
+**The Task:**
+```
+In the running-project directory, assemble the capstone for [YOUR CHOSEN SYSTEM].
+1. Confirm method-table.md has the row for this system's method, with epsilon
+   computed at your parameters. If epsilon is not << 1, HALT and report that the
+   method is invalid — do not produce a number.
+2. Run the existing per-system script (do not rewrite it) and capture its output
+   number with units.
+3. Create report.md with five sections:
+   - Move 1 System identification (leave a stub for me to fill — do NOT write it)
+   - Move 2 Method selection: paste the method, the epsilon value, and the
+     valid/marginal/broken verdict
+   - Move 3 Calculation: the number with units and the script that produced it
+   - Move 4 Validation: the cited measured value, the percent error (compute it),
+     and the citation (author, year)
+   - Move 5 Breakdown analysis (leave a stub for me to fill — do NOT write it)
+4. Verify: re-run the script and confirm the number is reproducible to the stated
+   precision; confirm the percent error in report.md matches the recomputed one.
+Touch no files outside this directory. Report the number, the percent error, and
+whether the reproducibility check passed.
+```
+**Expected output:** `report.md` with moves 2–4 filled and moves 1, 5 stubbed for you; a reproducible number with units and a computed percent error against a cited datum.
+**What to inspect:** the $\varepsilon$ verdict gates the whole report (no number if the method is invalid); the percent error is computed against an actual cited value, not asserted; the script reproduces the number on re-run.
+**If it goes wrong:** if Claude Code fills in moves 1 or 5, revert those sections — the system identification and breakdown analysis are the human-only moves R2 flagged; a generated breakdown with no magnitudes is the tell.
+**CLAUDE.md / AGENTS.md note:** add "Moves 1 (identification) and 5 (breakdown) are author-written; the agent fills only moves 2–4. A breakdown section without order-of-magnitude estimates is incomplete."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the complete capstone — the computed observable against its cited measured value with percent error, *and* the breakdown analysis.
+**Validation type:** Agentic output (a full five-move model + report)
+**Risk level:** High — this is the integrated deliverable; a wrong method choice or an ungrounded "good error" claim invalidates the whole project.
+**Setup:** use your own R3/R4 capstone report. If you want to stress-test the failure mode the project is built to catch, additionally paste a *deliberately mis-selected* model — e.g. a Born-approximation cross-section applied to a strong, bound-state-supporting potential at low energy ($\xi\sim2$) reported as if it were valid — and run the same checklist on it; it should fail the "method in valid regime" line.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Capstone: Modeling a Real Quantum System
+□ Move 1 Identification: are the relevant degrees of freedom named and the
+  irrelevant ones excluded with an argument?
+□ Move 2 Method + epsilon: is epsilon computed NUMERICALLY and is it << 1? If
+  epsilon ~ 1, the method is invalid and the whole report fails here.
+□ Move 3 Derivation: is the number derived from the Hamiltonian (not quoted),
+  dimensionally correct, and reproducible by the committed script?
+□ Move 4 Validation: is there a CITED measured value (author, year), a computed
+  percent error, and is the error weighed against the number of free parameters?
+□ Move 5 Breakdown: are the TWO dominant omitted effects named AND at least one
+  estimated by order of magnitude?
+□ Failure-mode check: any of —
+  - method applied outside its validity regime (epsilon ~ 1) without flagging
+  - "good error" asserted with no comparison to free-parameter count
+  - breakdown analysis is a generic list with no magnitudes
+  - the number does not reproduce on re-run, or has no units
+  - the cited datum was actually fitted (not an independent validation)
+```
+**What to do with findings:** pass → you have a defended quantitative model; record what made it trustworthy (the $\varepsilon$ check and the independent datum). one fail → if it is Move 2 (bad $\varepsilon$), reselect the method — do not patch the number; otherwise revise and re-run. multiple fails / cannot-determine → this is the "When NOT to Use AI" moment the whole volume warned about: redo the method selection and breakdown yourself.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* What AI produced and how you used it.
+> *2:* One specific thing the AI could not determine that required your judgment — for the capstone, this should be either the method-selection call (checking $\varepsilon$) or the breakdown magnitude estimate.
+**Physics-judgment connection:** this validation trains the entire discipline of the volume in one pass — checking the small parameter $\varepsilon$ before trusting the method, deriving a number with units, comparing it to a cited measured datum with percent error weighed against free parameters, and naming with magnitudes what the model ignores. That is what it means to model and defend a real quantum system.

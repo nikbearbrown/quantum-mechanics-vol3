@@ -41,6 +41,9 @@ This is still exact. It is still circular: it requires knowing $\psi(\mathbf{r}'
 
 <!-- → [FIGURE: schematic of the Lippmann-Schwinger geometry — incident plane wave from the left, scattering region with potential V(r') in the center, outgoing spherical wave propagating to detector at position r; label the incident wavevector k, outgoing k', and the source point r' inside the potential; arrows should show the path from source point to observation point with the label |r - r'|] -->
 
+![schematic of the Lippmann-Schwinger geometry — incident plane wave from the left, scattering region with potential V(r') in the center,…](../images/08-scattering-ii-the-born-approximation-fig-01.png)
+*Figure 8.1 — schematic of the Lippmann-Schwinger geometry — incident plane wave from the left, scattering region with potential V(r') in the center,…*
+
 ---
 
 ## The First Born Approximation
@@ -67,6 +70,9 @@ At $\theta = 0$ (forward scattering), $q = 0$: you probe $\widetilde{V}(0) = \in
 
 <!-- → [FIGURE: vector triangle for momentum transfer — showing k (incident), k' (scattered), and q = k - k'; label the angle θ between k and k', and show that |q| = 2k sin(θ/2) from the geometry of the isoceles triangle; two cases should be shown: θ small (q small, forward peak) and θ large (q ~ 2k, backscattering)] -->
 
+![vector triangle for momentum transfer — showing k (incident), k' (scattered), and q = k - k'](../images/08-scattering-ii-the-born-approximation-fig-02.png)
+*Figure 8.2 — vector triangle for momentum transfer — showing k (incident), k' (scattered), and q = k - k'*
+
 ---
 
 ## The Yukawa Potential: An Analytic Born Calculation
@@ -92,6 +98,9 @@ $$\boxed{\frac{d\sigma}{d\Omega} = \left(\frac{2mV_0}{\hbar^2\mu}\right)^2\frac{
 Several features to read off. The cross-section is strongly peaked forward: as $\theta \to 0$, $q \to 0$ and the denominator approaches $\mu^4$ — finite and large. As $\theta$ increases, $q$ grows and the denominator grows as $q^4 \propto \sin^4(\theta/2)$, so the cross-section falls steeply. The angular distribution becomes more forward-peaked as $k$ increases, because the denominator is dominated by $4k^2\sin^2(\theta/2)$ at large $k$. The range parameter $\mu$ sets the angular scale at which the cross-section begins to fall: the forward peak has angular half-width $\sim \mu/k$, narrowing at high energy.
 
 <!-- → [CHART: Born differential cross-section dσ/dΩ vs θ for the Yukawa potential at three values of ka — showing the forward peak sharpening as ka increases; log scale on y-axis; the three curves should be labeled with ka = 0.5, 2, 5; this makes the energy dependence of the angular distribution visible] -->
+
+![Born differential cross-section dσ/dΩ vs θ for the Yukawa potential at three values of ka — showing the forward peak sharpening as ka…](../images/08-scattering-ii-the-born-approximation-fig-03.png)
+*Figure 8.3 — Born differential cross-section dσ/dΩ vs θ for the Yukawa potential at three values of ka — showing the forward peak sharpening as ka…*
 
 ---
 
@@ -142,6 +151,9 @@ This condition improves as $k$ increases — Born becomes better at higher energ
 **Practical rule:** if the potential is strong enough to support a bound state, Born fails at low energy even if it eventually works at high energy. If the potential is too weak to bind, Born works throughout. The failure of Born near a resonance is qualitative, not quantitative: it predicts no resonance structure at all, because it assumes the wave function is barely perturbed. Near a resonance, the wave function inside the scattering region is dramatically enhanced — exactly what Born ignores.
 
 <!-- → [FIGURE: Born validity diagram — a 2D plot with Born parameter ξ = 2m|V₀|/ℏ²μ² on the vertical axis (log scale, 0.01 to 100) and ka on the horizontal axis (log scale, 0.1 to 10); shade the Born-valid region (ξ < 1 or ka > ξ) in light green and the invalid region in light red; draw the boundary curve ka = ξ as a dashed line; mark with red stars the locations of s-wave resonances (exact cross-section peaks that Born misses); the diagram should make the two-parameter structure of Born validity visually clear] -->
+
+![Born validity diagram — a 2D plot with Born parameter ξ = 2m|V₀|/ℏ²μ² on the vertical axis (log scale, 0.01 to 100) and ka on the…](../images/08-scattering-ii-the-born-approximation-fig-04.png)
+*Figure 8.4 — Born validity diagram — a 2D plot with Born parameter ξ = 2m|V₀|/ℏ²μ² on the vertical axis (log scale, 0.01 to 100) and ka on the…*
 
 The Born series — iterating the Lippmann-Schwinger equation — generates the correction to the first Born term:
 
@@ -248,3 +260,112 @@ Griffiths, D. J., & Schroeter, D. F. (2018). *Introduction to Quantum Mechanics*
 Sakurai, J. J., & Napolitano, J. (2021). *Modern Quantum Mechanics* (3rd ed.). Cambridge University Press. Ch. 6.
 
 Fitzpatrick, R. *Introductory Quantum Mechanics* (LibreTexts / UT Austin), §§14.1–14.2.
+
+---
+
+## Running Project — Model a Real Quantum System, End to End
+
+**This chapter adds:** the Born approximation to the toolkit, with the Born parameter $\xi = 2m|V_0|/\hbar^2\mu^2$ (and its high-energy partner $\xi/ka$) as a table row — and it supplies the complete quantitative model for the capstone's **System F — Rutherford scattering**, validated against the Geiger-Marsden data.
+
+Today's table entry: **Born approximation — $\varepsilon = \xi = 2m|V_0|/\hbar^2\mu^2$ (low energy) and $2m|V_0|/\hbar^2\mu k$ (high energy) — breaks at low energy if the potential is strong enough to bind, and qualitatively near resonances (Born predicts no resonance at all); improves at high energy.** The capstone subtlety: for the Coulomb potential Born is *exact* (the phases cancel in $|f|^2$ by the SO(4) symmetry) — so the agreement with Rutherford is not luck, and knowing *why* tells you it will not generalize to other potentials.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Computing the Born parameter $\xi = ZZ'e^2/(4\pi\epsilon_0\hbar v)$ (Sommerfeld parameter) for given energy and charges — *Why AI works here:* a plug-in checkable against the chapter's $\approx 8.6\times10^{-4}$ for 5 MeV alphas on gold.
+- Evaluating the Rutherford cross-section $d\sigma/d\Omega = (ZZ'e^2/16\pi\epsilon_0 E)^2/\sin^4(\theta/2)$ at a set of angles and verifying the log-log slope of $-4$ — *Why AI works here:* mechanical arithmetic with a known angular law.
+- Computing a form factor $F(q)$ and locating its first zero $qR\approx4.49$ for a uniform sphere — *Why AI works here:* a Fourier transform with a tabulated answer.
+
+**The tell:** You are using AI well when you have an independent check — here, the Geiger-Marsden $\sin^{-4}(\theta/2)$ law and the Born parameter being $\ll1$.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding whether Born is valid for *your* potential — checking $\xi$ against 1 *and* whether the potential binds — *Why AI fails here:* it will apply Born to a strong, bound-state-supporting potential at low energy and report a smooth cross-section that entirely misses the resonance structure, without flagging that $\xi\gtrsim1$. This is the small-parameter call, and Born's failure near resonance is *qualitative*, not a small numerical error.
+- Explaining why Born is exact for Coulomb but not otherwise — *Why AI fails here:* the reason (the Coulomb phase has unit modulus, $|\Gamma(1+i\eta)/\Gamma(1-i\eta)|=1$, scale invariance) is a subtle structural fact it will paraphrase without grasping, and it may wrongly generalize "Born = classical" to other potentials.
+- Judging when Rutherford itself fails (nuclear-force onset at small impact parameter, screening at small angle) — *Why AI fails here:* the breakdown analysis needs you to estimate the closest-approach distance vs the nuclear radius, a physics call.
+
+**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours.
+
+**Physics-judgment connection:** This trains computing the small parameter $\xi$ *before* trusting Born, and recognizing that a method can fail *qualitatively* (no resonance where there should be one) — not every failure is a wrong number; some are a wrong shape.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of the capstone's System F (Rutherford) — method selection by the Born parameter and the cross-section calculation — plus the Born table row.
+**Tool:** Claude Project — your most-cited candidate (Geiger-Marsden, four decades of data).
+**The Prompt:**
+```
+I am drafting a five-move quantum model of Rutherford scattering (alpha
+particles on gold). Help me with moves 2-3 (method selection, calculation);
+I will write moves 1, 4, 5.
+
+METHOD SELECTION: justify the Born approximation. Compute the Born/Sommerfeld
+parameter xi = Z Z' e^2/(4 pi eps0 hbar v) for E=5 MeV, Z=2, Z'=79, and show
+xi ~ 8.6e-4 << 1, so Born is extremely well justified. Then explain in 2-3
+sentences why, UNIQUELY for the Coulomb potential, Born reproduces the EXACT
+differential cross-section: the Coulomb phase factor has unit modulus
+(|Gamma(1+i eta)/Gamma(1-i eta)| = 1), so the phases cancel in |f|^2. Note this
+does NOT generalize to other potentials.
+
+CALCULATION: derive the Rutherford cross-section as the mu->0 limit of the
+Yukawa Born result. Evaluate d sigma/d Omega at theta=90 deg for E=5.5 MeV,
+Z=2, Z'=79, using e^2/4 pi eps0 = 1.44 MeV fm. Report in fm^2/sr. Show units.
+
+Do NOT claim "Born = classical" as a general rule — it is special to Coulomb.
+Do NOT judge whether my eventual agreement with Geiger-Marsden is "good".
+```
+**What this produces:** $\xi\approx 8.6\times10^{-4}$, a 90° cross-section of order $10^2$ fm²/sr, and the correct reason Born is exact here.
+**How to adapt:** *Your system:* for a Yukawa nuclear potential, keep $\mu$ finite and check $\xi$ — Born may now be marginal. *ChatGPT/Gemini:* watch for the over-generalization "Born always gives the classical result." *Claude Project:* store as System F.
+**Builds on:** Chapter 7's partial-wave view (Born is the complementary expansion — in the potential, not in $\ell$).  **Next:** Chapter 9 returns to atoms in fields (Zeeman/Stark/magnetic resonance) — the ammonia/maser two-state and the Zeeman $g$-factor candidates.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the Born table row and a script that computes the Rutherford cross-section, verifies the $-4$ log-log slope, and checks the Born parameter.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–7 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "Compute the Born parameter xi before trusting a Born cross-section; Born predicts NO resonance structure, so a smooth Born curve near a known resonance is a qualitative failure, not a small error."
+**The Task:**
+```
+In the running-project directory:
+1. Append the Born row to method-table.md (epsilon = xi = 2m|V0|/hbar^2 mu^2,
+   high-energy form xi/ka).
+2. Create rutherford.py that:
+   - computes xi = Z Z' e^2/(4 pi eps0 hbar v) for E=5 MeV, Z=2, Z'=79; confirms
+     xi ~ 8.6e-4 << 1,
+   - computes d sigma/d Omega = (Z Z' e^2/(16 pi eps0 E))^2 / sin^4(theta/2)
+     at theta=30,60,90,120,150 deg for E=5.486 MeV (Am-241), Z'=79; prints fm^2/sr,
+   - fits log(d sigma/d Omega) vs log(sin(theta/2)) and confirms slope ~ -4.
+3. Run it. Confirm xi << 1 and slope ~ -4.
+Touch no files outside this directory. Report the 90-deg cross-section, xi, and
+the fitted slope.
+```
+**Expected output:** appended row; console showing $\xi\approx 8.6\times10^{-4}$, a table of cross-sections, and a fitted log-log slope of $\approx -4$.
+**What to inspect:** $\xi\ll1$ confirms Born; the slope is $-4$ (the $\sin^{-4}$ law); the 90° value is in the $10^2$ fm²/sr range.
+**If it goes wrong:** if the slope is not $-4$, the angle convention ($\theta$ vs $\theta/2$) or a degree/radian slip is the cause — print $\sin(\theta/2)$ for each angle and check.
+**CLAUDE.md / AGENTS.md note:** add "Born's exactness for Coulomb is a special property of the $1/r$ potential; never assume Born reproduces the classical result for any other potential."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 Rutherford cross-section, the Born parameter, and the slope.
+**Validation type:** Numerical result
+**Risk level:** Low-to-Medium — the formula is standard and Born is provably exact here, so the main risks are angle-convention and unit slips.
+**Setup:** use your R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Scattering II: The Born Approximation
+□ Correctness: is xi ~ 8.6e-4 << 1 for 5 MeV alphas on gold?
+□ Completeness: is the REASON Born is exact for Coulomb stated correctly
+  (unit-modulus Coulomb phase / SO(4)), and flagged as NOT general?
+□ Scope: is the log-log slope verified as -4 (the sin^-4 law)?
+□ Magnitude: is the 90-deg cross-section in the ~10^2 fm^2/sr range?
+□ Validity honesty: is it stated that Born would FAIL qualitatively (no
+  resonance) for a strong binding potential, even though it is exact here?
+□ Failure-mode check: any of —
+  - fluent but wrong (claiming Born = classical for all potentials)
+  - theta vs theta/2 convention error (slope comes out != -4)
+  - MeV/fm unit slips in e^2/4 pi eps0
+  - missing the qualitative-failure-near-resonance caveat
+```
+**What to do with findings:** pass → record System F's calculation; cite Geiger-Marsden for the validation move. one fail → fix the angle convention/units, re-run, document. multiple fails → recompute one cross-section by hand.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* What AI produced and how you used it.
+> *2:* One specific thing the AI could not determine that required your judgment.
+**Physics-judgment connection:** this validation trains computing a method's small parameter before trusting it and distinguishing a method's *exact* regime (Coulomb) from its *approximate* one — recognizing that "it matched the data" can be guaranteed by symmetry rather than by luck, and that the reason matters.

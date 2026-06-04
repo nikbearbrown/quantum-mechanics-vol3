@@ -47,6 +47,9 @@ This is **Fermi's golden rule**.
 
 <!-- → [DIAGRAM: two-panel illustration — left: discrete two-level Rabi oscillation P(t) bouncing between 0 and 1; right: continuum case P_total(t) growing linearly with golden-rule slope W, sinc-squared sharpening into a delta function shown as an inset] -->
 
+![two-panel illustration — left: discrete two-level Rabi oscillation P(t) bouncing between 0 and 1](../images/06-radiation-and-fermis-golden-rule-fig-01.png)
+*Figure 6.1 — two-panel illustration — left: discrete two-level Rabi oscillation P(t) bouncing between 0 and 1*
+
 **Historical attribution.** P.A.M. Dirac derived this formula in 1927 in "The Quantum Theory of the Emission and Absorption of Radiation." This paper is the foundational document of quantum electrodynamics. Enrico Fermi called it "Golden Rule No. 2" in his 1950 Chicago lecture notes on nuclear physics because it was useful — not because he derived it. The name stuck. Dirac got there first, by twenty-three years.
 
 **Validity window.** The golden rule requires $t$ large enough that the sinc-squared has sharpened into a delta function ($t \gg 2\pi/\Delta\omega$, where $\Delta\omega$ is the continuum bandwidth), but small enough that first-order perturbation theory still holds ($W \cdot t \ll 1$). For an atom emitting into the electromagnetic vacuum, this window spans many orders of magnitude: Bohr oscillation periods are femtoseconds, spontaneous emission lifetimes are nanoseconds, and the golden rule governs the entire middle range.
@@ -74,6 +77,9 @@ $$\rho(\omega) = \frac{V\omega^2}{\pi^2 c^3} \quad\text{(per unit angular freque
 This is the quantity that enters the spontaneous emission rate and that Planck needed in 1900 to get the blackbody spectrum right. More available final states per unit energy means a faster rate — the system decays faster because there are more places to go. The density of states is not decoration; it is what converts a Rabi oscillation into an irreversible exponential decay.
 
 <!-- → [CHART: ρ(E) ∝ √E for a 3D free particle, shown as a smooth curve with the k-space spherical shell shown as an inset; annotation showing the 3D result vs. the constant 2D result for comparison] -->
+
+![ρ(E) ∝ √E for a 3D free particle, shown as a smooth curve with the k-space spherical shell shown as an inset](../images/06-radiation-and-fermis-golden-rule-fig-02.png)
+*Figure 6.2 — ρ(E) ∝ √E for a 3D free particle, shown as a smooth curve with the k-space spherical shell shown as an inset*
 
 ---
 
@@ -128,6 +134,9 @@ $$\int_0^{2\pi}e^{-im'\phi}\,e^{iq\phi}\,e^{im\phi}\,d\phi = 2\pi\,\delta_{m',\,
 For $z$-polarized light ($q = 0$): $\Delta m = 0$. For $\sigma^+$ circularly polarized light ($q = +1$): $\Delta m = +1$. For $\sigma^-$ ($q = -1$): $\Delta m = -1$.
 
 <!-- → [DIAGRAM: angular momentum coupling diagram showing a photon (L=1, q=0,±1) absorbed by an atom with initial (ℓ,m) → final (ℓ',m'), illustrating all allowed combinations as a 3×3 grid] -->
+
+![angular momentum coupling diagram showing a photon (L=1, q=0,±1) absorbed by an atom with initial (ℓ,m) → final (ℓ',m'), illustrating all…](../images/06-radiation-and-fermis-golden-rule-fig-03.png)
+*Figure 6.3 — angular momentum coupling diagram showing a photon (L=1, q=0,±1) absorbed by an atom with initial (ℓ,m) → final (ℓ',m'), illustrating all…*
 
 The electric-dipole operator contains no spin. It acts only on the orbital part of the wave function. So $\Delta s = 0$.
 
@@ -392,3 +401,112 @@ Townsend, J. S. (2012). *A Modern Approach to Quantum Mechanics* (2nd ed.). Univ
 Cohen-Tannoudji, C., Diu, B., & Laloë, F. (1977). *Quantum Mechanics*, Vol. II. Wiley. Chapter XIII.
 
 Haroche, S., & Kleppner, D. (1989). Cavity quantum electrodynamics. *Physics Today*, 42(1), 24–30.
+
+---
+
+## Running Project — Model a Real Quantum System, End to End
+
+**This chapter adds:** Fermi's golden rule and the density of states to the toolkit, with the validity-window small parameter $2\pi/\Delta\omega \ll t \ll \hbar/|V_{fi}|$ as a table row — and it supplies a fully cited end-to-end model: the hydrogen **$2p \to 1s$ spontaneous-emission lifetime**, computed at 1.6 ns and validated against the measured 1.596 ns.
+
+Today's table entry: **Fermi golden rule — $\varepsilon$: the validity window $2\pi/\Delta\omega \ll t \ll \hbar/|V_{fi}|$ (long enough for the sinc² to sharpen into a delta function, short enough for first-order PT) — breaks at $t \gtrsim 1/\Gamma$, where the perturbation series must be resummed (Wigner-Weisskopf).** The capstone lesson here: the rate is the product of *three* ingredients — $|V_{fi}|^2$, $\rho(E_f)$, and $\omega^3$ — and getting the lifetime right means getting all three; the density of states is physics, not decoration.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Evaluating the hydrogen radial dipole integral $\mathcal{R}=\int R_{10}r^3R_{21}\,dr = 256/(81\sqrt6)\,a_0$ via the substitution $u=3r/2a_0$ and $\int u^ne^{-u}du=n!$ — *Why AI works here:* a definite integral with a known closed form, checkable against the boxed result.
+- Assembling the Einstein-$A$ coefficient $A_{21}=\omega^3|\langle 1s|e\vec r|2p\rangle|^2/(3\pi\epsilon_0\hbar c^3)$ and inverting to a lifetime — *Why AI works here:* a formula plug-in with a target number (1.6 ns) to check against.
+- Applying selection rules ($\Delta\ell=\pm1$, $\Delta m=0,\pm1$) to enumerate allowed transitions — *Why AI works here:* a parity + azimuthal-integral check you can verify case by case.
+
+**The tell:** You are using AI well when you have an independent check — here, the measured 1.596 ns lifetime and the requirement $A(2s\to1s)=0$ (forbidden).
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Confirming the golden-rule validity window holds for *your* transition — *Why AI fails here:* the derivation requires $t\to\infty$ to make the delta function *and* $Wt\ll1$ for PT, two conditions in tension; whether a wide intermediate window exists is a per-system judgment, not a formula. An AI will apply the rule without checking the window.
+- Trusting the $\omega^3$ scaling and the density of states — *Why AI fails here:* dropping or mis-powering the $\omega^3$ factor (or using the wrong-dimension $\rho$) gives a plausible but order-of-magnitude-wrong rate that the AI will not flag.
+- Recognizing the semiclassical seam — that an excited atom in vacuum "should" sit forever under a classical field — *Why AI fails here:* the mechanism (vacuum fluctuations, requiring QED) is exactly the conceptual boundary an LLM blurs by quoting the right number with a wrong story.
+
+**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours.
+
+**Physics-judgment connection:** This trains checking a computed rate against a cited measured lifetime *and* confirming the validity window before believing the golden rule applies — the discipline of not using a $t\to\infty$ formula at a $t$ where it has not yet converged.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of a candidate system — the hydrogen $2p\to1s$ lifetime via the golden rule / Einstein $A$ — plus the golden-rule table row.
+**Tool:** Claude Project — a fully cited candidate (measured datum to 4 significant figures).
+**The Prompt:**
+```
+I am drafting a five-move quantum model of the hydrogen 2p -> 1s spontaneous
+emission lifetime. Help me with moves 2-3 (method selection, calculation);
+I will write moves 1, 4, 5.
+
+METHOD SELECTION: justify Fermi's golden rule / the Einstein-A formula. State
+the validity window 2 pi/Delta_omega << t << hbar/|V_fi| and argue it is wide
+for atomic emission (femtosecond Bohr periods, nanosecond lifetimes). Note the
+electric-dipole approximation holds because k a0 ~ 1e-3 << 1.
+
+CALCULATION: compute the 2p->1s rate. Evaluate the radial integral
+R = integral R_10 r^3 R_21 dr = 256/(81 sqrt 6) a0 (show the substitution),
+fold in the angular factor, average over the three 2p substates to get
+|<1s|e r|2p>|^2_avg = e^2 (2^8/3^5) a0^2, then apply
+A_21 = omega^3 |<...>|^2 / (3 pi eps0 hbar c^3) with hbar omega = 10.2 eV.
+Report A_21 in s^-1 and tau = 1/A_21 in ns. Show units.
+
+Do NOT claim the classical-field derivation explains WHY the atom decays — I
+know that requires quantizing the field (QED). Do NOT judge whether my percent
+error vs the measured 1.596 ns is "good".
+```
+**What this produces:** $A_{21}\approx 6.3\times10^8$ s$^{-1}$, $\tau\approx 1.6$ ns, validated against the measured 1.596 ns.
+**How to adapt:** *Your system:* for the $3p$ branching ($\to1s$ and $\to2s$), compute both $A$'s and the branching fractions; the $\omega^3$ factor decides which dominates. *ChatGPT/Gemini:* watch for a dropped $\omega^3$ power — it shifts the rate by orders of magnitude. *Claude Project:* store as a candidate alongside helium/STM/Rabi.
+**Builds on:** Chapter 5's first-order amplitude (the golden rule is that amplitude summed over a continuum).  **Next:** Chapter 7 opens scattering with the partial-wave $ka\ll1$ regime.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the golden-rule table row and a script that computes the $2p\to1s$ lifetime and checks it against the measured value.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–5 rows.
+- [ ] Python 3 + numpy/scipy.
+- [ ] `CLAUDE.md` rule: "Golden-rule rates depend on three ingredients — |V_fi|^2, rho(E), and omega^3; a missing omega^3 power is the most common order-of-magnitude error."
+**The Task:**
+```
+In the running-project directory:
+1. Append the Fermi-golden-rule row to method-table.md (epsilon = the validity
+   window 2 pi/Delta_omega << t << hbar/|V_fi|).
+2. Create golden_rule_2p1s.py that:
+   - computes the radial integral R = 256/(81 sqrt 6) a0 numerically by direct
+     quadrature of R_10 r^3 R_21, and confirms it matches the closed form,
+   - forms |<1s|e r|2p>|^2_avg = e^2 (2^8/3^5) a0^2,
+   - computes A_21 = omega^3 |<...>|^2 / (3 pi eps0 hbar c^3) with
+     hbar omega = 10.2 eV, prints A_21 (s^-1) and tau = 1/A_21 (ns),
+   - prints percent error vs the measured tau = 1.596 ns.
+3. Run it. Confirm tau ~ 1.6 ns and percent error within a few percent.
+Touch no files outside this directory. Report A_21, tau, and the percent error.
+```
+**Expected output:** appended row; console showing the radial integral matching $256/(81\sqrt6)a_0$, $A_{21}\approx 6.3\times10^8$ s$^{-1}$, $\tau\approx 1.6$ ns, and a few-percent error.
+**What to inspect:** the numerical radial integral matches the closed form; the lifetime lands in the nanosecond decade; the percent error is small and reported against the cited 1.596 ns.
+**If it goes wrong:** if $\tau$ comes out in picoseconds or microseconds, the $\omega^3$ factor or a unit conversion is off — print $A_{21}$ and check the $\omega^3$ has the photon angular frequency ($1.55\times10^{16}$ rad/s), not the energy in eV.
+**CLAUDE.md / AGENTS.md note:** add "Never report a decay rate without confirming the golden-rule validity window holds for that transition's timescale."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 hydrogen $2p\to1s$ lifetime.
+**Validation type:** Numerical result
+**Risk level:** Medium — the radial integral and $\omega^3$ are error-prone, and a wrong power of $\omega$ silently shifts the answer by decades.
+**Setup:** use your R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Radiation and Fermi's Golden Rule
+□ Correctness: does the numerical radial integral match 256/(81 sqrt 6) a0?
+□ Completeness: is the validity window stated and the dipole approximation
+  justified (k a0 ~ 1e-3)?
+□ Scope: is the lifetime compared against the CITED measured 1.596 ns?
+□ Three ingredients: are |V_fi|^2, the omega^3 factor, and the constants all present?
+□ Selection rule: is A(2s->1s) treated as zero (forbidden), not computed as nonzero?
+□ Failure-mode check: any of —
+  - fluent but wrong (omega^3 dropped or given as omega -> rate off by decades)
+  - omega taken as energy in eV instead of angular frequency in rad/s
+  - radial integral sign/normalization error
+  - a "why does it decay" story that omits the QED vacuum-fluctuation mechanism
+```
+**What to do with findings:** pass → record $\tau$ as a fully cited candidate; note the QED seam for the breakdown move. one fail → fix the $\omega^3$/units, re-run, document. multiple fails → recompute the radial integral by hand.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* What AI produced and how you used it.
+> *2:* One specific thing the AI could not determine that required your judgment.
+**Physics-judgment connection:** this validation trains checking a computed observable against a cited measured value to several significant figures, and confirming that every multiplicative ingredient (especially the $\omega^3$ density-of-states factor) is present — the discipline that catches order-of-magnitude errors before they reach the report.
