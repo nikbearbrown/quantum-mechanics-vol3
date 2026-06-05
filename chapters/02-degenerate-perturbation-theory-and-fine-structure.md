@@ -123,7 +123,7 @@ The radial expectation value $\langle 1/r^3\rangle_{n\ell}$ diverges as $\ell \t
 
 ### Perturbation 3: The Darwin Term
 
-A third correction arises from the Dirac equation. It can be motivated by **Zitterbewegung**: the rapid quantum jitter of a relativistic electron at the scale of the Compton wavelength $\hbar/mc$ smears the electron over a tiny volume, so it sees the average Coulomb potential over a small sphere rather than the exact value at $\vec{r}$. The leading correction for a potential $V(r)$ from this smearing is proportional to $\nabla^2 V$. For the Coulomb potential, $\nabla^2(-e^2/r) = (e^2/\epsilon_0)\delta^3(\vec{r})$ [verify], giving:
+A third correction arises from the Dirac equation. It can be motivated by **Zitterbewegung**: the rapid quantum jitter of a relativistic electron at the scale of the Compton wavelength $\hbar/mc$ smears the electron over a tiny volume, so it sees the average Coulomb potential over a small sphere rather than the exact value at $\vec{r}$. The leading correction for a potential $V(r)$ from this smearing is proportional to $\nabla^2 V$. For the Coulomb potential, $\nabla^2\!\left(-\dfrac{e^2}{4\pi\epsilon_0 r}\right) = \dfrac{e^2}{\epsilon_0}\delta^3(\vec{r})$, giving:
 
 $$\hat{H}'_\text{Darwin} = \frac{\pi\hbar^2}{2m^2c^2}\cdot\frac{e^2}{4\pi\epsilon_0}\,\delta^3(\vec{r}).$$
 

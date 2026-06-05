@@ -271,7 +271,7 @@ I am drafting a five-move quantum model of NMR proton Rabi oscillations at a
 I will write moves 1, 4, 5.
 
 METHOD SELECTION: justify the rotating-wave approximation by computing the
-small parameter Omega_R/omega_0 and showing it is ~0.003 << 1 for B0=9.4 T,
+small parameter Omega_R/omega_0 and showing it is ~5e-4 << 1 for B0=9.4 T,
 B1=1e-2 T. Then state the SECOND condition that governs whether first-order
 PT (vs the exact Rabi formula) is valid: Omega_R * t << 1. Make clear that for
 a pi-pulse Omega_R*t = pi, so first-order PT is INVALID and the exact Rabi
@@ -315,7 +315,7 @@ Touch no files outside this directory. Report t_pi and the Omega_R t where PT
 first exceeds 1.
 ```
 **Expected output:** appended row; console showing $t_\pi\approx 2.3$ μs, the exact/PT comparison table, and PT crossing 1 near $\Omega_R t = 2$.
-**What to inspect:** exact $P$ never exceeds 1; PT and exact agree for $\Omega_R t \ll 1$ and diverge by the $\pi$-pulse; $\Omega_R/\omega_0 \approx 0.003$ confirms the RWA.
+**What to inspect:** exact $P$ never exceeds 1; PT and exact agree for $\Omega_R t \ll 1$ and diverge by the $\pi$-pulse; $\Omega_R/\omega_0 \approx 5\times10^{-4}$ confirms the RWA.
 **If it goes wrong:** if $t_\pi$ comes out in nanoseconds or seconds, $\Omega_R$ used $\gamma_p B_1$ instead of $\gamma_p B_1/2$, or a factor of $2\pi$ slipped — print $\Omega_R$ in rad/s and check it is $\sim 10^6$.
 **CLAUDE.md / AGENTS.md note:** add "A transition probability greater than 1 is a breakdown signal of first-order TDPT, not a result — switch to the exact Rabi formula."
 
@@ -332,7 +332,7 @@ Validation Checklist — Time-Dependent PT and Rabi
   Omega*t for first-order PT)?
 □ Scope: is any P>1 flagged as a breakdown, not reported as a probability?
 □ Cap: does the exact Rabi P stay <= 1 at every tabulated Omega_R t?
-□ RWA: is Omega_R/omega_0 ~ 0.003 << 1 confirmed numerically?
+□ RWA: is Omega_R/omega_0 ~ 5e-4 << 1 confirmed numerically?
 □ Failure-mode check: any of —
   - fluent but wrong (PT value (pi/2)^2=2.47 reported as a real probability)
   - factor-of-2: Omega_R = gamma_p B1 instead of gamma_p B1/2

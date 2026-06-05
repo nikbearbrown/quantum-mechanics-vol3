@@ -199,7 +199,7 @@ $$\langle 1s|\hat{z}|2p_0\rangle = \frac{256}{81\sqrt{6}}\cdot\frac{1}{\sqrt{3}}
 
 For the spontaneous emission rate, average over all $2p$ substates and photon polarizations (the standard result from summing over $m = -1, 0, +1$ with spherical symmetry):
 
-$$|\langle 1s|e\hat{\vec{r}}|2p\rangle|^2_{\rm avg} = \frac{e^2 \times 2^8}{3^5}\,a_0^2.$$
+$$|\langle 1s|e\hat{\vec{r}}|2p\rangle|^2_{\rm avg} = \frac{e^2 \times 2^{15}}{3^{10}}\,a_0^2.$$
 
 <!-- → [TABLE: hydrogen radial integrals |ℛ_{n'ℓ', nℓ}|² in units of a₀² for transitions 2p→1s, 3p→1s, 3p→2s, 3d→2p — three columns: transition, |ℛ|², angular factor] -->
 
@@ -445,7 +445,7 @@ electric-dipole approximation holds because k a0 ~ 1e-3 << 1.
 CALCULATION: compute the 2p->1s rate. Evaluate the radial integral
 R = integral R_10 r^3 R_21 dr = 256/(81 sqrt 6) a0 (show the substitution),
 fold in the angular factor, average over the three 2p substates to get
-|<1s|e r|2p>|^2_avg = e^2 (2^8/3^5) a0^2, then apply
+|<1s|e r|2p>|^2_avg = e^2 (2^15/3^10) a0^2, then apply
 A_21 = omega^3 |<...>|^2 / (3 pi eps0 hbar c^3) with hbar omega = 10.2 eV.
 Report A_21 in s^-1 and tau = 1/A_21 in ns. Show units.
 
@@ -473,7 +473,7 @@ In the running-project directory:
 2. Create golden_rule_2p1s.py that:
    - computes the radial integral R = 256/(81 sqrt 6) a0 numerically by direct
      quadrature of R_10 r^3 R_21, and confirms it matches the closed form,
-   - forms |<1s|e r|2p>|^2_avg = e^2 (2^8/3^5) a0^2,
+   - forms |<1s|e r|2p>|^2_avg = e^2 (2^15/3^10) a0^2,
    - computes A_21 = omega^3 |<...>|^2 / (3 pi eps0 hbar c^3) with
      hbar omega = 10.2 eV, prints A_21 (s^-1) and tau = 1/A_21 (ns),
    - prints percent error vs the measured tau = 1.596 ns.

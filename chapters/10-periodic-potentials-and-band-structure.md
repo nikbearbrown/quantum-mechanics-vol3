@@ -72,9 +72,9 @@ Set $P = 3\pi/2 \approx 4.71$.
 
 $$f(\pi) = \cos(\pi) + \frac{P}{\pi}\sin(\pi) = -1 + 0 = -1.$$
 
-This is exactly at the boundary — the first allowed band ends here. Just above $\alpha a = \pi$, the term $-(P/\pi)\epsilon$ drives $f$ below $-1$ and the gap opens. Numerically, $f$ re-enters the interval $[-1,1]$ near $\alpha a \approx 4.42$, where the second band begins.
+This is exactly at the boundary — the first allowed band ends here. Just above $\alpha a = \pi$, the term $-(P/\pi)\epsilon$ drives $f$ below $-1$ and the gap opens. Numerically, $f$ re-enters the interval $[-1,1]$ near $\alpha a \approx 4.71$, where the second band begins.
 
-**In natural units** ($\hbar = 2m = a = 1$, energies in units of $\hbar^2/2ma^2$): the first gap runs from $E = \pi^2 \approx 9.87$ to $E \approx 19.5$. The gap width grows with $P$.
+**In natural units** ($\hbar = 2m = a = 1$, energies in units of $\hbar^2/2ma^2$): the first gap runs from $E = \pi^2 \approx 9.87$ to $E \approx 22.2$. The gap width grows with $P$.
 
 **The simulation procedure.** Sweep $\alpha a$ from $0$ to $6\pi$ in 5000 steps. At each point, compute $f(\alpha a)$. If $|f| \leq 1$, assign $k = \arccos(f)/a$ and fold into the first BZ; plot $(k, E = \hbar^2\alpha^2/2m)$. Color allowed-band points teal, shade gap regions gray.
 

@@ -123,9 +123,9 @@ Alpha particles (charge $2e$) on gold (charge $79e$) at 5–8 MeV experience Cou
 
 $$\frac{d\sigma}{d\Omega} = \left(\frac{ZZ'e^2}{4\pi\epsilon_0\cdot 4E}\right)^2\frac{1}{\sin^4(\theta/2)}.$$
 
-The Born parameter for this system: at $E = 5$ MeV and $ZZ' = 158$, $\xi = ZZ'e^2/(4\pi\epsilon_0 \hbar v) \approx 1.44\times158/(5\times10^6\times0.53) \approx 8.6\times10^{-4} \ll 1$. Born is extremely well-justified.
+The Sommerfeld parameter for this system: at $E = 5$ MeV and $ZZ' = 158$, $\eta = ZZ'e^2/(4\pi\epsilon_0 \hbar v) = 158\times1.44/(197.3\times0.052)\,\text{MeV·fm} \approx 22 \gg 1$. So the naive Born small-parameter is *not* small here; Born nonetheless reproduces Rutherford exactly because the Coulomb scattering phases cancel in $|f|^2$ (as shown above), not because $\eta$ is small.
 
-At $\theta = 90°$ for $E = 5.5$ MeV and gold: $d\sigma/d\Omega = (2\times79\times1.44\,\text{MeV·fm}/4\times5.5\,\text{MeV})^2 \approx 108\,\text{fm}^2$/sr. The Geiger-Marsden data confirmed this formula across four decades of cross-section magnitude. [verify: Geiger & Marsden (1913), Philosophical Magazine 25, 604]
+At $\theta = 90°$ for $E = 5.5$ MeV and gold: $d\sigma/d\Omega = (2\times79\times1.44\,\text{MeV·fm}/4\times5.5\,\text{MeV})^2/\sin^4(45°) \approx 428\,\text{fm}^2$/sr. The Geiger-Marsden data confirmed this formula across four decades of cross-section magnitude. [verify: Geiger & Marsden (1913), Philosophical Magazine 25, 604]
 
 The agreement between the Born approximation and the classical result is exact — a consequence of the special structure of the $1/r$ potential. The formula predicts an infinite forward cross-section ($\theta\to0$), correctly: the Coulomb potential has infinite range and deflects even infinitely distant particles by some infinitesimal angle. In practice, atomic screening cuts this off.
 
@@ -169,7 +169,7 @@ $$E_{1s,h} = \frac{1.28\,\text{eV}\times0.13}{0.45} = 0.37\,\text{eV.}$$
 
 **Coulomb correction:**
 
-$$E_C = -\frac{1.8\times1.44\,\text{eV·Å}}{10.6\times15\,\text{Å}} = -\frac{2.592}{159} = -0.163\,\text{eV.}$$
+$$E_C = -\frac{1.8\times14.4\,\text{eV·Å}}{10.6\times15\,\text{Å}} = -\frac{25.92}{159} = -0.163\,\text{eV.}$$
 
 **Predicted gap:** $E_\text{dot} = 1.74 + 1.28 + 0.37 - 0.163 = 3.23\,\text{eV.}$
 

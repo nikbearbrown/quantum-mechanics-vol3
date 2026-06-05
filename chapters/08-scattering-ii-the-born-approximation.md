@@ -271,11 +271,11 @@ Today's table entry: **Born approximation — $\varepsilon = \xi = 2m|V_0|/\hbar
 
 ### Exercise R1 — When to Use AI
 **The judgment:** In this chapter's project work, AI assistance is appropriate for:
-- Computing the Born parameter $\xi = ZZ'e^2/(4\pi\epsilon_0\hbar v)$ (Sommerfeld parameter) for given energy and charges — *Why AI works here:* a plug-in checkable against the chapter's $\approx 8.6\times10^{-4}$ for 5 MeV alphas on gold.
+- Computing the Sommerfeld parameter $\eta = ZZ'e^2/(4\pi\epsilon_0\hbar v)$ for given energy and charges — *Why AI works here:* a plug-in checkable against the chapter's value $\eta\approx 22$ for 5 MeV alphas on gold (so the naive Born small-parameter is *not* small here — Born is exact for Coulomb by phase cancellation, not by $\eta\ll1$).
 - Evaluating the Rutherford cross-section $d\sigma/d\Omega = (ZZ'e^2/16\pi\epsilon_0 E)^2/\sin^4(\theta/2)$ at a set of angles and verifying the log-log slope of $-4$ — *Why AI works here:* mechanical arithmetic with a known angular law.
 - Computing a form factor $F(q)$ and locating its first zero $qR\approx4.49$ for a uniform sphere — *Why AI works here:* a Fourier transform with a tabulated answer.
 
-**The tell:** You are using AI well when you have an independent check — here, the Geiger-Marsden $\sin^{-4}(\theta/2)$ law and the Born parameter being $\ll1$.
+**The tell:** You are using AI well when you have an independent check — here, the Geiger-Marsden $\sin^{-4}(\theta/2)$ law and the Coulomb phase-cancellation argument (which is *why* Born is exact, since the Sommerfeld parameter $\eta\approx22\gg1$).
 
 ### Exercise R2 — When NOT to Use AI
 **The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
@@ -296,9 +296,10 @@ I am drafting a five-move quantum model of Rutherford scattering (alpha
 particles on gold). Help me with moves 2-3 (method selection, calculation);
 I will write moves 1, 4, 5.
 
-METHOD SELECTION: justify the Born approximation. Compute the Born/Sommerfeld
-parameter xi = Z Z' e^2/(4 pi eps0 hbar v) for E=5 MeV, Z=2, Z'=79, and show
-xi ~ 8.6e-4 << 1, so Born is extremely well justified. Then explain in 2-3
+METHOD SELECTION: justify the Born approximation. Compute the Sommerfeld
+parameter eta = Z Z' e^2/(4 pi eps0 hbar v) for E=5 MeV, Z=2, Z'=79, and show
+eta ~ 22 >> 1, so the naive Born small-parameter is NOT small; Born is nonetheless
+exact for the Coulomb potential because the scattering phases cancel in |f|^2. Then explain in 2-3
 sentences why, UNIQUELY for the Coulomb potential, Born reproduces the EXACT
 differential cross-section: the Coulomb phase factor has unit modulus
 (|Gamma(1+i eta)/Gamma(1-i eta)| = 1), so the phases cancel in |f|^2. Note this
@@ -311,7 +312,7 @@ Z=2, Z'=79, using e^2/4 pi eps0 = 1.44 MeV fm. Report in fm^2/sr. Show units.
 Do NOT claim "Born = classical" as a general rule — it is special to Coulomb.
 Do NOT judge whether my eventual agreement with Geiger-Marsden is "good".
 ```
-**What this produces:** $\xi\approx 8.6\times10^{-4}$, a 90° cross-section of order $10^2$ fm²/sr, and the correct reason Born is exact here.
+**What this produces:** $\eta\approx 22$ ($\gg1$), a 90° cross-section of order $10^2$ fm²/sr, and the correct reason Born is exact here despite $\eta\gg1$ (Coulomb phase cancellation).
 **How to adapt:** *Your system:* for a Yukawa nuclear potential, keep $\mu$ finite and check $\xi$ — Born may now be marginal. *ChatGPT/Gemini:* watch for the over-generalization "Born always gives the classical result." *Claude Project:* store as System F.
 **Builds on:** Chapter 7's partial-wave view (Born is the complementary expansion — in the potential, not in $\ell$).  **Next:** Chapter 9 returns to atoms in fields (Zeeman/Stark/magnetic resonance) — the ammonia/maser two-state and the Zeeman $g$-factor candidates.
 
@@ -329,17 +330,17 @@ In the running-project directory:
 1. Append the Born row to method-table.md (epsilon = xi = 2m|V0|/hbar^2 mu^2,
    high-energy form xi/ka).
 2. Create rutherford.py that:
-   - computes xi = Z Z' e^2/(4 pi eps0 hbar v) for E=5 MeV, Z=2, Z'=79; confirms
-     xi ~ 8.6e-4 << 1,
+   - computes eta = Z Z' e^2/(4 pi eps0 hbar v) for E=5 MeV, Z=2, Z'=79; confirms
+     eta ~ 22 >> 1 (Born is exact for Coulomb by phase cancellation, not a small parameter),
    - computes d sigma/d Omega = (Z Z' e^2/(16 pi eps0 E))^2 / sin^4(theta/2)
      at theta=30,60,90,120,150 deg for E=5.486 MeV (Am-241), Z'=79; prints fm^2/sr,
    - fits log(d sigma/d Omega) vs log(sin(theta/2)) and confirms slope ~ -4.
-3. Run it. Confirm xi << 1 and slope ~ -4.
-Touch no files outside this directory. Report the 90-deg cross-section, xi, and
+3. Run it. Confirm eta ~ 22 (>> 1) and slope ~ -4.
+Touch no files outside this directory. Report the 90-deg cross-section, eta, and
 the fitted slope.
 ```
-**Expected output:** appended row; console showing $\xi\approx 8.6\times10^{-4}$, a table of cross-sections, and a fitted log-log slope of $\approx -4$.
-**What to inspect:** $\xi\ll1$ confirms Born; the slope is $-4$ (the $\sin^{-4}$ law); the 90° value is in the $10^2$ fm²/sr range.
+**Expected output:** appended row; console showing $\eta\approx 22$, a table of cross-sections, and a fitted log-log slope of $\approx -4$.
+**What to inspect:** the slope is $-4$ (the $\sin^{-4}$ law) and the 90° value is in the $10^2$ fm²/sr range; note $\eta\approx22\gg1$, so Born is exact here by Coulomb phase cancellation, *not* by a small parameter.
 **If it goes wrong:** if the slope is not $-4$, the angle convention ($\theta$ vs $\theta/2$) or a degree/radian slip is the cause — print $\sin(\theta/2)$ for each angle and check.
 **CLAUDE.md / AGENTS.md note:** add "Born's exactness for Coulomb is a special property of the $1/r$ potential; never assume Born reproduces the classical result for any other potential."
 
@@ -351,7 +352,7 @@ the fitted slope.
 **The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
 ```
 Validation Checklist — Scattering II: The Born Approximation
-□ Correctness: is xi ~ 8.6e-4 << 1 for 5 MeV alphas on gold?
+□ Correctness: is eta ~ 22 (>> 1) for 5 MeV alphas on gold, with Born exact by Coulomb phase cancellation?
 □ Completeness: is the REASON Born is exact for Coulomb stated correctly
   (unit-modulus Coulomb phase / SO(4)), and flagged as NOT general?
 □ Scope: is the log-log slope verified as -4 (the sin^-4 law)?

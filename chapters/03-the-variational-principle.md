@@ -97,11 +97,11 @@ $$\hat{H} = \underbrace{\left[\frac{\hat{p}_1^2}{2m} - \frac{\tilde{Z}e^2}{4\pi\
 
 The trial state is the exact eigenstate of $\hat{H}_1(\tilde{Z}) + \hat{H}_2(\tilde{Z})$ with eigenvalue $2E_1(\tilde{Z}) = -\tilde{Z}^2/2\times 2$ Hartree (twice the hydrogen ground-state energy at charge $\tilde{Z}$). So computing $\langle\hat{H}\rangle$ requires only two additional integrals: the expectation of $1/r$ in a hydrogen-like 1s state, which is $\langle 1/r\rangle = \tilde{Z}/a_0$, and the electron-electron repulsion integral, which evaluates to $5\tilde{Z}/(8a_0)$ after expanding $1/|\mathbf{r}_1 - \mathbf{r}_2|$ in Legendre polynomials. The full variational energy, in atomic units:
 
-$$E_V(\tilde{Z}) = 2\tilde{Z}^2 - 4Z\tilde{Z} + \frac{5}{4}\tilde{Z} \quad\text{(in Hartree)}.$$
+$$E_V(\tilde{Z}) = \tilde{Z}^2 - 2Z\tilde{Z} + \frac{5}{8}\tilde{Z} \quad\text{(in Hartree)}.$$
 
 **Minimize.** Set $\partial E_V/\partial\tilde{Z} = 0$:
 
-$$4\tilde{Z} - 4Z + \frac{5}{4} = 0 \quad\Longrightarrow\quad \tilde{Z}^* = Z - \frac{5}{16}.$$
+$$2\tilde{Z} - 2Z + \frac{5}{8} = 0 \quad\Longrightarrow\quad \tilde{Z}^* = Z - \frac{5}{16}.$$
 
 For helium with $Z = 2$:
 
@@ -116,7 +116,7 @@ $$\boxed{\tilde{Z}^* = 2 - \frac{5}{16} = \frac{27}{16} \approx 1.6875.}$$
 
 **The numerical result.**
 
-$$E_V^* = -2\!\left(\frac{27}{16}\right)^2\,\text{Hartree} \approx -77.5\,\text{eV}.$$
+$$E_V^* = -\left(\frac{27}{16}\right)^2\,\text{Hartree} \approx -77.5\,\text{eV}.$$
 
 Experiment: $-78.98$ eV. Error: about $2\%$. Compare to first-order perturbation theory treating the electron-electron repulsion as a perturbation at fixed $Z = 2$: that gives $-74.8$ eV, an error of about $5\%$. The variational method outperforms perturbation theory because it optimizes over the parameter that matters most — the effective charge — rather than trusting the unmodified Hamiltonian.
 
@@ -190,7 +190,7 @@ Single SVG canvas 1000 x 500.
 Main panel (left 600 wide): Plot E_V(Z_tilde) in eV on the y-axis
 (range: -85 to -65 eV) vs. Z_tilde on the x-axis (range 1.0 to 2.5).
 The variational energy formula is:
-  E_V(Z_tilde) = [2*Z_tilde^2 - 4*Z*Z_tilde + (5/4)*Z_tilde] * Hartree_to_eV
+  E_V(Z_tilde) = [Z_tilde^2 - 2*Z*Z_tilde + (5/8)*Z_tilde] * Hartree_to_eV
 where Z = 2 and 1 Hartree = 27.211 eV.
 Draw the E_V curve in teal. Mark the minimum with a vertical dashed line
 at Z_tilde = 27/16 = 1.6875 and annotate: "Z-tilde* = 27/16 = 1.6875".
@@ -351,7 +351,7 @@ Today's table entry: **variational method — $\varepsilon$: none (no perturbati
 
 ### Exercise R1 — When to Use AI
 **The judgment:** In this chapter's project work, AI assistance is appropriate for:
-- Carrying out the screened-trial expectation values $\langle\hat T\rangle$, $\langle V_{ne}\rangle$, $\langle V_{ee}\rangle$ and assembling $E_V(\tilde Z) = 2\tilde Z^2 - 4Z\tilde Z + \tfrac54\tilde Z$ — *Why AI works here:* each integral has a known closed form ($\langle 1/r\rangle = \tilde Z/a_0$, $\langle V_{ee}\rangle = 5\tilde Z/8a_0$) you can check term by term.
+- Carrying out the screened-trial expectation values $\langle\hat T\rangle$, $\langle V_{ne}\rangle$, $\langle V_{ee}\rangle$ and assembling $E_V(\tilde Z) = \tilde Z^2 - 2Z\tilde Z + \tfrac58\tilde Z$ — *Why AI works here:* each integral has a known closed form ($\langle 1/r\rangle = \tilde Z/a_0$, $\langle V_{ee}\rangle = 5\tilde Z/8a_0$) you can check term by term.
 - Minimizing $E_V(\tilde Z)$ and recovering $\tilde Z^* = Z - 5/16$ — *Why AI works here:* one derivative, one root, checkable by hand.
 - Scaffolding the Rayleigh-Ritz generalized eigenvalue solve $\mathbf{Hc}=E_V\mathbf{Sc}$ — *Why AI works here:* standard linear algebra with a known answer for the test cases.
 
@@ -384,7 +384,7 @@ applies regardless.
 
 CALCULATION: using the screened trial wavefunction
 psi = (Zt^3 / pi a0^3) exp(-Zt (r1+r2)/a0) with variational parameter Zt,
-derive E_V(Zt) = 2 Zt^2 - 4 Z Zt + (5/4) Zt in Hartree. Show <T>, <V_ne>,
+derive E_V(Zt) = Zt^2 - 2 Z Zt + (5/8) Zt in Hartree. Show <T>, <V_ne>,
 and <V_ee> separately, each with its closed form. Minimize to get
 Zt* = Z - 5/16 = 27/16, and evaluate E_V* in eV for Z=2. Show all algebra.
 
@@ -409,7 +409,7 @@ In the running-project directory:
 1. Append the variational row to method-table.md (epsilon: none; validity =
    upper-bound theorem + trial-family quality).
 2. Create helium_variational.py that:
-   - defines E_V(Zt) = (2*Zt**2 - 4*2*Zt + (5/4)*Zt) Hartree, Z=2,
+   - defines E_V(Zt) = (Zt**2 - 2*2*Zt + (5/8)*Zt) Hartree, Z=2,
    - finds Zt* analytically (Z - 5/16) AND by numerical minimization; confirm
      they agree to 1e-6,
    - converts E_V* to eV (1 Hartree = 27.211 eV),
