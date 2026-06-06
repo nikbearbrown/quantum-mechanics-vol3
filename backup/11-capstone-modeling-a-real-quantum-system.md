@@ -1,26 +1,27 @@
 # Chapter 11 — Capstone: Modeling a Real Quantum System
+*The gap between having a formula and knowing whether it works here.*
 
-Gordon Moore, working at Fairchild Semiconductor in 1965, observed that transistor density was doubling roughly every two years. He was not solving a Schrödinger equation. He was reading a trend and noting that the trend had a physical floor: quantum tunneling sets the gate-oxide thickness limit, discrete-dopant fluctuations set the channel-length limit, and when those floors arrive, the doubling stops. The transistor you are reading this on works because engineers applied quantum mechanics quantitatively — not just "tunneling happens" but "at this oxide thickness, the leakage current is this many amps per square micron, and here is the formula."
+Gordon Moore, working at Fairchild Semiconductor in 1965, observed that transistor density was doubling roughly every two years. He was not solving a Schrödinger equation. He was reading a trend and noting that the trend had a physical floor: quantum tunneling sets the gate-oxide thickness limit, discrete-dopant fluctuations set the channel-length limit, and when those floors arrived, the doubling would stop. The transistor you are reading this on works because engineers sat with quantum mechanics long enough to make it quantitative — not just "tunneling happens" but "at this oxide thickness, the leakage current is this many amps per square micron, and here is the formula."
 
-That is what this chapter asks you to do in miniature. Every approximation method in this volume is a tool suited to a specific regime. The capstone trains you to select the right one, use it end-to-end, produce a number with units, find the measured number, and account for the difference.
+That is what this chapter asks you to do in miniature. Every approximation method in this volume is a scalpel, not a hammer. The capstone trains you to pick the right one, use it end-to-end, produce a number with units, find the measured number, and make peace with the difference.
 
-The difference between a model prediction and a measurement is not failure. The difference is physics.
+The difference is not failure. The difference is physics.
 
 ---
 
 ## What It Means to Model and Defend a Quantum System
 
-A complete quantum model involves five moves, in order. Skipping any one produces a result you cannot trust.
+A complete quantum model involves five moves, in order. Skipping any one produces an answer you cannot trust.
 
-**System identification.** Name the relevant degrees of freedom and argue that the others can be ignored. An STM vacuum gap is, to a first approximation, a 1D rectangular barrier — the three-dimensional tip geometry reduces to a single apex atom, and the lateral degrees of freedom average out. That argument must be made explicitly; it cannot be assumed.
+**System identification.** Name the relevant degrees of freedom and argue that the others can be ignored. An STM vacuum gap is, to a first approximation, a 1D rectangular barrier — the three-dimensional tip geometry reduces to a single apex atom, and the lateral degrees of freedom average out. That argument has to be made explicitly; it cannot be assumed.
 
-**Method selection.** Choose the approximation whose small-parameter condition is satisfied for this system in this regime. The small parameter is not always obvious. For WKB applied to a vacuum barrier, it is $\hbar|dp/dx|/p^2$ — if the potential varies slowly on the scale of the de Broglie wavelength, the phase integral is well-defined. For the Born approximation applied to neutron scattering, it is $m|V|a^2/\hbar^2$ — the potential must be weak compared to the kinetic energy at the range scale $a$. Estimate the parameter before calculating. If it is of order 1, select a different method.
+**Method selection.** Choose the approximation whose small-parameter condition is satisfied for this system in this regime. The small parameter is not always obvious. For WKB applied to a vacuum barrier, it is $\hbar|dp/dx|/p^2$ — if the potential varies slowly on the scale of the de Broglie wavelength, the phase integral is well-defined. For the Born approximation applied to neutron scattering, it is $m|V|a^2/\hbar^2$ — the potential must be weak compared to the kinetic energy at the range scale $a$. Estimate the parameter before calculating. If it is of order 1, pick a different method.
 
-**Calculation.** Derive the key observable from the model Hamiltonian. Do not quote the formula without derivation; the formula is trustworthy only when you understand where it came from, because then you know when it is no longer applicable. This step must produce a number with units.
+**Calculation.** Derive the key observable from the model Hamiltonian. Do not quote the formula without derivation; the formula is trustworthy only if you understand where it came from, because then you know when it is lying. This step must produce a number with units.
 
-**Validation.** Compare to a known experimental datum with a citation and a percent error. A 10% error in a first-principles model is typically excellent. A 50% error in a model with three fitting parameters is cause for scrutiny. A 3% error in a model with no free parameters is a meaningful result.
+**Validation.** Compare to a known experimental datum with a citation and a percent error. A 10% error in a first-principles model is usually excellent. A 50% error in a model with three fitting parameters is suspicious. A 3% error in a model with no free parameters is worth celebrating.
 
-**Breakdown analysis.** Name what the model ignores. Estimate the magnitude of the omitted effect, at least by order of magnitude. The goal is not to fix the model — that is a research project — but to demonstrate that you understand where it stops working.
+**Breakdown analysis.** Name what the model ignores. Estimate the magnitude of the omitted effect, at least by order of magnitude. The goal is not to fix the model — that is a research project — but to demonstrate that you know where it stops working.
 
 <!-- → [TABLE: small-parameter conditions for each Vol. 3 method — columns: method, small parameter ε, formula for ε, breaks when; rows: non-degenerate PT, WKB, variational (note: no breakdown parameter, only upper-bound guarantee), TDPT/Rabi, Born approximation, tight-binding; this is the reference table for method selection in the capstone] -->
 
@@ -50,7 +51,7 @@ The small-parameter check: the WKB condition $\hbar|dp/dx|/p^2$ inside a rectang
 
 A colloidal CdSe nanocrystal 2–6 nm in diameter confines electrons and holes within a potential well defined by the crystal boundary. The optical band gap, measured by UV-Vis spectroscopy, shifts upward from the bulk value of 1.74 eV as the radius $R$ decreases — the blueshift of quantum confinement.
 
-We model the lowest electron and hole states as particles in a spherical infinite square well. The lowest energy level ($\ell = 0$, $n = 1$, $j_0(kR) = 0$ giving $kR = \pi$):
+Model the lowest electron and hole states as particles in a spherical infinite square well. The lowest energy level ($\ell = 0$, $n = 1$, $j_0(kR) = 0$ giving $kR = \pi$):
 
 $$E_{1s} = \frac{\hbar^2\pi^2}{2m^*R^2}.$$
 
@@ -96,7 +97,7 @@ The RWA small parameter is $\Omega_R/\omega_0 \approx 0.003 \ll 1$ for these fie
 
 The helium atom has two electrons and electron-electron repulsion that cannot be treated perturbatively without care — the repulsion is comparable in magnitude to the nuclear attraction at $r \sim a_0$. The measured ground-state energy is $-79.0$ eV.
 
-We use the trial wave function
+Use the trial wave function
 
 $$\psi_\text{trial}(\vec{r}_1,\vec{r}_2) = \frac{Z_\text{eff}^3}{\pi a_0^3}\,e^{-Z_\text{eff}(r_1+r_2)/a_0}$$
 
@@ -112,7 +113,7 @@ Percent error: 1.9%. The result is an upper bound — it is guaranteed to lie ab
 
 The main omission is electron-electron correlation. The trial state assumes the two electrons move independently (a product wave function), accounting for their repulsion only through the average screening $Z_\text{eff}$. Hylleraas (1930) added the inter-electron distance $r_{12}$ explicitly to the trial state and obtained $-79.0$ eV. The dominant error in the simple trial is the missing "cusp condition" at $r_{12} = 0$ — the exact wave function has a sharp feature there that the product state cannot represent.
 
-The perturbative approach (treating electron repulsion as $\hat{H}'$) gives $-74.8$ eV — a 5.3% error, nearly three times worse than the variational result, even though the perturbation is not small ($\langle V_{ee}\rangle/|E_0| \approx 0.3$). The variational method outperforms perturbation theory here because it optimizes the zeroth-order state rather than correcting a fixed one.
+The perturbative approach (treating electron repulsion as $\hat{H}'$) gives $-74.8$ eV — a 5.3% error, nearly three times worse than the variational result, even though the perturbation is not small ($\langle V_{ee}\rangle/|E_0| \approx 0.3$). The variational method outperforms perturbation theory precisely because it optimizes the zeroth-order state rather than correcting a fixed one.
 
 ---
 
@@ -144,7 +145,7 @@ $$\kappa = \frac{\sqrt{2m_e\phi}}{\hbar} = 0.5123\,\text{Å}^{-1}\times\sqrt{\ph
 
 The factor of roughly 8 per ångström emerges from the formula without fitting. The rule of thumb is confirmed.
 
-**On the prefactor.** At $V = 0.1$ V with a typical conductance prefactor $G_0 \sim 10^{-4}$ S, the WKB estimate gives $I \sim G_0 V T \sim 10^{-4}\times0.1\times3.5\times10^{-5} \approx 0.35$ pA. Real STM currents at this geometry are 0.1–1 nA, roughly $10^3$ times larger. The exponential (the slope $d\ln I/dd = -2\kappa$) is accurately predicted. The absolute magnitude requires the Tersoff-Hamann treatment of the density of states. The WKB approximation gives the exponential reliably; the prefactor is a separate and harder problem.
+**On the prefactor.** At $V = 0.1$ V with a typical conductance prefactor $G_0 \sim 10^{-4}$ S, the WKB estimate gives $I \sim G_0 V T \sim 10^{-4}\times0.1\times3.5\times10^{-5} \approx 0.35$ pA. Real STM currents at this geometry are 0.1–1 nA, roughly $10^3$ times larger. The exponential (the slope $d\ln I/dd = -2\kappa$) is accurately predicted. The absolute magnitude requires the Tersoff-Hamann treatment of the density of states. The WKB approximation gives you the exponential reliably; the prefactor is a separate and harder problem.
 
 ---
 
@@ -158,7 +159,7 @@ Using $\hbar^2\pi^2/(2m_e a_0^2) = \pi^2\times13.6 = 134.2$ eV·Å$^2$:
 
 $$E_{1s,e} = \frac{134.2\,\text{eV·Å}^2}{m_e^*/m_e \times R^2} = \frac{134.2}{0.13\times(15\,\text{Å})^2} = \frac{134.2}{29.25} = 4.59\,\text{eV}.$$
 
-That value is unexpectedly large. We recompute using $E_1 = \hbar^2\pi^2/(2m_e^* R^2)$ more carefully in SI:
+That seems large. Let me recompute using $E_1 = \hbar^2\pi^2/(2m_e^* R^2)$ more carefully:
 
 $$E_{1s,e} = \frac{(1.055\times10^{-34})^2\pi^2}{2\times0.13\times9.11\times10^{-31}\times(1.5\times10^{-9})^2} = \frac{1.097\times10^{-67}}{5.33\times10^{-49}} = 2.06\times10^{-19}\,\text{J} = 1.28\,\text{eV.}$$
 
@@ -320,7 +321,7 @@ Griffiths, D. J. (2018). *Introduction to Quantum Mechanics* (3rd ed.). Cambridg
 | 9 | Atoms in fields | $\mu_B B/\Delta E_\text{fs}$ | C — ammonia maser; Zeeman |
 | 10 | Tight-binding / band structure | $t/E_0$; gap $=2\|V_G\|$ | B — CdSe quantum dot |
 
-This chapter does not add a new method. It assembles the complete deliverable: **one chosen system carried through all five moves — identify, select-method-by-checking-$\varepsilon$, calculate-a-number-with-units, validate-against-a-cited-datum-with-percent-error, analyze-breakdown** — and validates it. Select one system (A–F, or your own subject to the feasibility check) and complete it.
+This block does not add a new piece. It assembles the whole deliverable: **one chosen system carried through all five moves — identify, select-method-by-checking-$\varepsilon$, calculate-a-number-with-units, validate-against-a-cited-datum-with-percent-error, analyze-breakdown** — and validates it. Pick one system (A–F, or your own subject to the feasibility check) and finish it.
 
 ### Exercise R1 — When to Use AI
 **The judgment:** In the capstone, AI assistance is appropriate for:
@@ -331,12 +332,12 @@ This chapter does not add a new method. It assembles the complete deliverable: *
 **The tell:** You are using AI well when you have an independent way to check the output — for the capstone, the *cited measured value* itself is the check: the model's job is to predict it without having fit it.
 
 ### Exercise R2 — When NOT to Use AI
-**The judgment:** These tasks require your judgment; AI output here cannot be trusted without redoing the work:
-- **Picking the method.** *Why AI fails here:* this is the single most important judgment in the whole volume. An LLM will apply a method outside its validity regime without flagging it — Born to a strong bound-state potential, WKB at the barrier top, first-order PT through a $\pi$-pulse, the weak-field $g_J$ formula in the intermediate Zeeman regime — and will report a confident number. You must compute $\varepsilon$ yourself and reject any method with $\varepsilon\gtrsim1$. The capstone exists to train exactly this judgment.
-- **Judging whether a percent error is "good."** *Why AI fails here:* a 10% error in a parameter-free first-principles model is excellent; a 3% error from a model with three fitted inputs is suspicious; an LLM has no principled way to weigh error against the number of free parameters, and will call any small number "good." Whether your residual is a success or a warning sign is your call.
-- **The breakdown analysis.** *Why AI fails here:* naming the two dominant omitted effects and *estimating their magnitude by order of magnitude* requires knowing which physics your model discarded and how large it is at *your* parameters — image-charge vs 3D geometry for STM, nonparabolicity vs correlation for the dot, barrier shape for ammonia. An AI will produce a generic list without magnitudes, which is not a breakdown analysis.
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- **Picking the method.** *Why AI fails here:* this is the single most dangerous handoff in the whole volume. An LLM will apply a method outside its validity regime without flagging it — Born to a strong bound-state potential, WKB at the barrier top, first-order PT through a $\pi$-pulse, the weak-field $g_J$ formula in the intermediate Zeeman regime — and will report a confident number. You must compute $\varepsilon$ yourself and reject any method with $\varepsilon\gtrsim1$. The capstone exists to train exactly this refusal.
+- **Judging whether a percent error is "good."** *Why AI fails here:* a 10% error in a parameter-free first-principles model is excellent; a 3% error from a model with three fitted inputs is suspicious; an LLM has no principled way to weigh error against the number of free parameters, and will call any small number "good." Whether your residual is a triumph or a red flag is your call.
+- **The breakdown analysis.** *Why AI fails here:* naming the two dominant omitted effects and *estimating their magnitude by order of magnitude* requires knowing which physics your model threw away and how big it is at *your* parameters — image-charge vs 3D geometry for STM, nonparabolicity vs correlation for the dot, barrier shape for ammonia. An AI will produce a generic list without magnitudes, which is not a breakdown analysis.
 
-**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours. For the capstone specifically: if you cannot defend *why this method* and *why this error is acceptable* without the AI, you have not completed the project.
+**The tell:** If you could not explain the result without the AI — if the AI is your *reason* rather than your *tool* — it did work that should have been yours. For the capstone specifically: if you cannot defend *why this method* and *why this error is acceptable* without the AI, you have not done the project.
 
 **Physics-judgment connection:** This integrates the volume's whole discipline — check the small parameter $\varepsilon$ before trusting a method, compute a number with units, compare to a cited measured datum with percent error, and name what the model ignores with its magnitude. The capstone is that discipline, end to end.
 

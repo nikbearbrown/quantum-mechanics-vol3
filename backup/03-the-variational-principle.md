@@ -1,34 +1,37 @@
 # Chapter 3 — The Variational Principle
+*A theorem about guessing — and why a good guess, optimized, is better than a bad theory.*
 
-In 1929, Egil Hylleraas was working in Copenhagen on the ground-state energy of helium. Helium has two electrons whose mutual repulsion makes the Schrödinger equation unseparable. No closed-form solution existed.
+In 1929, Egil Hylleraas was working in Copenhagen on a problem that had resisted quantum mechanics since the year it was born: the ground-state energy of helium. Helium has two electrons, and their mutual repulsion makes the Schrödinger equation unseparable. No closed-form solution existed. The question was whether quantum mechanics could predict the energy accurately enough to trust.
 
-Hylleraas wrote down a trial wave function with the correct symmetry and the right qualitative physics — each electron near the nucleus, with an adjustment for the other's presence — and computed the expectation value of the full Hamiltonian. He knew this was not the exact ground state. A theorem guaranteed, however, that any normalized trial state has an energy expectation value at or above the true ground-state energy. Minimizing over a family of trial states gives a guaranteed upper bound.
+Hylleraas tried something direct. He wrote down a trial wave function with the right symmetry and the right qualitative physics — each electron near a nucleus, with some accounting for the other's repulsion — and computed the expectation value of the full Hamiltonian. He knew this was not the exact ground state. But there was a theorem: any normalized trial state has an energy expectation value at or above the true ground-state energy. The minimum over any family of trial states gives a guaranteed upper bound.
 
-With a single variational parameter, Hylleraas obtained $-77.5$ eV. Experiment gave $-78.98$ eV, an error of about 2% — and he knew with certainty that he was wrong in the right direction. With six parameters he reached $-78.7$ eV. With dozens of terms depending explicitly on the inter-electron distance, subsequent workers pushed agreement to eleven significant figures. Every result remained an upper bound. The theorem held throughout.
+With a single variational parameter, he got to $-77.5$ eV. Experiment said $-78.98$ eV. An error of about 2% — and he knew with certainty he was wrong in the right direction. With six parameters he reached $-78.7$ eV. With dozens of terms depending explicitly on the inter-electron distance, subsequent workers pushed agreement to eleven significant figures. Throughout, every result bounded from above. The theorem held.
 
-This is the variational principle. It underlies a large fraction of quantum mechanics and quantum chemistry.
+This is the variational principle. It is the mathematical permission slip for a large fraction of all of quantum mechanics and quantum chemistry.
 
 ---
 
 ## The Theorem and Its Proof
 
-Let $\hat{H}$ have a discrete spectrum with eigenvalues $E_0 \leq E_1 \leq E_2 \leq \cdots$ and eigenstates $|n\rangle$. For any normalized state $|\psi\rangle$:
+Let $\hat{H}$ have a discrete spectrum with eigenvalues $E_0 \leq E_1 \leq E_2 \leq \cdots$ and eigenstates $|n\rangle$. Take any normalized state $|\psi\rangle$ — not necessarily an eigenstate. The claim is:
 
 $$\boxed{\langle\psi|\hat{H}|\psi\rangle \geq E_0.}$$
 
-The proof is three lines. We expand $|\psi\rangle$ in the exact eigenbasis: $|\psi\rangle = \sum_n c_n|n\rangle$. Normalization gives $\sum_n|c_n|^2 = 1$. Then:
+The proof is three lines. Expand $|\psi\rangle$ in the exact eigenbasis: $|\psi\rangle = \sum_n c_n|n\rangle$. Normalization gives $\sum_n|c_n|^2 = 1$. Compute:
 
 $$\langle\hat{H}\rangle = \sum_n|c_n|^2 E_n \geq E_0\sum_n|c_n|^2 = E_0.$$
 
-The inequality holds because every $E_n \geq E_0$. Equality holds if and only if $c_n = 0$ for every $n > 0$, meaning $|\psi\rangle = e^{i\phi}|0\rangle$ — the trial state is the exact ground state up to a global phase.
+The inequality in the middle holds because every $E_n \geq E_0$ — the ground state is the minimum. That is the complete proof.
 
-Several important properties follow from this proof.
+Equality holds if and only if $c_n = 0$ for every $n > 0$, meaning $|\psi\rangle = e^{i\phi}|0\rangle$ — the trial state is the exact ground state up to a global phase. Every other trial state gives a strict upper bound.
 
-The method cannot go below. There is no normalized state with $\langle\hat{H}\rangle < E_0$. If we minimize over a trial family and obtain a result below the known exact energy, we have made an error — possibly a normalization mistake or a sign in the kinetic energy. The theorem serves as a sanity check.
+Three things follow from the proof structure.
 
-Lower means a tighter bound. Within a fixed trial family, a lower variational energy is a tighter upper bound. The goal is to push the bound down. However, a tight energy does not automatically mean an accurate wave function — this point is important and we return to it.
+The method cannot go below. There is no normalized state with $\langle\hat{H}\rangle < E_0$. If you minimize over a trial family and get a result 0.1 eV below the experimental value, you have made an error — possibly a normalization mistake, possibly a sign in the kinetic energy. The theorem is a sanity check.
 
-No small parameter is needed. Perturbation theory requires $\lambda\hat{H}'$ to be small. The variational method requires only that we can compute $\langle\hat{H}\rangle$. For systems with no obvious small parameter — helium, most molecules — the variational approach is the natural tool.
+Lower means closer. Within a fixed trial family, a lower variational energy is a tighter upper bound. The game is to push the bound down. But a tight energy does not automatically mean a good wave function — more on this later.
+
+No small parameter needed. Perturbation theory requires $\lambda\hat{H}'$ to be small. The variational method requires only that you can compute $\langle\hat{H}\rangle$. For systems with no obvious small parameter — helium, most molecules — the variational approach is the natural tool.
 
 <!-- → [DIAGRAM: number line showing E_0 at left, E_V^* somewhere to the right, and the region "no trial state can reach" extending left of E_0 — illustrating the one-sided nature of the bound] -->
 
@@ -39,19 +42,19 @@ No small parameter is needed. Perturbation theory requires $\lambda\hat{H}'$ to 
 
 ## The Optimization Procedure
 
-We choose a trial function $\psi(\mathbf{r};\alpha)$ depending on one or more variational parameters $\alpha = (\alpha_1, \alpha_2, \ldots)$ and define the variational energy:
+Choose a trial function $\psi(\mathbf{r};\alpha)$ depending on one or more variational parameters $\alpha = (\alpha_1, \alpha_2, \ldots)$. Define the variational energy:
 
 $$E_V(\alpha) = \frac{\langle\psi(\alpha)|\hat{H}|\psi(\alpha)\rangle}{\langle\psi(\alpha)|\psi(\alpha)\rangle}.$$
 
-The denominator handles trial functions that are not normalized for every $\alpha$. We minimize $E_V$ by setting $\partial E_V/\partial\alpha_i = 0$ for each $i$ and solving. The minimum $E_V^* = \min_\alpha E_V(\alpha)$ is the best upper bound achievable within this trial family.
+The denominator handles trial functions that are not normalized for every $\alpha$. Minimize $E_V$ by setting $\partial E_V/\partial\alpha_i = 0$ for each $i$ and solving. The minimum $E_V^* = \min_\alpha E_V(\alpha)$ is the best upper bound achievable within this trial family.
 
-**A first example: the harmonic oscillator.** We take $\psi(x;\alpha) = Ae^{-\alpha x^2}$, normalized with $A = (2\alpha/\pi)^{1/4}$. The expectation values are:
+**A first example: the harmonic oscillator.** Take $\psi(x;\alpha) = Ae^{-\alpha x^2}$, normalized with $A = (2\alpha/\pi)^{1/4}$. The expectation values:
 
 $$\langle\hat{T}\rangle = \frac{\hbar^2\alpha}{2m}, \qquad \langle\hat{V}\rangle = \frac{m\omega^2}{8\alpha}.$$
 
-So $E_V(\alpha) = \hbar^2\alpha/(2m) + m\omega^2/(8\alpha)$. Setting $\partial E_V/\partial\alpha = 0$ gives $\alpha^* = m\omega/(2\hbar)$. Substituting back: $E_V^* = \hbar\omega/2 = E_0$.
+So $E_V(\alpha) = \hbar^2\alpha/(2m) + m\omega^2/(8\alpha)$. Minimize: $\partial E_V/\partial\alpha = 0$ gives $\alpha^* = m\omega/(2\hbar)$. Substituting back: $E_V^* = \hbar\omega/2 = E_0$.
 
-The trial function gives the exact ground-state energy because the true ground state of the harmonic oscillator is itself a Gaussian. The trial family contains the exact answer. When this happens, the variational method finds it exactly. It does not always happen.
+The trial function gives the exact ground-state energy — not by accident, but because the true ground state of the harmonic oscillator is itself a Gaussian. The trial family contains the exact answer. When this happens, the variational method finds it exactly. It does not always happen.
 
 <!-- → [CHART: E_V(α) as a parabola-like curve for the harmonic oscillator, minimum marked at α* with E_V* = ℏω/2, the curve labeled to show it approaches ∞ on both ends — illustrating the optimization landscape] -->
 
@@ -62,13 +65,13 @@ The trial function gives the exact ground-state energy because the true ground s
 
 ## The Rayleigh–Ritz Method
 
-When the trial function is a linear combination of $N$ basis functions — $|\psi\rangle = \sum_{j=1}^N c_j|\phi_j\rangle$ — optimizing over the coefficients $\{c_j\}$ reduces to a linear algebra problem. Setting $\partial E_V/\partial c_i^* = 0$ gives:
+When the trial function is a linear combination of $N$ basis functions — $|\psi\rangle = \sum_{j=1}^N c_j|\phi_j\rangle$ — the optimization over the coefficients $\{c_j\}$ reduces to a linear algebra problem. Setting $\partial E_V/\partial c_i^* = 0$ gives:
 
 $$\mathbf{H}\mathbf{c} = E_V\,\mathbf{S}\mathbf{c},$$
 
 where $H_{ij} = \langle\phi_i|\hat{H}|\phi_j\rangle$ is the Hamiltonian matrix and $S_{ij} = \langle\phi_i|\phi_j\rangle$ is the overlap matrix. This is the **generalized eigenvalue problem**. When the basis is orthonormal ($\mathbf{S} = \mathbf{I}$) it reduces to the ordinary eigenvalue problem.
 
-The lowest eigenvalue is the best upper bound on $E_0$ achievable in the $N$-dimensional trial space. As $N \to \infty$ and the basis becomes complete, the lowest eigenvalue converges to $E_0$ from above. This is the foundation of computational quantum chemistry: Hartree–Fock minimizes the energy over all possible single Slater determinants; configuration interaction adds more determinants; at the limit of a complete basis, the exact energy is recovered. Each step is an application of the same theorem.
+The lowest eigenvalue is the best upper bound on $E_0$ achievable in the $N$-dimensional trial space. As $N \to \infty$ and the basis becomes complete, the lowest eigenvalue converges to $E_0$ from above. This is the foundation of computational quantum chemistry: Hartree–Fock minimizes the energy over all possible single Slater determinants; configuration interaction adds more determinants; at the limit of a complete basis, the exact energy is recovered. Throughout, every step is an application of the same theorem.
 
 **An illustrative numerical example.** For the hydrogen atom, the exact ground state has energy $-0.5$ Hartree. Using four Gaussian basis functions $\chi_p(r) = e^{-\alpha_p r^2}$ with appropriately chosen exponents, the generalized eigenvalue problem gives $E_V = -0.4993$ Hartree — an error of only 0.14%. No differential equation was solved. The Hamiltonian matrix elements were integrals over Gaussians, computable analytically. Scale this to hundreds of basis functions and you have modern quantum chemistry.
 
@@ -80,23 +83,23 @@ Helium has nuclear charge $Z = 2$ and two electrons at positions $\mathbf{r}_1$ 
 
 $$\hat{H} = \frac{\hat{p}_1^2}{2m} + \frac{\hat{p}_2^2}{2m} - \frac{Ze^2}{4\pi\epsilon_0 r_1} - \frac{Ze^2}{4\pi\epsilon_0 r_2} + \frac{e^2}{4\pi\epsilon_0|\mathbf{r}_1 - \mathbf{r}_2|}.$$
 
-The last term — electron-electron repulsion — makes the equation unseparable.
+The last term — electron-electron repulsion — makes the equation unseparable. That term is the whole problem.
 
-**The trial function.** We place each electron in a hydrogen-like 1s orbital with an adjustable effective nuclear charge $\tilde{Z}$ instead of the bare $Z = 2$:
+**The trial function.** Place each electron in a hydrogen-like 1s orbital with an adjustable effective nuclear charge $\tilde{Z}$ instead of the bare $Z = 2$:
 
 $$\psi(\mathbf{r}_1,\mathbf{r}_2;\tilde{Z}) = \frac{\tilde{Z}^3}{\pi a_0^3}\,e^{-\tilde{Z}(r_1+r_2)/a_0}.$$
 
-The single parameter $\tilde{Z}$ encodes screening: each electron partially shielding the nucleus from the other. If $\tilde{Z} < Z$, each electron "sees" less than the full nuclear charge because the other electron sits, on average, between them.
+The single parameter $\tilde{Z}$ encodes screening: each electron partially shielding the nucleus from the other. If $\tilde{Z} < Z$, the effective charge is reduced, meaning each electron "sees" less than the full nuclear charge because the other electron sits, on average, between them.
 
-**The trick: rewrite the Hamiltonian.** We add and subtract $\tilde{Z}e^2/(4\pi\epsilon_0 r)$ for each electron:
+**The trick: rewrite the Hamiltonian.** Add and subtract $\tilde{Z}e^2/(4\pi\epsilon_0 r)$ for each electron:
 
 $$\hat{H} = \underbrace{\left[\frac{\hat{p}_1^2}{2m} - \frac{\tilde{Z}e^2}{4\pi\epsilon_0 r_1}\right]}_{\hat{H}_1(\tilde{Z})} + \underbrace{\left[\frac{\hat{p}_2^2}{2m} - \frac{\tilde{Z}e^2}{4\pi\epsilon_0 r_2}\right]}_{\hat{H}_2(\tilde{Z})} + \frac{(\tilde{Z}-Z)e^2}{4\pi\epsilon_0}\left(\frac{1}{r_1} + \frac{1}{r_2}\right) + \frac{e^2}{4\pi\epsilon_0|\mathbf{r}_1-\mathbf{r}_2|}.$$
 
-The trial state is the exact eigenstate of $\hat{H}_1(\tilde{Z}) + \hat{H}_2(\tilde{Z})$ with eigenvalue $2E_1(\tilde{Z}) = -\tilde{Z}^2/2\times 2$ Hartree. Computing $\langle\hat{H}\rangle$ then requires two additional integrals: the expectation of $1/r$ in a hydrogen-like 1s state, which is $\langle 1/r\rangle = \tilde{Z}/a_0$, and the electron-electron repulsion integral, which evaluates to $5\tilde{Z}/(8a_0)$ after expanding $1/|\mathbf{r}_1 - \mathbf{r}_2|$ in Legendre polynomials. The full variational energy in atomic units is:
+The trial state is the exact eigenstate of $\hat{H}_1(\tilde{Z}) + \hat{H}_2(\tilde{Z})$ with eigenvalue $2E_1(\tilde{Z}) = -\tilde{Z}^2/2\times 2$ Hartree (twice the hydrogen ground-state energy at charge $\tilde{Z}$). So computing $\langle\hat{H}\rangle$ requires only two additional integrals: the expectation of $1/r$ in a hydrogen-like 1s state, which is $\langle 1/r\rangle = \tilde{Z}/a_0$, and the electron-electron repulsion integral, which evaluates to $5\tilde{Z}/(8a_0)$ after expanding $1/|\mathbf{r}_1 - \mathbf{r}_2|$ in Legendre polynomials. The full variational energy, in atomic units:
 
 $$E_V(\tilde{Z}) = \tilde{Z}^2 - 2Z\tilde{Z} + \frac{5}{8}\tilde{Z} \quad\text{(in Hartree)}.$$
 
-**Minimize.** Setting $\partial E_V/\partial\tilde{Z} = 0$:
+**Minimize.** Set $\partial E_V/\partial\tilde{Z} = 0$:
 
 $$2\tilde{Z} - 2Z + \frac{5}{8} = 0 \quad\Longrightarrow\quad \tilde{Z}^* = Z - \frac{5}{16}.$$
 
@@ -115,15 +118,15 @@ $$\boxed{\tilde{Z}^* = 2 - \frac{5}{16} = \frac{27}{16} \approx 1.6875.}$$
 
 $$E_V^* = -\left(\frac{27}{16}\right)^2\,\text{Hartree} \approx -77.5\,\text{eV}.$$
 
-Experiment: $-78.98$ eV. Error: about $2\%$. First-order perturbation theory, treating the electron-electron repulsion as a perturbation at fixed $Z = 2$, gives $-74.8$ eV — an error of about $5\%$. The variational method outperforms perturbation theory because it optimizes over the parameter that matters most (the effective charge) rather than holding the unmodified Hamiltonian fixed.
+Experiment: $-78.98$ eV. Error: about $2\%$. Compare to first-order perturbation theory treating the electron-electron repulsion as a perturbation at fixed $Z = 2$: that gives $-74.8$ eV, an error of about $5\%$. The variational method outperforms perturbation theory because it optimizes over the parameter that matters most — the effective charge — rather than trusting the unmodified Hamiltonian.
 
-**How to do better.** More flexible trial functions extend the bound downward. With a two-parameter trial that adds angular correlation, the bound reaches $-77.8$ eV. With Hylleraas-type functions depending explicitly on the inter-electron distance $r_{12}$, the helium ground-state energy is known to eleven significant figures. Every result is an upper bound.
+**How to do better.** More flexible trial functions. With a two-parameter trial that adds angular correlation, the bound reaches $-77.8$ eV. With Hylleraas-type functions depending explicitly on the inter-electron distance $r_{12}$, the helium ground-state energy is known to eleven significant figures. Every result is an upper bound. Every improvement pushes the bound lower.
 
 ---
 
 ## H₂⁺: Where Chemical Bonds Come From
 
-The hydrogen molecular ion H₂⁺ — one electron, two protons separated by distance $R$ — is the simplest molecule. The variational approach with a minimal trial basis is particularly instructive because it shows where bonds come from.
+The hydrogen molecular ion H₂⁺ — one electron, two protons separated by distance $R$ — is the simplest molecule. The variational approach with a minimal trial basis is more illuminating than the exact solution because it shows where bonds come from.
 
 **The trial function.** Let $|A\rangle$ and $|B\rangle$ be hydrogen 1s orbitals centered on each proton. The trial function is a linear combination of atomic orbitals (LCAO):
 
@@ -150,21 +153,21 @@ Adding the proton-proton repulsion $e^2/(4\pi\epsilon_0 R)$ to get the total ene
 ![E_total,+(R) (teal, solid) and E_total,-(R) (orange, solid) vs. R in Å, from 0.3 to 6 Å](../images/03-the-variational-principle-fig-04.png)
 *Figure 3.4 — E_total,+(R) (teal, solid) and E_total,-(R) (orange, solid) vs. R in Å, from 0.3 to 6 Å*
 
-**Why does only one orbital bind?** The bonding orbital $|+\rangle$ builds up electron density between the two protons — the wave function adds constructively in the midplane. That density is simultaneously attracted to both nuclei, pulling them together. The antibonding orbital $|-\rangle$ has a nodal plane between the protons where the wave function vanishes by destructive interference; the electron density is pushed outward, providing no bonding contribution and effectively increasing repulsion.
+**Why does only one bind?** The bonding orbital $|+\rangle$ builds up electron density between the two protons — the wave function adds constructively in the midplane. That density is simultaneously attracted to both nuclei, pulling them together. The antibonding orbital $|-\rangle$ has a nodal plane between the protons where the wave function vanishes by destructive interference; the electron density is pushed outward, providing no glue and effectively increasing repulsion.
 
-There is also a kinetic energy contribution. The bonding orbital is smooth and spread over a larger volume; its kinetic energy is lower. The antibonding orbital has sharper curvature around the nodal plane; its kinetic energy is higher. Both contributions — reduced potential energy from density between nuclei, and reduced kinetic energy from delocalization — work in the same direction for the bonding case. Every covalent bond in chemistry is a version of this story.
+There is also a kinetic energy contribution. The bonding orbital is smooth and spread over a larger volume; its kinetic energy is lower. The antibonding orbital is sharply curved around the nodal plane; its kinetic energy is higher. Both contributions — reduced potential energy from density between nuclei, and reduced kinetic energy from delocalization — work in the same direction for the bonding case. The LCAO result is quantitatively imperfect but physically exactly right. Every covalent bond in chemistry is a version of this story.
 
 ---
 
 ## Limits of the Method
 
-**The bound is one-sided.** The variational principle gives a guaranteed upper bound and nothing else. It does not tell us how far below $E_V^*$ the true ground state lies. A poor trial function can give a tight bound while the wave function itself is quite wrong.
+**The bound is one-sided.** The variational principle gives a guaranteed upper bound and nothing else. It does not tell you how far below $E_V^*$ the true ground state lies. A bad trial function can give a tight bound while the wave function is quite wrong — and a tighter bound does not tell you the wave function is better.
 
-This matters for applications. The energy is a bilinear functional of the wave function, and a first-order error in $\psi$ produces only a second-order error in $\langle\hat{H}\rangle$. The energy converges to $E_0$ at a quadratic rate in the wave-function error. A wave function that is $10\%$ wrong in shape can still recover $99\%$ of the binding energy. If we need the wave function itself — to compute transition matrix elements, electron densities, or response properties — a tight variational energy is not sufficient evidence of wave-function quality. These two convergences must be tracked separately.
+This matters more than it might seem. The energy is a bilinear functional of the wave function, and a first-order error in $\psi$ produces only a second-order error in $\langle\hat{H}\rangle$. The energy converges to $E_0$ at a quadratic rate in the wave-function error. So you can get $99\%$ of the binding energy with a wave function that is still $10\%$ wrong in shape. If you need the wave function itself — to compute transition matrix elements, electron densities, or response properties — a tight variational energy is not sufficient. Energies are cheaper to optimize than wave functions, and quantum chemists track both convergences separately.
 
-**Excited states require extra work.** The theorem directly bounds only the ground state. To bound an excited-state energy, we need either knowledge of the exact ground state (to impose the orthogonality constraint $\langle\psi|\psi_0\rangle = 0$) or a symmetry that excludes the ground state from the trial space. If the ground state is even-parity, a trial function in the odd-parity sector cannot overlap with it, and $\langle\hat{H}\rangle \geq E_1$. Symmetry is the operative tool in practice.
+**Excited states require extra work.** The theorem directly bounds only the ground state. To bound an excited-state energy, you need either knowledge of the exact ground state (so you can impose the orthogonality constraint $\langle\psi|\psi_0\rangle = 0$) or a symmetry that excludes the ground state from your trial space. If the ground state is even-parity, a trial function in the odd-parity sector cannot overlap with it, and $\langle\hat{H}\rangle \geq E_1$. In practice, symmetry is the operative tool.
 
-**Trial family dependence.** The variational energy is the minimum over a specific family of trial states. Choosing the wrong family — wrong symmetry, wrong nodal structure, wrong asymptotic behavior — gives a bound that may sit far above $E_0$. A trial function that does not decay at infinity will not give a good bound on a bound state. Choosing the trial family is where physical reasoning earns its keep.
+**Trial family dependence.** The variational energy is the minimum over a specific family of trial states. Choose the wrong family — wrong symmetry, wrong nodal structure, wrong asymptotic behavior — and the minimum may sit far above $E_0$. A trial function that does not decay at infinity will not give a good bound on a bound state. Choosing the trial family well is where physical intuition earns its keep.
 
 ---
 
@@ -261,27 +264,25 @@ energy computations. Verify formulas at console before relying on plots.
 
 ### Exploration tasks
 
-**Task 1: Helium, no screening.** Set the slider to $\tilde{Z} = 2$. Read the variational energy. This is the result from zeroth-order perturbation theory — no screening. Now set $\tilde{Z} = 27/16$ and record the improvement in the bound.
+**Task 1: Helium, no screening.** Set the slider to $\tilde{Z} = 2$. Read the variational energy. This is what you would get from perturbation theory at zeroth order — the bare Hamiltonian, no screening at all. Now set $\tilde{Z} = 27/16$. Record the improvement in the bound.
 
-**Task 2: The parabola shape.** Move the slider below 1.5 and above 2.0. The curve $E_V(\tilde{Z})$ is a parabola in $\tilde{Z}$. Read the approximate location of the minimum from the plot and compare to $27/16 \approx 1.6875$.
+**Task 2: The parabola shape.** Move the slider below 1.5 and above 2.0. The curve $E_V(\tilde{Z})$ is a parabola in $\tilde{Z}$. Read off the approximate location of the minimum from the plot and compare to $27/16 \approx 1.6875$.
 
-**Task 3: LCAO bond length.** Set $R = 1.06$ Å (experimental equilibrium). Is the LCAO minimum close to this value? By how many Å does the LCAO answer differ? Does the bonding curve go below the separated-atom limit at $-13.6$ eV?
+**Task 3: LCAO bond length.** Set $R = 1.06$ Å (experimental equilibrium). Is the LCAO minimum close to this? By how many Å is the LCAO answer off? Does the bonding curve go below the separated-atom limit at $-13.6$ eV?
 
 **Task 4: Large-$R$ behavior.** Move to $R = 4$ Å and beyond. Both curves approach $-13.6$ eV. Do they approach from the same side? Explain in one sentence why the antibonding curve approaches from above and the bonding from below.
 
-**Task 5: Small-$R$ behavior.** Set $R = 0.5$ Å. The proton-proton repulsion $e^2/R$ dominates at small $R$ — verify that both curves increase sharply. Does the antibonding curve rise faster or slower than the bonding curve?
+**Task 5: Small-$R$ behavior.** Set $R = 0.5$ Å. The proton-proton repulsion $e^2/R$ dominates at small $R$ — verify that both curves shoot up. Does the antibonding curve go up faster or slower than the bonding curve?
 
 ---
 
 ## Still Puzzling
 
-The variational principle tells us which direction we are wrong. It does not say how far wrong.
+The variational principle tells you which direction you are wrong. It does not tell you how far wrong. For helium, the gap between $-77.5$ eV and $-78.98$ eV is about $1.5$ eV — larger than the thermal energy at room temperature and larger than the accuracy required for chemical reaction energy calculations ($\sim 1\,\text{kcal/mol} \approx 0.04$ eV). The single effective-charge trial function is not good enough for chemistry.
 
-For helium, the gap between $-77.5$ eV and $-78.98$ eV is about $1.5$ eV — larger than the thermal energy at room temperature and larger than the accuracy needed for chemical reaction energies ($\sim 1\,\text{kcal/mol} \approx 0.04$ eV). The single effective-charge trial function is not sufficient for chemistry.
+Hylleraas made it better by including $r_{12}$ — the inter-electron distance — explicitly in the trial function. Why does that work so much better? The product trial function $\psi(\tilde{Z};\mathbf{r}_1)\psi(\tilde{Z};\mathbf{r}_2)$ treats the two electrons as independent given the effective charge: it captures the mean repulsion but misses the fluctuations — the tendency of the two electrons to avoid each other instantaneously. The Hylleraas terms add back the correlation energy. This is the language of modern electronic structure theory: Hartree-Fock captures exchange (the Pauli principle) but misses correlation; configuration interaction and coupled-cluster methods add correlation. The difference between Hartree-Fock and the exact energy is always negative — the true answer is lower — and computing that correlation energy accurately is still the hard part of quantum chemistry.
 
-Hylleraas improved this by including $r_{12}$ — the inter-electron distance — explicitly in the trial function. The product trial function $\psi(\tilde{Z};\mathbf{r}_1)\psi(\tilde{Z};\mathbf{r}_2)$ treats the two electrons as independent given the effective charge: it captures the mean repulsion but misses the fluctuations — the tendency of the two electrons to avoid each other instantaneously. The Hylleraas terms restore the correlation energy. This is the language of modern electronic structure theory: Hartree-Fock captures exchange (the Pauli principle) but misses correlation; configuration interaction and coupled-cluster methods add correlation. The difference between Hartree-Fock and the exact energy is always negative — the true answer is lower — and computing that correlation energy accurately remains the central challenge of quantum chemistry.
-
-There is also the question of energy versus wave-function quality raised above. The energy converges to $E_0$ at a quadratic rate in the wave-function error, while the wave function converges only linearly. A wave function that is $10\%$ wrong in shape can give $99\%$ of the binding energy. If we need the wave function itself — for transition matrix elements, electron densities, or response properties — a tight variational energy does not guarantee that the wave function is sufficiently accurate. This is why quantum chemists track both convergences separately.
+There is also a deeper question about energy versus wave function quality. The energy converges to $E_0$ at a quadratic rate in the wave-function error, while the wave function itself converges only linearly. You can get $99\%$ of the binding energy with a wave function that is still $10\%$ wrong in shape. If you need the wave function — to compute transition matrix elements, electron densities, or response properties — a tight variational energy is not a sufficient condition. This is why quantum chemists track both convergences separately.
 
 ---
 
@@ -319,7 +320,7 @@ There is also the question of energy versus wave-function quality raised above. 
 
 **Challenge**
 
-9. *[Upper bound on excited states via symmetry]* The infinite square well has even-parity ground state ($\psi_1 \propto \cos(\pi x/L)$ on $[-L/2, L/2]$). A trial function with odd parity cannot overlap with $\psi_1$. (a) Show that for any odd-parity normalized $|\psi\rangle$, $\langle\psi|\hat{H}|\psi\rangle \geq E_2$ (the first excited state energy). (b) Take the trial function $\psi_\text{trial}(x) = Ax(L^2/4 - x^2)$ on $[-L/2, L/2]$. Verify it is odd. Compute $E_V$ and compare to the exact $E_2 = 4\pi^2\hbar^2/(2mL^2)$. (c) Why can we not use the same approach to bound $E_3$ without additional orthogonality constraints?
+9. *[Upper bound on excited states via symmetry]* The infinite square well has even-parity ground state ($\psi_1 \propto \cos(\pi x/L)$ on $[-L/2, L/2]$). A trial function with odd parity cannot overlap with $\psi_1$. (a) Show that for any odd-parity normalized $|\psi\rangle$, $\langle\psi|\hat{H}|\psi\rangle \geq E_2$ (the first excited state energy). (b) Take the trial function $\psi_\text{trial}(x) = Ax(L^2/4 - x^2)$ on $[-L/2, L/2]$. Verify it is odd. Compute $E_V$ and compare to the exact $E_2 = 4\pi^2\hbar^2/(2mL^2)$. (c) Why can you not use the same approach to bound $E_3$ without additional orthogonality constraints?
 *What this tests: using symmetry to access excited-state bounds; seeing why the ground-state restriction is the critical step; understanding the limits of the symmetry approach.*
 
 ---
@@ -346,7 +347,7 @@ Jensen, F. (2017). *Introduction to Computational Chemistry* (3rd ed.). Wiley. C
 
 **This chapter adds:** the variational method to the toolkit — and a special row in the method-selection table, because variational is the one method here with **no breakdown small parameter**, only a one-sided upper-bound *guarantee*. It is the right tool exactly when no small parameter exists (helium, molecules), and it supplies the full quantitative model for the capstone's **System E — variational helium ground state**.
 
-Today's table entry: **variational method — $\varepsilon$: none (no perturbative small parameter); validity rests on the upper-bound theorem $\langle\psi|\hat H|\psi\rangle \ge E_0$ and on the quality of the trial family — "breaks" only in the sense that a poorly chosen family gives a loose bound, never a wrong-side one.** This is the chapter where the project's first *complete five-move candidate* becomes available: helium, where we identify the system (two electrons + repulsion), select variational (no small parameter — repulsion is $\sim 0.3$ of $|E_0|$), compute $-77.5$ eV, validate against the measured $-78.98$ eV (1.9% error), and analyze the breakdown (missing electron correlation, the $r_{12}$ cusp).
+Today's table entry: **variational method — $\varepsilon$: none (no perturbative small parameter); validity rests on the upper-bound theorem $\langle\psi|\hat H|\psi\rangle \ge E_0$ and on the quality of the trial family — "breaks" only in the sense that a poorly chosen family gives a loose bound, never a wrong-side one.** This is the chapter where the project's first *complete five-move candidate* becomes available: helium, where you identify the system (two electrons + repulsion), select variational (no small parameter — repulsion is $\sim 0.3$ of $|E_0|$), compute $-77.5$ eV, validate against the measured $-78.98$ eV (1.9% error), and analyze the breakdown (missing electron correlation, the $r_{12}$ cusp).
 
 ### Exercise R1 — When to Use AI
 **The judgment:** In this chapter's project work, AI assistance is appropriate for:

@@ -1,12 +1,13 @@
 # Chapter 6 — Radiation and Fermi's Golden Rule
+*The most-used formula in quantum physics was Dirac's, not Fermi's — and the density of states is not an add-on. It is the physics.*
 
-On October 4, 1947, Lamb and Retherford published their result in *Physical Review*: the $2s_{1/2}$ and $2p_{1/2}$ levels of hydrogen, predicted by Dirac's equation to be degenerate, are separated by about 1,060 MHz. The shift is small — four parts in $10^7$ of the $n=2$ binding energy — but clean, sharp, and reproducible. It showed that Dirac's equation alone was not sufficient. Something was missing.
+On October 4, 1947, Lamb and Retherford published their result in *Physical Review*: the $2s_{1/2}$ and $2p_{1/2}$ levels of hydrogen, predicted by Dirac's equation to be degenerate, are separated by about 1,060 MHz. The shift is small — four parts in $10^7$ of the $n=2$ binding energy — but clean, sharp, and reproducible. It destroyed the hope that Dirac's equation alone was sufficient. Something was missing.
 
 What was missing was the quantized electromagnetic field. The vacuum is not empty; it fluctuates. Those fluctuations shift the $2s$ level relative to $2p$ because the $2s$ electron, with its nonzero probability density at the nucleus, samples the vacuum field differently from the $2p$ electron. The Lamb shift is a QED effect, and computing it correctly requires renormalization — machinery that would not be complete for another two years.
 
-This chapter develops the tools just below that boundary. We derive Fermi's golden rule. We compute the density of states needed to use it. We derive the electric-dipole selection rules that govern which hydrogen transitions are fast and which are slow. We compute the rate and lifetime for the $2p \to 1s$ transition, obtaining 1.6 ns in agreement with experiment.
+This chapter develops the tools just below that wall. We derive Fermi's golden rule. We compute the density of states needed to use it. We derive the electric-dipole selection rules that govern which hydrogen transitions are fast and which are slow. We compute the rate and lifetime for the $2p \to 1s$ transition and get 1.6 ns, matching experiment.
 
-At each stage we identify where the semiclassical framework ends and points toward QED. That boundary is not a failure of the semiclassical approach; the formula works. The mechanism behind it requires a separate framework.
+At every stage we will reach a seam where the semiclassical framework says "here ends my jurisdiction" and points toward QED. That pointing is not a failure. The formula works. The mechanism behind it is another course.
 
 ---
 
@@ -16,13 +17,13 @@ Chapter 5 gave the first-order transition probability for a sinusoidal perturbat
 
 $$P_{i\to f}(t) = \frac{|V_{fi}|^2}{\hbar^2}\cdot\frac{\sin^2\!\left[\frac{(\omega_{fi}-\omega)\,t}{2}\right]}{\left(\frac{\omega_{fi}-\omega}{2}\right)^2}.$$
 
-This is for a single discrete final state $|f\rangle$. The population bounces coherently between $|i\rangle$ and $|f\rangle$ — Rabi oscillations. We now consider the opposite extreme: the final state is not a single level but a continuum, a dense spectrum of states near $E_f = E_i + \hbar\omega$.
+This is for a single discrete final state $|f\rangle$. The population bounces coherently between $|i\rangle$ and $|f\rangle$ — Rabi oscillations. Now consider the opposite extreme: the final state is not a single level but a continuum, a dense spectrum of states near $E_f = E_i + \hbar\omega$.
 
-An electron ionizing from a hydrogen atom, a photon emitted into the many electromagnetic modes of the vacuum, a nucleus decaying into a continuum of recoil states — all of these are transitions to a continuum. There is no single $|f\rangle$ to bounce back from. The population leaks out irreversibly.
+An electron ionizing from a hydrogen atom, a photon emitted into the infinite variety of electromagnetic modes, a nucleus decaying into a continuum of recoil states — all of these are transitions to a continuum. There is no single $|f\rangle$ to bounce back from. The population leaks out irreversibly.
 
-**Step 1: Sum over final states.** Let $\rho(E_f)$ be the density of final states — the number of states per unit energy near $E_f$. We sum the transition probability:
+**Step 1: Sum over final states.** Let $\rho(E_f)$ be the density of final states — the number of states per unit energy near $E_f$. Sum the transition probability:
 
-$$P_{\mathrm{total}}(t) = \int P_{i\to f}(t)\,\rho(E_f)\,dE_f = \frac{|V_{fi}|^2}{\hbar^2}\int_{-\infty}^{+\infty}\frac{\sin^2(\alpha t/2)}{\alpha^2}\,\rho(E_f)\,dE_f,$$
+$$P_{\rm total}(t) = \int P_{i\to f}(t)\,\rho(E_f)\,dE_f = \frac{|V_{fi}|^2}{\hbar^2}\int_{-\infty}^{+\infty}\frac{\sin^2(\alpha t/2)}{\alpha^2}\,\rho(E_f)\,dE_f,$$
 
 where $\alpha = (E_f - E_i)/\hbar - \omega$, and we assumed $|V_{fi}|^2$ and $\rho(E_f)$ vary slowly compared to the sinc-squared peak.
 
@@ -34,11 +35,11 @@ As $t \to \infty$, this becomes $(\pi t/2)\,\delta(\alpha)$. Converting to energ
 
 $$\frac{\sin^2(\alpha t/2)}{\alpha^2} \;\to\; \frac{\pi t\hbar}{2}\,\delta(E_f - E_i - \hbar\omega).$$
 
-**Step 3: Pull out the rate.** Substituting into the sum and using the delta function to evaluate the integral:
+**Step 3: Pull out the rate.** Substituting into the sum and using the delta function to kill the integral:
 
-$$P_{\mathrm{total}}(t) = \frac{\pi |V_{fi}|^2}{\hbar}\,\rho(E_f)\,t.$$
+$$P_{\rm total}(t) = \frac{\pi |V_{fi}|^2}{\hbar}\,\rho(E_f)\,t.$$
 
-Since $P_{\mathrm{total}} \propto t$, the transition rate — probability per unit time — is constant:
+Since $P_{\rm total} \propto t$, the transition rate — probability per unit time — is constant:
 
 $$\boxed{W_{i\to f} = \frac{2\pi}{\hbar}\,|\langle f|\hat{H}'|i\rangle|^2\,\rho(E_f).}$$
 
@@ -57,7 +58,7 @@ This is **Fermi's golden rule**.
 
 ## The Density of States
 
-The density of states $\rho(E)$ — the number of quantum states per unit energy — follows from a counting argument.
+The density of states $\rho(E)$ — the number of quantum states per unit energy — is not a mystical quantity. It is a counting exercise.
 
 **Setup.** A free particle in a cubic box of side $L$, volume $V = L^3$, with periodic boundary conditions. Allowed wavevectors: $\vec{k} = (2\pi/L)(n_x, n_y, n_z)$ for integers $(n_x, n_y, n_z)$. Each such $\vec{k}$ is one state per spin.
 
@@ -73,7 +74,7 @@ For **photons** (two polarization states, $E = \hbar\omega$, $k = \omega/c$):
 
 $$\rho(\omega) = \frac{V\omega^2}{\pi^2 c^3} \quad\text{(per unit angular frequency, summed over polarizations).}$$
 
-This is the quantity that enters the spontaneous emission rate and that Planck needed in 1900 to obtain the correct blackbody spectrum. More available final states per unit energy means a faster rate — the system decays faster because there are more places to go. The density of states is not supplementary information; it is what converts a Rabi oscillation into an irreversible exponential decay.
+This is the quantity that enters the spontaneous emission rate and that Planck needed in 1900 to get the blackbody spectrum right. More available final states per unit energy means a faster rate — the system decays faster because there are more places to go. The density of states is not decoration; it is what converts a Rabi oscillation into an irreversible exponential decay.
 
 <!-- → [CHART: ρ(E) ∝ √E for a 3D free particle, shown as a smooth curve with the k-space spherical shell shown as an inset; annotation showing the 3D result vs. the constant 2D result for comparison] -->
 
@@ -88,23 +89,23 @@ The coupling between an atom and an electromagnetic field involves the vector po
 
 $$\hat{H}' = -\frac{e}{mc}\hat{\vec{A}}(\vec{r},t)\cdot\hat{\vec{p}}.$$
 
-For optical and UV transitions in hydrogen, the photon wavelength $\lambda \sim 100$–$500$ nm greatly exceeds the atomic size $a_0 \approx 0.053$ nm. The dimensionless product $ka_0 \approx 2\pi a_0/\lambda \sim 0.001$. The vector potential barely varies over the extent of the atom, so:
+For optical and UV transitions in hydrogen, the photon wavelength $\lambda \sim 100$–$500$ nm dwarfs the atomic size $a_0 \approx 0.053$ nm. The dimensionless product $ka_0 \approx 2\pi a_0/\lambda \sim 0.001$. The vector potential barely varies over the extent of the atom, so:
 
 $$\hat{\vec{A}}(\vec{r},t) \approx \hat{\vec{A}}(\vec{0},t).$$
 
 This is the **electric-dipole approximation**. Using $\hat{\vec{E}} = -(1/c)\partial_t\hat{\vec{A}}$ and the commutator identity that connects $\hat{\vec{A}}\cdot\hat{\vec{p}}$ to $e\hat{\vec{r}}\cdot\hat{\vec{E}}$, the coupling reduces to:
 
-$$\hat{H}'_{\mathrm{dip}} = e\hat{\vec{r}}\cdot\hat{\vec{\mathcal{E}}}(t).$$
+$$\hat{H}'_{\rm dip} = e\hat{\vec{r}}\cdot\hat{\vec{\mathcal{E}}}(t).$$
 
 The transition matrix element is now $\langle f|e\hat{\vec{r}}|i\rangle$ — the dipole matrix element.
 
-The approximation fails when $ka_0 \sim 1$, i.e., $E_{\mathrm{photon}} \sim \hbar c/a_0 \approx 3.7$ keV — hard X-rays and above. For X-ray transitions, magnetic-dipole (M1) and electric-quadrupole (E2) corrections become important, suppressed relative to E1 by additional powers of $ka_0$.
+The approximation fails when $ka_0 \sim 1$, i.e., $E_{\rm photon} \sim \hbar c/a_0 \approx 3.7$ keV — hard X-rays and above. For X-ray transitions, magnetic-dipole (M1) and electric-quadrupole (E2) corrections become important, suppressed relative to E1 by additional powers of $ka_0$.
 
 ---
 
 ## Selection Rules Are Calculations
 
-The electric-dipole matrix element for hydrogen is:
+The electric-dipole matrix element for hydrogen:
 
 $$\langle n'\ell'm'|e\hat{\vec{r}}|n\ell m\rangle = e\int\psi^*_{n'\ell'm'}\,\vec{r}\,\psi_{n\ell m}\,d^3r.$$
 
@@ -112,7 +113,7 @@ The wave functions $\psi_{n\ell m} = R_{n\ell}(r)Y_\ell^m(\theta,\phi)$ separate
 
 $$z = r\cos\theta \propto r\,Y_1^0, \qquad x \pm iy \propto r\,Y_1^{\pm 1}.$$
 
-The matrix element factorizes into a radial integral and an angular integral:
+So the matrix element factorizes into a radial integral and an angular integral:
 
 $$\langle n'\ell'm'|e\hat{z}|n\ell m\rangle = e\underbrace{\int_0^\infty R_{n'\ell'}\,r^3\,R_{n\ell}\,dr}_{\text{radial}} \times \underbrace{\int Y_{\ell'}^{m'*}\,Y_1^0\,Y_\ell^m\,d\Omega}_{\text{angular}}.$$
 
@@ -137,33 +138,33 @@ For $z$-polarized light ($q = 0$): $\Delta m = 0$. For $\sigma^+$ circularly pol
 ![angular momentum coupling diagram showing a photon (L=1, q=0,±1) absorbed by an atom with initial (ℓ,m) → final (ℓ',m'), illustrating all…](../images/06-radiation-and-fermis-golden-rule-fig-03.png)
 *Figure 6.3 — angular momentum coupling diagram showing a photon (L=1, q=0,±1) absorbed by an atom with initial (ℓ,m) → final (ℓ',m'), illustrating all…*
 
-The electric-dipole operator acts only on the orbital part of the wave function, so $\Delta s = 0$.
+The electric-dipole operator contains no spin. It acts only on the orbital part of the wave function. So $\Delta s = 0$.
 
-The full selection rules are:
+The full selection rules:
 
 $$\boxed{\Delta\ell = \pm 1, \qquad \Delta m = 0, \pm 1, \qquad \Delta s = 0.}$$
 
-These results follow from two calculations — a parity argument and an azimuthal integral — and can be reproduced from the structure of spherical harmonics alone.
+These are not rules to memorize. They are the results of two calculations — a parity argument and an azimuthal integral — reproducible from the structure of spherical harmonics alone.
 
-**Forbidden means slow, not impossible.** The $2s \to 1s$ transition has $\Delta\ell = 0$ and is electric-dipole forbidden. It occurs via two-photon decay, with both photons carrying angular momentum, and has lifetime $\approx 0.12$ s — eight orders of magnitude longer than the allowed $2p \to 1s$ transition. The 21-cm hydrogen hyperfine line (magnetic dipole, $\Delta\ell = 0$) has a lifetime of $\sim 10^7$ years. Both transitions occur; they are slow.
+**Forbidden means slow, not impossible.** The $2s \to 1s$ transition has $\Delta\ell = 0$ and is electric-dipole forbidden. It occurs via two-photon decay, with both photons carrying angular momentum, and has lifetime $\approx 0.12$ s — eight orders of magnitude longer than the allowed $2p \to 1s$ transition. The 21-cm hydrogen hyperfine line (magnetic dipole, $\Delta\ell = 0$) has a lifetime of $\sim 10^7$ years. Both transitions happen; they are slow.
 
 ---
 
 ## The Einstein A and B Coefficients
 
-In 1917 — a decade before quantum mechanics was complete — Einstein derived the relationship between spontaneous emission, stimulated emission, and absorption from thermodynamic equilibrium alone. The argument does not require knowing any matrix elements.
+In 1917 — a decade before quantum mechanics was complete — Einstein extracted the relationship between spontaneous emission, stimulated emission, and absorption from thermodynamic equilibrium alone. The argument does not require knowing any matrix elements.
 
-Let $N_1$ and $N_2$ be the populations of the lower and upper levels, $u(\omega)$ the spectral energy density of the radiation field at the transition frequency. Three processes: absorption ($N_1 B_{12}\,u(\omega)$), stimulated emission ($N_2 B_{21}\,u(\omega)$), and spontaneous emission ($N_2 A_{21}$). At thermal equilibrium, $N_2/N_1 = e^{-\hbar\omega/k_BT}$ and $u(\omega)$ is the Planck distribution. Setting upward and downward rates equal and requiring consistency gives:
+Let $N_1$ and $N_2$ be the populations of the lower and upper levels, $u(\omega)$ the spectral energy density of the radiation field at the transition frequency. Three processes: absorption ($N_1 B_{12}\,u(\omega)$), stimulated emission ($N_2 B_{21}\,u(\omega)$), and spontaneous emission ($N_2 A_{21}$). At thermal equilibrium, $N_2/N_1 = e^{-\hbar\omega/k_BT}$ and $u(\omega)$ is the Planck distribution. Setting upward and downward rates equal and demanding consistency gives:
 
 $$B_{12} = B_{21}, \qquad \frac{A_{21}}{B_{21}} = \frac{\hbar\omega^3}{\pi^2 c^3}.$$
 
 The $A/B$ ratio grows as $\omega^3$. At optical frequencies and room temperature, $A_{21} \gg B_{21}\,u(\omega)$ — spontaneous emission dominates. At radio frequencies (NMR, microwave), $B_{21}\,u(\omega)$ dominates — which is why NMR signal is detectable and why laser gain requires population inversion.
 
-Using the golden rule with the photon density of states $\rho_{\mathrm{photon}}(\omega) = V\omega^2/(\pi^2 c^3)$ and averaging over all photon polarizations and emission directions:
+Using the golden rule with the photon density of states $\rho_{\rm photon}(\omega) = V\omega^2/(\pi^2 c^3)$ and averaging over all photon polarizations and emission directions:
 
 $$\boxed{A_{21} = \frac{\omega^3}{3\pi\epsilon_0\hbar c^3}\,|\langle 1|e\hat{\vec{r}}|2\rangle|^2.}$$
 
-The factor of 3 comes from the isotropic average over polarizations: $\langle|\hat{z}|^2\rangle_{\mathrm{avg}} = |\langle\vec{r}\rangle|^2/3$.
+The factor of 3 comes from the isotropic average over polarizations: $\langle|\hat{z}|^2\rangle_{\rm avg} = |\langle\vec{r}\rangle|^2/3$.
 
 ---
 
@@ -176,7 +177,7 @@ The factor of 3 comes from the isotropic average over polarizations: $\langle|\h
 
 All three $2p$ substates ($m = -1, 0, +1$) connect to $1s$ ($m=0$) with $\Delta m = 0, -1, +1$ respectively — all allowed.
 
-**The dipole matrix element.** We take the $2p_0$ state ($m=0$) with $z$-polarized light. The matrix element factorizes:
+**The dipole matrix element.** Take the $2p_0$ state ($m=0$) with $z$-polarized light. The matrix element factorizes:
 
 $$\langle 1s|\hat{z}|2p_0\rangle = \int_0^\infty R_{10}(r)\,r^3\,R_{21}(r)\,dr \times \int Y_0^{0*}\cos\theta\,Y_1^0\,d\Omega.$$
 
@@ -196,21 +197,21 @@ $$\int Y_0^{0*}\cos\theta\,Y_1^0\,d\Omega = \frac{\sqrt{3}}{4\pi}\cdot 2\pi\int_
 
 $$\langle 1s|\hat{z}|2p_0\rangle = \frac{256}{81\sqrt{6}}\cdot\frac{1}{\sqrt{3}}\,a_0 = \frac{256}{243\sqrt{2}}\,a_0.$$
 
-For the spontaneous emission rate, we average over all $2p$ substates and photon polarizations (the standard result from summing over $m = -1, 0, +1$ with spherical symmetry):
+For the spontaneous emission rate, average over all $2p$ substates and photon polarizations (the standard result from summing over $m = -1, 0, +1$ with spherical symmetry):
 
-$$|\langle 1s|e\hat{\vec{r}}|2p\rangle|^2_{\mathrm{avg}} = \frac{e^2 \times 2^{15}}{3^{10}}\,a_0^2.$$
+$$|\langle 1s|e\hat{\vec{r}}|2p\rangle|^2_{\rm avg} = \frac{e^2 \times 2^{15}}{3^{10}}\,a_0^2.$$
 
 <!-- → [TABLE: hydrogen radial integrals |ℛ_{n'ℓ', nℓ}|² in units of a₀² for transitions 2p→1s, 3p→1s, 3p→2s, 3d→2p — three columns: transition, |ℛ|², angular factor] -->
 
 **The emission rate and lifetime.** The photon energy for $2p \to 1s$: $\hbar\omega = 13.6\,(1 - 1/4)$ eV $= 10.2$ eV, so $\omega = 1.55\times10^{16}$ rad/s. Applying the Einstein $A$-coefficient formula:
 
-$$A_{21} = \frac{\omega^3}{3\pi\epsilon_0\hbar c^3}\,|\langle 1s|e\hat{\vec{r}}|2p\rangle|^2_{\mathrm{avg}} \approx 6.3\times10^8\,\text{s}^{-1}.$$
+$$A_{21} = \frac{\omega^3}{3\pi\epsilon_0\hbar c^3}\,|\langle 1s|e\hat{\vec{r}}|2p\rangle|^2_{\rm avg} \approx 6.3\times10^8\,\text{s}^{-1}.$$
 
 $$\tau = \frac{1}{A_{21}} \approx 1.6\,\text{ns}.$$
 
 The measured value is $\tau = 1.596$ ns. Agreement to the accuracy of the approximations made — chiefly the dipole approximation, which introduces negligible error since $ka_0 \ll 1$.
 
-**The limit of the derivation.** This calculation assumed the electromagnetic field is classical. An atom in its excited eigenstate, with no photons present, should remain there indefinitely under this framework — there is no time-dependent perturbation. Yet excited atoms decay. They decay because the electromagnetic field is quantum, and the vacuum carries zero-point fluctuations. The mechanism for why $A_{21} \neq 0$ in the first place requires quantizing the field — which Dirac did in the same 1927 paper in which he derived the golden rule. The semiclassical calculation gives the correct number via the $A/B$ ratio argument, but not the correct mechanism. That boundary is visible from here.
+**The limit of the derivation.** The calculation assumed the electromagnetic field is classical. An atom in its excited eigenstate, with no photons present, should sit there forever under this framework — there is no time-dependent perturbation. Yet excited atoms decay. They decay because the electromagnetic field is quantum, and the vacuum carries zero-point fluctuations. The mechanism for why $A_{21} \neq 0$ in the first place requires quantizing the field — which Dirac did in the same 1927 paper in which he derived the golden rule. The semiclassical calculation gets the correct number via the $A/B$ ratio argument, but not the correct mechanism. The wall is visible from here.
 
 ---
 
@@ -320,11 +321,11 @@ Console checks:
 
 ### Part 4 — Exploration tasks
 
-**Task 1: Rabi to Fermi.** Start with $N=2$. Observe the Rabi-like oscillation. Increase $N$ to 5, 10, 20, 50. At what value does the dashed orange (Fermi rate) line first agree with the black curve throughout the full time range?
+**Task 1: Rabi to Fermi.** Start with $N=2$. You should see a clear Rabi-like oscillation. Increase $N$ to 5, 10, 20, 50. At what value does the dashed orange (Fermi rate) line first agree with the black curve throughout the full time range?
 
-**Task 2: Rate scales as $|V_{fi}|^2$.** With $N=50$ and $\Delta_{\mathrm{band}} = 0.5\omega_0$, double $|V_{fi}|$. The rate $W \propto |V_{fi}|^2$ should increase by a factor of 4. Verify by reading the slopes.
+**Task 2: Rate scales as $|V_{fi}|^2$.** With $N=50$ and $\Delta_{\rm band} = 0.5\omega_0$, double $|V_{fi}|$. The rate $W \propto |V_{fi}|^2$ should increase by a factor of 4. Verify by reading the slopes.
 
-**Task 3: Rate scales as $\rho$.** Vary $\Delta_{\mathrm{band}}$ at fixed $N=50$. The Fermi rate $W = 2\pi|V_{fi}|^2 N/(\hbar\Delta_{\mathrm{band}})$ decreases as $\Delta_{\mathrm{band}}$ increases. Confirm: doubling the bandwidth halves the slope.
+**Task 3: Rate scales as $\rho$.** Vary $\Delta_{\rm band}$ at fixed $N=50$. The Fermi rate $W = 2\pi|V_{fi}|^2 N/(\hbar\Delta_{\rm band})$ decreases as $\Delta_{\rm band}$ increases. Confirm: doubling the bandwidth halves the slope.
 
 **Task 4: Branching in hydrogen.** Click the $3p$ level. It decays to both $1s$ (large $\Delta E$, large $\omega^3$) and $2s$ (small $\Delta E$, small $\omega^3$). Which branch dominates? Estimate the branching ratio from the displayed $A$-values.
 
@@ -336,7 +337,7 @@ Console checks:
 
 The golden rule requires taking $t \to \infty$ to sharpen the sinc-squared into a delta function, while simultaneously requiring $W \cdot t \ll 1$ for first-order perturbation theory to hold. These conditions cannot both be satisfied at arbitrarily large $t$.
 
-The standard resolution — that there exists a wide intermediate window $2\pi/\Delta\omega \ll t \ll \hbar/|V_{fi}|$ where both conditions hold — is correct for atomic emission. For the hydrogen $2p$ state the window spans orders of magnitude. But the logical structure of the derivation has a seam at large $t$, and the tension does not fully disappear.
+The standard resolution — that there exists a wide intermediate window $2\pi/\Delta\omega \ll t \ll \hbar/|V_{fi}|$ where both conditions hold — is correct for atomic emission. For the hydrogen $2p$ state the window spans orders of magnitude. But the logical structure of the derivation has a seam at large $t$, and staring at it does not make it disappear.
 
 What lies beyond that seam is the non-perturbative treatment of coupling to a continuum — Wigner–Weisskopf theory — which derives exponential decay by resumming the perturbation series. The exponential form $P(t) = e^{-\Gamma t}$ comes from summing diagrams; the golden rule rate $W = \Gamma$ is the first term. For times much longer than $1/\Gamma$, the perturbation series breaks down and the resummation gives the correct answer. For hydrogen $2p$, $\Gamma = A_{21} \approx 6.3\times10^8$ s$^{-1}$ and the non-perturbative lifetime is $\tau = 1/\Gamma = 1.6$ ns — the same number, obtained from a deeper argument.
 
@@ -363,12 +364,12 @@ What lies beyond that seam is the non-perturbative treatment of coupling to a co
 5. *[Radial integral for $3p \to 1s$]* (a) Write out $R_{10}(r)$ and $R_{31}(r)$ explicitly. (b) Set up the integral $\mathcal{R} = \int_0^\infty R_{10}\,r^3\,R_{31}\,dr$. (c) Evaluate using the substitution $u = 4r/(3a_0)$ and the Gamma function. (d) Compute the ratio $|\mathcal{R}_{10,31}|^2/|\mathcal{R}_{10,21}|^2$ and determine the ratio of rates $A(3p\to 1s)/A(2p\to 1s)$ including the $\omega^3$ factor.
 *What this tests: extending the radial integral calculation to a different transition; seeing that the $\omega^3$ factor is not negligible.*
 
-6. *[Branching ratios for $3p$]* The $3p$ state decays to both $1s$ and $2s$. (a) Compute $\hbar\omega$ for each branch. (b) Using $|\langle 2s|\hat{r}|3p\rangle|^2 \approx 0.093\,a_0^2$ and the $3p\to 1s$ result from exercise 5, compute both $A$-coefficients. (c) Find the branching fractions to each lower state. (d) Compute the total decay rate $\Gamma_{\mathrm{total}} = A(3p\to 1s) + A(3p\to 2s)$ and the observed lifetime $\tau = 1/\Gamma_{\mathrm{total}}$. Compare to the measured value $\tau_{3p} \approx 5.3$ ns.
+6. *[Branching ratios for $3p$]* The $3p$ state decays to both $1s$ and $2s$. (a) Compute $\hbar\omega$ for each branch. (b) Using $|\langle 2s|\hat{r}|3p\rangle|^2 \approx 0.093\,a_0^2$ and the $3p\to 1s$ result from exercise 5, compute both $A$-coefficients. (c) Find the branching fractions to each lower state. (d) Compute the total decay rate $\Gamma_{\rm total} = A(3p\to 1s) + A(3p\to 2s)$ and the observed lifetime $\tau = 1/\Gamma_{\rm total}$. Compare to the measured value $\tau_{3p} \approx 5.3$ ns.
 *What this tests: combining multiple $A$-coefficients into a total decay rate; the $\omega^3$ factor's role in determining which branch dominates.*
 
 **Synthesis**
 
-7. *[Purcell effect]* In a high-$Q$ electromagnetic cavity resonant with an atomic transition, the photon density of states at the atomic frequency is modified. The Purcell factor $F_P = (3/4\pi^2)(\lambda/n)^3(Q/V)$ gives the emission rate enhancement relative to free space. (a) For a cavity with $Q = 10^5$, mode volume $V = (\lambda/2)^3$, $n = 1$: compute $F_P$. (b) For hydrogen $2p \to 1s$ with $A_{\mathrm{free}} \approx 6\times10^8$ s$^{-1}$, compute the enhanced rate. (c) In one sentence: is the enhancement from the matrix element, the density of states, or both? (d) If the cavity is detuned so the photon density of states at the atomic frequency is suppressed by $10^{-3}$, compute the inhibited lifetime and explain why inhibited spontaneous emission is useful for quantum memory.
+7. *[Purcell effect]* In a high-$Q$ electromagnetic cavity resonant with an atomic transition, the photon density of states at the atomic frequency is modified. The Purcell factor $F_P = (3/4\pi^2)(\lambda/n)^3(Q/V)$ gives the emission rate enhancement relative to free space. (a) For a cavity with $Q = 10^5$, mode volume $V = (\lambda/2)^3$, $n = 1$: compute $F_P$. (b) For hydrogen $2p \to 1s$ with $A_{\rm free} \approx 6\times10^8$ s$^{-1}$, compute the enhanced rate. (c) In one sentence: is the enhancement from the matrix element, the density of states, or both? (d) If the cavity is detuned so the photon density of states at the atomic frequency is suppressed by $10^{-3}$, compute the inhibited lifetime and explain why inhibited spontaneous emission is useful for quantum memory.
 *What this tests: applying the golden rule to an engineered density of states; connecting the Purcell factor to the three-ingredient structure of the formula.*
 
 8. *[Wigner–Weisskopf and the validity window]* The golden rule requires $2\pi/\Delta\omega \ll t \ll \hbar/|V_{fi}|$. (a) For hydrogen $2p \to 1s$: estimate the lower bound using $\Delta\omega \sim \omega_{21}$ (the photon continuum bandwidth available). (b) Estimate the upper bound using $|V_{fi}| \sim eE_0 a_0$ for a field $E_0 = 1$ V/m. (c) How many orders of magnitude wide is the valid window? (d) Wigner–Weisskopf theory derives $P(t) = e^{-\Gamma t}$ by resumming all orders of perturbation theory. At $t \gg 1/\Gamma$, the first-order result $P \approx \Gamma t$ clearly fails (probability exceeds 1). Explain in one sentence how the resummation resolves this: what does the geometric series $\sum_n (-\Gamma t)^n / n!$ converge to?
@@ -376,7 +377,7 @@ What lies beyond that seam is the non-perturbative treatment of coupling to a co
 
 **Challenge**
 
-9. *[Electromagnetic vacuum and the Lamb shift — scaling argument]* The Lamb shift arises because the $2s$ electron, with $|\psi_{2s}(0)|^2 \neq 0$, couples differently to vacuum fluctuations than the $2p$ electron, with $|\psi_{2p}(0)|^2 = 0$. (a) The rms fluctuation of the vacuum electric field at frequency $\omega$ in a volume $V$ is $\delta E_\omega \sim \sqrt{\hbar\omega/\epsilon_0 V}$. The electron's position fluctuates under this field by $\delta r_\omega \sim e\delta E_\omega/(m\omega^2)$. Show that the mean-square position fluctuation integrated over all photon modes is $\langle(\delta r)^2\rangle \sim (\alpha/\pi)(a_0^2)\ln(\omega_{\mathrm{max}}/\omega_{\mathrm{min}})$ where $\alpha = e^2/(4\pi\epsilon_0\hbar c)$ is the fine-structure constant. (b) The energy shift from this fluctuation is $\delta E \approx (1/6)\langle(\delta r)^2\rangle\nabla^2 V$. For a Coulomb potential, $\nabla^2(-e^2/4\pi\epsilon_0 r) = (e^2/\epsilon_0)|\psi(0)|^2$. Use this to estimate the Lamb shift as an energy scale. (c) The $2s$ state has $|\psi_{2s}(0)|^2 = 1/(\pi a_0^3)$; the $2p$ state has $|\psi_{2p}(0)|^2 = 0$. What does this predict for the sign of the $2s$ shift relative to $2p$?
+9. *[Electromagnetic vacuum and the Lamb shift — scaling argument]* The Lamb shift arises because the $2s$ electron, with $|\psi_{2s}(0)|^2 \neq 0$, couples differently to vacuum fluctuations than the $2p$ electron, with $|\psi_{2p}(0)|^2 = 0$. (a) The rms fluctuation of the vacuum electric field at frequency $\omega$ in a volume $V$ is $\delta E_\omega \sim \sqrt{\hbar\omega/\epsilon_0 V}$. The electron's position fluctuates under this field by $\delta r_\omega \sim e\delta E_\omega/(m\omega^2)$. Show that the mean-square position fluctuation integrated over all photon modes is $\langle(\delta r)^2\rangle \sim (\alpha/\pi)(a_0^2)\ln(\omega_{\rm max}/\omega_{\rm min})$ where $\alpha = e^2/(4\pi\epsilon_0\hbar c)$ is the fine-structure constant. (b) The energy shift from this fluctuation is $\delta E \approx (1/6)\langle(\delta r)^2\rangle\nabla^2 V$. For a Coulomb potential, $\nabla^2(-e^2/4\pi\epsilon_0 r) = (e^2/\epsilon_0)|\psi(0)|^2$. Use this to estimate the Lamb shift as an energy scale. (c) The $2s$ state has $|\psi_{2s}(0)|^2 = 1/(\pi a_0^3)$; the $2p$ state has $|\psi_{2p}(0)|^2 = 0$. What does this predict for the sign of the $2s$ shift relative to $2p$?
 *What this tests: connecting the semiclassical framework of this chapter to QED at the level of dimensional analysis; seeing why the $2s$ and not the $2p$ is shifted.*
 
 ---
@@ -407,7 +408,7 @@ Haroche, S., & Kleppner, D. (1989). Cavity quantum electrodynamics. *Physics Tod
 
 **This chapter adds:** Fermi's golden rule and the density of states to the toolkit, with the validity-window small parameter $2\pi/\Delta\omega \ll t \ll \hbar/|V_{fi}|$ as a table row — and it supplies a fully cited end-to-end model: the hydrogen **$2p \to 1s$ spontaneous-emission lifetime**, computed at 1.6 ns and validated against the measured 1.596 ns.
 
-Today's table entry: **Fermi golden rule — $\varepsilon$: the validity window $2\pi/\Delta\omega \ll t \ll \hbar/|V_{fi}|$ (long enough for the sinc² to sharpen into a delta function, short enough for first-order PT) — breaks at $t \gtrsim 1/\Gamma$, where the perturbation series must be resummed (Wigner-Weisskopf).** The capstone lesson here: the rate is the product of *three* ingredients — $|V_{fi}|^2$, $\rho(E_f)$, and $\omega^3$ — and getting the lifetime right means getting all three. The density of states is physics, not decoration.
+Today's table entry: **Fermi golden rule — $\varepsilon$: the validity window $2\pi/\Delta\omega \ll t \ll \hbar/|V_{fi}|$ (long enough for the sinc² to sharpen into a delta function, short enough for first-order PT) — breaks at $t \gtrsim 1/\Gamma$, where the perturbation series must be resummed (Wigner-Weisskopf).** The capstone lesson here: the rate is the product of *three* ingredients — $|V_{fi}|^2$, $\rho(E_f)$, and $\omega^3$ — and getting the lifetime right means getting all three; the density of states is physics, not decoration.
 
 ### Exercise R1 — When to Use AI
 **The judgment:** In this chapter's project work, AI assistance is appropriate for:

@@ -9,7 +9,7 @@
 ## Chapter 00: Quantum Mechanics
 *Source: `chapters/00-frontmatter.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
+> **Section not yet authored.** No `## LLM Exercises` / `### Exercise R3 — LLM Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---
@@ -17,95 +17,747 @@
 ## Chapter 01: Chapter 1 — Time-Independent Perturbation Theory
 *Source: `chapters/01-time-independent-perturbation-theory.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the first two rows of the project's method-selection table, plus a derivation of one first-order energy correction you will reuse.
+**Tool:** Claude Project — the table and method notes persist across all eleven chapters, so a project with the running table in its context beats a one-off chat.
+**The Prompt:**
+```
+I am building a "method-selection table" for a quantum mechanics project that
+will eventually model one real physical system end to end. Each row is one
+approximation method, its small parameter epsilon, the formula for epsilon,
+and the condition under which it breaks down.
+
+Start the table with NON-DEGENERATE TIME-INDEPENDENT PERTURBATION THEORY.
+Fill in exactly these columns and nothing more:
+  - Method name
+  - Small parameter epsilon (the dimensionless quantity that must be << 1)
+  - Formula for epsilon in terms of H', H_0 spectrum (give both the coupling-
+    constant form lambda and the matrix-element/energy-gap ratio form)
+  - "Breaks when" (state all three: epsilon ~ 1, near-degeneracy, and the
+    negative-coupling / zero-radius-of-convergence instability)
+
+Then, as a worked check, derive the first-order energy correction for the
+quartic-perturbed harmonic oscillator H = H_HO + lambda*x^4. Show the step
+where (a_+ + a_-)^4 is expanded and only same-level terms survive, and arrive
+at E_n^(1) = (3 lambda /4)(2n^2 + 2n + 1) in natural units. Show all algebra.
+
+Do NOT advise me on which method to use for any specific system, and do NOT
+estimate at what lambda the expansion "fails" — I will judge that myself.
+```
+**What this produces:** a clean first row of the running table and a re-derivation of $E_n^{(1)}$ you can verify against the chapter's boxed result.
+**How to adapt:** *Your system:* if your capstone candidate is the STM barrier, add a note that PT here supplies the image-charge correction, not the leading exponential. *ChatGPT/Gemini:* paste the same prompt; expect more eager (and sometimes wrong) "validity" commentary — strip it. *Claude Project:* put the running-table schema in the project's custom instructions so every later chapter appends to the same table.
+**Builds on:** nothing yet — this is the seed.  **Next:** Chapter 2 adds the degenerate-PT row and the $\alpha^2$ fine-structure scale.
 
 ---
 
 ## Chapter 02: Chapter 2 — Degenerate Perturbation Theory and Fine Structure
 *Source: `chapters/02-degenerate-perturbation-theory-and-fine-structure.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+The following exercises are designed to be worked with a large language model as a thinking partner — not to obtain derivations, but to probe reasoning, test the limits of the chapter's claims, and build physical intuition.
+
+1. Ask an LLM to explain why the good zeroth-order states are eigenvectors of the perturbation matrix $W$, not of the full Hamiltonian. Specifically: what property of the good states makes the nondegenerate first-order state-correction formula finite (rather than divergent) when you use them as the starting basis? Ask it to walk through the argument with an explicit two-state example.
+
+2. Ask an LLM to explain the physical origin of the Stark effect's linear versus quadratic distinction: why does $n=2$ show a linear shift (proportional to $\mathcal{E}$) while $n=1$ shows only a quadratic shift (proportional to $\mathcal{E}^2$)? The explanation should use the words "parity," "degeneracy," and "first-order." Evaluate whether its answer correctly identifies both conditions (definite parity kills diagonal matrix elements; degeneracy between opposite-parity states is required for off-diagonal elements to contribute at first order).
+
+3. The Thomas factor of $\frac{1}{2}$ in spin-orbit coupling is a kinematic relativistic effect, not a dynamical one. Ask an LLM to explain what distinguishes kinematic from dynamical relativistic effects in this context, and to confirm that the Dirac equation automatically produces the Thomas factor without any additional input. Ask it to explain the qualitative reason why a non-inertial reference frame (the electron's orbit is accelerating) produces a spin precession.
+
+4. Ask an LLM to verify the claim that the combined fine-structure formula $E_n^\text{fs} = -(E_n^{(0)})^2/(2mc^2)(4n/(j+\frac{1}{2})-3)$ depends on $n$ and $j$ only, even though the three individual corrections each depend on $\ell$. Ask it to show the cancellation explicitly for the $n=2$ case by computing each of the three corrections separately for the $2p_{1/2}$ state and demonstrating that their sum equals the formula evaluated at $j=\frac{1}{2}$.
+
+5. The Lamb shift lifts the degeneracy of $2s_{1/2}$ and $2p_{1/2}$ that fine structure predicts. Ask an LLM to explain in physical terms why $2s_{1/2}$ shifts more than $2p_{1/2}$: the answer should involve the electron's probability density at the nucleus, the sensitivity of $s$-states versus $p$-states to short-distance vacuum fluctuations, and the concept of "charge renormalization" in QED. Evaluate whether the explanation correctly identifies all three ingredients.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the degenerate-PT row of the running table, plus a verified fine-structure splitting for hydrogen $n=2$.
+**Tool:** Claude Project — append to the same running table started in Chapter 1.
+**The Prompt:**
+```
+Append a second row to my method-selection table for DEGENERATE
+perturbation theory. Columns: method | small parameter epsilon | formula for
+epsilon | breaks when. For fine structure, epsilon = alpha^2 where
+alpha = e^2/(4 pi eps0 hbar c) ~ 1/137, so epsilon ~ 5.3e-5. "Breaks when":
+when the perturbation is NOT small relative to the level spacing, OR at the
+next order where QED (Lamb shift) enters. Note in the cell that the method
+requires diagonalizing H' in the degenerate subspace first.
+
+Then compute, showing all arithmetic, the hydrogen n=2 fine-structure
+energies from E_fs = -(E_n^0)^2/(2 m c^2) * (4n/(j+1/2) - 3) with
+E_2^0 = -3.4 eV and m c^2 = 0.511 MeV, for j=1/2 and j=3/2. Report the
+splitting Delta E_FS between them in eV, and express it as a multiple of
+alpha^2 |E_2^0|.
+
+Do NOT tell me whether a given external field is "weak" or "strong" for any
+particular B — I will check mu_B B against Delta E_fs myself. Do NOT silently
+change the Thomas factor of 1/2.
+```
+**What this produces:** the table's second row and a fine-structure splitting ($\approx 4.5\times10^{-5}$ eV) you check against the chapter's worked example.
+**How to adapt:** *Your system:* if your capstone is the ammonia/maser two-state splitting, note that the same $2\times2$ diagonalization structure recurs there. *ChatGPT/Gemini:* watch for the model dropping the Thomas $\tfrac12$ or mislabeling which state sits higher. *Claude Project:* keep the running table in project instructions so the row persists.
+**Builds on:** Chapter 1's table seed and the non-degenerate breakdown (zero denominator).  **Next:** Chapter 3 adds the variational row — the one method with *no* breakdown parameter, only an upper-bound guarantee.
 
 ---
 
 ## Chapter 03: Chapter 3 — The Variational Principle
 *Source: `chapters/03-the-variational-principle.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+### The simulation prompt
+
+```
+You are working in my directory which contains CLAUDE.md, DESIGN.md, and
+PROJECT.md. Read all three first.
+
+Build 04-variational-explorer.html: a single self-contained HTML file
+using D3 v7 from a CDN (https://cdn.jsdelivr.net/npm/d3@7) and
+d3-simple-slider (https://cdn.jsdelivr.net/npm/d3-simple-slider).
+No other dependencies. Two modes selectable by tabs:
+"Helium atom (E vs Z-tilde)" and "H2+ bonding".
+
+HELIUM MODE
+Single SVG canvas 1000 x 500.
+Main panel (left 600 wide): Plot E_V(Z_tilde) in eV on the y-axis
+(range: -85 to -65 eV) vs. Z_tilde on the x-axis (range 1.0 to 2.5).
+The variational energy formula is:
+  E_V(Z_tilde) = [Z_tilde^2 - 2*Z*Z_tilde + (5/8)*Z_tilde] * Hartree_to_eV
+where Z = 2 and 1 Hartree = 27.211 eV.
+Draw the E_V curve in teal. Mark the minimum with a vertical dashed line
+at Z_tilde = 27/16 = 1.6875 and annotate: "Z-tilde* = 27/16 = 1.6875".
+Draw a horizontal dashed line at E_V* = -77.5 eV and annotate:
+"Variational minimum: -77.5 eV".
+Draw a horizontal dotted line at E_exp = -78.98 eV and annotate:
+"Experimental: -78.98 eV".
+Draw a horizontal dotted line at E_PT = -74.8 eV (first-order PT result)
+and annotate: "First-order PT: -74.8 eV".
+
+Info panel (right 400 wide): Display:
+  - Current Z_tilde (from slider)
+  - E_V at current Z_tilde (in eV)
+  - Gap from experiment (in eV, colored red if > 1.5 eV, green if < 1.5)
+  - Screening per electron: (Z - Z_tilde) = (2 - Z_tilde)
+  - Brief text: "Each electron screens Z - Z_tilde = [X] proton charges
+    from the other electron."
+
+Slider for Z_tilde from 1.0 to 2.5, default 1.6875, live-updating all
+displays.
+
+H2+ BONDING MODE
+Single SVG canvas 1000 x 500.
+Main panel (left 600 wide): Plot E_+(R) and E_-(R) in eV vs. R (in
+Angstrom) on the x-axis (range 0.3 to 6 Angstrom).
+Natural units: a_0 = 0.529 Angstrom; energy in eV; 1 Hartree = 27.211 eV.
+
+Define (with R in atomic units a_0):
+  S(R) = exp(-R) * (1 + R + R^2/3)        [overlap integral]
+  E_1 = -13.6 eV (hydrogen ground-state energy)
+
+In atomic units (a0 = 1, e^2/4pi eps0 = 1):
+  H_AA(R) = -0.5 + 1/R - (1/R + 1)*exp(-2R)
+  H_AB(R) = S(R) * (-0.5 + 1/R) - exp(-R)*(1 + R)
+
+  E_+(R) = (H_AA + H_AB) / (1 + S)   [bonding, in Hartree; multiply by 27.211 for eV]
+  E_-(R) = (H_AA - H_AB) / (1 - S)   [antibonding]
+
+The TOTAL energy (including proton-proton repulsion 1/R Hartree):
+  E_total_+(R) = E_+(R) + 1/R  [Hartree]
+  E_total_-(R) = E_-(R) + 1/R
+
+Convert to eV and plot vs. R (in Angstrom, so multiply R_au by 0.529).
+
+Draw E_total_+(R) as a solid teal curve ("Bonding orbital").
+Draw E_total_-(R) as a solid orange curve ("Antibonding orbital").
+Draw a horizontal dashed line at E = -13.6 eV (separated H + H+ limit).
+
+Annotate the minimum of E_total_+(R) with a vertical dashed line;
+display the equilibrium bond length R_eq in Angstrom and the binding
+energy (depth below -13.6 eV) in eV.
+
+Info panel (right 400 wide): Display:
+  - R at slider position (in Angstrom and in a_0)
+  - S(R) — overlap integral (dimensionless)
+  - E_bonding and E_antibonding at current R (eV)
+  - Binding energy vs. separated atoms (eV) — positive means bound
+
+Slider for R from 0.3 to 6 Angstrom, live-updating all displays.
+
+GLOBAL
+Runtime sanity checks to console:
+  - Helium: at Z_tilde = 27/16, E_V should be -77.50 eV within 0.05 eV.
+  - H2+: at R -> infinity (R_au = 20), E_total_+ should approach
+    -13.6 eV within 0.05 eV.
+  - H2+: S(R=0) should equal 1; S(R=20) should be < 1e-8.
+
+Comments at every non-trivial physics step. Pure functions for all
+energy computations. Verify formulas at console before relying on plots.
+```
+
+### Exploration tasks
+
+**Task 1: Helium, no screening.** Set the slider to $\tilde{Z} = 2$. Read the variational energy. This is what you would get from perturbation theory at zeroth order — the bare Hamiltonian, no screening at all. Now set $\tilde{Z} = 27/16$. Record the improvement in the bound.
+
+**Task 2: The parabola shape.** Move the slider below 1.5 and above 2.0. The curve $E_V(\tilde{Z})$ is a parabola in $\tilde{Z}$. Read off the approximate location of the minimum from the plot and compare to $27/16 \approx 1.6875$.
+
+**Task 3: LCAO bond length.** Set $R = 1.06$ Å (experimental equilibrium). Is the LCAO minimum close to this? By how many Å is the LCAO answer off? Does the bonding curve go below the separated-atom limit at $-13.6$ eV?
+
+**Task 4: Large-$R$ behavior.** Move to $R = 4$ Å and beyond. Both curves approach $-13.6$ eV. Do they approach from the same side? Explain in one sentence why the antibonding curve approaches from above and the bonding from below.
+
+**Task 5: Small-$R$ behavior.** Set $R = 0.5$ Å. The proton-proton repulsion $e^2/R$ dominates at small $R$ — verify that both curves shoot up. Does the antibonding curve go up faster or slower than the bonding curve?
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a first full end-to-end draft of the helium five-move model — the capstone's System E in miniature — plus the variational row of the running table.
+**Tool:** Claude Project — this draft is the spine of your eventual capstone report; keep it in the project.
+**The Prompt:**
+```
+I am drafting a five-move quantum model of the helium ground state that I will
+finish as a capstone. Help me with moves 2-3 only (method selection and
+calculation); I will write moves 1, 4, 5 myself.
+
+METHOD SELECTION: explain in 3-4 sentences why the VARIATIONAL method is the
+right choice here and perturbation theory is not — specifically that the
+electron-electron repulsion is NOT a small perturbation (<V_ee>/|E_0| ~ 0.3),
+so there is no small parameter, and the variational upper-bound theorem still
+applies regardless.
+
+CALCULATION: using the screened trial wavefunction
+psi = (Zt^3 / pi a0^3) exp(-Zt (r1+r2)/a0) with variational parameter Zt,
+derive E_V(Zt) = Zt^2 - 2 Z Zt + (5/8) Zt in Hartree. Show <T>, <V_ne>,
+and <V_ee> separately, each with its closed form. Minimize to get
+Zt* = Z - 5/16 = 27/16, and evaluate E_V* in eV for Z=2. Show all algebra.
+
+Do NOT tell me whether the resulting percent error is "good" — that is my
+judgment. Do NOT claim the wavefunction is accurate just because the energy is.
+```
+**What this produces:** a verified $E_V^* = -77.5$ eV with $\tilde Z^* = 27/16$, ready to slot into the capstone with your own moves 1/4/5.
+**How to adapt:** *Your system:* if your capstone is instead a quantum dot or H$_2^+$, swap in the relevant trial family but keep the same "why variational / no small parameter" argument. *ChatGPT/Gemini:* expect editorializing about accuracy — delete it; the percent-error judgment is yours. *Claude Project:* store the helium draft so Chapter 11's integration block can pull it.
+**Builds on:** Chapter 2's table (degenerate PT for atoms in fields); this chapter is the first to reach a *complete cited-datum comparison*.  **Next:** Chapter 4 adds WKB and the slowly-varying-potential condition.
 
 ---
 
 ## Chapter 04: Chapter 4 — The WKB Approximation and Tunneling
 *Source: `chapters/04-the-wkb-approximation-and-tunneling.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of the capstone's System A (STM) — method selection by the WKB condition and the $\kappa$, $T(d)$, current-ratio calculation — plus the WKB table row.
+**Tool:** Claude Project — this is the second full five-move candidate; keep it beside helium.
+**The Prompt:**
+```
+I am drafting a five-move quantum model of STM vacuum-gap tunneling. Help me
+with moves 2-3 (method selection, calculation); I will write moves 1, 4, 5.
+
+METHOD SELECTION: argue in 3-4 sentences why WKB is appropriate for a vacuum
+gap. State the small parameter (|d lambda_dB / dx| << 1) and explain why it is
+satisfied in the barrier interior (constant imaginary momentum) and only
+marginally violated at the turning points (a prefactor of order unity, not an
+exponential error). State the thick-barrier condition kappa*d >> 1.
+
+CALCULATION: for a tungsten tip on gold, effective work function phi = 4.0 eV:
+compute kappa = sqrt(2 m_e phi)/hbar in inverse angstroms (use the shortcut
+0.5123*sqrt(phi[eV])); compute T(d)=exp(-2 kappa d) at d=5 A and d=6 A; report
+the current ratio I(5A)/I(6A). Show units throughout.
+
+Do NOT quote an absolute tunneling current from WKB alone — I know WKB misses
+the prefactor by ~10^3 and I will handle that in the breakdown move. Do NOT
+tell me whether my eventual percent error is acceptable.
+```
+**What this produces:** $\kappa \approx 1.025$ Å$^{-1}$, a current ratio $\approx 7.8$ per ångström, ready to validate against the STM calibration rule.
+**How to adapt:** *Your system:* for alpha decay, swap the rectangular barrier for the Coulomb barrier and integrate $\gamma$ analytically; the method-selection argument is identical. *ChatGPT/Gemini:* watch for it volunteering an absolute current — that is the prefactor trap. *Claude Project:* store this draft as System A.
+**Builds on:** Chapter 3's helium draft (your first complete candidate); now you have a second, in a different method.  **Next:** Chapter 5 adds time-dependent PT and the $\Omega t \ll 1$ Rabi condition.
 
 ---
 
 ## Chapter 05: Chapter 5 — Time-Dependent Perturbation Theory and Transitions
 *Source: `chapters/05-time-dependent-perturbation-theory-and-transitions.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+The following exercises are designed to be worked with a large language model as a thinking partner — not to obtain derivations, but to probe reasoning, test intuition, and press on the limits of what the chapter established.
+
+1. Ask an LLM to explain the rotating-wave approximation (RWA) in physical terms: what is the counter-rotating term, why does it average to near-zero near resonance, and when does it matter? Ask for the condition $\Omega \ll \omega_0$ to be justified quantitatively. Then ask: what physical effect — measurable in the lab — is the leading consequence of the counter-rotating term that the RWA misses?
+
+2. Ask an LLM to derive the Rabi formula from the coupled amplitude equations. The derivation should: write the two coupled ODEs for $c_g$ and $c_e$ in the RWA, differentiate one equation to get a second-order ODE, solve with the given initial conditions, and arrive at $P_{g\to e}(t) = (\Omega/\Omega_\text{gen})^2\sin^2(\Omega_\text{gen}t/2)$. Check each step.
+
+3. The chapter claims the first-order transition amplitude is a Fourier transform of the perturbation matrix element at the Bohr frequency. Ask an LLM to make this explicit: write the first-order formula as a convolution or Fourier integral, identify the time window (0 to $t$) as a rectangular window function, and explain how the finite-time sinc-squared lineshape becomes a delta function as $t\to\infty$. Ask it to connect this to the time-energy uncertainty relation.
+
+4. Ask an LLM to explain Fermi's golden rule from the sinc-squared formula — how summing over a continuum of final states at density $\rho(E)$ converts the oscillating sinc-squared into a constant rate. The explanation should show the integral that converts $\sum_f P_{i\to f}(t)$ to $W \cdot t$. Then ask: why does this derivation require both "the perturbation matrix element varies slowly over the width of the sinc-squared peak" and "the density of states varies slowly"? What breaks if either condition fails?
+
+5. Ask an LLM to compare the Rabi formula to the quantum harmonic oscillator problem: in both cases a two-level (or multi-level) system is driven by a periodic perturbation, yet the harmonic oscillator is exactly solvable while the two-level system needs the RWA. Ask it to identify what feature of the harmonic oscillator makes it exactly solvable without approximation, and why the two-level system does not share this feature.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of the capstone's System D (NMR Rabi) — method selection by the RWA/$\Omega t$ conditions and the $t_\pi$ calculation — plus the Rabi table row.
+**Tool:** Claude Project — your third full five-move candidate.
+**The Prompt:**
+```
+I am drafting a five-move quantum model of NMR proton Rabi oscillations at a
+400 MHz instrument. Help me with moves 2-3 (method selection, calculation);
+I will write moves 1, 4, 5.
+
+METHOD SELECTION: justify the rotating-wave approximation by computing the
+small parameter Omega_R/omega_0 and showing it is ~5e-4 << 1 for B0=9.4 T,
+B1=1e-2 T. Then state the SECOND condition that governs whether first-order
+PT (vs the exact Rabi formula) is valid: Omega_R * t << 1. Make clear that for
+a pi-pulse Omega_R*t = pi, so first-order PT is INVALID and the exact Rabi
+formula is required.
+
+CALCULATION: with gamma_p = 2.675e8 rad/s/T, B0=9.4 T, B1=1e-2 T:
+compute the Larmor frequency, Omega_R = gamma_p B1 / 2, and t_pi = pi/Omega_R
+in microseconds. Show units.
+
+Do NOT report a first-order PT probability for the full pi-pulse as if it were
+physical (it exceeds 1). Do NOT judge whether my final agreement with measured
+pi-pulse times is "good".
+```
+**What this produces:** $\Omega_R \approx 1.34\times10^6$ rad/s, $t_\pi \approx 2.3$ μs, ready to validate against the measured 1–25 μs range.
+**How to adapt:** *Your system:* for a transmon qubit, swap $\gamma_p B_1/2$ for the drive Rabi frequency but keep the same two-condition argument. *ChatGPT/Gemini:* watch for it reporting the $(\pi/2)^2$ PT value as a real probability. *Claude Project:* store as System D.
+**Builds on:** Chapters 3–4 (helium, STM) — three candidates now, three different methods.  **Next:** Chapter 6 takes the same first-order amplitude to a continuum (Fermi golden rule) and a decay rate.
 
 ---
 
 ## Chapter 06: Chapter 6 — Radiation and Fermi's Golden Rule
 *Source: `chapters/06-radiation-and-fermis-golden-rule.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+### Part 1 — Update PROJECT.md
+
+```
+Append a new entry to PROJECT.md:
+
+Chapter 06 — Radiation and Fermi's Golden Rule
+Deliverable: 07-golden-rule-explorer.html
+Status: in progress
+
+The simulation has two modes selectable by tabs:
+
+Mode A — Fermi rate vs. Rabi oscillation.
+Initial state |i> coupled to N final states |f_k> at energies
+E_k = E_f + k*delta, k = -N/2 ... N/2, with equal |V_fi|^2.
+Plot P_total(t) = sum_k |c_k(t)|^2 from first-order PT.
+As N increases from 2 to 50, watch the coherent oscillation
+(N=2: pure Rabi) smooth into a linear ramp (N=50: Fermi rate).
+Overlay the golden-rule prediction W*t as a dashed orange line.
+
+Mode B — Hydrogen emission animation.
+Schematic energy level diagram with n=1, 2, 3 levels.
+Show the allowed transitions as arrows (Δℓ = ±1).
+Click a level to "populate" it; the simulation decays it with the
+correct relative rates using the A-coefficients.
+Display the lifetime of the selected level from the
+branching-ratio sum of all downward rates.
+```
+
+### Part 2 — CLAUDE.md amendment
+
+```
+Append to CLAUDE.md the following physics rules for Chapter 6:
+
+FERMI GOLDEN RULE AND RADIATION PHYSICS RULES
+
+1. GOLDEN RULE RATE:
+   W = (2*pi/hbar) * |V_fi|^2 * rho(E_f)
+   Units: s^{-1} (rate). hbar = 1 in natural units.
+
+2. CONTINUUM MODE with N discrete final states, bandwidth Delta_band:
+   rho = N / Delta_band (states per unit energy).
+   c_k(t) from first-order PT: c_k(t) = V_fi * (1 - exp(i*(E_k-E_i-hbar*omega)*t/hbar)) / (E_k - E_i - hbar*omega).
+   Use l'Hopital at exact resonance: c_k(t_res) = -i*V_fi*t/hbar.
+   P_total(t) = sum_k |c_k(t)|^2.
+   Golden rule prediction: W*t (dashed orange) with W = 2*pi*|V_fi|^2*rho/hbar.
+
+3. HYDROGEN A-COEFFICIENTS (relative, for the animation):
+   A(2p->1s): proportional to omega_{21}^3 * |<1s|r|2p>|^2 ~ omega_{21}^3 * 0.555 a_0^2.
+   A(3p->1s): proportional to omega_{31}^3 * |<1s|r|3p>|^2.
+   A(3p->2s): proportional to omega_{32}^3 * |<2s|r|3p>|^2 ~ omega_{32}^3 * 0.093 a_0^2.
+   Only Δℓ=±1 transitions are drawn. Check Δℓ before drawing any arrow.
+   Forbidden: 2s->1s (Δℓ=0), 3s->2s (Δℓ=0), 3d->1s (Δℓ=2), 3s->1s (Δℓ=0).
+
+4. BRANCHING RATIOS: For each level, total rate = sum of all downward A-coefficients.
+   Lifetime = 1 / total_rate.
+   Branching fraction to each lower state = A_k / total_rate.
+
+KNOWN FAILURE MODES:
+(a) Division by zero in c_k when E_k = E_i + hbar*omega: use l'Hopital.
+(b) Too few band states (N < 5) shows spiky artifacts rather than smooth rate.
+(c) Hydrogen level diagram: 2s has NO allowed E1 decay to 1s. Do not draw an arrow there.
+(d) A-coefficient formula: the omega^3 factor matters strongly.
+```
+
+### Part 3 — The simulation prompt
+
+```
+Build 07-golden-rule-explorer.html: single self-contained HTML, D3 v7 + d3-simple-slider,
+no other dependencies. Two tabs: "Fermi rate" and "Hydrogen levels".
+
+FERMI RATE MODE — SVG 1100x600.
+Main panel (left 700 wide): P_total(t) vs time.
+  X-axis: time in units of 2*pi/Delta_band, range 0 to 8.
+  Y-axis: probability 0 to 1.
+  Black solid: sum of |c_k(t)|^2 from N discrete band states.
+  Dashed orange: W*t (Fermi golden rule prediction).
+  When the two curves agree to within 5%, annotate "Golden rule regime".
+Right panel (400 wide): static bar chart showing the N final states
+  as horizontal lines colored by their detuning from E_i + hbar*omega.
+  The central state (at resonance) is highlighted.
+Controls: N slider (2 to 50, default 20); Delta_band slider (0.1 to 2 omega_0, default 0.5);
+  |V_fi| slider (0 to 0.2 hbar*omega_0, default 0.05).
+
+HYDROGEN LEVELS MODE — SVG 1100x600.
+Energy level diagram: n=1, 2, 3 as horizontal bars.
+Split each n into ℓ sub-levels: n=1 shows 1s only; n=2 shows 2s and 2p;
+n=3 shows 3s, 3p, 3d.
+Draw arrows for E1-allowed transitions only (Δℓ=±1):
+  2p->1s, 3p->1s, 3p->2s, 3d->2p.
+Each arrow labeled with "A ~ X ns" where X is the approximate lifetime.
+Click any level to fill it (highlight it green).
+The decay simulation runs in real time: filled level
+  dims at rate exp(-Gamma_total * t) and populates lower levels
+  (with branching fractions) until everything reaches 1s.
+
+Console checks:
+- At t=0: P_total = 0.
+- At t = 5 * 2*pi/Delta_band with N=50: |P_total/t - W| / W < 0.05.
+- For N=2: P_total should show clear Rabi-like oscillation.
+- For N=50: P_total should be smooth and linear past the transient.
+```
+
+### Part 4 — Exploration tasks
+
+**Task 1: Rabi to Fermi.** Start with $N=2$. You should see a clear Rabi-like oscillation. Increase $N$ to 5, 10, 20, 50. At what value does the dashed orange (Fermi rate) line first agree with the black curve throughout the full time range?
+
+**Task 2: Rate scales as $|V_{fi}|^2$.** With $N=50$ and $\Delta_{\rm band} = 0.5\omega_0$, double $|V_{fi}|$. The rate $W \propto |V_{fi}|^2$ should increase by a factor of 4. Verify by reading the slopes.
+
+**Task 3: Rate scales as $\rho$.** Vary $\Delta_{\rm band}$ at fixed $N=50$. The Fermi rate $W = 2\pi|V_{fi}|^2 N/(\hbar\Delta_{\rm band})$ decreases as $\Delta_{\rm band}$ increases. Confirm: doubling the bandwidth halves the slope.
+
+**Task 4: Branching in hydrogen.** Click the $3p$ level. It decays to both $1s$ (large $\Delta E$, large $\omega^3$) and $2s$ (small $\Delta E$, small $\omega^3$). Which branch dominates? Estimate the branching ratio from the displayed $A$-values.
+
+**Task 5: Metastable 2s.** The $2s$ level has no downward E1 arrow. Verify: $\Delta\ell = 0 - 0 = 0$ for $2s \to 1s$, violating $\Delta\ell = \pm 1$. Confirm the simulation shows $2s$ as a metastable state with no E1 decay path.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of a candidate system — the hydrogen $2p\to1s$ lifetime via the golden rule / Einstein $A$ — plus the golden-rule table row.
+**Tool:** Claude Project — a fully cited candidate (measured datum to 4 significant figures).
+**The Prompt:**
+```
+I am drafting a five-move quantum model of the hydrogen 2p -> 1s spontaneous
+emission lifetime. Help me with moves 2-3 (method selection, calculation);
+I will write moves 1, 4, 5.
+
+METHOD SELECTION: justify Fermi's golden rule / the Einstein-A formula. State
+the validity window 2 pi/Delta_omega << t << hbar/|V_fi| and argue it is wide
+for atomic emission (femtosecond Bohr periods, nanosecond lifetimes). Note the
+electric-dipole approximation holds because k a0 ~ 1e-3 << 1.
+
+CALCULATION: compute the 2p->1s rate. Evaluate the radial integral
+R = integral R_10 r^3 R_21 dr = 256/(81 sqrt 6) a0 (show the substitution),
+fold in the angular factor, average over the three 2p substates to get
+|<1s|e r|2p>|^2_avg = e^2 (2^15/3^10) a0^2, then apply
+A_21 = omega^3 |<...>|^2 / (3 pi eps0 hbar c^3) with hbar omega = 10.2 eV.
+Report A_21 in s^-1 and tau = 1/A_21 in ns. Show units.
+
+Do NOT claim the classical-field derivation explains WHY the atom decays — I
+know that requires quantizing the field (QED). Do NOT judge whether my percent
+error vs the measured 1.596 ns is "good".
+```
+**What this produces:** $A_{21}\approx 6.3\times10^8$ s$^{-1}$, $\tau\approx 1.6$ ns, validated against the measured 1.596 ns.
+**How to adapt:** *Your system:* for the $3p$ branching ($\to1s$ and $\to2s$), compute both $A$'s and the branching fractions; the $\omega^3$ factor decides which dominates. *ChatGPT/Gemini:* watch for a dropped $\omega^3$ power — it shifts the rate by orders of magnitude. *Claude Project:* store as a candidate alongside helium/STM/Rabi.
+**Builds on:** Chapter 5's first-order amplitude (the golden rule is that amplitude summed over a continuum).  **Next:** Chapter 7 opens scattering with the partial-wave $ka\ll1$ regime.
 
 ---
 
 ## Chapter 07: Chapter 7 — Scattering I: Partial Waves
 *Source: `chapters/07-scattering-i-partial-waves.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of a candidate — the low-energy s-wave cross-section and scattering length for a model potential — plus the partial-wave table row.
+**Tool:** Claude chat — this is a self-contained calculation; a persistent project is optional.
+**The Prompt:**
+```
+Help me with moves 2-3 (method selection, calculation) of a five-move model of
+low-energy s-wave scattering from a spherical square well (depth V0, radius a).
+I will write moves 1, 4, 5.
+
+METHOD SELECTION: justify the partial-wave method and state the small parameter
+ka. Argue that at ka << 1 only the ell=0 (s-wave) channel contributes, so
+sigma -> 4 pi a_s^2 with a_s the scattering length. Note this is FOUR times the
+classical geometric pi a_s^2 and explain why (isotropic s-wave scattering).
+
+CALCULATION (natural units hbar=2m=1, a=1): for V0=5, compute
+kappa = sqrt(k^2 + V0), delta_0 = arctan((k/kappa) tan kappa) - k at ka=0.5,
+and sigma = (4 pi / k^2) sin^2(delta_0). Also compute the scattering length
+a_s = 1 - tan(sqrt(V0))/sqrt(V0). Show all steps and units.
+
+Do NOT truncate at ell=0 without stating that ka << 1 justifies it. Track the
+arctan branch carefully near any resonance and tell me if you crossed one.
+```
+**What this produces:** a verified s-wave $\delta_0$, cross-section, and scattering length, with the factor-of-four wave enhancement made explicit.
+**How to adapt:** *Your system:* for nuclear np scattering, use the measured $a_t,a_s$ and compute $\sigma\to4\pi a_s^2$ for comparison; the s-wave dominance argument is identical. *ChatGPT/Gemini:* check the $\arctan$ branch handling explicitly. *Claude Project:* optional — store only if you carry scattering as your capstone candidate.
+**Builds on:** the perturbative chapters' "check the small parameter first" habit, now applied to $ka$.  **Next:** Chapter 8 reorganizes scattering as an expansion in the potential (Born) — the route to Rutherford (System F).
 
 ---
 
 ## Chapter 08: Chapter 8 — Scattering II: The Born Approximation
 *Source: `chapters/08-scattering-ii-the-born-approximation.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+The following exercises are designed to be worked with a large language model as a thinking partner — not to obtain derivations, but to test reasoning and probe the limits of what the chapter established.
+
+1. Ask an LLM to derive the Lippmann-Schwinger equation from the Schrödinger equation, showing explicitly that the outgoing boundary condition selects the $+i\epsilon$ prescription for the Green's function. Ask it to explain in words what "outgoing boundary condition" means and why it matters physically — what would happen if you used the incoming-wave Green's function instead?
+
+2. Ask an LLM to explain why the Born differential cross-section is the squared Fourier transform of the potential at the momentum transfer $q = 2k\sin(\theta/2)$. Then ask it: for a hard sphere (infinite potential inside radius $R$, zero outside), the Born approximation gives $d\sigma/d\Omega \propto [j_1(qR)/q]^2$. Is this result physically reasonable at $\theta = 0$? Does it match the geometric cross-section $\pi R^2$ when integrated?
+
+3. Ask an LLM to explain the deep reason why the Born approximation gives the exact Rutherford differential cross-section for the Coulomb potential. The explanation should involve the phrase "Coulomb phase," the fact that $|\Gamma(1+i\eta)/\Gamma(1-i\eta)| = 1$, and the connection to scale invariance of the $1/r$ potential. Evaluate whether the explanation is complete.
+
+4. Ask an LLM to describe a physical situation where the Born approximation fails qualitatively rather than just quantitatively — that is, where Born predicts the wrong physical behavior, not just a wrong number. The best example is near a scattering resonance. Ask it to sketch what the exact total cross-section looks like as a function of energy near a resonance, and what Born predicts. Ask it to explain why Born misses resonances entirely.
+
+5. Ask an LLM to explain the connection between the Born series in scattering theory and perturbation theory in bound-state quantum mechanics. The connection should go through the Lippmann-Schwinger equation, the resolvent operator $(E-H_0)^{-1}$, and the analogy between the Born expansion $|\psi\rangle = (1 + G_0 V + G_0 V G_0 V + \cdots)|\phi\rangle$ and the perturbation series for energy eigenstates. Ask it to identify the analogues of "matrix elements" and "energy denominators" in the two cases.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of the capstone's System F (Rutherford) — method selection by the Born parameter and the cross-section calculation — plus the Born table row.
+**Tool:** Claude Project — your most-cited candidate (Geiger-Marsden, four decades of data).
+**The Prompt:**
+```
+I am drafting a five-move quantum model of Rutherford scattering (alpha
+particles on gold). Help me with moves 2-3 (method selection, calculation);
+I will write moves 1, 4, 5.
+
+METHOD SELECTION: justify the Born approximation. Compute the Sommerfeld
+parameter eta = Z Z' e^2/(4 pi eps0 hbar v) for E=5 MeV, Z=2, Z'=79, and show
+eta ~ 22 >> 1, so the naive Born small-parameter is NOT small; Born is nonetheless
+exact for the Coulomb potential because the scattering phases cancel in |f|^2. Then explain in 2-3
+sentences why, UNIQUELY for the Coulomb potential, Born reproduces the EXACT
+differential cross-section: the Coulomb phase factor has unit modulus
+(|Gamma(1+i eta)/Gamma(1-i eta)| = 1), so the phases cancel in |f|^2. Note this
+does NOT generalize to other potentials.
+
+CALCULATION: derive the Rutherford cross-section as the mu->0 limit of the
+Yukawa Born result. Evaluate d sigma/d Omega at theta=90 deg for E=5.5 MeV,
+Z=2, Z'=79, using e^2/4 pi eps0 = 1.44 MeV fm. Report in fm^2/sr. Show units.
+
+Do NOT claim "Born = classical" as a general rule — it is special to Coulomb.
+Do NOT judge whether my eventual agreement with Geiger-Marsden is "good".
+```
+**What this produces:** $\eta\approx 22$ ($\gg1$), a 90° cross-section of order $10^2$ fm²/sr, and the correct reason Born is exact here despite $\eta\gg1$ (Coulomb phase cancellation).
+**How to adapt:** *Your system:* for a Yukawa nuclear potential, keep $\mu$ finite and check $\xi$ — Born may now be marginal. *ChatGPT/Gemini:* watch for the over-generalization "Born always gives the classical result." *Claude Project:* store as System F.
+**Builds on:** Chapter 7's partial-wave view (Born is the complementary expansion — in the potential, not in $\ell$).  **Next:** Chapter 9 returns to atoms in fields (Zeeman/Stark/magnetic resonance) — the ammonia/maser two-state and the Zeeman $g$-factor candidates.
 
 ---
 
 ## Chapter 09: Chapter 9 — Atoms in Fields: Zeeman, Stark, and Magnetic Resonance
 *Source: `chapters/09-atoms-in-fields.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+### Part 1 — Update PROJECT.md
+
+```
+Append a new entry to PROJECT.md describing this chapter's simulation:
+
+Chapter 9 — Atoms in Fields
+Deliverable: 10-atoms-in-fields.html
+Status: in progress
+
+The simulation has two modes selectable by tabs: "Zeeman" and "Stark".
+
+ZEEMAN MODE
+Energy-level diagram for the hydrogen 2p manifold (j=1/2 and j=3/2
+sub-levels) as a function of magnetic field B from 0 to 10 T.
+At B=0, the fine-structure splitting Delta_E_fs ≈ 4.5e-5 eV separates
+the two groups. For B > 0, each level splits according to:
+  weak-field approximation: Delta E = g_J * mu_B * B * m_j
+  strong-field approximation: Delta E = mu_B * B * (m_l + 2*m_s)
+The simulation shows both limiting formulas as dashed curves and
+(optionally) a numerical interpolation via 6x6 diagonalization as
+solid curves. Slider for B, 0 to 10 T.
+
+STARK MODE
+Energy-level diagram for the hydrogen n=2 manifold as a function of
+electric field strength E_field from 0 to 0.05 atomic units. Four
+states at E_field = 0; as the field increases, two states shift by
++3*a0*e*E_field and -3*a0*e*E_field, two states remain flat. Annotate
+eigenstates at the right edge. Show the 4x4 matrix live on the right.
+```
+
+### Part 2 — The simulation prompt
+
+```
+You are working in my directory which contains CLAUDE.md, DESIGN.md, and
+PROJECT.md. Read all three first.
+
+Build 10-atoms-in-fields.html: a single self-contained HTML file using
+D3 v7 from a CDN. No other external dependencies. Two modes, selectable
+by tab: "Zeeman" and "Stark".
+
+ZEEMAN MODE
+SVG canvas 1100 x 600. Left panel: energy vs. B diagram for the hydrogen
+2p manifold. Pin the y-axis from -0.0004 eV to +0.0004 eV relative to
+the unperturbed 2p energy. Fine-structure baseline: 2p_{3/2} (j=3/2)
+sits at +Delta_fs/2 = +2.25e-5 eV; 2p_{1/2} (j=1/2) sits at
+-Delta_fs/2 = -2.25e-5 eV (fine-structure splitting approximately
+4.5e-5 eV). For each sub-level, draw the weak-field energy curve
+  E = E_fine + g_J * mu_B * B * m_j
+as colored lines (teal for j=3/2, orange for j=1/2). Label each curve
+with its m_j value at the right edge. Slider for B from 0 to 5 T.
+
+Right panel: a legend showing g_J for each j value and the Landé
+formula displayed as rendered math.
+
+STARK MODE
+SVG canvas 1100 x 600. Four horizontal energy lines starting at E=0
+(in Hartree relative to unperturbed n=2 level) when E_field = 0.
+As E_field increases from 0 to 0.05 atomic units, the lines move:
+  top line: +3 * a0 * e * E_field = +3*E_field (in a.u. with a0=e=1)
+  bottom line: -3 * E_field
+  two middle lines: stay at 0
+Label each line with its eigenstate at the right edge.
+Show the 4x4 perturbation matrix W live on the right, with the only
+nonzero entry highlighted in teal.
+Slider for E_field from 0 to 0.05 a.u.
+
+GLOBAL
+mu_B = 5.788e-5 eV/T. Delta_fs(2p) = 4.5e-5 eV. a0 = 1 in atomic units.
+Comments at every physics step. No dead code.
+Runtime sanity check: at B=0, all lines should lie within 1e-10 eV of
+their fine-structure baseline. At E_field=0, all Stark lines at 0.
+```
+
+### Part 3 — Exploration tasks
+
+**Task 1: Zeeman crossover.** Increase $B$ slowly from 0 to 5 T. At what value does the energy spread of the $j=3/2$ quartet equal the fine-structure splitting $\Delta E_{FS}$? This is approximately where the weak-field formula breaks down. (The actual crossover requires the full diagonalization, but the simulation shows the limiting formula continuing past its range of validity — which is a deliberate teaching point.)
+
+**Task 2: Level ordering at $B = 1$ T.** The $j=3/2$, $m_j = -\tfrac{1}{2}$ sublevel has $\Delta E = -\tfrac{4}{3}\cdot\tfrac{1}{2}\mu_B B$. The $j=1/2$, $m_j = +\tfrac{1}{2}$ sublevel has $\Delta E = +\tfrac{2}{3}\cdot\tfrac{1}{2}\mu_B B$. Do these ever cross? If the weak-field curves cross, what would a crossing mean physically, and why does the full calculation produce an avoided crossing instead?
+
+**Task 3: Stark linear splitting.** Set $\mathcal{E} = 0.01$ a.u. Verify from the simulation that the upper eigenvalue is exactly $+0.03$ Hartree and the lower is $-0.03$ Hartree. Confirm the two middle lines remain at zero.
+
+**Task 4: Stark ionization.** Push $\mathcal{E}$ to $0.04$ a.u. At this field strength the electron can classically escape over the Stark-tilted Coulomb barrier. The simulation continues showing linear splitting — its energy lines keep moving. Note where the simulation physics ends and real physics begins: above the ionization threshold, these are not bound-state energies.
+
+**Extension prompt:**
+
+```
+Extend 10-atoms-in-fields.html to add a "Rabi oscillations" panel (a
+third tab). Display P_down(t) = sin^2(omega_1 * t / 2) at resonance
+and the off-resonant form P_down(t) = (omega_1^2 / Omega^2) *
+sin^2(Omega * t / 2) where Omega = sqrt((omega - omega_0)^2 + omega_1^2).
+Sliders: omega_1 (Rabi frequency, 0 to 2*pi*10 kHz), detuning
+delta = omega - omega_0 (0 to 5 * omega_1_max).
+The x-axis should be time from 0 to 2*pi / omega_1 * 5 (five full cycles).
+Show that at delta = 0 the spin fully inverts; at delta = 2*omega_1 the
+maximum flip probability is 1/5.
+```
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of the capstone's System C (ammonia maser) — the two-state tunneling model and its splitting — plus the atoms-in-fields table row.
+**Tool:** Claude Project — store as System C alongside your other candidates.
+**The Prompt:**
+```
+I am drafting a five-move quantum model of the ammonia (NH3) inversion
+splitting that drives the maser. Help me with moves 2-3 (method selection,
+calculation); I will write moves 1, 4, 5.
+
+METHOD SELECTION: justify treating NH3 inversion as a TWO-STATE system: the
+nitrogen sits above or below the H3 plane (|L>, |R>), tunneling through a
+barrier mixes them. Write the 2x2 Hamiltonian [[E0, -A],[-A, E0]] and state
+that this is the SAME structure as the Stark and weak-field Zeeman 2x2 blocks.
+Emphasize that the tunneling matrix element A is EXPONENTIALLY sensitive to the
+barrier shape — this is the dominant model uncertainty.
+
+CALCULATION: diagonalize to get E_pm = E0 -/+ A and splitting Delta E = 2A.
+Convert the measured inversion frequency 23.87 GHz to Delta E in eV via
+Delta E = h nu (expect ~9.94e-5 eV). Show units.
+
+Do NOT tell me whether a given double-well barrier model's 24% error is
+"acceptable" — that is my judgment. Do NOT quote A from a barrier model without
+flagging its exponential sensitivity.
+```
+**What this produces:** the two-state splitting structure and $\Delta E\approx9.94\times10^{-5}$ eV from the measured line, ready for validation.
+**How to adapt:** *Your system:* for the weak-field Zeeman $g$-factor, reuse the $2\times2$ recognition but compute $g_J$ instead; same structural insight. *ChatGPT/Gemini:* check it flags the exponential barrier sensitivity rather than quoting a single confident $A$. *Claude Project:* store as System C.
+**Builds on:** Chapter 2's degenerate-PT $2\times2$ diagonalization (Stark) — now applied to a molecular tunneling doublet.  **Next:** Chapter 10 adds tight-binding / band structure and the hopping small parameter — the route to the quantum-dot band-gap candidate.
 
 ---
 
 ## Chapter 10: Chapter 10 — Periodic Potentials and the Band Structure of Solids
 *Source: `chapters/10-periodic-potentials-and-band-structure.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** moves 2–3 of the capstone's System B (CdSe quantum dot) — the spherical-box confinement model and its known failure — plus the band-structure table row.
+**Tool:** Claude Project — store as System B; it is the candidate that best teaches "right structure, wrong input parameter."
+**The Prompt:**
+```
+I am drafting a five-move quantum model of the CdSe quantum-dot optical band
+gap. Help me with moves 2-3 (method selection, calculation); I will write moves
+1, 4, 5.
+
+METHOD SELECTION: justify modeling the lowest electron and hole states as a 3D
+spherical infinite square well (confinement), giving E_1s = hbar^2 pi^2 /
+(2 m* R^2). State that this gives the correct SCALING E ~ 1/R^2. Explain that
+the effective mass m* is a band-structure quantity (inverse band curvature at
+k=0) and that the small parameter governing its validity is how far k ~ pi/R is
+from the band minimum.
+
+CALCULATION: for R=1.5 nm, m_e*=0.13 m_e, m_h*=0.45 m_e, eps_r=10.6,
+E_bulk=1.74 eV: compute E_1s,e, E_1s,h, the Coulomb correction
+-1.8 e^2/(4 pi eps0 eps_r R), and the predicted gap. Show units.
+
+Do NOT silently use m_e*=0.13 as if it were valid at k~pi/R — I know the band
+is nonparabolic there and m* is closer to 0.20 m_e; I will handle that in the
+breakdown move. Do NOT judge whether the resulting ~32% error is "acceptable".
+```
+**What this produces:** the predicted gap ($\approx3.2$ eV with band-edge $m^*$), set up so the breakdown move can show the nonparabolicity correction bringing it to $\sim14\%$.
+**How to adapt:** *Your system:* for an InP dot, note the more complex valence band makes the box model fail differently. *ChatGPT/Gemini:* watch for it "correcting" $m^*$ silently and hiding the teaching point. *Claude Project:* store as System B.
+**Builds on:** the whole toolkit — by now the running table has eight method rows and several full candidates.  **Next:** Chapter 11 — the capstone integration: assemble one system through all five moves and validate it against a cited measured datum.
 
 ---
 
 ## Chapter 11: Chapter 11 — Capstone: Modeling a Real Quantum System
 *Source: `chapters/11-capstone-modeling-a-real-quantum-system.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+The following exercises are designed to be worked with a large language model as a thinking partner — to probe reasoning, pressure-test calculations, and explore the edges of the models.
+
+1. Ask an LLM to explain the five-move structure (identification, method selection, calculation, validation, breakdown) in its own words, using a system different from the six listed here — say, the Josephson effect in a superconducting junction. Evaluate whether its application of the structure is coherent: does it identify a small parameter, name a method from this volume's toolkit, and say what the next correction would be?
+
+2. Ask an LLM to carry out the variational helium calculation end-to-end: write the trial Hamiltonian, compute $\langle\hat{T}\rangle$, $\langle V_{ne}\rangle$, and $\langle V_{ee}\rangle$ for the screened trial state, minimize over $Z_\text{eff}$, and recover $Z_\text{eff} = 27/16$ and $E = -77.5$ eV. Check each step of the algebra. If it makes an error, identify which expectation value is wrong and why.
+
+3. The Tersoff-Hamann model corrects the STM prefactor that WKB gets wrong. Ask an LLM to explain what the Tersoff-Hamann model adds to WKB and why the density of states of the *sample* (not the tip) enters the current. Ask specifically: does the exponential $e^{-2\kappa d}$ change, or only the prefactor? If only the prefactor, what does that imply for using the $\ln I$ vs. $d$ slope as a measurement of the work function?
+
+4. Ask an LLM to explain why the variational principle gives an upper bound on the ground-state energy but not on any excited-state energy. The explanation should invoke the completeness of the Hamiltonian eigenbasis and the Cauchy-Schwarz or Rayleigh-Ritz argument. Then ask: under what additional condition can you use the variational principle to bound the first excited-state energy? (Hint: the trial state must be orthogonal to the ground state.)
+
+5. Ask an LLM to analyze the CdSe quantum dot model's failure: specifically, why does the effective mass approximation break down for small $R$? The explanation should invoke the band dispersion relation $E(k)$ near the conduction band minimum, the meaning of effective mass as the inverse curvature of the band, and what happens to that curvature as $k$ departs from zero. Ask it to estimate at what dot radius (in nm) the nonparabolicity correction first reaches 10% for CdSe.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the full five-move written model for your chosen system — moves 2 and 3 (method selection with $\varepsilon$, and the complete derivation), pulling together the per-chapter drafts.
+**Tool:** Claude Project — the project holds your method table and all per-chapter candidate drafts; the capstone draws on all of them.
+**The Prompt:**
+```
+I am finishing a capstone: a defended quantitative model of ONE real quantum
+system, carried through five moves. I have chosen: [STATE YOUR SYSTEM, e.g.
+"System A — STM vacuum-gap tunneling via WKB"]. Use the method-selection table
+and the per-chapter draft for this system that are already in this project.
+
+Help me with MOVE 2 (method selection) and MOVE 3 (calculation) only. I will
+write moves 1 (system identification), 4 (validation), and 5 (breakdown) myself.
+
+MOVE 2: State the method. Compute its small parameter epsilon NUMERICALLY at my
+system's parameters from the table formula. State explicitly whether epsilon <<
+1 (valid), ~0.3 (marginal), or ~1 (broken). If epsilon is not << 1, STOP and
+tell me the method is inappropriate rather than proceeding.
+
+MOVE 3: Carry out the full derivation from the model Hamiltonian to a single
+number WITH UNITS. Show every step; do not quote a formula without deriving it.
+
+Do NOT tell me whether my percent error (move 4) will be "good" — that is my
+judgment. Do NOT write my breakdown analysis (move 5) — naming and sizing the
+omitted effects is mine. Do NOT switch methods to make the number come out
+nicer; if epsilon says the method is wrong, say so.
+```
+**What this produces:** a verified method-selection argument with a numerical $\varepsilon$ and a complete derivation ending in a number with units — the spine of moves 2–3, ready for you to wrap with your own moves 1, 4, 5.
+**How to adapt:** *Your system:* swap the bracketed system; the prompt structure is system-agnostic. *ChatGPT/Gemini:* these are more likely to plow ahead with a method even when $\varepsilon\sim1$ — watch for it and reject. *Claude Project:* keep the method table and candidate drafts in project context so the capstone pulls them automatically.
+**Builds on:** all ten per-chapter pieces — the toolkit and the small-parameter table.  **Next:** there is no next chapter; move 4 (validation) and move 5 (breakdown) are yours to finish in R5.
 
 ---
 
-## Chapter 99: 99 Back Matter
+## Chapter 99: 99-back-matter.md
 *Source: `chapters/99-back-matter.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
+> **Section not yet authored.** No `## LLM Exercises` / `### Exercise R3 — LLM Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---

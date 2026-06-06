@@ -9,7 +9,7 @@
 ## Chapter 00: Quantum Mechanics
 *Source: `chapters/00-frontmatter.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
+> **Section not yet authored.** No `### Exercise R4 — CLI Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---
@@ -17,95 +17,386 @@
 ## Chapter 01: Chapter 1 — Time-Independent Perturbation Theory
 *Source: `chapters/01-time-independent-perturbation-theory.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the project repository with a `method-table.md` and a verified numerical check of $E_n^{(1)}$ and $E_0^{(2)}$ for the quartic oscillator.
+**Tool:** Claude Code — it can create the project directory, write a small verification script, run it, and report the number.
+**Skill level:** Beginner
+**Setup — confirm:**
+- [ ] An empty project directory for the running project (create one if needed).
+- [ ] Python 3 with numpy available.
+- [ ] Add to `CLAUDE.md`: "The running-project method table lives in `method-table.md`; never delete rows, only append. All physics constants in SI unless a cell says natural units."
+**The Task:**
+```
+In the running-project directory:
+1. Create method-table.md with a Markdown table with columns:
+   Method | epsilon | formula for epsilon | breaks when.
+   Add one row: non-degenerate perturbation theory, epsilon = lambda (or
+   |<m|H'|n>|/|E_n^0 - E_m^0|), breaks when epsilon ~ 1 / near-degeneracy /
+   negative-coupling instability.
+2. Create check_pt.py that, in natural units (hbar=m=omega=1):
+   - computes E_n^(1) = (3/4)(2n^2+2n+1) for n=0..4,
+   - builds the 30x30 harmonic-oscillator matrix of H = H_HO + lambda*x^4
+     for lambda=0.05, diagonalizes it numerically,
+   - prints, for n=0..4: E_n^(0), E_n^(0)+lambda*E_n^(1), and the exact
+     eigenvalue, side by side.
+3. Run it. Confirm at lambda=0 the exact eigenvalues equal n+0.5 to 1e-6,
+   and that the exact ground-state energy lies BELOW the first-order estimate
+   (the second-order correction is negative).
+Do not modify any file outside this directory. Report the printed table.
+```
+**Expected output:** `method-table.md` (one row) and a console table comparing zeroth-order, first-order, and exact energies.
+**What to inspect:** at $\lambda=0$, exact eigenvalues $= n+0.5$; the exact ground-state energy sits below the first-order estimate (negative $E_0^{(2)}$ — the theorem); the first-order error grows with $n$.
+**If it goes wrong:** if the exact ground state comes out *above* the first-order estimate, the $\hat{x}^4$ matrix was built with the wrong $\hbar/2m\omega$ prefactor or the basis is too small — print $\langle n|\hat{x}^4|n\rangle$ and check it against $6n^2+6n+3$ before re-diagonalizing.
+**CLAUDE.md / AGENTS.md note:** add "Append-only to `method-table.md`. Every numerical claim in this project must have a script that reproduces it."
 
 ---
 
 ## Chapter 02: Chapter 2 — Degenerate Perturbation Theory and Fine Structure
 *Source: `chapters/02-degenerate-perturbation-theory-and-fine-structure.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** an appended table row and a script that diagonalizes the $4\times4$ Stark $W$ matrix and the hydrogen $n=2$ fine-structure levels.
+**Tool:** Claude Code
+**Skill level:** Beginner
+**Setup — confirm:**
+- [ ] `method-table.md` from Chapter 1 exists in the project directory.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule from Chapter 1 (append-only table) is present.
+**The Task:**
+```
+In the running-project directory:
+1. Append the degenerate-PT row to method-table.md (do not edit existing rows).
+2. Create check_degenerate.py that:
+   - builds the 4x4 Stark matrix W = e*E_field * [[0,-3a0,0,0],[-3a0,0,0,0],
+     [0,0,0,0],[0,0,0,0]] (use e=a0=E_field=1 for structure), diagonalizes it,
+     and prints eigenvalues and eigenvectors; confirm eigenvalues +/-3 and two 0s.
+   - computes E_fs for j=1/2 and j=3/2 from the fine-structure formula with
+     E_2^0=-3.4 eV, m c^2=0.511e6 eV; prints both and their difference.
+3. Run it. Confirm the W eigenvectors are (|2s> -/+ |2p0>)/sqrt(2) and that
+   Delta E_FS ~ 4.5e-5 eV.
+Touch no files outside this directory. Report the eigenvalues and the splitting.
+```
+**Expected output:** appended table row; console listing $W$ eigenvalues $\{+3,-3,0,0\}$, the good-state eigenvectors, and $\Delta E_\text{FS}\approx 4.5\times10^{-5}$ eV.
+**What to inspect:** the two shifted eigenvalues are equal and opposite (traceless block); the two unshifted states are $|2p_{\pm1}\rangle$; the splitting lands in the $10^{-5}$ eV decade.
+**If it goes wrong:** if the splitting comes out near $10^{-4}$ eV, the script likely doubled the spin-orbit term (missing Thomas $\tfrac12$) or used $j+\tfrac12$ wrong — print the $(4n/(j+\tfrac12)-3)$ factor for each $j$ and check against $5$ and $1$.
+**CLAUDE.md / AGENTS.md note:** add "When a level is degenerate, diagonalize the perturbation in the subspace; never apply the non-degenerate energy-denominator formula across a degeneracy."
 
 ---
 
 ## Chapter 03: Chapter 3 — The Variational Principle
 *Source: `chapters/03-the-variational-principle.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the variational row in the table and a script that minimizes $E_V(\tilde Z)$ and reports the percent error against the measured helium energy.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with the Ch 1–2 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "Every model prediction must be reported with its percent error against a cited measured value."
+**The Task:**
+```
+In the running-project directory:
+1. Append the variational row to method-table.md (epsilon: none; validity =
+   upper-bound theorem + trial-family quality).
+2. Create helium_variational.py that:
+   - defines E_V(Zt) = (Zt**2 - 2*2*Zt + (5/8)*Zt) Hartree, Z=2,
+   - finds Zt* analytically (Z - 5/16) AND by numerical minimization; confirm
+     they agree to 1e-6,
+   - converts E_V* to eV (1 Hartree = 27.211 eV),
+   - prints E_V*, the measured value -78.98 eV, and the percent error,
+   - prints a one-line ASSERT that E_V* > -78.98 eV (upper-bound sanity).
+3. Run it. The assert must pass (variational result is ABOVE the true energy).
+Touch no files outside this directory. Report E_V*, the percent error, and
+whether the upper-bound assert held.
+```
+**Expected output:** appended row; console showing $\tilde Z^* = 1.6875$, $E_V^* \approx -77.5$ eV, percent error $\approx 1.9\%$, and the upper-bound assert passing.
+**What to inspect:** $\tilde Z^*$ matches $27/16$; the energy sits *above* $-78.98$ eV (never below); the percent error is the one you report — with units and a citation.
+**If it goes wrong:** if the assert fails (energy below $-78.98$ eV), a sign in $\langle V_{ee}\rangle$ or a wrong Hartree conversion flipped the result — print the three expectation values separately and check $\langle V_{ee}\rangle = +5\tilde Z/8$ is *positive* (repulsion).
+**CLAUDE.md / AGENTS.md note:** add "A variational energy below the cited true energy is always a bug, never a discovery — the bound is one-sided."
 
 ---
 
 ## Chapter 04: Chapter 4 — The WKB Approximation and Tunneling
 *Source: `chapters/04-the-wkb-approximation-and-tunneling.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the WKB table row and a script comparing $T_\text{WKB}$ to the exact rectangular-barrier $T$, plus extracting $\kappa$ from synthetic STM data.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–3 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "For WKB results, report the exponent (slope) as reliable and flag the prefactor as a separate, harder problem."
+**The Task:**
+```
+In the running-project directory:
+1. Append the WKB row to method-table.md.
+2. Create wkb_stm.py that:
+   - computes kappa for phi=4.0 eV (expect ~1.025 1/A),
+   - computes T_WKB=exp(-2 kappa L) and the EXACT rectangular-barrier T for
+     E=1 eV, V0=5 eV, L=5 A; prints both and their ratio T_exact/T_WKB,
+   - confirms that ratio matches 16 E (V0-E)/V0^2,
+   - given synthetic STM data d=[4,5,6,7] A, I=[12.3,1.62,0.213,0.028] nA,
+     fits ln(I) vs d, extracts kappa from slope (-2 kappa), and infers
+     phi = hbar^2 kappa^2 / (2 m_e); prints phi in eV.
+3. Run it. Confirm T_exact/T_WKB ~ 2.56 and the inferred phi is a few eV.
+Touch no files outside this directory. Report the ratio and the inferred phi.
+```
+**Expected output:** appended row; console showing $T_\text{exact}/T_\text{WKB}\approx 2.56$ matching $16E(V_0-E)/V_0^2$, and an inferred work function of order 4–5 eV from the synthetic data.
+**What to inspect:** the exact/WKB ratio is the analytic prefactor (an $O(1)$ number, not exponential); the extracted $\phi$ from the $\ln I$ slope is physically sane (a few eV).
+**If it goes wrong:** if the inferred $\phi$ comes out tens of eV or negative, the slope sign or the $\hbar^2\kappa^2/2m_e$ unit conversion is wrong — print $\kappa$ in Å$^{-1}$ and check it is near 1, not 10.
+**CLAUDE.md / AGENTS.md note:** add "WKB gives the slope $d\ln I/dd = -2\kappa$ reliably; never report an absolute STM current from WKB without flagging the missing density-of-states prefactor."
 
 ---
 
 ## Chapter 05: Chapter 5 — Time-Dependent Perturbation Theory and Transitions
 *Source: `chapters/05-time-dependent-perturbation-theory-and-transitions.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the Rabi table row and a script that compares exact Rabi vs first-order PT and computes $t_\pi$.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–4 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "First-order TDPT is valid only while Omega*t << 1; report any P>1 as a method-breakdown flag, never as a probability."
+**The Task:**
+```
+In the running-project directory:
+1. Append the time-dependent-PT/Rabi row to method-table.md (note BOTH small
+   parameters: Omega/omega_0 for RWA, Omega*t for first-order PT).
+2. Create rabi_nmr.py that:
+   - computes Omega_R = gamma_p*B1/2 and t_pi = pi/Omega_R (gamma_p=2.675e8,
+     B1=1e-2 T); prints t_pi in microseconds,
+   - tabulates exact P=sin^2(Omega_R t/2) and PT P=(Omega_R t/2)^2 at
+     Omega_R t = pi/4, pi/2, pi, 3pi/2,
+   - flags the first Omega_R t at which the PT value exceeds 1,
+   - confirms Omega_R/omega_0 << 1 for the RWA (omega_0 = 2*pi*400e6).
+3. Run it. Confirm t_pi ~ 2.3 us, exact P caps at 1, and PT exceeds 1 near
+   Omega_R t = 2.
+Touch no files outside this directory. Report t_pi and the Omega_R t where PT
+first exceeds 1.
+```
+**Expected output:** appended row; console showing $t_\pi\approx 2.3$ μs, the exact/PT comparison table, and PT crossing 1 near $\Omega_R t = 2$.
+**What to inspect:** exact $P$ never exceeds 1; PT and exact agree for $\Omega_R t \ll 1$ and diverge by the $\pi$-pulse; $\Omega_R/\omega_0 \approx 5\times10^{-4}$ confirms the RWA.
+**If it goes wrong:** if $t_\pi$ comes out in nanoseconds or seconds, $\Omega_R$ used $\gamma_p B_1$ instead of $\gamma_p B_1/2$, or a factor of $2\pi$ slipped — print $\Omega_R$ in rad/s and check it is $\sim 10^6$.
+**CLAUDE.md / AGENTS.md note:** add "A transition probability greater than 1 is a breakdown signal of first-order TDPT, not a result — switch to the exact Rabi formula."
 
 ---
 
 ## Chapter 06: Chapter 6 — Radiation and Fermi's Golden Rule
 *Source: `chapters/06-radiation-and-fermis-golden-rule.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the golden-rule table row and a script that computes the $2p\to1s$ lifetime and checks it against the measured value.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–5 rows.
+- [ ] Python 3 + numpy/scipy.
+- [ ] `CLAUDE.md` rule: "Golden-rule rates depend on three ingredients — |V_fi|^2, rho(E), and omega^3; a missing omega^3 power is the most common order-of-magnitude error."
+**The Task:**
+```
+In the running-project directory:
+1. Append the Fermi-golden-rule row to method-table.md (epsilon = the validity
+   window 2 pi/Delta_omega << t << hbar/|V_fi|).
+2. Create golden_rule_2p1s.py that:
+   - computes the radial integral R = 256/(81 sqrt 6) a0 numerically by direct
+     quadrature of R_10 r^3 R_21, and confirms it matches the closed form,
+   - forms |<1s|e r|2p>|^2_avg = e^2 (2^15/3^10) a0^2,
+   - computes A_21 = omega^3 |<...>|^2 / (3 pi eps0 hbar c^3) with
+     hbar omega = 10.2 eV, prints A_21 (s^-1) and tau = 1/A_21 (ns),
+   - prints percent error vs the measured tau = 1.596 ns.
+3. Run it. Confirm tau ~ 1.6 ns and percent error within a few percent.
+Touch no files outside this directory. Report A_21, tau, and the percent error.
+```
+**Expected output:** appended row; console showing the radial integral matching $256/(81\sqrt6)a_0$, $A_{21}\approx 6.3\times10^8$ s$^{-1}$, $\tau\approx 1.6$ ns, and a few-percent error.
+**What to inspect:** the numerical radial integral matches the closed form; the lifetime lands in the nanosecond decade; the percent error is small and reported against the cited 1.596 ns.
+**If it goes wrong:** if $\tau$ comes out in picoseconds or microseconds, the $\omega^3$ factor or a unit conversion is off — print $A_{21}$ and check the $\omega^3$ has the photon angular frequency ($1.55\times10^{16}$ rad/s), not the energy in eV.
+**CLAUDE.md / AGENTS.md note:** add "Never report a decay rate without confirming the golden-rule validity window holds for that transition's timescale."
 
 ---
 
 ## Chapter 07: Chapter 7 — Scattering I: Partial Waves
 *Source: `chapters/07-scattering-i-partial-waves.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the partial-wave table row and a script that computes $\delta_0$, $\sigma$, $a_s$, and verifies the optical theorem.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–6 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "Always estimate ka before truncating the partial-wave sum; verify the optical theorem as a self-consistency check."
+**The Task:**
+```
+In the running-project directory:
+1. Append the partial-wave row to method-table.md (epsilon = ka).
+2. Create partial_waves.py (natural units hbar=2m=1, a=1) that:
+   - computes delta_0(k) = arctan((k/kappa) tan(kappa)) - k with
+     kappa=sqrt(k^2+V0), for V0=5, scanning ka in [0.01, 6] with branch tracking,
+   - computes sigma/(pi a^2) = 4 sin^2(delta_0)/k^2,
+   - computes a_s = 1 - tan(sqrt(V0))/sqrt(V0),
+   - at ka=0.1 confirms sigma/(pi a^2) -> ~4 (the factor of four),
+   - verifies the optical theorem sigma_tot = (4 pi/k) Im f(0) to 1e-6 at ka=1.
+3. Run it. Confirm the factor-of-four limit and the optical-theorem check pass.
+Touch no files outside this directory. Report a_s and the ka=0.1 cross-section ratio.
+```
+**Expected output:** appended row; console showing $\sigma/\pi a^2 \to 4$ at low $ka$, a finite $a_s$, and the optical theorem passing.
+**What to inspect:** the low-energy ratio approaches 4 (not 1); the optical theorem holds to numerical tolerance; the scattering length diverges as $V_0$ crosses $(\pi/2)^2$.
+**If it goes wrong:** if the cross-section is discontinuous in $ka$, the $\arctan$ branch was not tracked — detect $\tan\kappa>10^6$ and add $n\pi$ to keep $\delta_0(k)$ continuous.
+**CLAUDE.md / AGENTS.md note:** add "Partial-wave phase shifts require $\arctan$ branch tracking across resonances; a discontinuous $\delta_0(k)$ is a branch bug, not physics."
 
 ---
 
 ## Chapter 08: Chapter 8 — Scattering II: The Born Approximation
 *Source: `chapters/08-scattering-ii-the-born-approximation.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the Born table row and a script that computes the Rutherford cross-section, verifies the $-4$ log-log slope, and checks the Born parameter.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–7 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "Compute the Born parameter xi before trusting a Born cross-section; Born predicts NO resonance structure, so a smooth Born curve near a known resonance is a qualitative failure, not a small error."
+**The Task:**
+```
+In the running-project directory:
+1. Append the Born row to method-table.md (epsilon = xi = 2m|V0|/hbar^2 mu^2,
+   high-energy form xi/ka).
+2. Create rutherford.py that:
+   - computes eta = Z Z' e^2/(4 pi eps0 hbar v) for E=5 MeV, Z=2, Z'=79; confirms
+     eta ~ 22 >> 1 (Born is exact for Coulomb by phase cancellation, not a small parameter),
+   - computes d sigma/d Omega = (Z Z' e^2/(16 pi eps0 E))^2 / sin^4(theta/2)
+     at theta=30,60,90,120,150 deg for E=5.486 MeV (Am-241), Z'=79; prints fm^2/sr,
+   - fits log(d sigma/d Omega) vs log(sin(theta/2)) and confirms slope ~ -4.
+3. Run it. Confirm eta ~ 22 (>> 1) and slope ~ -4.
+Touch no files outside this directory. Report the 90-deg cross-section, eta, and
+the fitted slope.
+```
+**Expected output:** appended row; console showing $\eta\approx 22$, a table of cross-sections, and a fitted log-log slope of $\approx -4$.
+**What to inspect:** the slope is $-4$ (the $\sin^{-4}$ law) and the 90° value is in the $10^2$ fm²/sr range; note $\eta\approx22\gg1$, so Born is exact here by Coulomb phase cancellation, *not* by a small parameter.
+**If it goes wrong:** if the slope is not $-4$, the angle convention ($\theta$ vs $\theta/2$) or a degree/radian slip is the cause — print $\sin(\theta/2)$ for each angle and check.
+**CLAUDE.md / AGENTS.md note:** add "Born's exactness for Coulomb is a special property of the $1/r$ potential; never assume Born reproduces the classical result for any other potential."
 
 ---
 
 ## Chapter 09: Chapter 9 — Atoms in Fields: Zeeman, Stark, and Magnetic Resonance
 *Source: `chapters/09-atoms-in-fields.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the atoms-in-fields table row and a script that diagonalizes the two-state ammonia Hamiltonian and computes Zeeman $g_J$ shifts, checking the regime parameter.
+**Tool:** Claude Code
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–8 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "Before applying a weak-field (g_J) or strong-field (Paschen-Back) Zeeman formula, compute mu_B B / Delta_E_fs and confirm it is << 1 or >> 1; if it is near 1, neither limiting formula is valid."
+**The Task:**
+```
+In the running-project directory:
+1. Append the atoms-in-fields row to method-table.md (epsilon = mu_B B/Delta_E_fs).
+2. Create atoms_in_fields.py that:
+   - diagonalizes [[E0,-A],[-A,E0]] symbolically/numerically; confirms
+     E_pm = E0 -/+ A and splitting 2A,
+   - converts nu=23.87 GHz to Delta E in eV (Delta E = h nu); prints it,
+   - computes g_J for 2s (g=2), 2p_1/2 (g=2/3), 2p_3/2 (g=4/3) and the Zeeman
+     shifts g_J mu_B B m_j at B=0.5 T,
+   - computes mu_B B / Delta_E_fs at B=0.5 T (Delta_E_fs=4.5e-5 eV) and prints a
+     WARNING if it is between 0.1 and 10 (intermediate regime).
+3. Run it. Confirm Delta E(maser) ~ 9.94e-5 eV and the intermediate-regime
+   warning fires at B=0.5 T.
+Touch no files outside this directory. Report Delta E(maser), the three g_J,
+and whether the regime warning fired.
+```
+**Expected output:** appended row; console showing $\Delta E\approx9.94\times10^{-5}$ eV, the three $g_J$ values, and an intermediate-regime warning at 0.5 T.
+**What to inspect:** the maser splitting matches $h\times23.87$ GHz; the $g_J$ values are $2,\tfrac23,\tfrac43$; the regime warning correctly fires because $\mu_B B/\Delta E_\text{fs}\approx0.65$.
+**If it goes wrong:** if $\Delta E$ comes out near $10^{-4}$ eV instead of $\sim10^{-4}$… check the GHz→Hz and $h$ in eV·s conversion; print $h\nu$ in joules then convert.
+**CLAUDE.md / AGENTS.md note:** add "A two-state splitting set by a tunneling matrix element is exponentially sensitive to barrier shape; report such splittings with that caveat, never as a single confident number from a crude barrier model."
 
 ---
 
 ## Chapter 10: Chapter 10 — Periodic Potentials and the Band Structure of Solids
 *Source: `chapters/10-periodic-potentials-and-band-structure.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the band-structure table row and a script that computes the CdSe gap with band-edge $m^*$ and with the nonparabolicity-corrected $m^*$, reporting both percent errors.
+**Tool:** Claude Code
+**Skill level:** Advanced
+**Setup — confirm:**
+- [ ] `method-table.md` with Ch 1–9 rows.
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "An input parameter (e.g. effective mass) used outside the regime where it was measured is a silent error source; always report which regime the input is valid in."
+**The Task:**
+```
+In the running-project directory:
+1. Append the tight-binding/band-structure row to method-table.md (epsilon =
+   t/E0 atomic limit; NFE gap = 2|V_G1|). Add a note that the quantum-dot m* is
+   the inverse band curvature.
+2. Create quantum_dot.py that:
+   - computes E_1s,e = hbar^2 pi^2/(2 m_e* R^2), E_1s,h likewise, and the Coulomb
+     correction, for R=1.5 nm, m_e*=0.13 m_e, m_h*=0.45 m_e, eps_r=10.6,
+     E_bulk=1.74 eV; prints the predicted gap,
+   - prints percent error vs the measured 3 nm CdSe gap ~2.44 eV (expect ~32%),
+   - recomputes E_1s,e with the nonparabolicity-corrected m_e*=0.20 m_e and
+     prints the revised gap and percent error (expect ~14%).
+3. Run it. Confirm the band-edge m* gives ~32% error and the corrected m* gives
+   ~14%.
+Touch no files outside this directory. Report both gaps and both percent errors.
+```
+**Expected output:** appended row; console showing the band-edge prediction ($\sim3.2$ eV, $\sim32\%$ error) and the corrected prediction ($\sim2.78$ eV, $\sim14\%$ error) against the cited 2.44 eV.
+**What to inspect:** the $1/R^2$ scaling is correct; the band-edge $m^*$ overestimates the gap; the corrected $m^*$ roughly halves the error — demonstrating "right structure, wrong input."
+**If it goes wrong:** if $E_{1s,e}$ comes out near 4.6 eV (the chapter's own cautionary mis-step), the eV·Å² shortcut was applied without the $1/R^2$ in SI — recompute $E_{1s,e}$ in SI from $\hbar^2\pi^2/2m^*R^2$ and confirm $\approx1.28$ eV.
+**CLAUDE.md / AGENTS.md note:** add "Report the regime of validity of every input parameter, not just of the method; an in-regime method with an out-of-regime input still fails."
 
 ---
 
 ## Chapter 11: Chapter 11 — Capstone: Modeling a Real Quantum System
 *Source: `chapters/11-capstone-modeling-a-real-quantum-system.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the complete capstone repository — a single script that reproduces your chosen system's number, plus a `report.md` assembling all five moves.
+**Tool:** Claude Code — it can read your method table and per-system scripts, run the chosen one, and assemble the report.
+**Skill level:** Advanced
+**Setup — confirm:**
+- [ ] `method-table.md` with all ten method rows.
+- [ ] The per-chapter script for your chosen system (e.g. `wkb_stm.py`, `rutherford.py`, `helium_variational.py`).
+- [ ] Python 3 + numpy.
+- [ ] `CLAUDE.md` rule: "The capstone number must be reproduced by a committed script and reported with units, a percent error, and a cited measured value."
+**The Task:**
+```
+In the running-project directory, assemble the capstone for [YOUR CHOSEN SYSTEM].
+1. Confirm method-table.md has the row for this system's method, with epsilon
+   computed at your parameters. If epsilon is not << 1, HALT and report that the
+   method is invalid — do not produce a number.
+2. Run the existing per-system script (do not rewrite it) and capture its output
+   number with units.
+3. Create report.md with five sections:
+   - Move 1 System identification (leave a stub for me to fill — do NOT write it)
+   - Move 2 Method selection: paste the method, the epsilon value, and the
+     valid/marginal/broken verdict
+   - Move 3 Calculation: the number with units and the script that produced it
+   - Move 4 Validation: the cited measured value, the percent error (compute it),
+     and the citation (author, year)
+   - Move 5 Breakdown analysis (leave a stub for me to fill — do NOT write it)
+4. Verify: re-run the script and confirm the number is reproducible to the stated
+   precision; confirm the percent error in report.md matches the recomputed one.
+Touch no files outside this directory. Report the number, the percent error, and
+whether the reproducibility check passed.
+```
+**Expected output:** `report.md` with moves 2–4 filled and moves 1, 5 stubbed for you; a reproducible number with units and a computed percent error against a cited datum.
+**What to inspect:** the $\varepsilon$ verdict gates the whole report (no number if the method is invalid); the percent error is computed against an actual cited value, not asserted; the script reproduces the number on re-run.
+**If it goes wrong:** if Claude Code fills in moves 1 or 5, revert those sections — the system identification and breakdown analysis are the human-only moves R2 flagged; a generated breakdown with no magnitudes is the tell.
+**CLAUDE.md / AGENTS.md note:** add "Moves 1 (identification) and 5 (breakdown) are author-written; the agent fills only moves 2–4. A breakdown section without order-of-magnitude estimates is incomplete."
 
 ---
 
-## Chapter 99: 99 Back Matter
+## Chapter 99: 99-back-matter.md
 *Source: `chapters/99-back-matter.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
+> **Section not yet authored.** No `### Exercise R4 — CLI Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---

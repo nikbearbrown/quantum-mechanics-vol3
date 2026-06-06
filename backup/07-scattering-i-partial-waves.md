@@ -1,24 +1,26 @@
 # Chapter 7 — Scattering I: Partial Waves
 
-Consider a hard sphere of radius $a$ placed in the laboratory. A beam of particles streams toward it. In classical mechanics, every particle whose impact parameter is less than $a$ bounces off and every other particle misses, giving a total cross-section of $\pi a^2$ — the geometric shadow area.
+A hard sphere of radius $a$ sits in the lab. A beam of particles streams toward it. Classically, the answer is easy: every particle with impact parameter less than $a$ bounces off, every other misses, and the total cross-section is $\pi a^2$ — the geometric shadow.
 
-In quantum mechanics, the answer depends on energy. At low energy the total cross-section is $4\pi a^2$, four times the geometric value. At high energy it is $2\pi a^2$, twice the classical result. Both values follow directly from the wave nature of quantum particles: diffraction, interference, and the fact that a wave cannot be blocked without scattering in the forward direction. To calculate these results we develop the **partial-wave expansion**, a framework that separates the scattering problem into angular-momentum channels and assigns each channel a single real number called the phase shift. Once this framework is in place, every elastic scattering problem with spherical symmetry reduces to determining the phase shifts.
+Now do it quantum mechanically. The answer at low energy is $4\pi a^2$ — four times the geometric cross-section. At high energy it is $2\pi a^2$ — twice the classical result. Both numbers are wrong from a classical perspective and both are right quantum mechanically. Understanding why is the entire point of this chapter.
+
+The extra factors come from wave behavior: diffraction, interference, the fact that a wave cannot be blocked without scattering in the forward direction. To quantify this requires a framework — the partial-wave expansion — that breaks the problem into angular-momentum channels and assigns each one a single real number, the phase shift. Build that framework once and every elastic scattering problem in spherical geometry reduces to reading off phase shifts.
 
 ---
 
 ## The Scattering Amplitude
 
-We work in the center-of-mass frame. A steady beam with energy $E = \hbar^2 k^2/2m$ propagates along $\hat{z}$. Far from the scatterer, the total wave function satisfies the **scattering boundary condition**:
+Work in the center-of-mass frame. A steady beam with energy $E = \hbar^2 k^2/2m$ propagates along $\hat{z}$. Far from the scatterer, the total wave function has the **scattering boundary condition**:
 
-$$\psi(\mathbf{r}) \overset{r\to\infty}{\longrightarrow} e^{ikz} + f(\theta)\,\frac{e^{ikr}}{r}.$$
+$$\psi(\mathbf{r}) \xrightarrow{r\to\infty} e^{ikz} + f(\theta)\,\frac{e^{ikr}}{r}.$$
 
-The first term is the incident plane wave; the second is an outgoing spherical wave with angular modulation $f(\theta)$. We assume azimuthal symmetry (central potential), so there is no $\phi$ dependence. The single complex function $f(\theta)$ is called the **scattering amplitude**, and from it we can determine the total cross-section, the differential cross-section, and resonance properties.
+The first term is the incident plane wave; the second is an outgoing spherical wave with angular modulation $f(\theta)$. We assume azimuthal symmetry (central potential), so there is no $\phi$ dependence. Everything — total cross-section, differential cross-section, resonances — follows from the single complex function $f(\theta)$, the **scattering amplitude**.
 
-The probability current in the incident wave is $j_\text{inc} = \hbar k/m$. The current scattered into solid angle $d\Omega$ is proportional to $|f(\theta)|^2$. Their ratio defines the **differential cross-section**:
+The probability current in the incident wave is $j_\text{inc} = \hbar k/m$. The current scattered into solid angle $d\Omega$ is proportional to $|f(\theta)|^2$. The ratio defines the **differential cross-section**:
 
 $$\frac{d\sigma}{d\Omega} = |f(\theta)|^2.$$
 
-Integrating over all solid angles gives the **total cross-section**:
+Integrate over all solid angles for the **total cross-section**:
 
 $$\sigma_\text{tot} = \int|f(\theta)|^2\,d\Omega = 2\pi\int_0^\pi|f(\theta)|^2\sin\theta\,d\theta.$$
 
@@ -26,15 +28,15 @@ $$\sigma_\text{tot} = \int|f(\theta)|^2\,d\Omega = 2\pi\int_0^\pi|f(\theta)|^2\s
 
 ## The Partial-Wave Expansion
 
-For a central potential, angular momentum is conserved and the problem separates by angular-momentum quantum number $\ell$. The incident plane wave has the Rayleigh expansion:
+For a central potential, angular momentum is conserved and the problem separates. The incident plane wave has the Rayleigh expansion:
 
 $$e^{ikz} = \sum_{\ell=0}^\infty(2\ell+1)\,i^\ell\,j_\ell(kr)\,P_\ell(\cos\theta).$$
 
-Far from the scatterer, spherical Bessel functions behave as $j_\ell(kr) \to \sin(kr - \ell\pi/2)/kr$. The potential shifts each partial wave by a phase, so the asymptotic radial solution for angular momentum $\ell$ becomes:
+Far from the scatterer, spherical Bessel functions go as $j_\ell(kr) \to \sin(kr - \ell\pi/2)/kr$. The potential shifts each partial wave by a phase, so the asymptotic radial solution for angular momentum $\ell$ becomes:
 
-$$u_\ell(r) \overset{r\to\infty}{\longrightarrow} \frac{\sin(kr - \ell\pi/2 + \delta_\ell)}{kr}.$$
+$$u_\ell(r) \xrightarrow{r\to\infty} \frac{\sin(kr - \ell\pi/2 + \delta_\ell)}{kr}.$$
 
-The real number $\delta_\ell$ is the **phase shift** for the $\ell$-th partial wave. Assembling all partial waves and matching to the boundary condition, we obtain the scattering amplitude:
+The real number $\delta_\ell$ is the **phase shift** for the $\ell$-th partial wave. Assembling all partial waves and matching to the boundary condition, the scattering amplitude is:
 
 $$\boxed{f(\theta) = \frac{1}{k}\sum_{\ell=0}^\infty(2\ell+1)\,e^{i\delta_\ell}\sin\delta_\ell\,P_\ell(\cos\theta).}$$
 
@@ -42,19 +44,19 @@ Using the orthogonality of Legendre polynomials, the total cross-section becomes
 
 $$\sigma_\text{tot} = \frac{4\pi}{k^2}\sum_{\ell=0}^\infty(2\ell+1)\sin^2\delta_\ell.$$
 
-Each partial wave contributes $\sigma_\ell = (4\pi/k^2)(2\ell+1)\sin^2\delta_\ell$, which is bounded by the **unitarity limit** $4\pi(2\ell+1)/k^2$. No such bound exists in classical mechanics.
+Each partial wave contributes $\sigma_\ell = (4\pi/k^2)(2\ell+1)\sin^2\delta_\ell$, bounded by the **unitarity limit** $4\pi(2\ell+1)/k^2$. No such bound exists classically.
 
-The phase shift has a direct physical interpretation: it is the phase by which the potential has shifted the outgoing wave relative to a free particle. An attractive potential draws the wave closer to the origin, advancing the phase, so $\delta_\ell > 0$. A repulsive potential pushes the wave outward, so $\delta_\ell < 0$.
+The phase shift has a direct physical meaning: it is the phase by which the potential has shifted the outgoing wave relative to a free particle. An attractive potential pulls the wave closer to the origin, advancing the phase — $\delta_\ell > 0$. A repulsive potential pushes it out — $\delta_\ell < 0$.
 
 ---
 
 ## The Optical Theorem
 
-We evaluate $f(\theta)$ at $\theta = 0$, using $P_\ell(1) = 1$:
+Evaluate $f(\theta)$ at $\theta = 0$, using $P_\ell(1) = 1$:
 
 $$f(0) = \frac{1}{k}\sum_{\ell=0}^\infty(2\ell+1)\,e^{i\delta_\ell}\sin\delta_\ell.$$
 
-Taking the imaginary part:
+Take the imaginary part:
 
 $$\operatorname{Im}[f(0)] = \frac{1}{k}\sum_{\ell=0}^\infty(2\ell+1)\sin^2\delta_\ell = \frac{k}{4\pi}\sigma_\text{tot}.$$
 
@@ -62,61 +64,61 @@ Rearranging:
 
 $$\boxed{\sigma_\text{tot} = \frac{4\pi}{k}\,\operatorname{Im}[f(0)].}$$
 
-This result is known as the **optical theorem**. It states that the total cross-section equals the imaginary part of the forward scattering amplitude multiplied by $4\pi/k$. The physical content of this relation is as follows: whenever the potential removes probability from the forward beam by scattering to other directions, the forward-scattered wave must interfere destructively with the incident wave to create a shadow. That destructive interference requires a specific imaginary component in $f(0)$. The optical theorem is a consequence of unitarity and holds for inelastic scattering as well, where $\sigma_\text{tot}$ includes every process.
+This is the **optical theorem**. It says that the total cross-section equals the imaginary part of the forward scattering amplitude (times $4\pi/k$). The physics: whenever the potential removes probability from the forward beam by scattering to other directions, the forward-scattered wave must interfere destructively with the incident wave to produce a shadow. That destructive interference requires a specific imaginary component in $f(0)$. The optical theorem is a consequence of unitarity — it holds for inelastic scattering too, where $\sigma_\text{tot}$ includes every process.
 
-We can use it as a self-consistency check: compute $\sigma_\text{tot}$ from the partial-wave sum, independently compute $\operatorname{Im}[f(0)]$, and verify that the relation holds. If it does not, there is an error somewhere in the calculation.
+Use it as a sanity check: compute $\sigma_\text{tot}$ from the partial-wave sum, independently compute $\operatorname{Im}[f(0)]$, and verify the relation. If it fails, something is wrong.
 
 ---
 
 ## Low-Energy Scattering and the Scattering Length
 
-A classical particle with angular momentum $\ell\hbar$ and momentum $\hbar k$ has impact parameter $b = \ell/k$. Only particles approaching within the range $a$ of the potential are affected: $b \lesssim a$ means $\ell \lesssim ka$. At low energy, when $ka \ll 1$, only the $\ell = 0$ term survives. The scattering amplitude and total cross-section reduce to:
+A classical particle with angular momentum $\ell\hbar$ and momentum $\hbar k$ has impact parameter $b = \ell/k$. Only particles approaching within the range $a$ of the potential are affected: $b \lesssim a$ means $\ell \lesssim ka$. At low energy $ka \ll 1$, only $\ell = 0$ survives. Everything reduces to:
 
 $$f(\theta) \approx \frac{e^{i\delta_0}\sin\delta_0}{k}, \qquad \sigma_\text{tot} \approx \frac{4\pi}{k^2}\sin^2\delta_0.$$
 
 As $k \to 0$, the phase shift goes to zero linearly: $\delta_0 \to -a_s k$, where $a_s$ is the **scattering length**. Then:
 
-$$\sigma_\text{tot} \overset{k\to 0}{\longrightarrow} \frac{4\pi}{k^2}\sin^2(a_s k) \approx 4\pi a_s^2.$$
+$$\sigma_\text{tot} \xrightarrow{k\to 0} \frac{4\pi}{k^2}\sin^2(a_s k) \approx 4\pi a_s^2.$$
 
-The low-energy total cross-section is $4\pi a_s^2$, independent of energy and four times the "classical" area $\pi a_s^2$. This factor of four is not an error. A spherically symmetric scatterer of characteristic size $a_s$ scatters isotropically into all $4\pi$ steradians, and that isotropy produces the factor of four.
+The low-energy total cross-section is $4\pi a_s^2$ — independent of energy, and four times the "classical" $\pi a_s^2$. The factor of four is not a mistake. A spherically symmetric scatterer of characteristic size $a_s$ scatters isotropically into all $4\pi$ steradians; that isotropy produces the factor of four.
 
-The scattering length encodes information about the bound-state spectrum of the potential. If the potential is just deep enough to support a bound state at threshold (binding energy $\to 0$), then $a_s \to +\infty$. Just below threshold $a_s$ is large and negative; just above it is large and positive. This relationship is expressed by the Levinson theorem: the scattering length diverges whenever a new bound state appears at threshold and its sign changes. In nuclear physics, the neutron-proton triplet s-wave scattering length is $a_t \approx 5.4$ fm and the singlet is $a_s \approx -23.7$ fm. The large negative singlet value indicates a virtual bound state of the np system sitting just above threshold. In ultracold atomic physics, Feshbach resonances allow the scattering length to be tuned from $-\infty$ to $+\infty$ by adjusting a magnetic field.
+The scattering length is the low-energy fingerprint of the bound-state spectrum. If the potential is just deep enough to support a bound state at threshold (binding energy $\to 0$), then $a_s \to +\infty$. Just below threshold $a_s$ is large and negative; just above, large and positive. This is the Levinson theorem in its simplest form: the scattering length diverges whenever a new bound state appears at threshold, and its sign flips. In nuclear physics, the neutron-proton triplet s-wave scattering length is $a_t \approx 5.4$ fm and the singlet is $a_s \approx -23.7$ fm — the large negative singlet value signals a virtual bound state of the np system sitting just above threshold. In ultracold atomic physics, Feshbach resonances allow the scattering length to be tuned from $-\infty$ to $+\infty$ by adjusting a magnetic field.
 
 ---
 
 ## Resonances
 
-When the potential supports a quasi-bound state just above threshold, the s-wave phase shift passes through $\pi/2$, causing $\sin^2\delta_0 \to 1$, and the partial cross-section reaches the unitarity limit $4\pi/k^2$. This is a **scattering resonance**.
+When the potential supports a quasi-bound state just above threshold, the s-wave phase shift passes through $\pi/2$, $\sin^2\delta_0 \to 1$, and the partial cross-section hits the unitarity limit $4\pi/k^2$. This is a **scattering resonance**.
 
-Near a resonance at energy $E_R$, the phase shift takes the Breit-Wigner form:
+Near a resonance at energy $E_R$, the phase shift has the Breit-Wigner form:
 
 $$\tan\delta_0(k) = \frac{\Gamma/2}{E_R - E},$$
 
-where $\Gamma$ is the width of the resonance. The s-wave cross-section near the resonance is a Breit-Wigner Lorentzian in energy, peaking at $4\pi/k_R^2$ at $E = E_R$. Narrow resonances correspond to long-lived quasi-bound states; wide resonances correspond to weakly-trapped states that escape quickly. The analogy with a driven oscillator is useful: the cross-section peaks when the incoming energy matches the natural frequency of a quasi-stationary state inside the potential.
+where $\Gamma$ is the width of the resonance. The s-wave cross-section near the resonance is a Breit-Wigner Lorentzian in energy, peaking at $4\pi/k_R^2$ at $E = E_R$. Narrow resonances correspond to long-lived quasi-bound states; wide resonances to weakly-trapped states that escape quickly. The resonance is a scattering analog of a driven oscillator: the cross-section peaks when the incoming energy matches a natural frequency of a quasi-stationary state inside the potential.
 
 ---
 
 ## Worked Example — Hard-Sphere Scattering at Low and High Energy
 
-**Setup.** We consider the hard-sphere potential: $V = \infty$ for $r < a$, $V = 0$ for $r \geq a$. The boundary condition is $\psi(a) = 0$.
+**Setup.** Hard-sphere potential: $V = \infty$ for $r < a$, $V = 0$ for $r \geq a$. Boundary condition: $\psi(a) = 0$.
 
-**Exact s-wave phase shift.** The radial equation outside the sphere is the free-particle equation: $u_0'' + k^2 u_0 = 0$. The general solution is $u_0(r) = A\sin(kr + \delta_0)$. Applying the boundary condition $u_0(a) = 0$ requires $\sin(ka + \delta_0) = 0$, which gives:
+**Exact s-wave phase shift.** The radial equation outside the sphere is free-particle: $u_0'' + k^2 u_0 = 0$. The general solution is $u_0(r) = A\sin(kr + \delta_0)$. The boundary condition $u_0(a) = 0$ requires $\sin(ka + \delta_0) = 0$, giving:
 
 $$\delta_0 = -ka.$$
 
-This result is exact for all $k$. The phase shift is negative (consistent with a repulsive potential) and grows linearly with momentum.
+This is exact for all $k$. The phase shift is negative (repulsive) and grows linearly with momentum.
 
-**Low-energy cross-section.** With $\delta_0 = -ka$ and $ka \ll 1$, we have $\sin(ka) \approx ka$, so:
+**Low-energy cross-section.** With $\delta_0 = -ka$ and $ka \ll 1$: $\sin(ka) \approx ka$, so:
 
 $$\frac{d\sigma}{d\Omega} \approx a^2 \quad\text{(isotropic)}, \qquad \sigma_\text{tot} \approx 4\pi a^2.$$
 
-The scattering is isotropic and the cross-section is four times the geometric value. This is a purely quantum-mechanical result. The classical value $\pi a^2$ is smaller by a factor of four because the classical picture assumes particles travel in straight lines, while the quantum wave diffracts around the sphere and scatters uniformly in all directions at low energy.
+Four times the geometric cross-section. The scattering is isotropic — a purely quantum-mechanical result. The classical answer $\pi a^2$ (a disk) is wrong by a factor of four because the classical picture assumes particles travel in straight lines. The quantum wave diffracts around the sphere and scatters in all directions equally at low energy.
 
-**High-energy cross-section.** At $ka \gg 1$, many partial waves contribute — up to $\ell_\text{max} \approx ka$. The exact phase shifts $\delta_\ell$ for the hard sphere oscillate rapidly over the occupied channels and average to $\langle\sin^2\delta_\ell\rangle \to 1/2$. Summing over all channels:
+**High-energy cross-section.** At $ka \gg 1$, many partial waves contribute — up to $\ell_\text{max} \approx ka$. The exact phase shifts $\delta_\ell$ for the hard sphere oscillate rapidly over the occupied channels and average $\langle\sin^2\delta_\ell\rangle \to 1/2$. Summing:
 
 $$\sigma_\text{tot} \approx \frac{4\pi}{k^2}\sum_{\ell=0}^{ka}(2\ell+1)\cdot\frac{1}{2} \approx 2\pi a^2.$$
 
-This is twice the geometric cross-section. The extra $\pi a^2$ contribution is diffractive: blocking the beam requires the forward-scattered wave to interfere destructively with the incident wave and create a shadow. That forward-scattered wave carries probability and contributes $\pi a^2$ to the total cross-section in addition to the $\pi a^2$ from sideways scattering. A shadow requires scattering, and the scattering that produces the shadow is counted just as much as the scattering that deflects particles sideways. This is the quantum version of Babinet's principle.
+Twice the geometric cross-section. The extra $\pi a^2$ is diffractive: blocking the beam requires the forward-scattered wave to destructively interfere with the incident wave to create a shadow. That forward-scattered wave carries probability — it contributes $\pi a^2$ to the total on top of the $\pi a^2$ from sideways scattering. A shadow requires scattering, and the scattering that makes the shadow counts just as much as the scattering that deflects particles to the side. This is the quantum version of Babinet's principle.
 
 **Square-well phase shift for reference.** For a finite spherical square well of depth $V_0$ and radius $a$, the interior wave vector is $\kappa = \sqrt{k^2 + 2mV_0/\hbar^2}$. Matching the logarithmic derivative at $r = a$:
 
@@ -126,17 +128,17 @@ The scattering length at $k \to 0$:
 
 $$a_s = a\!\left[1 - \frac{\tan(\kappa_0 a)}{\kappa_0 a}\right], \qquad \kappa_0 = \sqrt{2mV_0/\hbar^2}.$$
 
-When $\kappa_0 a = (n + 1/2)\pi$, we have $\tan(\kappa_0 a) \to \infty$ and $a_s \to \pm\infty$. A new bound state appears at threshold, the cross-section diverges, and the wave can barely distinguish the potential from a true bound state.
+When $\kappa_0 a = (n + 1/2)\pi$, $\tan(\kappa_0 a) \to \infty$ and $a_s \to \pm\infty$ — a new bound state appears at threshold, the cross-section diverges, and the wave can barely distinguish the potential from a true bound state.
 
 ---
 
 ## Still Puzzling
 
-**Efimov physics.** When the two-body scattering length is large ($|a_s| \gg$ range), three-body bound states appear at a geometric series of binding energies: $E_{n+1}/E_n = e^{-2\pi/s_0}$ where $s_0 \approx 1.00624$, so adjacent states differ by a factor of roughly $1/515$. Predicted by Vitaly Efimov in 1970 [verify] and first observed in ultracold cesium in 2006 [verify], this spectrum is universal — it depends only on the scattering length, not on the specific potential. It is one of the more striking features of low-energy quantum physics and requires renormalization-group methods applied to three-body quantum mechanics.
+**Efimov physics.** When the two-body scattering length is large ($|a_s| \gg$ range), three-body bound states appear at a geometric series of binding energies: $E_{n+1}/E_n = e^{-2\pi/s_0}$ where $s_0 \approx 1.00624$, so adjacent states differ by a factor of roughly $1/515$. Predicted by Vitaly Efimov in 1970 [verify] and first observed in ultracold cesium in 2006 [verify], this spectrum is universal — it depends only on the scattering length, not on the specific potential. It is one of the stranger corners of low-energy quantum physics, requiring renormalization-group ideas applied to three-body quantum mechanics.
 
-**The inverse scattering problem.** Given $\{\delta_\ell(k)\}$ for all $\ell$ and all $k$, can we reconstruct $V(r)$? The Gel'fand-Levitan-Marchenko theorem answers yes under certain conditions, providing an integral equation for the potential. However, the reconstruction requires phase shifts over the full range $0 < k < \infty$, while experiments measure cross-sections (squared amplitudes, without phase information) at finite energy ranges. The connection between data and potential is therefore less direct than the forward problem.
+**The inverse scattering problem.** Given $\{\delta_\ell(k)\}$ for all $\ell$ and all $k$, can you reconstruct $V(r)$? The Gel'fand-Levitan-Marchenko theorem says yes under certain conditions, giving an integral equation for the potential. But the problem requires phase shifts over the full range $0 < k < \infty$, while experiments measure cross-sections (squared amplitudes, losing phase information) at finite energy ranges. The connection between data and potential is less clean than the forward problem.
 
-**The S-matrix pole picture.** The Breit-Wigner formula emerges naturally from the observation that the S-matrix element $S_\ell(k) = e^{2i\delta_\ell}$ has a pole in the complex $k$-plane. Bound states correspond to poles on the positive imaginary axis. Resonances are poles in the lower half-plane close to the real axis. Virtual bound states like the dineutron sit on the negative imaginary axis. The scattering length, resonance width, and bound-state binding energy are all determined by the locations of these poles — this is the starting point of analytic S-matrix theory.
+**The S-matrix pole picture.** The Breit-Wigner formula emerges naturally from the assumption that the S-matrix element $S_\ell(k) = e^{2i\delta_\ell}$ has a pole in the complex $k$-plane. Bound states correspond to poles on the positive imaginary axis. Resonances are poles in the lower half-plane close to the real axis. Virtual bound states like the dineutron sit on the negative imaginary axis. The scattering length, resonance width, and bound-state binding energy are all controlled by where these poles sit — the beginning of analytic S-matrix theory.
 
 ---
 
@@ -282,7 +284,7 @@ Today's table entry: **partial waves — $\varepsilon = ka$ (number of contribut
 **The tell:** You are using AI well when you have an independent check — here, the optical theorem and the unitarity bound $\sigma_\ell\le4\pi(2\ell+1)/k^2$.
 
 ### Exercise R2 — When NOT to Use AI
-**The judgment:** These tasks require your judgment; AI output here cannot be trusted without redoing the work:
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
 - Deciding how many partial waves *your* problem needs — checking $ka$ against 1 — *Why AI fails here:* it will truncate at $\ell=0$ for a problem where $ka\sim5$ and several channels contribute, or carry needless high-$\ell$ terms, without estimating $ka$ first. This is the small-parameter call.
 - Tracking the $\arctan$ branch across a resonance — *Why AI fails here:* $\arctan$ jumps by $\pi$ at $\delta_0=\pi/2$; a model that does not add the $n\pi$ correction reports a discontinuous, wrong phase shift, and it will not notice.
 - Interpreting a large/negative scattering length physically (virtual vs real bound state) — *Why AI fails here:* the sign and magnitude encode the bound-state spectrum (Levinson), a physics call it will state confidently and sometimes wrongly.

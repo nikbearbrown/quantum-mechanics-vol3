@@ -1,10 +1,9 @@
 # Chapter 5 — Time-Dependent Perturbation Theory and Transitions
+*Why resonance is Fourier resonance, and why first-order perturbation theory predicts probabilities greater than one.*
 
-In January 1938 at Columbia University, Isidor Rabi's group passed a beam of LiCl molecules through three magnets. The first selected a particular nuclear spin orientation. The second — the interaction region — carried an oscillating radio-frequency field. The third analyzed what emerged. As the RF frequency was swept, the beam intensity dropped sharply at one specific value: the molecules had been flipped, driven from one spin state to the other. The resonance was narrow and well-defined.
+January 1938. Columbia University. Isidor Rabi's group passes a beam of LiCl molecules through three magnets. The first selects a particular nuclear spin orientation. The second — the interaction region — carries an oscillating radio-frequency field. The third analyzes what comes out. As they sweep the RF frequency, something sharp happens at one specific value: the beam intensity drops. The molecules have been flipped — driven from one spin state to the other. The resonance is narrow and well-defined.
 
-The two-state system Rabi was driving — a spin-up nuclear state and a spin-down nuclear state, separated by energy $\hbar\omega_0$, coupled by an oscillating perturbation — is physically identical to an atom in a laser field, an NMR sample in a coil, a superconducting qubit driven by a microwave pulse, a trapped ion manipulated by a Raman laser pair, or an electron spin in an ESR apparatus. Every quantum control experiment built since 1938 is Rabi's apparatus in different molecular form.
-
-This chapter answers two questions that apply to all of them: what is the probability of finding the system in the excited state at time $t$, and when does perturbation theory give the right answer?
+Here is what makes this worth understanding before doing the math. The two-state system Rabi was driving — a spin-up nuclear state and a spin-down nuclear state, separated by energy $\hbar\omega_0$, coupled by an oscillating perturbation — is physically identical to an atom in a laser field, an NMR sample in a coil, a superconducting qubit driven by a microwave pulse, a trapped ion being manipulated by a Raman laser pair, an electron spin in an ESR apparatus. Every quantum control experiment built since 1938 is Rabi's apparatus in different molecular handwriting. The two questions we will answer — what is the probability of finding the system in the excited state at time $t$, and when does perturbation theory give the right answer — work for all of them.
 
 ---
 
@@ -12,63 +11,63 @@ This chapter answers two questions that apply to all of them: what is the probab
 
 The Schrödinger equation for $\hat{H} = \hat{H}_0 + \hat{H}'(t)$ mixes two things: the eigenstates of $\hat{H}_0$ (which we know) and the perturbation (which is what we want to study). The interaction picture separates them.
 
-We define a new state vector by rotating out the trivial $\hat{H}_0$ evolution:
+Define a new state vector by rotating out the trivial $\hat{H}_0$ evolution:
 
 $$|\tilde{\psi}(t)\rangle = e^{i\hat{H}_0 t/\hbar}\,|\psi(t)\rangle.$$
 
-Substituting into the full Schrödinger equation, the $\hat{H}_0$ terms on both sides cancel exactly, leaving:
+Substitute into the full Schrödinger equation. The $\hat{H}_0$ terms on both sides cancel exactly, leaving:
 
 $$i\hbar\,\partial_t|\tilde{\psi}(t)\rangle = \tilde{H}'(t)\,|\tilde{\psi}(t)\rangle,$$
 
 where $\tilde{H}'(t) = e^{i\hat{H}_0 t/\hbar}\hat{H}'(t)e^{-i\hat{H}_0 t/\hbar}$ is the perturbation in the interaction picture.
 
-The interaction-picture state evolves only under $\hat{H}'(t)$. When $\hat{H}'(t) = 0$, it freezes completely. All the interesting dynamics — the transitions we want to compute — live in the perturbation. The fast $\hat{H}_0$ oscillations have been rotated away.
+The interaction-picture state evolves only under $\hat{H}'(t)$. When $\hat{H}'(t) = 0$, it freezes completely. This is the point: all the interesting dynamics — the transitions we want to compute — lives in the perturbation. The fast $\hat{H}_0$ oscillations have been rotated away.
 
-We expand in the unperturbed eigenstates $|n\rangle$:
+Expand in the unperturbed eigenstates $|n\rangle$:
 
 $$|\tilde{\psi}(t)\rangle = \sum_n c_n(t)\,|n\rangle,$$
 
-with initial condition $c_n(0) = \delta_{ni}$ (starting in state $|i\rangle$). Projecting onto the final state $\langle f|$:
+with initial condition $c_n(0) = \delta_{ni}$ (start in state $|i\rangle$). Project onto the final state $\langle f|$:
 
 $$i\hbar\,\dot{c}_f = \sum_n c_n(t)\,\langle f|\hat{H}'(t)|n\rangle\,e^{i\omega_{fn}t},$$
 
-where $\omega_{fn} = (E_f - E_n)/\hbar$ is the **Bohr frequency** for the $n \to f$ transition. This is exact. Every $c_f$ is coupled to every other $c_n$, which is why the full problem is hard. The factor $e^{i\omega_{fn}t}$ is the interaction-picture phase: the oscillation from $\hat{H}_0$ evolution is now explicit in the coupling equation.
+where $\omega_{fn} = (E_f - E_n)/\hbar$ is the **Bohr frequency** for the $n \to f$ transition. This is exact. Every $c_f$ is coupled to every other $c_n$, which is why the full problem is hard. The factor $e^{i\omega_{fn}t}$ is the interaction-picture phase: the oscillation from $\hat{H}_0$ evolution is now explicit in the coupling equation rather than hidden in the state.
 
 ---
 
 ## The First-Order Amplitude and Why It Is a Fourier Transform
 
-To solve the coupled equations, we replace every $c_n(t)$ on the right-hand side with its initial value: $c_n(t) \approx \delta_{ni}$. This is the first-order approximation — we treat the system as remaining mostly in $|i\rangle$ throughout. Integrating from 0 to $t$:
+To solve the coupled equations, replace every $c_n(t)$ on the right-hand side with its initial value: $c_n(t) \approx \delta_{ni}$. This is the first-order approximation — treat the system as still mostly in $|i\rangle$ throughout. Integrate from 0 to $t$:
 
 $$\boxed{c_f^{(1)}(t) = \frac{1}{i\hbar}\int_0^t\langle f|\hat{H}'(t')|i\rangle\,e^{i\omega_{fi}t'}\,dt'.}$$
 
 The transition probability is $P_{i\to f}(t) = |c_f^{(1)}(t)|^2$.
 
-This formula says that the transition amplitude is the **Fourier transform** of the perturbation matrix element $\langle f|\hat{H}'(t)|i\rangle$, evaluated at the Bohr frequency $\omega_{fi} = (E_f - E_i)/\hbar$.
+Read this formula carefully. It says: the transition amplitude is the **Fourier transform** of the perturbation matrix element $\langle f|\hat{H}'(t)|i\rangle$, evaluated at the Bohr frequency $\omega_{fi} = (E_f - E_i)/\hbar$.
 
-Resonance in this framework is Fourier resonance. The perturbation drives the transition efficiently when it has a Fourier component at the frequency matching the energy difference between initial and final states. If the perturbation oscillates at the wrong frequency, the phase factor in the integral oscillates and the integral cancels. If it oscillates at $\omega_{fi}$, the integral accumulates coherently.
+Resonance, in this framework, is Fourier resonance. The perturbation drives the transition efficiently when it has a Fourier component at the frequency that matches the energy difference between initial and final states. If the perturbation oscillates at the wrong frequency, the phase factor in the integral oscillates and the integral cancels. If it oscillates at $\omega_{fi}$, the integral accumulates coherently.
 
-This interpretation covers several important cases in one framework. A sudden kick (delta function in time) has a flat Fourier spectrum and drives all transitions equally. A slow quasi-static perturbation has a narrow spectrum near zero and drives nothing. A resonant sinusoidal perturbation drives the one transition it is tuned to.
+This interpretation generalizes immediately. A sudden kick (delta function in time) has a flat Fourier spectrum and drives all transitions equally. A slow quasi-static perturbation has a narrow spectrum near zero and drives nothing. A resonant sinusoidal perturbation drives the one transition it is tuned to. These are not three separate facts — they are three limits of the same formula.
 
 ---
 
 ## The Resonance Lineshape
 
-We take $\hat{H}'(t) = \hat{V}\cos(\omega t)$ and write $\cos\omega t = \frac{1}{2}(e^{i\omega t} + e^{-i\omega t})$. Near resonance $\omega \approx \omega_{fi}$, one exponential combines with $e^{i\omega_{fi}t}$ to oscillate at $e^{i(\omega_{fi}+\omega)t}$ — rapidly varying, averaging to nearly zero over any appreciable time. The other combines to give $e^{i(\omega_{fi}-\omega)t}$ — slowly varying near resonance, building up coherently. Dropping the fast term (the **rotating-wave approximation**, valid when $|V_{fi}| \ll \hbar\omega_0$) and integrating gives:
+Take $\hat{H}'(t) = \hat{V}\cos(\omega t)$. Write $\cos\omega t = \frac{1}{2}(e^{i\omega t} + e^{-i\omega t})$. Near resonance $\omega \approx \omega_{fi}$, one exponential combines with $e^{i\omega_{fi}t}$ to oscillate at $e^{i(\omega_{fi}+\omega)t}$ — rapidly varying, averaging to nearly zero over any appreciable time. The other combines to give $e^{i(\omega_{fi}-\omega)t}$ — slowly varying near resonance, building up coherently. Drop the fast term (the **rotating-wave approximation**, valid when $|V_{fi}| \ll \hbar\omega_0$) and the integral gives:
 
 $$\boxed{P_{i\to f}(t) = \frac{|V_{fi}|^2}{\hbar^2}\cdot\frac{\sin^2\!\left[\frac{(\omega_{fi}-\omega)\,t}{2}\right]}{\left(\frac{\omega_{fi}-\omega}{2}\right)^2}.}$$
 
-This is the **sinc-squared lineshape**. Several results follow directly.
+This is the **sinc-squared lineshape**. Several things to read off immediately.
 
-At resonance ($\omega = \omega_{fi}$), taking the $\delta\to 0$ limit where $\delta = \omega_{fi} - \omega$, the function $\sin^2(\delta t/2)/(\delta/2)^2 \to t^2$, so:
+At resonance ($\omega = \omega_{fi}$), take the $\delta\to 0$ limit where $\delta = \omega_{fi} - \omega$: the function $\sin^2(\delta t/2)/(\delta/2)^2 \to t^2$. So:
 
 $$P_{i\to f}^\text{resonance}(t) = \frac{|V_{fi}|^2}{\hbar^2}\cdot\frac{t^2}{4}.$$
 
-On-resonance probability grows as $t^2$. The peak height grows as $t^2$; the width to the first zero narrows as $2\pi/t$; the area under the central peak grows as $t$. As $t\to\infty$, the sinc-squared sharpens into $(\pi t/2)\,\delta(\omega_{fi}-\omega)$ — a delta function at resonance whose coefficient grows linearly in time. This is the gateway to Fermi's golden rule.
+On-resonance probability grows as $t^2$. The peak height grows as $t^2$; the width to the first zero narrows as $2\pi/t$; the area under the central peak grows as $t$. In the limit $t\to\infty$, the sinc-squared sharpens into $(\pi t/2)\,\delta(\omega_{fi}-\omega)$ — a delta function at resonance whose coefficient grows linearly in time. This is the gateway to Fermi's golden rule.
 
-**The failure mode.** At resonance, $P_{i\to f}(t) = |V_{fi}|^2 t^2/(4\hbar^2)$. This grows without bound. Eventually it exceeds 1. A probability exceeding 1 is a diagnostic: first-order perturbation theory has broken down.
+**The failure mode.** At resonance, $P_{i\to f}(t) = |V_{fi}|^2 t^2/(4\hbar^2)$. This grows without bound. Eventually it exceeds 1. A probability exceeding 1 is not a numerical inconvenience — it is a diagnostic. The formula is announcing that first-order perturbation theory has broken.
 
-The cause is the approximation $c_i(t) \approx 1$ throughout the integration. Once probability flows into $|f\rangle$, the population in $|i\rangle$ has decreased, and the rate of further transfer should slow. The first-order equations ignore this depletion: they continue drawing from $|i\rangle$ as though nothing has changed. The exact two-level solution accounts for this feedback; first-order PT does not.
+The cause is the approximation $c_i(t) \approx 1$ throughout the integration. Once probability flows into $|f\rangle$, the population in $|i\rangle$ has decreased, and the rate of further transfer should slow. The first-order equations ignore this depletion: they keep drawing from $|i\rangle$ as though nothing has changed. The exact two-level solution accounts for the feedback. First-order PT does not.
 
 <!-- → [CHART: sinc-squared lineshape P(δ, T) vs. detuning δ for three values of T — showing the central peak sharpening as T increases, with annotations for peak height ∝ T², width ∝ 1/T, and area ∝ T; the evolution toward a delta function should be visible; this is the key figure connecting finite-time perturbation to the Fermi golden rule limit] -->
 
@@ -79,7 +78,7 @@ The cause is the approximation $c_i(t) \approx 1$ throughout the integration. On
 
 ## The Exact Rabi Solution
 
-The two-level problem has an exact analytical solution. Two states $|g\rangle$ and $|e\rangle$, energies 0 and $\hbar\omega_0$. The drive Hamiltonian is:
+The two-level problem has an exact analytical solution. Two states $|g\rangle$ and $|e\rangle$, energies 0 and $\hbar\omega_0$. Drive Hamiltonian:
 
 $$\hat{H}'(t) = \hbar\Omega\cos(\omega t)\,(|e\rangle\langle g| + |g\rangle\langle e|).$$
 
@@ -87,13 +86,13 @@ The quantity $\Omega = |V_{fi}|/\hbar$ is the **Rabi frequency**. In the rotatin
 
 $$\dot{c}_g = -\frac{i\Omega}{2}\,e^{-i\Delta t}\,c_e, \qquad \dot{c}_e = -\frac{i\Omega}{2}\,e^{+i\Delta t}\,c_g,$$
 
-where $\Delta = \omega - \omega_0$ is the **detuning**. These are solved exactly by differentiating to obtain a second-order ODE and applying initial conditions $c_g(0) = 1$, $c_e(0) = 0$. The result:
+where $\Delta = \omega - \omega_0$ is the **detuning**. These can be solved exactly by differentiating to get a second-order ODE, then applying initial conditions $c_g(0) = 1$, $c_e(0) = 0$. The result:
 
 $$\boxed{P_{g\to e}(t) = \frac{\Omega^2}{\Omega^2+\Delta^2}\,\sin^2\!\left(\frac{\sqrt{\Omega^2+\Delta^2}}{2}\,t\right).}$$
 
 This is the **Rabi formula**. It is exact within the RWA — no perturbative approximation.
 
-We define the **generalized Rabi frequency** $\Omega_\text{gen} = \sqrt{\Omega^2 + \Delta^2}$. Then:
+Define the **generalized Rabi frequency** $\Omega_\text{gen} = \sqrt{\Omega^2 + \Delta^2}$. Then:
 
 $$P_{g\to e}(t) = \frac{\Omega^2}{\Omega_\text{gen}^2}\,\sin^2\!\left(\frac{\Omega_\text{gen}\,t}{2}\right).$$
 
@@ -101,13 +100,13 @@ $$P_{g\to e}(t) = \frac{\Omega^2}{\Omega_\text{gen}^2}\,\sin^2\!\left(\frac{\Ome
 
 $$P_{g\to e}(t) = \sin^2\!\left(\frac{\Omega t}{2}\right).$$
 
-The population oscillates between 0 and 1. At $t = \pi/\Omega$ — a **$\pi$-pulse** — the entire population is in $|e\rangle$. At $t = 2\pi/\Omega$ it is back in $|g\rangle$. This is Rabi oscillation. It is what Rabi's molecular beam showed in 1938, and it is what every qubit readout protocol relies on today.
+The population oscillates between 0 and 1. At $t = \pi/\Omega$ — a **$\pi$-pulse** — the entire population is in $|e\rangle$. At $t = 2\pi/\Omega$ it is back in $|g\rangle$. This is Rabi oscillation. It is what Rabi's molecular beam showed in 1938. It is what every qubit readout protocol relies on today.
 
 **Off resonance** ($\Delta \neq 0$): the maximum achievable probability is $\Omega^2/(\Omega^2+\Delta^2) < 1$. Full population transfer is impossible away from resonance. The oscillation is faster (frequency $\Omega_\text{gen} > \Omega$) but shallower. Resonance is required for complete inversion.
 
-**Comparison to first-order PT at resonance.** PT gives $P^\text{PT}_{g\to e}(t) = (\Omega t/2)^2$ — a parabola. The exact formula gives $\sin^2(\Omega t/2)$ — a bounded oscillation. For $\Omega t \ll 1$, expanding $\sin^2 x \approx x^2$ shows they agree. For $\Omega t \sim 1$, they diverge. At the first $\pi$-pulse ($\Omega t = \pi$): exact $P = 1$; PT predicts $(\pi/2)^2 \approx 2.47$. PT has predicted a probability of 247%.
+**Comparison to first-order PT at resonance.** PT gives $P^\text{PT}_{g\to e}(t) = (\Omega t/2)^2$ — a parabola. The exact formula gives $\sin^2(\Omega t/2)$ — a bounded oscillation. For $\Omega t \ll 1$, expand $\sin^2 x \approx x^2$: the two agree. For $\Omega t \sim 1$, they diverge badly. At the first $\pi$-pulse ($\Omega t = \pi$): exact $P = 1$; PT predicts $(\pi/2)^2 \approx 2.47$. PT has predicted a probability of 247%.
 
-The reason PT fails is worth stating precisely. PT assumes the amplitude in $|i\rangle$ is constant — $c_i(t) \approx 1$ — even as probability drains out of it. The exact solution feeds the depleted $|i\rangle$ population back in during the return half of the Rabi cycle; PT misses the return entirely. The regime of validity is $\Omega t \ll 1$: small coupling times short time. Outside that window, the Rabi formula is required.
+Why PT fails is worth stating precisely. PT assumes the amplitude in $|i\rangle$ is constant — $c_i(t) \approx 1$ — even as probability drains out of it. The exact solution feeds the depleted $|i\rangle$ population back in during the return half of the Rabi cycle; PT misses the return entirely. The regime of validity is $\Omega t \ll 1$: small coupling times short time. Outside that window, use the Rabi formula.
 
 <!-- → [CHART: Rabi oscillation vs. PT parabola — two-panel figure: (left) on resonance, showing sin²(Ωt/2) and (Ωt/2)² on the same axes with a dashed horizontal line at P=1, the PT curve rising above it, and a red label "PT invalid" after the crossing; (right) off resonance at Δ=2Ω, showing the capped oscillation at max P=1/5 from the Rabi formula vs. the PT approximation; this is the central diagnostic figure of the chapter] -->
 
@@ -140,7 +139,7 @@ At the moment PT declares complete population transfer, the real atom has moved 
 
 ## From Discrete to Continuum: Fermi's Golden Rule in Preview
 
-The sinc-squared lineshape at long times sharpens into a delta function. For a transition into a single discrete state, this would produce an infinitely narrow resonance. But real atoms emit photons into the vacuum: infinitely many electromagnetic modes, forming a continuum, each slightly different in frequency. When there is a continuum of final states, the delta function is always satisfied: there is always some mode whose frequency matches the transition energy, and the rate of transition becomes constant rather than oscillatory.
+The sinc-squared lineshape at long times sharpens into a delta function. For a transition into a single discrete state, this would mean an infinitely narrow resonance — fine structure in the spectrum. But real atoms emit photons into the vacuum: infinitely many electromagnetic modes, forming a continuum, each slightly different in frequency. When there is a continuum of final states, the delta function is always satisfied: there is always some mode whose frequency matches the transition energy, and the rate of transition becomes constant rather than oscillatory.
 
 Summing the first-order transition rates over a continuum of final states with density $\rho(E)$:
 
@@ -150,7 +149,7 @@ This is Fermi's golden rule. It gives the *rate* (probability per unit time) of 
 
 The transition from Rabi oscillation to Fermi golden rule decay is not a sudden change of physics. It is what happens as the number of available final states grows: the oscillations of the individual transition amplitudes add up destructively at all times except the first, leaving only the initial linear rise. A discrete problem with many modes is an intermediate case — almost continuum but not quite, showing oscillatory behavior at long times that a true continuum would not.
 
-Chapter 6 derives Fermi's golden rule formally and applies it to atomic emission. The key point here is recognizing where it comes from: the same first-order formula, applied to a continuum rather than a single final state.
+Chapter 6 derives Fermi's golden rule formally and applies it to atomic emission. What matters here is recognizing where it comes from: the same first-order formula, applied to a continuum rather than a single final state.
 
 ---
 
@@ -204,13 +203,13 @@ Chapter 6 derives Fermi's golden rule formally and applies it to atomic emission
 
 ## LLM Exercises
 
-The following exercises are designed to be worked with a large language model as a thinking partner — not to obtain derivations, but to probe reasoning, test intuition, and examine the limits of what the chapter established.
+The following exercises are designed to be worked with a large language model as a thinking partner — not to obtain derivations, but to probe reasoning, test intuition, and press on the limits of what the chapter established.
 
 1. Ask an LLM to explain the rotating-wave approximation (RWA) in physical terms: what is the counter-rotating term, why does it average to near-zero near resonance, and when does it matter? Ask for the condition $\Omega \ll \omega_0$ to be justified quantitatively. Then ask: what physical effect — measurable in the lab — is the leading consequence of the counter-rotating term that the RWA misses?
 
 2. Ask an LLM to derive the Rabi formula from the coupled amplitude equations. The derivation should: write the two coupled ODEs for $c_g$ and $c_e$ in the RWA, differentiate one equation to get a second-order ODE, solve with the given initial conditions, and arrive at $P_{g\to e}(t) = (\Omega/\Omega_\text{gen})^2\sin^2(\Omega_\text{gen}t/2)$. Check each step.
 
-3. The chapter states that the first-order transition amplitude is a Fourier transform of the perturbation matrix element at the Bohr frequency. Ask an LLM to make this explicit: write the first-order formula as a convolution or Fourier integral, identify the time window (0 to $t$) as a rectangular window function, and explain how the finite-time sinc-squared lineshape becomes a delta function as $t\to\infty$. Ask it to connect this to the time-energy uncertainty relation.
+3. The chapter claims the first-order transition amplitude is a Fourier transform of the perturbation matrix element at the Bohr frequency. Ask an LLM to make this explicit: write the first-order formula as a convolution or Fourier integral, identify the time window (0 to $t$) as a rectangular window function, and explain how the finite-time sinc-squared lineshape becomes a delta function as $t\to\infty$. Ask it to connect this to the time-energy uncertainty relation.
 
 4. Ask an LLM to explain Fermi's golden rule from the sinc-squared formula — how summing over a continuum of final states at density $\rho(E)$ converts the oscillating sinc-squared into a constant rate. The explanation should show the integral that converts $\sum_f P_{i\to f}(t)$ to $W \cdot t$. Then ask: why does this derivation require both "the perturbation matrix element varies slowly over the width of the sinc-squared peak" and "the density of states varies slowly"? What breaks if either condition fails?
 
@@ -242,7 +241,7 @@ Zener, C. (1932). Non-adiabatic crossing of energy levels. *Proceedings of the R
 
 **This chapter adds:** time-dependent perturbation theory and the exact Rabi solution to the toolkit, with two small parameters — the RWA condition $\Omega/\omega_0 \ll 1$ and the PT-validity window $\Omega t \ll 1$ — and it supplies the complete model for the capstone's **System D — NMR $^1$H qubit Rabi oscillations**.
 
-Today's table entry: **time-dependent PT / Rabi — $\varepsilon_\text{RWA} = \Omega/\omega_0 \ll 1$ (drop the counter-rotating term) and $\varepsilon_\text{PT} = \Omega t \ll 1$ (first-order PT) — first-order PT breaks when $\Omega t \sim 1$ (it predicts $P>1$); the exact Rabi formula stays valid within the RWA; the RWA itself breaks at large $\Omega/\omega_0$ via the Bloch-Siegert shift.** The key lesson for the capstone: *time matters as much as coupling strength* — PT fails not because $\Omega$ is "large" but because the product $\Omega t$ reaches 1.
+Today's table entry: **time-dependent PT / Rabi — $\varepsilon_\text{RWA} = \Omega/\omega_0 \ll 1$ (drop the counter-rotating term) and $\varepsilon_\text{PT} = \Omega t \ll 1$ (first-order PT) — first-order PT breaks when $\Omega t \sim 1$ (it predicts $P>1$); the exact Rabi formula stays valid within the RWA; the RWA itself breaks at large $\Omega/\omega_0$ via the Bloch-Siegert shift.** The crucial lesson for the capstone: *time matters as much as coupling strength* — PT fails not because $\Omega$ is "large" but because the product $\Omega t$ reaches 1.
 
 ### Exercise R1 — When to Use AI
 **The judgment:** In this chapter's project work, AI assistance is appropriate for:

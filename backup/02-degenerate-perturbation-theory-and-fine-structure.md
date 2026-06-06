@@ -1,40 +1,43 @@
 # Chapter 2 — Degenerate Perturbation Theory and Fine Structure
+*Why the $n=2$ level of hydrogen splits into three spectral lines under an electric field, and what that tells you about the limits of the nondegenerate formula.*
 
-In 1913, Johannes Stark applied an electric field of about $10^5$ V/cm to hydrogen gas and observed the Balmer lines split. The $n=2$ level — fourfold degenerate in the unperturbed atom, with states $2s$, $2p_0$, $2p_{+1}$, $2p_{-1}$ all sitting at $-3.4$ eV — split into exactly three spectral lines. Not four. Three. One line shifted up, one shifted down by the same amount, and one that did not shift at all. The unshifted line was twice as intense as either shifted line, indicating that it contains two states.
+Johannes Stark, working in Aachen in the fall of 1913, put hydrogen in an electric field of about $10^5$ V/cm and watched the Balmer lines split. What he found was specific and strange: the $n=2$ level — fourfold degenerate in the unperturbed atom, with states $2s$, $2p_0$, $2p_{+1}$, $2p_{-1}$ all sitting at $-3.4$ eV — split into exactly three lines. Not four. Three. One shifted up, one shifted down by the same amount, and one that did not shift at all. The unshifted line was twice as intense as either of the other two, which is a hint: it must contain two states.
 
-This chapter explains these observations using degenerate perturbation theory, extends the same logic to hydrogen's fine structure, and identifies the boundary where this framework gives way to quantum electrodynamics.
+Why three lines from four states? Why exactly symmetric shifts up and down? Why does the ground state barely move while $n=2$ splits so dramatically?
+
+These are the questions degenerate perturbation theory answers. The machinery of the previous chapter fails precisely when levels share an energy — which is where it is needed most. This chapter fixes that failure, applies the fix to Stark's puzzle, and then uses the same logic to understand the fine structure of hydrogen's spectral lines.
 
 ---
 
 ## The Breakdown and the Fix
 
-Recall the first-order state correction from Chapter 1:
+Recall the first-order state correction:
 
 $$|n^{(1)}\rangle = \sum_{m \neq n}\frac{\langle m^{(0)}|\hat{H}'|n^{(0)}\rangle}{E_n^{(0)} - E_m^{(0)}}\,|m^{(0)}\rangle.$$
 
 Suppose two states share an energy: $E_a^{(0)} = E_b^{(0)}$. The term with $m = b$ in the sum for $|a^{(1)}\rangle$ has a zero denominator. The formula is undefined.
 
-The difficulty here is not that perturbation theory cannot handle degenerate levels. It is that the *basis within the degenerate subspace* is ambiguous. If $\hat{H}_0|a\rangle = E^{(0)}|a\rangle$ and $\hat{H}_0|b\rangle = E^{(0)}|b\rangle$, then any linear combination $\alpha|a\rangle + \beta|b\rangle$ satisfies the unperturbed eigenvalue equation at the same energy. The unperturbed Hamiltonian cannot distinguish among these combinations.
+The failure is not that perturbation theory cannot handle degenerate levels. It is that the *basis within the degenerate subspace* is ambiguous. If $\hat{H}_0|a\rangle = E^{(0)}|a\rangle$ and $\hat{H}_0|b\rangle = E^{(0)}|b\rangle$, then any linear combination $\alpha|a\rangle + \beta|b\rangle$ satisfies the unperturbed eigenvalue equation at the same energy. The unperturbed Hamiltonian has no preference among these combinations.
 
-The perturbation $\hat{H}'$ breaks this symmetry. As $\lambda$ is slowly turned up from zero, the eigenstates of the full $\hat{H}$ deform continuously from *specific* linear combinations of $|a\rangle$ and $|b\rangle$ — the ones that connect smoothly to the perturbed eigenstates — into the true eigenstates. These preferred combinations are the **good zeroth-order states**. The nondegenerate formula diverges precisely because it was applied starting from the wrong zeroth-order states; the zero denominator signals that the formula cannot determine which combination to use.
+The perturbation $\hat{H}'$ breaks this symmetry. As $\lambda$ is slowly turned up from zero, the eigenstates of the full $\hat{H}$ deform continuously from *specific* linear combinations of $|a\rangle$ and $|b\rangle$ — the ones that connect smoothly to the perturbed eigenstates — into the true eigenstates. These preferred combinations are the **good zeroth-order states**. The nondegenerate formula breaks because it was trying to expand around the *wrong* zeroth-order states; the zero denominator is the formula's way of telling you it cannot decide which combination to use.
 
-**The fix.** We restrict $\hat{H}'$ to the degenerate subspace and construct the matrix of its matrix elements:
+**The fix.** Restrict $\hat{H}'$ to the degenerate subspace and construct the matrix of its matrix elements:
 
 $$W_{ij} = \langle i|\hat{H}'|j\rangle \quad i,j \in \text{degenerate subspace.}$$
 
-We diagonalize $W$. The **eigenvalues** are the first-order energy corrections $E_n^{(1)}$. The **eigenvectors** are the good zeroth-order states — the correct starting basis from which nondegenerate perturbation theory proceeds without zero denominators.
+Diagonalize $W$. The **eigenvalues** are the first-order energy corrections $E_n^{(1)}$. The **eigenvectors** are the good zeroth-order states — the correct starting basis from which nondegenerate perturbation theory proceeds without any zero denominators.
 
-This procedure is the general case, not a special trick. Nondegenerate perturbation theory is what happens when the degenerate subspace is one-dimensional and the diagonalization is trivial. Whenever the unperturbed Hamiltonian has a symmetry — and hydrogen has an unusually large one — the degenerate version is the appropriate tool.
+This is not a special trick for degenerate systems. It is the general case. Nondegenerate perturbation theory is what happens when the degenerate subspace is one-dimensional, so the "diagonalization" is trivial. Whenever the unperturbed Hamiltonian has a symmetry — and hydrogen has an unusually large one — the degenerate version is the right tool.
 
 ---
 
 ## The Geometry of Good States
 
-Before computing anything for hydrogen, it is helpful to visualize the geometry. The degenerate subspace is a plane in Hilbert space. Every vector in that plane is an equally valid zeroth-order state at energy $E^{(0)}$. The unperturbed Hamiltonian is isotropic in this plane — it cannot select a preferred direction.
+Before computing anything for hydrogen, it helps to see the geometry. Think of the degenerate subspace as a plane in Hilbert space. Every vector in that plane is an equally valid zeroth-order state at energy $E^{(0)}$. The unperturbed Hamiltonian is isotropic in this plane — it cannot point a preferred direction.
 
-The perturbation matrix $W$ can, and generically does, select a preferred direction. It identifies one axis in the plane along which the energy response to the perturbation is maximal and one along which it is minimal. These eigenvectors are the good states — the combinations that decouple from each other under the perturbation at first order.
+The perturbation matrix $W$ can, and generically does, pick a preferred direction. It identifies one axis in the plane along which the energy response to the perturbation is maximal and one along which it is minimal. These are the eigenvectors — the good states. They are the combinations that decouple from each other under the perturbation at first order.
 
-For the Stark effect, the preferred directions turn out to be $(|2s\rangle \pm |2p_0\rangle)/\sqrt{2}$: probability clouds asymmetrically shifted along the field axis. That asymmetry is what allows them to couple to an electric field at first order.
+For the Stark effect, the preferred directions turn out to be $(|2s\rangle \pm |2p_0\rangle)/\sqrt{2}$: probability clouds asymmetrically shifted along the field axis — more electron density above the nucleus, or below. That asymmetry is what allows them to couple to an electric field at first order.
 
 <!-- → [FIGURE: geometric diagram of the degenerate subspace as a plane — showing the original basis vectors |a⟩ and |b⟩, the perturbation matrix W acting as an "arrow" in the plane, and the good states as the eigenvectors of W; the visual point is that W selects a preferred basis even though H₀ cannot] -->
 
@@ -45,11 +48,11 @@ For the Stark effect, the preferred directions turn out to be $(|2s\rangle \pm |
 
 ## The Linear Stark Effect: Hydrogen $n=2$ in an Electric Field
 
-We apply a uniform electric field along $\hat{z}$. The perturbation is $\hat{H}' = e\mathcal{E}\hat{z}$. The four degenerate $n=2$ states are $\{|2s\rangle, |2p_0\rangle, |2p_{+1}\rangle, |2p_{-1}\rangle\}$, with subscripts denoting $m_\ell$.
+Apply a uniform electric field along $\hat{z}$. The perturbation is $\hat{H}' = e\mathcal{E}\hat{z}$. The four degenerate $n=2$ states are $\{|2s\rangle, |2p_0\rangle, |2p_{+1}\rangle, |2p_{-1}\rangle\}$, with subscripts denoting $m_\ell$.
 
 We need the $4\times4$ perturbation matrix. Selection rules eliminate most entries before any integral is computed.
 
-**$m_\ell$ conservation.** The commutator $[\hat{H}', \hat{L}_z] = [e\mathcal{E}\hat{z}, \hat{L}_z] = 0$, because $\hat{z}$ is rotationally symmetric about $\hat{z}$. The perturbation $\hat{H}'$ cannot change $m_\ell$: any matrix element with $m_\ell' \neq m_\ell$ is exactly zero. This immediately zeroes out all entries coupling $|2s\rangle$ or $|2p_0\rangle$ to $|2p_{+1}\rangle$ or $|2p_{-1}\rangle$.
+**$m_\ell$ conservation.** The commutator $[\hat{H}', \hat{L}_z] = [e\mathcal{E}\hat{z}, \hat{L}_z] = 0$, because $\hat{z}$ is rotationally symmetric about $\hat{z}$. So $\hat{H}'$ cannot change $m_\ell$: any matrix element with $m_\ell' \neq m_\ell$ is exactly zero. This immediately zeroes out all entries coupling $|2s\rangle$ or $|2p_0\rangle$ to $|2p_{+1}\rangle$ or $|2p_{-1}\rangle$.
 
 **Parity.** The operator $\hat{z}$ is odd under $\vec{r} \to -\vec{r}$. A diagonal matrix element $\langle\psi|\hat{z}|\psi\rangle$ with $|\psi\rangle$ of definite parity integrates to zero: parity-even $\times$ parity-odd $\times$ parity-even is parity-odd, and integrating an odd function over all space gives zero. All four states have definite parity ($\ell = 0$ is even; $\ell = 1$ is odd), so all diagonal entries vanish. The $|2p_0\rangle$–$|2p_{\pm1}\rangle$ entries also vanish by the $\Delta m_\ell = 0$ rule, and the $|2p_{+1}\rangle$–$|2p_{-1}\rangle$ entry by parity (both odd).
 
@@ -75,20 +78,20 @@ has eigenvalues $\pm 3a_0 e\mathcal{E}$ and eigenvectors $(|2s\rangle \mp |2p_0\
 - $E_2^{(0)} - 3a_0 e\mathcal{E}$: good state $(|2s\rangle + |2p_0\rangle)/\sqrt{2}$
 - $E_2^{(0)}$: doubly degenerate, states $|2p_{+1}\rangle$ and $|2p_{-1}\rangle$
 
-Three lines from four states. The middle line contains two states — hence its double intensity. The shifts are exactly symmetric (same up and down) because the $2\times2$ block is traceless: both diagonal entries vanish. The two shifted good states are probability clouds asymmetric along $\hat{z}$: one has more electron density above the nucleus, the other below. An asymmetric charge distribution couples to an electric field at first order. The $|2p_{\pm1}\rangle$ states are azimuthally symmetric about $\hat{z}$ and cannot polarize along it at first order.
+Three lines from four states. The middle line contains two states — hence its double intensity. The shifts are exactly symmetric (same up and down) because the $2\times2$ block is traceless: both diagonal entries vanish. The two shifted good states are probability clouds that are asymmetric along $\hat{z}$: one has more electron density above the nucleus, the other below. An asymmetric charge distribution couples to an electric field at first order. The $|2p_{\pm1}\rangle$ states are azimuthally symmetric about $\hat{z}$ and cannot polarize along it at first order.
 
-We can compare this to the ground state: $\langle 1s|e\mathcal{E}\hat{z}|1s\rangle = 0$ by parity. There is no partner at the same energy to mix with at first order. The ground state acquires a second-order (quadratic) shift — proportional to $\mathcal{E}^2$, tiny for ordinary laboratory fields. The linear Stark effect of $n=2$ versus the quadratic Stark effect of $n=1$ is a direct consequence of degeneracy.
+Compare to the ground state: $\langle 1s|e\mathcal{E}\hat{z}|1s\rangle = 0$ by parity. There is no partner at the same energy to mix with at first order. The ground state acquires a second-order (quadratic) shift — proportional to $\mathcal{E}^2$, tiny for ordinary laboratory fields. The linear Stark effect of $n=2$ versus the quadratic Stark effect of $n=1$ is a direct signature of degeneracy.
 
 <!-- → [FIGURE: energy-level diagram of the hydrogen n=2 Stark effect — showing all four states degenerate at ε=0 on the left, then splitting into three lines as ε increases on the right; label the good states (|2s⟩ ± |2p₀⟩)/√2 with their ±3a₀eε shifts, and the two unsplit |2p±₁⟩ states; note the double intensity of the middle line] -->
 
-![energy-level diagram of the hydrogen n=2 Stark effect — showing all four states degenerate at ε=0 on the left, then splitting into three lines as ε increases on the right; label the good states (|2s⟩ ± |2p₀⟩)/√2 with their ±3a₀eε shifts, and the two unsplit |2p±₁⟩ states; note the double intensity of the middle line](../images/02-degenerate-perturbation-theory-and-fine-structure-fig-02.png)
-*Figure 2.2 — energy-level diagram of the hydrogen n=2 Stark effect — showing all four states degenerate at ε=0 on the left, then splitting into three lines as ε increases on the right; label the good states (|2s⟩ ± |2p₀⟩)/√2 with their ±3a₀eε shifts, and the two unsplit |2p±₁⟩ states; note the double intensity of the middle line*
+![energy-level diagram of the hydrogen n=2 Stark effect — showing all four states degenerate at ε=0 on the left, then splitting into three…](../images/02-degenerate-perturbation-theory-and-fine-structure-fig-02.png)
+*Figure 2.2 — energy-level diagram of the hydrogen n=2 Stark effect — showing all four states degenerate at ε=0 on the left, then splitting into three…*
 
 ---
 
 ## Hydrogen Fine Structure: Three Perturbations
 
-High-resolution spectroscopy reveals that hydrogen's energy levels depend not only on $n$ but also on $j$, at the level of $\alpha^2|E_n^{(0)}| \sim 10^{-4}$ eV for $n=2$, where $\alpha = e^2/(4\pi\epsilon_0\hbar c) \approx 1/137$ is the fine-structure constant. Three perturbations — all of order $\alpha^2$ relative to $\hat{H}_0$ — produce this fine structure. All three must be treated simultaneously, because they are the same order of magnitude.
+High-resolution spectroscopy reveals that hydrogen's energy levels depend not only on $n$ but also on $j$, at the level of $\alpha^2|E_n^{(0)}| \sim 10^{-4}$ eV for $n=2$, where $\alpha = e^2/(4\pi\epsilon_0\hbar c) \approx 1/137$ is the fine-structure constant. Three perturbations — all of order $\alpha^2$ relative to $\hat{H}_0$ — produce this fine structure. All three must be treated simultaneously, because they are all the same order of magnitude.
 
 ### Perturbation 1: Relativistic Kinetic Energy
 
@@ -104,19 +107,19 @@ This shifts every level, including $\ell = 0$ states. Its first-order correction
 
 ### Perturbation 2: Spin-Orbit Coupling
 
-In the electron's rest frame, the orbiting nucleus creates a magnetic field. The naive approach — boost the electric field and couple the electron's spin magnetic moment to the resulting magnetic field — gives the wrong answer by a factor of 2.
+In the electron's rest frame, the orbiting nucleus creates a magnetic field. The naive result — boost the electric field and couple the electron's spin magnetic moment to the resulting magnetic field — gives the wrong answer by a factor of 2.
 
 The correction is the **Thomas precession**: the electron's rest frame is non-inertial (it accelerates in orbit), and a non-inertial frame rotating in a magnetic field acquires an extra spin precession at exactly $-\frac{1}{2}$ the naive rate. After including the Thomas factor:
 
 $$\hat{H}'_\text{SO} = \frac{e^2}{8\pi\epsilon_0 m^2c^2}\cdot\frac{\hat{\vec{L}}\cdot\hat{\vec{S}}}{r^3}.$$
 
-The factor of $\frac{1}{2}$ is required. Omitting it gives a spin-orbit splitting twice as large. It arises from the Lorentz covariance of the electromagnetic field tensor — a purely kinematic, not dynamic, effect. The Dirac equation produces this factor automatically. [verify]
+The factor of $\frac{1}{2}$ is not optional. Omitting it gives a spin-orbit splitting twice as large. It arises from the Lorentz covariance of the electromagnetic field tensor — a purely kinematic, not dynamic, effect. The Dirac equation gets the factor automatically. [verify]
 
 The spin-orbit term couples $\hat{\vec{L}}$ and $\hat{\vec{S}}$, making individual projections $m_\ell$ and $m_s$ no longer good quantum numbers. The appropriate quantum number is $j = \ell \pm s$, and in the $|n,\ell,j,m_j\rangle$ basis:
 
 $$\hat{\vec{L}}\cdot\hat{\vec{S}} = \frac{1}{2}(\hat{J}^2 - \hat{L}^2 - \hat{S}^2) = \frac{\hbar^2}{2}\left[j(j+1) - \ell(\ell+1) - \tfrac{3}{4}\right].$$
 
-The radial expectation value $\langle 1/r^3\rangle_{n\ell}$ diverges as $\ell \to 0$, but the pre-factor $j(j+1) - \ell(\ell+1) - \frac{3}{4}$ evaluates to zero for $\ell = 0$ (since $j = s = \frac{1}{2}$ gives $\frac{3}{4} - 0 - \frac{3}{4} = 0$). The spin-orbit energy correction therefore vanishes for all $s$-states — physically expected, since there is no orbital angular momentum to couple.
+The radial expectation value $\langle 1/r^3\rangle_{n\ell}$ diverges as $\ell \to 0$, but so does the pre-factor $j(j+1) - \ell(\ell+1) - \frac{3}{4}$ — it evaluates to zero for $\ell = 0$ (since $j = s = \frac{1}{2}$ gives $\frac{3}{4} - 0 - \frac{3}{4} = 0$). The spin-orbit energy correction vanishes for all $s$-states — physically correct, since there is no orbital angular momentum to couple.
 
 ### Perturbation 3: The Darwin Term
 
@@ -126,7 +129,7 @@ $$\hat{H}'_\text{Darwin} = \frac{\pi\hbar^2}{2m^2c^2}\cdot\frac{e^2}{4\pi\epsilo
 
 The delta function means the Darwin correction is nonzero **only for $\ell = 0$ states**, because only $s$-wave functions have $|\psi(0)|^2 \neq 0$.
 
-The complementarity is worth noting: spin-orbit vanishes for $\ell = 0$; Darwin vanishes for $\ell \neq 0$. They partition the corrections between $s$-states and all others.
+Note the clean complementarity: spin-orbit vanishes for $\ell = 0$; Darwin vanishes for $\ell \neq 0$. They partition the corrections between $s$-states and all others.
 
 <!-- → [TABLE: summary of the three fine-structure perturbations — columns: name, operator, which states it affects (ℓ=0, ℓ≠0, all), physical origin, order in α²; this is the reference table for the three-correction structure] -->
 
@@ -134,11 +137,11 @@ The complementarity is worth noting: spin-orbit vanishes for $\ell = 0$; Darwin 
 
 ## The Combined Formula and What It Reveals
 
-All three perturbations are the same order $\alpha^2 E_n^{(0)}$, so we treat them simultaneously. The unperturbed $n$-level is $2n^2$-fold degenerate (including spin). To diagonalize the sum $\hat{H}'_\text{rel} + \hat{H}'_\text{SO} + \hat{H}'_\text{Darwin}$ in this subspace, we need the good quantum numbers. All three terms commute with $\hat{J}^2$ and $\hat{J}_z$ — the total angular momentum basis $(n, \ell, j, m_j)$ diagonalizes the perturbation. Computing each correction and summing gives the combined fine-structure formula: [verify]
+All three perturbations are the same order $\alpha^2 E_n^{(0)}$, so they must be treated simultaneously. The unperturbed $n$-level is $2n^2$-fold degenerate (including spin). To diagonalize the sum $\hat{H}'_\text{rel} + \hat{H}'_\text{SO} + \hat{H}'_\text{Darwin}$ in this subspace, we need the good quantum numbers. All three terms commute with $\hat{J}^2$ and $\hat{J}_z$ — the total angular momentum basis $(n, \ell, j, m_j)$ diagonalizes the perturbation. Computing each correction and summing gives the combined fine-structure formula: [verify]
 
 $$\boxed{E_n^\text{fs} = -\frac{(E_n^{(0)})^2}{2mc^2}\left(\frac{4n}{j+\tfrac{1}{2}} - 3\right).}$$
 
-This result depends on $n$ and $j$ only — not on $\ell$ separately. This cancellation is notable: the relativistic correction and spin-orbit correction individually depend on $\ell$, but their sum does not (for $\ell \neq 0$; the Darwin term handles $\ell = 0$ to yield the same formula). The $\ell$-independence is a signature of the hidden SO(4) symmetry of the Coulomb problem — the same symmetry that makes the unperturbed levels depend only on $n$. Relativistic corrections partially break this symmetry, but only down to SO(3), which is why $j$ survives as the distinguishing quantum number.
+This result depends on $n$ and $j$ only — not on $\ell$ separately. This is a remarkable cancellation: the relativistic correction and spin-orbit correction individually depend on $\ell$, but their sum does not (for $\ell \neq 0$; the Darwin term handles $\ell = 0$ to yield the same formula). The $\ell$-independence is a signature of the hidden SO(4) symmetry of the Coulomb problem — the same symmetry that makes the unperturbed levels depend only on $n$. Relativistic corrections partially break this symmetry, but only down to SO(3), which is why $j$ survives as the distinguishing quantum number.
 
 ---
 
@@ -149,7 +152,7 @@ For $n=2$, the allowed $j$ values are:
 - $j = \frac{1}{2}$: accessible from $\ell = 0$ (the $2s$ state, $j = s = \frac{1}{2}$) and from $\ell = 1$ (the $2p$ state with $j = \ell - s = \frac{1}{2}$), giving the $2s_{1/2}$ and $2p_{1/2}$ states.
 - $j = \frac{3}{2}$: accessible from $\ell = 1$ only (the $2p$ state with $j = \ell + s = \frac{3}{2}$), giving the $2p_{3/2}$ state.
 
-We compute the corrections. The prefactor is $(E_2^{(0)})^2/(2mc^2) = (3.4)^2/(2\times511000) = 1.131\times10^{-5}$ eV.
+Compute the corrections. The prefactor is $(E_2^{(0)})^2/(2mc^2) = (3.4)^2/(2\times511000) = 1.131\times10^{-5}$ eV.
 
 **For $j = \frac{1}{2}$** (states $2s_{1/2}$ and $2p_{1/2}$):
 
@@ -171,13 +174,13 @@ The formula predicts $2s_{1/2}$ and $2p_{1/2}$ exactly degenerate — both have 
 
 In 1947, Willis Lamb and Robert Retherford tested the predicted degeneracy of $2s_{1/2}$ and $2p_{1/2}$ directly, using microwave spectroscopy. The two levels are not degenerate: $2s_{1/2}$ lies about 1057 MHz ($\approx 4.4\times10^{-6}$ eV) above $2p_{1/2}$.
 
-The Lamb shift has nothing to do with the three corrections above. It arises from quantum electrodynamics: the electron interacts not just with the classical Coulomb field but with the quantum fluctuations of the electromagnetic field itself. Vacuum fluctuations shift the electron's position slightly, shifting its energy. The $2s_{1/2}$ state (finite probability at the nucleus, more sensitive to short-distance physics) is shifted more than $2p_{1/2}$. Computing the Lamb shift requires quantizing the electromagnetic field — a framework beyond this chapter.
+The Lamb shift has nothing to do with the three corrections above. It arises from quantum electrodynamics: the electron interacts not just with the classical Coulomb field but with the quantum fluctuations of the electromagnetic field itself. Vacuum fluctuations jitter the electron's position slightly, shifting its energy. The $2s_{1/2}$ state (finite probability at the nucleus, more sensitive to short-distance physics) is shifted more than $2p_{1/2}$. Computing the Lamb shift requires quantizing the electromagnetic field — a technology this chapter does not have.
 
 The Lamb shift was the first precision test of renormalized QED, and Lamb shared the 1955 Nobel Prize in Physics for it. The hierarchy for $n=2$ hydrogen makes the scaling clear:
 
 $$\underbrace{E_2^{(0)} = -3.4\,\text{eV}}_\text{Bohr/Coulomb} \quad\to\quad \underbrace{\Delta E_\text{FS} \approx 4.5\times10^{-5}\,\text{eV}}_\text{fine structure (this chapter)} \quad\to\quad \underbrace{\Delta E_\text{Lamb} \approx 4\times10^{-6}\,\text{eV}}_\text{Lamb shift (QED).}$$
 
-Each step is roughly an order of magnitude smaller. The fine-structure formula marks a boundary: within it, semiclassical perturbation theory applies. The Lamb shift is the first correction beyond that boundary, and it requires a fundamentally different framework.
+Each step is roughly an order of magnitude smaller. The fine-structure formula is the boundary: inside it, semiclassical perturbation theory works. The Lamb shift is the first correction beyond that boundary, and it requires a fundamentally different framework.
 
 <!-- → [FIGURE: n=2 hydrogen energy-level diagram showing three stages — (1) the unperturbed level with all 8 states degenerate, (2) after fine structure with 2p₃/₂ above 2s₁/₂/2p₁/₂, (3) after Lamb shift with 2s₁/₂ slightly above 2p₁/₂; annotate each splitting with its numerical value and physical origin; the Lamb shift arrow should be visibly much smaller than the fine-structure arrow] -->
 
@@ -270,7 +273,7 @@ Zwiebach, B. (2018). *Quantum Physics III* (MIT OCW 8.06). Massachusetts Institu
 
 **This chapter adds:** degenerate perturbation theory to the toolkit, and the fine-structure scale $\varepsilon = \alpha^2 \approx (1/137)^2$ as a second row of the method-selection table — the row that governs any system whose leading splitting is set by relativistic/spin-orbit corrections (a candidate for the linear Stark and hydrogen-field systems in the capstone).
 
-Today's table entry: **degenerate PT — $\varepsilon = \alpha^2 = (e^2/4\pi\epsilon_0\hbar c)^2 \approx 5.3\times10^{-5}$ for fine structure — applies when the unperturbed level is degenerate and the splitting is small relative to the level itself; breaks at the next order (the Lamb shift), which needs QED.** The key discipline this chapter contributes to the capstone: when states are degenerate, we must *diagonalize $\hat{H}'$ in the subspace first* — applying the non-degenerate formula naively gives a zero denominator, the formula's way of indicating that the basis was wrong.
+Today's table entry: **degenerate PT — $\varepsilon = \alpha^2 = (e^2/4\pi\epsilon_0\hbar c)^2 \approx 5.3\times10^{-5}$ for fine structure — applies when the unperturbed level is degenerate and the splitting is small relative to the level itself; breaks at the next order (the Lamb shift), which needs QED.** The key discipline this chapter contributes to the capstone: when states are degenerate, you must *diagonalize $\hat{H}'$ in the subspace first* — applying the non-degenerate formula naively gives a zero denominator, the formula's way of telling you the basis was wrong.
 
 ### Exercise R1 — When to Use AI
 **The judgment:** In this chapter's project work, AI assistance is appropriate for:
