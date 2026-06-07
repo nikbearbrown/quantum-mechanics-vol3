@@ -34,7 +34,7 @@ and in the forbidden region where $p = i|p|$:
 
 $$\psi_\text{WKB}(x) \approx \frac{A}{\sqrt{|p(x)|}}\,\exp\!\left[\frac{1}{\hbar}\int|p|\,dx'\right] + \frac{B}{\sqrt{|p(x)|}}\,\exp\!\left[-\frac{1}{\hbar}\int|p|\,dx'\right].$$
 
-**The $1/\sqrt{p}$ factor has a physical interpretation.** The classical probability of finding the particle near $x$ is proportional to the time it spends there — proportional to $1/v \propto 1/p$. So $|\psi|^2 \propto 1/p$: the wave function is large where the classical particle moves slowly, small where it moves fast. The amplitude tracks classical mechanics; the phase oscillates quantum-mechanically. This is the sense in which the approximation is "semiclassical."
+**The** $1/\sqrt{p}$ **factor has a physical interpretation.** The classical probability of finding the particle near $x$ is proportional to the time it spends there — proportional to $1/v \propto 1/p$. So $|\psi|^2 \propto 1/p$: the wave function is large where the classical particle moves slowly, small where it moves fast. The amplitude tracks classical mechanics; the phase oscillates quantum-mechanically. This is the sense in which the approximation is "semiclassical."
 
 The expansion is controlled by $\hbar$ relative to the classical action $\int p\,dx$. When $\int p\,dx \gg \hbar$ — when the particle traverses many de Broglie wavelengths — the higher-order terms are small and the approximation is reliable.
 
@@ -136,7 +136,7 @@ $$\log_{10}\tau_{1/2} \approx A(Z') + \frac{B(Z')}{\sqrt{E_\alpha}}.$$
 
 This is the **Geiger-Nuttall law**: log half-life linear in $1/\sqrt{E_\alpha}$ for fixed daughter charge. The empirical observation from 1911 is derived from the WKB tunneling formula. Every point on the Geiger-Nuttall line is a different nuclide; every nuclide lies on the same straight line.
 
-**Numerics for $^{238}\text{U}$.** With the numbers above: $\gamma \approx 43$, $e^{-2\gamma} \approx 4\times10^{-38}$, half-life estimate roughly $5\times10^8$ years. The experimental value is $4.5\times10^9$ years — off by a factor of 10. On a quantity spanning $10^{24}$, this is excellent agreement. The remaining discrepancy comes from the alpha pre-formation probability and from the prefactors we dropped.
+**Numerics for** $^{238}\text{U}$. With the numbers above: $\gamma \approx 43$, $e^{-2\gamma} \approx 4\times10^{-38}$, half-life estimate roughly $5\times10^8$ years. The experimental value is $4.5\times10^9$ years — off by a factor of 10. On a quantity spanning $10^{24}$, this is excellent agreement. The remaining discrepancy comes from the alpha pre-formation probability and from the prefactors we dropped.
 
 ---
 

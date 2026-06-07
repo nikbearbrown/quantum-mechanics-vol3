@@ -118,7 +118,7 @@ $$\langle n'\ell'm'|e\hat{z}|n\ell m\rangle = e\underbrace{\int_0^\infty R_{n'\e
 
 If either integral vanishes, the transition is forbidden.
 
-**Why $\Delta\ell = \pm 1$.** Under parity ($\vec{r} \to -\vec{r}$), spherical harmonics transform as $Y_\ell^m \to (-1)^\ell Y_\ell^m$. The operator $\hat{z}$ is parity-odd: it picks up a factor of $-1$. The angular integral is nonzero only when the integrand has even overall parity:
+**Why** $\Delta\ell = \pm 1$. Under parity ($\vec{r} \to -\vec{r}$), spherical harmonics transform as $Y_\ell^m \to (-1)^\ell Y_\ell^m$. The operator $\hat{z}$ is parity-odd: it picks up a factor of $-1$. The angular integral is nonzero only when the integrand has even overall parity:
 
 $$(-1)^{\ell'}\times(-1)^1\times(-1)^\ell = (-1)^{\ell+\ell'+1} = +1 \implies \ell + \ell' \text{ is odd.}$$
 
@@ -126,7 +126,7 @@ So $\ell'$ and $\ell$ must have opposite parity: $\Delta\ell \neq 0$. The triang
 
 $$\Delta\ell = \pm 1.$$
 
-**Why $\Delta m = 0$ or $\pm 1$.** The $\phi$-dependence of $Y_\ell^m$ is $e^{im\phi}$. The azimuthal part of the angular integral is:
+**Why** $\Delta m = 0$ **or** $\pm 1$. The $\phi$-dependence of $Y_\ell^m$ is $e^{im\phi}$. The azimuthal part of the angular integral is:
 
 $$\int_0^{2\pi}e^{-im'\phi}\,e^{iq\phi}\,e^{im\phi}\,d\phi = 2\pi\,\delta_{m',\,m+q}.$$
 
@@ -232,11 +232,11 @@ The measured value is $\tau = 1.596$ ns. Agreement to the accuracy of the approx
 4. *[Golden rule for ionization]* An electron in a 1D box ($L = 10$ nm) in its ground state is exposed to a weak time-independent perturbation $V_0 = 10^{-3}$ eV. (a) Compute $E_1 = \pi^2\hbar^2/(2mL^2)$ in eV. (b) Evaluate the 1D free-particle density of states $\rho_{1D}(E) = L\sqrt{m/(2E)}/(2\pi\hbar)$ at $E = E_1$. (c) Using $|\langle k_f|V_0|1\rangle|^2 = V_0^2 L/2$, apply the golden rule to find the ionization rate $W$. (d) Is $W \cdot t \ll 1$ satisfied for $t = 1\,\mu\text{s}$?
 *What this tests: applying the golden rule with the 1D density of states; verifying the validity condition.*
 
-5. *[Radial integral for $3p \to 1s$]* (a) Write out $R_{10}(r)$ and $R_{31}(r)$ explicitly. (b) Set up the integral $\mathcal{R} = \int_0^\infty R_{10}\,r^3\,R_{31}\,dr$. (c) Evaluate using the substitution $u = 4r/(3a_0)$ and the Gamma function. (d) Compute the ratio $|\mathcal{R}_{10,31}|^2/|\mathcal{R}_{10,21}|^2$ and determine the ratio of rates $A(3p\to 1s)/A(2p\to 1s)$ including the $\omega^3$ factor.
-*What this tests: extending the radial integral calculation to a different transition; seeing that the $\omega^3$ factor is not negligible.*
+5. [*Radial integral for* $3p \to 1s$] (a) Write out $R_{10}(r)$ and $R_{31}(r)$ explicitly. (b) Set up the integral $\mathcal{R} = \int_0^\infty R_{10}\,r^3\,R_{31}\,dr$. (c) Evaluate using the substitution $u = 4r/(3a_0)$ and the Gamma function. (d) Compute the ratio $|\mathcal{R}_{10,31}|^2/|\mathcal{R}_{10,21}|^2$ and determine the ratio of rates $A(3p\to 1s)/A(2p\to 1s)$ including the $\omega^3$ factor.
+*What this tests: extending the radial integral calculation to a different transition; seeing that the* $\omega^3$ *factor is not negligible.*
 
-6. *[Branching ratios for $3p$]* The $3p$ state decays to both $1s$ and $2s$. (a) Compute $\hbar\omega$ for each branch. (b) Using $|\langle 2s|\hat{r}|3p\rangle|^2 \approx 0.093\,a_0^2$ and the $3p\to 1s$ result from exercise 5, compute both $A$-coefficients. (c) Find the branching fractions to each lower state. (d) Compute the total decay rate $\Gamma_{\mathrm{total}} = A(3p\to 1s) + A(3p\to 2s)$ and the observed lifetime $\tau = 1/\Gamma_{\mathrm{total}}$. Compare to the measured value $\tau_{3p} \approx 5.3$ ns.
-*What this tests: combining multiple $A$-coefficients into a total decay rate; the $\omega^3$ factor's role in determining which branch dominates.*
+6. [*Branching ratios for* $3p$] The $3p$ state decays to both $1s$ and $2s$. (a) Compute $\hbar\omega$ for each branch. (b) Using $|\langle 2s|\hat{r}|3p\rangle|^2 \approx 0.093\,a_0^2$ and the $3p\to 1s$ result from exercise 5, compute both $A$-coefficients. (c) Find the branching fractions to each lower state. (d) Compute the total decay rate $\Gamma_{\mathrm{total}} = A(3p\to 1s) + A(3p\to 2s)$ and the observed lifetime $\tau = 1/\Gamma_{\mathrm{total}}$. Compare to the measured value $\tau_{3p} \approx 5.3$ ns.
+*What this tests: combining multiple* $A$-*coefficients into a total decay rate; the* $\omega^3$ *factor's role in determining which branch dominates.*
 
 **Synthesis**
 
@@ -249,7 +249,7 @@ The measured value is $\tau = 1.596$ ns. Agreement to the accuracy of the approx
 **Challenge**
 
 9. *[Electromagnetic vacuum and the Lamb shift — scaling argument]* The Lamb shift arises because the $2s$ electron, with $|\psi_{2s}(0)|^2 \neq 0$, couples differently to vacuum fluctuations than the $2p$ electron, with $|\psi_{2p}(0)|^2 = 0$. (a) The rms fluctuation of the vacuum electric field at frequency $\omega$ in a volume $V$ is $\delta E_\omega \sim \sqrt{\hbar\omega/\epsilon_0 V}$. The electron's position fluctuates under this field by $\delta r_\omega \sim e\delta E_\omega/(m\omega^2)$. Show that the mean-square position fluctuation integrated over all photon modes is $\langle(\delta r)^2\rangle \sim (\alpha/\pi)(a_0^2)\ln(\omega_{\mathrm{max}}/\omega_{\mathrm{min}})$ where $\alpha = e^2/(4\pi\epsilon_0\hbar c)$ is the fine-structure constant. (b) The energy shift from this fluctuation is $\delta E \approx (1/6)\langle(\delta r)^2\rangle\nabla^2 V$. For a Coulomb potential, $\nabla^2(-e^2/4\pi\epsilon_0 r) = (e^2/\epsilon_0)|\psi(0)|^2$. Use this to estimate the Lamb shift as an energy scale. (c) The $2s$ state has $|\psi_{2s}(0)|^2 = 1/(\pi a_0^3)$; the $2p$ state has $|\psi_{2p}(0)|^2 = 0$. What does this predict for the sign of the $2s$ shift relative to $2p$?
-*What this tests: connecting the semiclassical framework of this chapter to QED at the level of dimensional analysis; seeing why the $2s$ and not the $2p$ is shifted.*
+*What this tests: connecting the semiclassical framework of this chapter to QED at the level of dimensional analysis; seeing why the* $2s$ *and not the* $2p$ *is shifted.*
 
 ---
 

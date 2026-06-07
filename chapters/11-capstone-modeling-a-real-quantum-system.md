@@ -136,9 +136,9 @@ The agreement between the Born approximation and the classical result is exact �
 
 $$\kappa = \frac{\sqrt{2m_e\phi}}{\hbar} = 0.5123\,\text{Å}^{-1}\times\sqrt{\phi[\text{eV}]} = 0.5123\times\sqrt{4.0} = 1.025\,\text{Å}^{-1}.$$
 
-**At $d_1 = 5$ Å:** $\quad T_1 = e^{-2\times1.025\times5.0} = e^{-10.25} \approx 3.5\times10^{-5}$.
+**At** $d_1 = 5$ Å: $\quad T_1 = e^{-2\times1.025\times5.0} = e^{-10.25} \approx 3.5\times10^{-5}$.
 
-**At $d_2 = 6$ Å:** $\quad T_2 = e^{-12.30} \approx 4.5\times10^{-6}$.
+**At** $d_2 = 6$ Å: $\quad T_2 = e^{-12.30} \approx 4.5\times10^{-6}$.
 
 **Current ratio:** $I(d_1)/I(d_2) = T_1/T_2 = e^{2.05} \approx 7.8$.
 

@@ -101,7 +101,7 @@ $$P_{g\to e}(t) = \frac{\Omega^2}{\Omega_\text{gen}^2}\,\sin^2\!\left(\frac{\Ome
 
 $$P_{g\to e}(t) = \sin^2\!\left(\frac{\Omega t}{2}\right).$$
 
-The population oscillates between 0 and 1. At $t = \pi/\Omega$ — a **$\pi$-pulse** — the entire population is in $|e\rangle$. At $t = 2\pi/\Omega$ it is back in $|g\rangle$. This is Rabi oscillation. It is what Rabi's molecular beam showed in 1938, and it is what every qubit readout protocol relies on today.
+The population oscillates between 0 and 1. At $t = \pi/\Omega$ — a $\pi$-**pulse** — the entire population is in $|e\rangle$. At $t = 2\pi/\Omega$ it is back in $|g\rangle$. This is Rabi oscillation. It is what Rabi's molecular beam showed in 1938, and it is what every qubit readout protocol relies on today.
 
 **Off resonance** ($\Delta \neq 0$): the maximum achievable probability is $\Omega^2/(\Omega^2+\Delta^2) < 1$. Full population transfer is impossible away from resonance. The oscillation is faster (frequency $\Omega_\text{gen} > \Omega$) but shallower. Resonance is required for complete inversion.
 
@@ -120,13 +120,13 @@ The reason PT fails is worth stating precisely. PT assumes the amplitude in $|i\
 
 A two-level atom with transition energy $\hbar\omega_0 = 2.00$ eV is driven by a resonant laser. The coupling strength is $\hbar\Omega = 0.010$ eV. The atom starts in the ground state.
 
-**When does the atom first reach $P = 1$?** On resonance, $\sin^2(\Omega t/2) = 1$ when $\Omega t/2 = \pi/2$, so $t_\pi = \pi/\Omega$.
+**When does the atom first reach** $P = 1$? On resonance, $\sin^2(\Omega t/2) = 1$ when $\Omega t/2 = \pi/2$, so $t_\pi = \pi/\Omega$.
 
 Converting: $\Omega = (0.010\,\text{eV}\times1.602\times10^{-19}\,\text{J/eV})/(1.055\times10^{-34}\,\text{J·s}) = 1.519\times10^{13}$ rad/s.
 
 $$t_\pi = \frac{\pi}{1.519\times10^{13}} \approx 2.07\times10^{-13}\,\text{s} = 0.21\,\text{ps.}$$
 
-**When does first-order PT predict $P = 1$, and what is the exact probability at that moment?** PT predicts $(\Omega t/2)^2 = 1$ when $\Omega t/2 = 1$, so $t_\text{PT} = 2/\Omega \approx 0.13$ ps.
+**When does first-order PT predict** $P = 1$, **and what is the exact probability at that moment?** PT predicts $(\Omega t/2)^2 = 1$ when $\Omega t/2 = 1$, so $t_\text{PT} = 2/\Omega \approx 0.13$ ps.
 
 At $t = t_\text{PT}$, the exact probability is:
 

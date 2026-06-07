@@ -81,9 +81,9 @@ We now apply an electric field $\mathcal{E}$ along $\hat{z}$ instead of a magnet
 
 $$E^{(2)}_{1s} = \sum_{n\neq 1s}\frac{|\langle n|e\mathcal{E}\hat{z}|1s\rangle|^2}{E^{(0)}_{1s} - E^{(0)}_n} = -\frac{9}{2}a_0^3\mathcal{E}^2.$$
 
-This defines the polarizability $\alpha_\text{pol} = 9a_0^3/2$. The shift is **quadratic in $\mathcal{E}$** — the ground state develops an induced dipole, lowering its energy.
+This defines the polarizability $\alpha_\text{pol} = 9a_0^3/2$. The shift is **quadratic in** $\mathcal{E}$ — the ground state develops an induced dipole, lowering its energy.
 
-**The $n=2$ manifold: linear Stark effect.** The $n=2$ level of hydrogen is fourfold degenerate: $|2s\rangle$, $|2p_0\rangle$, $|2p_{+1}\rangle$, $|2p_{-1}\rangle$ all share $E^{(0)}_2 = -13.6/4$ eV. This is the *accidental degeneracy* of the Coulomb potential: states with the same $n$ but different $\ell$ coincide in energy because the $1/r$ potential has an additional conserved quantity — the Runge–Lenz vector.
+**The** $n=2$ **manifold: linear Stark effect.** The $n=2$ level of hydrogen is fourfold degenerate: $|2s\rangle$, $|2p_0\rangle$, $|2p_{+1}\rangle$, $|2p_{-1}\rangle$ all share $E^{(0)}_2 = -13.6/4$ eV. This is the *accidental degeneracy* of the Coulomb potential: states with the same $n$ but different $\ell$ coincide in energy because the $1/r$ potential has an additional conserved quantity — the Runge–Lenz vector.
 
 Degenerate perturbation theory requires constructing the $4\times 4$ matrix of $\hat{H}' = e\mathcal{E}\hat{z}$ in this subspace and diagonalizing.
 
@@ -101,7 +101,7 @@ The $n=2$ level splits into **three lines** from four states:
 - Unshifted (doubly degenerate): $|2p_{+1}\rangle$, $|2p_{-1}\rangle$  
 - Down by $-3a_0\,e\mathcal{E}$: eigenstate $(|2s\rangle + |2p_0\rangle)/\sqrt{2}$
 
-The splitting is **linear in $\mathcal{E}$** — a **linear Stark effect** — because the degeneracy allows mixing at first order. The good eigenstates are superpositions of $s$ and $p$ states that have permanent electric dipole moments along $\hat{z}$, which couple directly to the applied field.
+The splitting is **linear in** $\mathcal{E}$ — a **linear Stark effect** — because the degeneracy allows mixing at first order. The good eigenstates are superpositions of $s$ and $p$ states that have permanent electric dipole moments along $\hat{z}$, which couple directly to the applied field.
 
 <!-- → [FIGURE: Stark energy diagram for n=2 manifold — two splitting lines (±3a₀eℰ) diverging linearly with field, two flat lines; eigenstates labeled at right edge; contrast with the curved quadratic ground-state shift shown below] -->
 
@@ -165,7 +165,7 @@ We begin with the fine structure: the $2p$ manifold splits into $2p_{1/2}$ ($j =
 
 We check the weak-field condition: $\mu_B B = (5.788\times10^{-5})(0.5) = 2.9\times10^{-5}$ eV, which is about $65\%$ of $\Delta E_\text{fs}$. Strictly this places us near the intermediate-field regime, but we proceed with the weak-field formula and note the caveat.
 
-**Compute $g_J$ for each sublevel.** With $\ell = 1$, $s = \tfrac{1}{2}$:
+**Compute** $g_J$ **for each sublevel.** With $\ell = 1$, $s = \tfrac{1}{2}$:
 
 For $2p_{3/2}$ ($j = \tfrac{3}{2}$):
 $$g_J = 1 + \frac{\frac{3}{2}\cdot\frac{5}{2} + \frac{1}{2}\cdot\frac{3}{2} - 1\cdot2}{2\cdot\frac{3}{2}\cdot\frac{5}{2}} = 1 + \frac{\frac{15}{4} + \frac{3}{4} - 2}{\frac{15}{2}} = 1 + \frac{\frac{10}{4}}{\frac{15}{2}} = 1 + \frac{1}{3} = \frac{4}{3}.$$
@@ -173,7 +173,7 @@ $$g_J = 1 + \frac{\frac{3}{2}\cdot\frac{5}{2} + \frac{1}{2}\cdot\frac{3}{2} - 1\
 For $2p_{1/2}$ ($j = \tfrac{1}{2}$):
 $$g_J = 1 + \frac{\frac{1}{2}\cdot\frac{3}{2} + \frac{1}{2}\cdot\frac{3}{2} - 1\cdot2}{2\cdot\frac{1}{2}\cdot\frac{3}{2}} = 1 + \frac{\frac{3}{4} + \frac{3}{4} - 2}{\frac{3}{2}} = 1 - \frac{1}{3} = \frac{2}{3}.$$
 
-**Energy shifts $\Delta E = g_J\mu_B B\,m_j$**, with $\mu_B B = 2.9\times10^{-5}$ eV:
+**Energy shifts** $\Delta E = g_J\mu_B B\,m_j$, with $\mu_B B = 2.9\times10^{-5}$ eV:
 
 For $2p_{3/2}$ ($g_J = \tfrac{4}{3}$): shifts are $+2\mu_B B$, $+\tfrac{2}{3}\mu_B B$, $-\tfrac{2}{3}\mu_B B$, $-2\mu_B B$ for $m_j = +\tfrac{3}{2}, +\tfrac{1}{2}, -\tfrac{1}{2}, -\tfrac{3}{2}$.
 
@@ -200,8 +200,8 @@ For an accurate treatment at $B = 0.5$ T, the Zeeman and fine-structure terms mu
 
 **Application**
 
-4. *[$3d_{3/2}$ Zeeman splitting]* A hydrogen atom is in the $3d_{3/2}$ state ($n=3$, $\ell=2$, $j=\tfrac{3}{2}$). (a) Compute $g_J$. (b) List all $m_j$ values and compute the energy shift of each at $B = 2.0$ T. (c) How many distinct spectral lines appear in emission from $3d_{3/2} \to 2p_{1/2}$ in this field? Use $\Delta m_j = 0, \pm 1$; count distinct frequency differences.
-*What this tests: g-factor calculation for $j=\tfrac{3}{2}$; transition counting from the splitting pattern.*
+4. [$3d_{3/2}$ *Zeeman splitting]* A hydrogen atom is in the $3d_{3/2}$ state ($n=3$, $\ell=2$, $j=\tfrac{3}{2}$). (a) Compute $g_J$. (b) List all $m_j$ values and compute the energy shift of each at $B = 2.0$ T. (c) How many distinct spectral lines appear in emission from $3d_{3/2} \to 2p_{1/2}$ in this field? Use $\Delta m_j = 0, \pm 1$; count distinct frequency differences.
+*What this tests: g-factor calculation for* $j=\tfrac{3}{2}$; *transition counting from the splitting pattern.*
 
 5. *[Off-resonance Rabi oscillations]* A $\text{spin-}\tfrac{1}{2}$ nucleus has $\omega_0 = 300$ MHz. A weak oscillating field is applied at $\omega = 300.001$ MHz with $\omega_1 = 2\pi\times 1$ kHz. (a) Compute $\omega - \omega_0$ in Hz. (b) Compute $\Omega = \sqrt{(\omega-\omega_0)^2 + \omega_1^2}$. (c) What is the maximum flip probability $\omega_1^2/\Omega^2$? (d) With a hard $\pi$-pulse of duration $\pi/\omega_1$ applied at this detuning, what fraction of the target spins actually flip?
 *What this tests: off-resonance Rabi formula; practical consequence of frequency error in NMR pulse calibration.*
@@ -218,7 +218,7 @@ For an accurate treatment at $B = 0.5$ T, the Zeeman and fine-structure terms mu
 *What this tests: uncoupled-basis calculation; counting Paschen–Back levels; spin-orbit as a perturbation in the strong-field limit.*
 
 9. *[Spin echo]* (a) After a $\pi/2$ pulse tips magnetization into the transverse plane, different spins accumulate different phases due to static field inhomogeneity. Explain qualitatively why a $\pi$ pulse at time $\tau$ causes rephasing at time $2\tau$. (b) Echo amplitudes at $2\tau = 50, 100, 200$ ms are $M/M_0 = 0.85, 0.72, 0.52$. Fit these to $e^{-2\tau/T_2}$ to estimate $T_2$. (c) Why is the spin-echo $T_2$ immune to static field inhomogeneity while a simple FID measurement is not?
-*What this tests: conceptual understanding of spin echo; exponential fitting; the $T_2$ vs. $T_2^*$ distinction.*
+*What this tests: conceptual understanding of spin echo; exponential fitting; the* $T_2$ *vs.* $T_2^*$ *distinction.*
 
 **Challenge**
 

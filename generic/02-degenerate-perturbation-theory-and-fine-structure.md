@@ -49,7 +49,7 @@ We apply a uniform electric field along $\hat{z}$. The perturbation is $\hat{H}'
 
 We need the $4\times4$ perturbation matrix. Selection rules eliminate most entries before any integral is computed.
 
-**$m_\ell$ conservation.** The commutator $[\hat{H}', \hat{L}_z] = [e\mathcal{E}\hat{z}, \hat{L}_z] = 0$, because $\hat{z}$ is rotationally symmetric about $\hat{z}$. The perturbation $\hat{H}'$ cannot change $m_\ell$: any matrix element with $m_\ell' \neq m_\ell$ is exactly zero. This immediately zeroes out all entries coupling $|2s\rangle$ or $|2p_0\rangle$ to $|2p_{+1}\rangle$ or $|2p_{-1}\rangle$.
+$m_\ell$ **conservation.** The commutator $[\hat{H}', \hat{L}_z] = [e\mathcal{E}\hat{z}, \hat{L}_z] = 0$, because $\hat{z}$ is rotationally symmetric about $\hat{z}$. The perturbation $\hat{H}'$ cannot change $m_\ell$: any matrix element with $m_\ell' \neq m_\ell$ is exactly zero. This immediately zeroes out all entries coupling $|2s\rangle$ or $|2p_0\rangle$ to $|2p_{+1}\rangle$ or $|2p_{-1}\rangle$.
 
 **Parity.** The operator $\hat{z}$ is odd under $\vec{r} \to -\vec{r}$. A diagonal matrix element $\langle\psi|\hat{z}|\psi\rangle$ with $|\psi\rangle$ of definite parity integrates to zero: parity-even $\times$ parity-odd $\times$ parity-even is parity-odd, and integrating an odd function over all space gives zero. All four states have definite parity ($\ell = 0$ is even; $\ell = 1$ is odd), so all diagonal entries vanish. The $|2p_0\rangle$–$|2p_{\pm1}\rangle$ entries also vanish by the $\Delta m_\ell = 0$ rule, and the $|2p_{+1}\rangle$–$|2p_{-1}\rangle$ entry by parity (both odd).
 
@@ -124,7 +124,7 @@ A third correction arises from the Dirac equation. It can be motivated by **Zitt
 
 $$\hat{H}'_\text{Darwin} = \frac{\pi\hbar^2}{2m^2c^2}\cdot\frac{e^2}{4\pi\epsilon_0}\,\delta^3(\vec{r}).$$
 
-The delta function means the Darwin correction is nonzero **only for $\ell = 0$ states**, because only $s$-wave functions have $|\psi(0)|^2 \neq 0$.
+The delta function means the Darwin correction is nonzero **only for** $\ell = 0$ **states**, because only $s$-wave functions have $|\psi(0)|^2 \neq 0$.
 
 The complementarity is worth noting: spin-orbit vanishes for $\ell = 0$; Darwin vanishes for $\ell \neq 0$. They partition the corrections between $s$-states and all others.
 
@@ -151,11 +151,11 @@ For $n=2$, the allowed $j$ values are:
 
 We compute the corrections. The prefactor is $(E_2^{(0)})^2/(2mc^2) = (3.4)^2/(2\times511000) = 1.131\times10^{-5}$ eV.
 
-**For $j = \frac{1}{2}$** (states $2s_{1/2}$ and $2p_{1/2}$):
+**For** $j = \frac{1}{2}$ (states $2s_{1/2}$ and $2p_{1/2}$):
 
 $$E_2^\text{fs}\Big|_{j=1/2} = -1.131\times10^{-5}\,\text{eV}\times\left(\frac{4\times 2}{1} - 3\right) = -5.66\times10^{-5}\,\text{eV.}$$
 
-**For $j = \frac{3}{2}$** (state $2p_{3/2}$):
+**For** $j = \frac{3}{2}$ (state $2p_{3/2}$):
 
 $$E_2^\text{fs}\Big|_{j=3/2} = -1.131\times10^{-5}\,\text{eV}\times\left(\frac{4\times 2}{2} - 3\right) = -1.13\times10^{-5}\,\text{eV.}$$
 
@@ -210,7 +210,7 @@ Each step is roughly an order of magnitude smaller. The fine-structure formula m
 
 5. *Difficulty: Application — sign analysis for the spin-orbit term.*
    The spin-orbit correction is proportional to $\langle\hat{\vec{L}}\cdot\hat{\vec{S}}\rangle = \frac{\hbar^2}{2}[j(j+1)-\ell(\ell+1)-\frac{3}{4}]$. (a) Evaluate this for the $2p_{1/2}$ state ($\ell=1$, $j=\frac{1}{2}$) and the $2p_{3/2}$ state ($\ell=1$, $j=\frac{3}{2}$). What are the signs? (b) The $2p_{1/2}$ spin-orbit correction is negative (spin antiparallel to orbital angular momentum). Explain physically why antiparallel alignment has lower energy than parallel alignment. (c) Why is the spin-orbit correction exactly zero for $2s_{1/2}$? Give both the algebraic reason and the physical reason.
-   *Tests: evaluating $\vec{L}\cdot\vec{S}$ eigenvalue; connecting the sign to physical alignment; identifying the ℓ=0 special case.*
+   *Tests: evaluating* $\vec{L}\cdot\vec{S}$ *eigenvalue; connecting the sign to physical alignment; identifying the ℓ=0 special case.*
 
 6. *Difficulty: Application — good states under a differently oriented field.*
    In the Stark effect as computed, the field points along $\hat{z}$ and the good states are $(|2s\rangle \pm |2p_0\rangle)/\sqrt{2}$. Now suppose the field is along $\hat{x}$ instead, so $\hat{H}' = e\mathcal{E}\hat{x}$. (a) The $m_\ell$ conservation rule changes: using $\hat{x} = -r/\sqrt{2}(Y_1^{+1} - Y_1^{-1})\sin\phi + \ldots$, identify which $m_\ell$ values can now mix. (b) Which pairs of states from $\{|2s\rangle, |2p_{-1}\rangle, |2p_0\rangle, |2p_{+1}\rangle\}$ have nonzero matrix elements under $\hat{H}' = e\mathcal{E}\hat{x}$? (c) By physical symmetry, should the magnitude of the energy splittings (the eigenvalues) change when the field direction rotates from $\hat{z}$ to $\hat{x}$? Justify your answer without computing.
@@ -224,7 +224,7 @@ Each step is roughly an order of magnitude smaller. The fine-structure formula m
    where $\alpha$ is real and $\beta$ may be complex. (a) Find the two eigenvalues of $W$. (b) Find the eigenvectors (the good states). (c) Identify which case in the Stark $W$ matrix this is (what are $\alpha$ and $\beta$ for the $\{|2s\rangle, |2p_0\rangle\}$ block?). (d) For $|\beta| \ll |\alpha|$, expand the eigenvalues to leading order in $\beta/\alpha$. When does the off-diagonal mixing become negligible relative to the diagonal splitting?
    *Tests: diagonalizing the general 2×2 degenerate PT problem; extracting the Stark case as a special instance; understanding when mixing is suppressed.*
 
-8. *Difficulty: Synthesis — fine-structure level diagram for $n=3$.*
+8. *Difficulty: Synthesis — fine-structure level diagram for* $n=3$.
    Hydrogen $n=3$ has $j$-values $\frac{1}{2}$ (from $3s_{1/2}$ and $3p_{1/2}$), $\frac{3}{2}$ (from $3p_{3/2}$ and $3d_{3/2}$), and $\frac{5}{2}$ (from $3d_{5/2}$). (a) Compute $E_3^\text{fs}$ for each $j$ from the formula. (b) Draw a labeled energy-level diagram showing the $n=3$ manifold split by fine structure; mark each level with its $j$-value and spectroscopic labels. (c) Which levels are degenerate according to the fine-structure formula? What would the Lamb shift do to these pairs? (d) How many distinct spectral lines would you observe in $n=3 \to n=2$ transitions including fine structure but ignoring the Lamb shift?
    *Tests: applying the combined formula to a higher manifold; drawing and reading a level diagram; counting transition lines.*
 
@@ -232,7 +232,7 @@ Each step is roughly an order of magnitude smaller. The fine-structure formula m
 
 9. *Difficulty: Challenge — the Thomas factor from kinematic first principles.*
    A classical electron orbiting the proton at radius $r$ with orbital frequency $\omega$ experiences in its rest frame a magnetic field $\vec{B}_\text{naive} = -\vec{v}\times\vec{E}/c^2$ from the Lorentz boost of the Coulomb field. (a) Compute $\vec{B}_\text{naive}$ in terms of $r$, $\omega$, and fundamental constants, and write the resulting spin-orbit coupling $\hat{H}_\text{naive} = -\vec{\mu}\cdot\vec{B}_\text{naive}$ where $\vec{\mu} = -g_e\mu_B\hat{\vec{S}}/\hbar$ with $g_e \approx 2$. (b) The Thomas precession adds a term $-\vec{\Omega}_T\cdot\hat{\vec{S}}$ where the Thomas precession rate is $\vec{\Omega}_T = -(1/2c^2)\vec{a}\times\vec{v}$ and $\vec{a}$ is the electron's centripetal acceleration. Show that for a circular orbit, $\vec{\Omega}_T = -\frac{1}{2}\vec{\omega}$ where $\vec{\omega}$ is the orbital angular velocity vector. (c) Combine the naive coupling and the Thomas correction to show the net spin-orbit Hamiltonian has a factor of $\frac{1}{2}$ relative to the naive result. (d) At what step does the identification $g_e \approx 2$ (rather than $g_e = 1$) enter, and how does the Thomas correction interact with the $g$-factor to give the correct spin-orbit coupling?
-   *Tests: deriving the Thomas factor from classical kinematics; understanding how the $g$-factor and Thomas precession conspire to give the correct coefficient.*
+   *Tests: deriving the Thomas factor from classical kinematics; understanding how the* $g$-*factor and Thomas precession conspire to give the correct coefficient.*
 
 ---
 

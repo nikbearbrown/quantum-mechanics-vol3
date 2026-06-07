@@ -141,5 +141,5 @@ When $\kappa_0 a = (n + 1/2)\pi$, we have $\tan(\kappa_0 a) \to \infty$ and $a_s
 
 ---
 
-*Chapter 8 follows: Born approximation. Instead of expanding in angular-momentum channels, expand in powers of the potential. The result is a Fourier transform of $V(\mathbf{r})$ evaluated at the momentum transfer $\mathbf{q} = \mathbf{k}_f - \mathbf{k}_i$ — Rutherford scattering falls out as the leading term.*
+*Chapter 8 follows: Born approximation. Instead of expanding in angular-momentum channels, expand in powers of the potential. The result is a Fourier transform of* $V(\mathbf{r})$ *evaluated at the momentum transfer* $\mathbf{q} = \mathbf{k}_f - \mathbf{k}_i$ — *Rutherford scattering falls out as the leading term.*
 
