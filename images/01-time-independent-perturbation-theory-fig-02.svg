@@ -1,0 +1,157 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 01-time-independent-perturbation-theory
+  Figure:  02 — State Mixing and Small-Denominator Breakdown
+  Type:    diagram
+  Priority: Critical
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/01-time-independent-perturbation-theory-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">State mixing mechanism: off-diagonal coupling and small-denominator breakdown</title>
+  <desc>Vertical energy axis with four discrete levels. Arrow thickness encodes mixing strength — thin arrows from distant levels, thick arrows near near-degenerate pair. A breakdown marker signals where the nondegenerate formula diverges.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="01-time-independent-perturbation-theory"
+      figure-number="02"
+      figure-title="State Mixing Mechanism"
+      figure-slug="state-mixing-mechanism"
+      figure-type="diagram"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/01-time-independent-perturbation-theory-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-mix-thin" markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto">
+      <polygon points="0 0,6 2.5,0 5" fill="#ADADAD"/>
+    </marker>
+    <marker id="arr-mix-thin-l" markerWidth="6" markerHeight="5" refX="1" refY="2.5" orient="auto">
+      <polygon points="6 0,0 2.5,6 5" fill="#ADADAD"/>
+    </marker>
+    <marker id="arr-mix-med" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#787878"/>
+    </marker>
+    <marker id="arr-mix-med-l" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0,0 3,8 6" fill="#787878"/>
+    </marker>
+    <marker id="arr-break" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#C8102E"/>
+    </marker>
+    <marker id="arr-break-l" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0,0 3,8 6" fill="#C8102E"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="28" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    State Mixing: Off-Diagonal Coupling and Breakdown
+  </text>
+
+  <!-- Vertical energy axis -->
+  <line x1="320" y1="55" x2="320" y2="370"
+        stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arr-break)"/>
+  <text x="310" y="52" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#2a1a0e">E</text>
+
+  <!-- ~~~~ Energy Levels ~~~~ -->
+  <!-- Level 1 (top, far) — y=80 -->
+  <line x1="260" y1="85" x2="380" y2="85" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="390" y="89" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">|m₄⟩  (far above n)</text>
+
+  <!-- Level 2 (target state n) — y=195 -->
+  <line x1="260" y1="195" x2="380" y2="195" stroke="#C8102E" stroke-width="2.5"/>
+  <text x="390" y="199" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#C8102E">|n⟩  (target state)</text>
+
+  <!-- Level 3 — near-degenerate partner, y=225 (small gap below n) -->
+  <line x1="260" y1="230" x2="380" y2="230" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="390" y="234" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">|m₂⟩  (near-degenerate)</text>
+
+  <!-- small-gap indicator -->
+  <line x1="240" y1="195" x2="240" y2="230" stroke="#787878" stroke-width="0.75" stroke-dasharray="2 2"/>
+  <text x="225" y="215" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#787878">small</text>
+  <text x="225" y="225" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#787878">gap</text>
+
+  <!-- Level 4 (bottom, far) — y=330 -->
+  <line x1="260" y1="335" x2="380" y2="335" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="390" y="339" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">|m₁⟩  (far below n)</text>
+
+  <!-- ~~~~ Mixing arrows ~~~~ -->
+
+  <!-- m4 → n: distant above, THIN (weak mixing) -->
+  <line x1="270" y1="90" x2="270" y2="188"
+        stroke="#ADADAD" stroke-width="1.5"
+        marker-end="url(#arr-mix-thin)" marker-start="url(#arr-mix-thin-l)"/>
+  <text x="248" y="142" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#ADADAD">weak</text>
+
+  <!-- m1 → n: distant below, THIN -->
+  <line x1="295" y1="329" x2="295" y2="202"
+        stroke="#ADADAD" stroke-width="1.5"
+        marker-end="url(#arr-mix-thin)" marker-start="url(#arr-mix-thin-l)"/>
+  <text x="275" y="268" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#ADADAD">weak</text>
+
+  <!-- m2 ↔ n: NEAR-DEGENERATE — breakdown arrow (thick red) -->
+  <line x1="310" y1="224" x2="310" y2="202"
+        stroke="#C8102E" stroke-width="4"
+        marker-end="url(#arr-break)" marker-start="url(#arr-break-l)"/>
+
+  <!-- Breakdown X marker on the near-degenerate arrow -->
+  <line x1="300" y1="207" x2="320" y2="220" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="320" y1="207" x2="300" y2="220" stroke="#C8102E" stroke-width="1.5"/>
+
+  <!-- breakdown callout box -->
+  <rect x="430" y="200" width="220" height="46" rx="0"
+        fill="#F5F5F5" stroke="#C8102E" stroke-width="1"/>
+  <text x="440" y="218"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#C8102E">Nondegenerate PT breaks down</text>
+  <text x="440" y="233"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">⟨m|H′|n⟩ / (E_n − E_m) → ∞</text>
+  <line x1="430" y1="213" x2="324" y2="213" stroke="#C8102E" stroke-width="0.75" stroke-dasharray="3 2"/>
+
+  <!-- legend for arrow thickness -->
+  <rect x="90" y="340" width="200" height="65" rx="0"
+        fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="100" y="358"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Arrow thickness ∝ mixing strength</text>
+  <text x="100" y="373"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">|⟨m|H′|n⟩| / |E_n − E_m|</text>
+  <line x1="100" y1="388" x2="140" y2="388" stroke="#ADADAD" stroke-width="1.5"/>
+  <text x="148" y="391" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#ADADAD">weak  </text>
+  <line x1="185" y1="388" x2="225" y2="388" stroke="#C8102E" stroke-width="4"/>
+  <text x="233" y="391" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">diverges</text>
+
+  <!-- caption -->
+  <text x="350" y="406" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    Near-degenerate pair (small denominator) forces the degenerate PT treatment of Chapter 2
+  </text>
+</svg>

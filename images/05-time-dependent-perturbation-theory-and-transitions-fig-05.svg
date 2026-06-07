@@ -1,0 +1,168 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 05-time-dependent-perturbation-theory-and-transitions
+  Figure:  05 — Coherent Rabi Oscillations Collapsing into Linear Golden-Rule Growth
+  Type:    chart (three-panel line)
+  Priority: Important
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/05-time-dependent-perturbation-theory-and-transitions-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-05-05">
+  <title id="fig-title-05-05">As the number of final states increases from N=2 to N=50, coherent Rabi oscillations average out and total transition probability converges to linear Fermi golden-rule growth W·t</title>
+  <desc>Three vertically stacked panels sharing a time axis. Top (N=2): clear oscillatory total probability. Middle (N=10): partially washed oscillations with emerging linear trend. Bottom (N=50): smooth linear rise matching the Fermi golden-rule reference line.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="05-time-dependent-perturbation-theory-and-transitions"
+      figure-number="05"
+      figure-title="Coherent Rabi to Golden-Rule Transition"
+      figure-slug="coherent-rabi-to-golden-rule"
+      figure-type="chart"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/05-time-dependent-perturbation-theory-and-transitions-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-05-05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="13" fill="#2a1a0e">
+    From Coherent Rabi Oscillations to Fermi's Golden Rule
+  </text>
+
+  <!-- ===== THREE PANELS, each height ~108px ===== -->
+  <!-- Panel 1: y 32..108, Panel 2: y 114..190, Panel 3: y 196..272 -->
+  <!-- Shared x: 90..630 (540px), t from 0 to 10 -->
+  <!-- P y: panel top to panel-10 = ~68px per panel -->
+
+  <!-- ~~~~ PANEL 1: N=2 ~~~~ -->
+  <rect x="90" y="32" width="540" height="100" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="96" y="48"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#2a1a0e">N = 2 final states</text>
+  <!-- Y axis ticks -->
+  <text x="80" y="123" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">0</text>
+  <text x="80" y="77" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">1</text>
+  <!-- Y axis line -->
+  <line x1="90" y1="122" x2="90" y2="40" stroke="#2a1a0e" stroke-width="0.75"/>
+  <!-- P=1 reference dashed -->
+  <line x1="90" y1="77" x2="630" y2="77" stroke="#ADADAD" stroke-width="0.5" stroke-dasharray="3 2"/>
+
+  <!-- N=2: two modes produce oscillation. Use: P=2*sin^2(1.5*t/2)/1.5^2 * norm
+       At t=2*pi/1.5 ~ 4.19: P_max = 2/1.5^2 = 0.89 (cap to ~1 range)
+       For SVG: y = 122 - P_norm * 85, P_norm in [0,1] -->
+  <!-- The oscillation peaks around P~0.89, so scale so peak = 0.89 normalized to 1 -->
+  <!-- Points: t from 0..10 -->
+  <!-- sin^2(1.5*t/2) for omega=1.5, two symmetric modes: total = 2*sin^2(1.5t/2)/1.5^2 -->
+  <!-- normalize to max which occurs at t~2.1: P=0.89 -> scale by 1.0 since 0.89 &lt; 1 -->
+  <!-- Generate schematic oscillation -->
+  <polyline
+    points="90,122 117,120 144,113 171,100 198,85 225,76 252,77 279,86 306,99 333,111 360,119 387,116 414,105 441,88 468,78 495,79 522,90 549,103 576,114 603,121 630,122"
+    fill="none" stroke="#2a1a0e" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- ~~~~ PANEL 2: N=10 ~~~~ -->
+  <rect x="90" y="142" width="540" height="100" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="96" y="158"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#2a1a0e">N = 10 final states</text>
+  <!-- Y axis -->
+  <text x="80" y="233" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">0</text>
+  <text x="80" y="187" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">1</text>
+  <line x1="90" y1="232" x2="90" y2="150" stroke="#2a1a0e" stroke-width="0.75"/>
+  <line x1="90" y1="187" x2="630" y2="187" stroke="#ADADAD" stroke-width="0.5" stroke-dasharray="3 2"/>
+
+  <!-- N=10: partially averaged oscillations + some linear trend -->
+  <!-- Use computed data scaled: spacing=1.0, 10 states at +-4.5 steps -->
+  <!-- Schematic: shows some oscillatory bumps with overall rising trend -->
+  <polyline
+    points="90,232 117,222 144,204 171,185 198,171 225,166 252,173 279,189 306,204 333,208 360,200 387,185 414,172 441,169 468,178 495,195 522,210 549,213 576,204 603,190 630,180"
+    fill="none" stroke="#2a1a0e" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- ~~~~ PANEL 3: N=50 ~~~~ -->
+  <rect x="90" y="252" width="540" height="100" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="96" y="268"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#2a1a0e">N = 50 final states</text>
+  <!-- Y axis -->
+  <text x="80" y="343" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">0</text>
+  <text x="80" y="297" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">1</text>
+  <line x1="90" y1="342" x2="90" y2="260" stroke="#2a1a0e" stroke-width="0.75"/>
+
+  <!-- Fermi golden rule line W*t (dashed orange) -->
+  <!-- W ~ 0.08, t_max=10, so at t=10 P=0.8 -> scale to 67% of panel height -->
+  <line x1="90" y1="342" x2="630" y2="285"
+        stroke="#C8860E" stroke-width="2" stroke-dasharray="8 4"/>
+
+  <!-- N=50 smooth nearly-linear rise (with small initial transient) -->
+  <polyline
+    points="90,342 117,339 144,335 171,330 198,324 225,318 252,312 279,307 306,302 333,298 360,295 387,292 414,290 441,289 468,288 495,287 522,287 549,287 576,288 603,289 630,290"
+    fill="none" stroke="#2a1a0e" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Shared X-axis below panel 3 -->
+  <line x1="90" y1="352" x2="635" y2="352"
+        stroke="#2a1a0e" stroke-width="1" marker-end="url(#arr-05-05)"/>
+  <text x="80" y="356" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">0</text>
+  <text x="360" y="356" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">t</text>
+
+  <!-- P_total Y axis label -->
+  <text x="42" y="200" text-anchor="middle" transform="rotate(-90,42,200)"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">P_total  (0 to 1)</text>
+
+  <!-- Legend for panel 3 -->
+  <line x1="96" y1="327" x2="120" y2="327" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="125" y="331"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">P_total(t)</text>
+  <line x1="195" y1="327" x2="219" y2="327" stroke="#C8860E" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="224" y="331"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">Fermi W·t</text>
+
+  <!-- Annotation arrows showing convergence -->
+  <line x1="655" y1="80" x2="655" y2="290"
+        stroke="#C8102E" stroke-width="1.5" marker-end="url(#arr-05-05)"/>
+  <text x="660" y="155" transform="rotate(90,660,155)"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">N → continuum</text>
+
+  <!-- Caption -->
+  <text x="350" y="370" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    Fermi's golden rule is the N→∞ limit: phase coherence is destroyed by the continuum density of states
+  </text>
+  <text x="350" y="385" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    Irreversibility emerges from the infinite number of final states — not from any single interaction
+  </text>
+</svg>

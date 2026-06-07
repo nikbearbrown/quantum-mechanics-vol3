@@ -1,0 +1,49 @@
+<!-- CAJAL SVG | quantum-mechanics-vol3 | 10-periodic-potentials-and-band-structure | fig 05 | Bloch Wave vs Free Plane Wave: Lattice Modulation | 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-05">
+  <title id="fig-title-05">Bloch Wave vs Free Plane Wave: Lattice Modulation</title>
+  <desc>Two-panel comparison: left shows a free plane wave with constant amplitude; right shows a Bloch wave whose carrier oscillation is amplitude-modulated by a periodic envelope u(x) with the lattice period. Lattice site ticks mark the envelope period.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Quantum Mechanics — Approximation Methods and Real Systems" book-slug="quantum-mechanics-vol3" chapter="10-periodic-potentials-and-band-structure" figure-number="05" figure-title="Bloch Wave vs Free Plane Wave: Lattice Modulation" figure-slug="bloch-wave-vs-free-plane-wave" figure-type="geometry" priority="Supplementary" author="Humanitarians AI Incorporated" date-generated="2026-06-06" source-file="pantry/10-periodic-potentials-and-band-structure-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <text x="350" y="28" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e">Bloch wave vs free plane wave: lattice modulation</text>
+
+  <!-- Left panel: free plane wave -->
+  <rect x="50" y="44" width="280" height="296" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="190" y="66" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Free plane wave  e<tspan baseline-shift="super" font-size="9">ikx</tspan></text>
+  <!-- Baseline -->
+  <line x1="55" y1="200" x2="325" y2="200" stroke="#D4D4D4" stroke-width="0.5"/>
+  <!-- Wave -->
+  <polyline points="55.0,200.0 57.7,177.3 60.4,159.5 63.1,150.6 65.8,152.4 68.5,164.6 71.2,184.5 73.9,207.8 76.6,229.4 79.3,244.6 82.0,250.0 84.7,244.6 87.4,229.4 90.1,207.8 92.8,184.5 95.5,164.6 98.2,152.4 100.9,150.6 103.6,159.5 106.3,177.3 109.0,200.0 111.7,222.7 114.4,240.5 117.1,249.4 119.8,247.6 122.5,235.4 125.2,215.5 127.9,192.2 130.6,170.6 133.3,155.4 136.0,150.0 138.7,155.4 141.4,170.6 144.1,192.2 146.8,215.5 149.5,235.4 152.2,247.6 154.9,249.4 157.6,240.5 160.3,222.7 163.0,200.0 165.7,177.3 168.4,159.5 171.1,150.6 173.8,152.4 176.5,164.6 179.2,184.5 181.9,207.8 184.6,229.4 187.3,244.6 190.0,250.0 192.7,244.6 195.4,229.4 198.1,207.8 200.8,184.5 203.5,164.6 206.2,152.4 208.9,150.6 211.6,159.5 214.3,177.3 217.0,200.0 219.7,222.7 222.4,240.5 225.1,249.4 227.8,247.6 230.5,235.4 233.2,215.5 235.9,192.2 238.6,170.6 241.3,155.4 244.0,150.0 246.7,155.4 249.4,170.6 252.1,192.2 254.8,215.5 257.5,235.4 260.2,247.6 262.9,249.4 265.6,240.5 268.3,222.7 271.0,200.0 273.7,177.3 276.4,159.5 279.1,150.6 281.8,152.4 284.5,164.6 287.2,184.5 289.9,207.8 292.6,229.4 295.3,244.6 298.0,250.0 300.7,244.6 303.4,229.4 306.1,207.8 308.8,184.5 311.5,164.6 314.2,152.4 316.9,150.6 319.6,159.5 322.3,177.3 325.0,200.0" fill="none" stroke="#2a1a0e" stroke-width="1.8"/>
+  <!-- Constant amplitude envelope lines -->
+  <line x1="55" y1="150" x2="325" y2="150" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="55" y1="250" x2="325" y2="250" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+
+  <!-- Right panel: Bloch wave -->
+  <rect x="370" y="44" width="280" height="296" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="510" y="66" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Bloch wave  e<tspan baseline-shift="super" font-size="9">ikx</tspan> · u(x)</text>
+  <line x1="375" y1="200" x2="645" y2="200" stroke="#D4D4D4" stroke-width="0.5"/>
+  <!-- Bloch wave -->
+  <polyline points="375.0,200.0 377.7,177.4 380.4,159.9 383.1,151.7 385.8,154.2 388.5,166.7 391.2,185.8 393.9,207.0 396.6,225.3 399.3,236.9 402.0,239.6 404.7,233.7 407.4,221.1 410.1,205.3 412.8,190.1 415.5,178.5 418.2,172.8 420.9,173.4 423.6,179.4 426.3,189.1 429.0,200.0 431.7,209.9 434.4,217.0 437.1,220.2 439.8,219.1 442.5,214.1 445.2,206.2 447.9,196.8 450.6,187.6 453.3,180.5 456.0,177.1 458.7,178.6 461.4,185.0 464.1,195.8 466.8,208.8 469.5,221.5 472.2,230.6 474.9,233.6 477.6,229.1 480.3,217.2 483.0,200.0 485.7,181.2 488.4,165.2 491.1,156.0 493.8,156.3 496.5,166.7 499.2,185.1 501.9,207.7 504.6,229.1 507.3,244.4 510.0,250.0 512.7,244.4 515.4,229.1 518.1,207.7 520.8,185.1 523.5,166.7 526.2,156.3 528.9,156.0 531.6,165.2 534.3,181.2 537.0,200.0 539.7,217.2 542.4,229.1 545.1,233.6 547.8,230.6 550.5,221.5 553.2,208.8 555.9,195.8 558.6,185.0 561.3,178.6 564.0,177.1 566.7,180.5 569.4,187.6 572.1,196.8 574.8,206.2 577.5,214.1 580.2,219.1 582.9,220.2 585.6,217.0 588.3,209.9 591.0,200.0 593.7,189.1 596.4,179.4 599.1,173.4 601.8,172.8 604.5,178.5 607.2,190.1 609.9,205.3 612.6,221.1 615.3,233.7 618.0,239.6 620.7,236.9 623.4,225.3 626.1,207.0 628.8,185.8 631.5,166.7 634.2,154.2 636.9,151.7 639.6,159.9 642.3,177.4 645.0,200.0" fill="none" stroke="#2a1a0e" stroke-width="1.8"/>
+  <!-- Periodic envelope (dashed) -->
+  <polyline points="375.0,150.0 377.7,150.1 380.4,150.5 383.1,151.1 385.8,151.9 388.5,152.9 391.2,154.1 393.9,155.4 396.6,157.0 399.3,158.6 402.0,160.4 404.7,162.2 407.4,164.1 410.1,165.9 412.8,167.8 415.5,169.6 418.2,171.4 420.9,173.0 423.6,174.6 426.3,175.9 429.0,177.1 431.7,178.1 434.4,178.9 437.1,179.5 439.8,179.9 442.5,180.0 445.2,179.9 447.9,179.5 450.6,178.9 453.3,178.1 456.0,177.1 458.7,175.9 461.4,174.6 464.1,173.0 466.8,171.4 469.5,169.6 472.2,167.8 474.9,165.9 477.6,164.1 480.3,162.2 483.0,160.4 485.7,158.6 488.4,157.0 491.1,155.4 493.8,154.1 496.5,152.9 499.2,151.9 501.9,151.1 504.6,150.5 507.3,150.1 510.0,150.0 512.7,150.1 515.4,150.5 518.1,151.1 520.8,151.9 523.5,152.9 526.2,154.1 528.9,155.4 531.6,157.0 534.3,158.6 537.0,160.4 539.7,162.2 542.4,164.1 545.1,165.9 547.8,167.8 550.5,169.6 553.2,171.4 555.9,173.0 558.6,174.6 561.3,175.9 564.0,177.1 566.7,178.1 569.4,178.9 572.1,179.5 574.8,179.9 577.5,180.0 580.2,179.9 582.9,179.5 585.6,178.9 588.3,178.1 591.0,177.1 593.7,175.9 596.4,174.6 599.1,173.0 601.8,171.4 604.5,169.6 607.2,167.8 609.9,165.9 612.6,164.1 615.3,162.2 618.0,160.4 620.7,158.6 623.4,157.0 626.1,155.4 628.8,154.1 631.5,152.9 634.2,151.9 636.9,151.1 639.6,150.5 642.3,150.1 645.0,150.0" fill="none" stroke="#C8860E" stroke-width="1.2" stroke-dasharray="4 2"/>
+  <polyline points="375.0,250.0 377.7,249.9 380.4,249.5 383.1,248.9 385.8,248.1 388.5,247.1 391.2,245.9 393.9,244.6 396.6,243.0 399.3,241.4 402.0,239.6 404.7,237.8 407.4,235.9 410.1,234.1 412.8,232.2 415.5,230.4 418.2,228.6 420.9,227.0 423.6,225.4 426.3,224.1 429.0,222.9 431.7,221.9 434.4,221.1 437.1,220.5 439.8,220.1 442.5,220.0 445.2,220.1 447.9,220.5 450.6,221.1 453.3,221.9 456.0,222.9 458.7,224.1 461.4,225.4 464.1,227.0 466.8,228.6 469.5,230.4 472.2,232.2 474.9,234.1 477.6,235.9 480.3,237.8 483.0,239.6 485.7,241.4 488.4,243.0 491.1,244.6 493.8,245.9 496.5,247.1 499.2,248.1 501.9,248.9 504.6,249.5 507.3,249.9 510.0,250.0 512.7,249.9 515.4,249.5 518.1,248.9 520.8,248.1 523.5,247.1 526.2,245.9 528.9,244.6 531.6,243.0 534.3,241.4 537.0,239.6 539.7,237.8 542.4,235.9 545.1,234.1 547.8,232.2 550.5,230.4 553.2,228.6 555.9,227.0 558.6,225.4 561.3,224.1 564.0,222.9 566.7,221.9 569.4,221.1 572.1,220.5 574.8,220.1 577.5,220.0 580.2,220.1 582.9,220.5 585.6,221.1 588.3,221.9 591.0,222.9 593.7,224.1 596.4,225.4 599.1,227.0 601.8,228.6 604.5,230.4 607.2,232.2 609.9,234.1 612.6,235.9 615.3,237.8 618.0,239.6 620.7,241.4 623.4,243.0 626.1,244.6 628.8,245.9 631.5,247.1 634.2,248.1 636.9,248.9 639.6,249.5 642.3,249.9 645.0,250.0" fill="none" stroke="#C8860E" stroke-width="1.2" stroke-dasharray="4 2"/>
+  <line x1="55.0" y1="340" x2="55.0" y2="348" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="91.0" y1="340" x2="91.0" y2="348" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="127.0" y1="340" x2="127.0" y2="348" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="163.0" y1="340" x2="163.0" y2="348" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="199.0" y1="340" x2="199.0" y2="348" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="235.0" y1="340" x2="235.0" y2="348" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="271.0" y1="340" x2="271.0" y2="348" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="307.0" y1="340" x2="307.0" y2="348" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="375.0" y1="340" x2="375.0" y2="348" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="510.0" y1="340" x2="510.0" y2="348" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="645.0" y1="340" x2="645.0" y2="348" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="55" y1="340" x2="325" y2="340" stroke="#ADADAD" stroke-width="0.75"/>
+  <line x1="375" y1="340" x2="645" y2="340" stroke="#ADADAD" stroke-width="0.75"/>
+  <!-- Annotation arrows / labels -->
+  <text x="190" y="370" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD">uniform amplitude</text>
+  <text x="510" y="370" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8860E">periodic envelope u(x)</text>
+  <text x="510" y="358" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#ADADAD">▲ lattice sites</text>
+  <!-- Panel divider -->
+  <line x1="348" y1="44" x2="348" y2="390" stroke="#D4D4D4" stroke-width="0.75"/>
+</svg>

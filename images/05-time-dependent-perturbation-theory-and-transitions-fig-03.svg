@@ -1,0 +1,161 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 05-time-dependent-perturbation-theory-and-transitions
+  Figure:  03 — Rabi Oscillation vs. First-Order PT Parabola
+  Type:    chart (line)
+  Priority: Critical
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/05-time-dependent-perturbation-theory-and-transitions-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-05-03">
+  <title id="fig-title-05-03">Exact Rabi oscillation versus first-order perturbation theory parabola: PT agrees at small Ωt but exceeds P=1 before the first Rabi minimum</title>
+  <desc>Line chart with Ωt on x-axis (0 to 3π) and transition probability P on y-axis (0 to 1.5). The exact Rabi curve sin²(Ωt/2) oscillates between 0 and 1. The PT parabola (Ωt/2)² matches the Rabi curve at small Ωt then diverges, crossing P=1 near Ωt=2. A shaded zone above P=1 marks the breakdown region.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="05-time-dependent-perturbation-theory-and-transitions"
+      figure-number="03"
+      figure-title="Rabi Oscillation vs. First-Order PT"
+      figure-slug="rabi-vs-first-order-pt"
+      figure-type="chart"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/05-time-dependent-perturbation-theory-and-transitions-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-05-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    Rabi Oscillation vs. First-Order Perturbation Theory (On Resonance)
+  </text>
+
+  <!-- Chart area: x 80..620 (540px), y 60..340 (280px) -->
+  <rect x="80" y="60" width="540" height="280" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- PT breakdown shaded zone above P=1 line (y=153) -->
+  <rect x="195" y="60" width="425" height="93" fill="#C8102E" fill-opacity="0.07"/>
+
+  <!-- Grid lines -->
+  <line x1="80" y1="247" x2="620" y2="247" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="80" y1="153" x2="620" y2="153" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+
+  <!-- Y-axis labels -->
+  <text x="70" y="344" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">0</text>
+  <text x="70" y="250" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">0.5</text>
+  <text x="70" y="156" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">1.0</text>
+  <text x="70" y="63" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">1.5</text>
+
+  <!-- Y-axis label -->
+  <text x="20" y="210" text-anchor="middle" transform="rotate(-90,20,210)"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">Transition probability P</text>
+
+  <!-- X-axis labels -->
+  <text x="80"  y="360" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">0</text>
+  <text x="260" y="360" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">π</text>
+  <text x="440" y="360" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">2π</text>
+  <text x="620" y="360" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">3π</text>
+  <text x="350" y="378" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">Ωt</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="340" x2="625" y2="340"
+        stroke="#2a1a0e" stroke-width="1" marker-end="url(#arr-05-03)"/>
+  <line x1="80" y1="340" x2="80" y2="55"
+        stroke="#2a1a0e" stroke-width="1" marker-end="url(#arr-05-03)"/>
+
+  <!-- P=1 reference line (dashed) -->
+  <line x1="80" y1="153" x2="620" y2="153"
+        stroke="#C8860E" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="630" y="157"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#C8860E">P=1</text>
+
+  <!-- π and 2π vertical markers -->
+  <line x1="260" y1="60" x2="260" y2="340" stroke="#ADADAD" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="440" y1="60" x2="440" y2="340" stroke="#ADADAD" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- PT breakdown label in shaded zone -->
+  <text x="500" y="100"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">PT breakdown:</text>
+  <text x="500" y="112"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">P &gt; 1 unphysical</text>
+
+  <!-- EXACT RABI curve (computed) -->
+  <polyline
+    points="80.0,340.0 107.0,329.8 134.0,301.5 161.0,261.3 188.0,217.8 215.0,180.7 242.0,157.9 269.0,154.5 296.0,171.1 323.0,204.3 350.0,246.6 377.0,289.0 404.0,322.1 431.0,338.8 458.0,335.4 485.0,312.7 512.0,275.6 539.0,232.1 566.0,191.9 593.0,163.5 620.0,153.3"
+    fill="none" stroke="#2a1a0e" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- FIRST-ORDER PT PARABOLA (capped at y=60 for chart) -->
+  <polyline
+    points="80.0,340.0 107.0,329.6 134.0,298.6 161.0,246.7 188.0,174.2 215.0,81.0 242.0,60.0 620.0,60.0"
+    fill="none" stroke="#C8102E" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 4"/>
+
+  <!-- Arrow at point where PT crosses P=1 -->
+  <circle cx="195" cy="153" r="5" fill="#C8102E"/>
+  <line x1="195" y1="145" x2="195" y2="80"
+        stroke="#C8102E" stroke-width="1" marker-end="url(#arr-05-03)"/>
+  <text x="205" y="115"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">PT crosses P=1</text>
+  <text x="205" y="127"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">at Ωt ≈ 2</text>
+
+  <!-- Early-time agreement annotation -->
+  <text x="130" y="313"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#787878">agree at</text>
+  <text x="130" y="325"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#787878">small Ωt</text>
+
+  <!-- Legend -->
+  <line x1="380" y1="310" x2="415" y2="310" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="420" y="314"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Exact Rabi: sin²(Ωt/2)</text>
+  <line x1="380" y1="328" x2="415" y2="328" stroke="#C8102E" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="420" y="332"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">First-order PT: (Ωt/2)²</text>
+
+  <!-- Caption -->
+  <text x="350" y="395" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    PT is valid only when Ωt ≪ 1; for strong driving (large t or large Ω) Rabi treatment is required
+  </text>
+</svg>

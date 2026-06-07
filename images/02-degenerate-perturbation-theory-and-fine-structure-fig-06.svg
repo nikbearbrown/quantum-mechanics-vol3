@@ -1,0 +1,172 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 02-degenerate-perturbation-theory-and-fine-structure
+  Figure:  06 — Hydrogen n=2 Energy Hierarchy: Bohr, Fine Structure, Lamb Shift
+  Type:    diagram
+  Priority: Important
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/02-degenerate-perturbation-theory-and-fine-structure-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-06b">
+  <title id="fig-title-06b">Hydrogen n=2 energy hierarchy: Bohr level, fine structure splitting (~4.5×10⁻⁵ eV), and Lamb shift (~4×10⁻⁶ eV) at three orders of magnification</title>
+  <desc>Three-tier level diagram reading left to right at increasing resolution. Tier 1: single Bohr n=2 level. Tier 2: fine-structure doublet (j=3/2 above, j=1/2 below). Tier 3: j=1/2 splits into 2s_{1/2} and 2p_{1/2} via the Lamb shift. Scale breaks between tiers indicate orders-of-magnitude zoom.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="02-degenerate-perturbation-theory-and-fine-structure"
+      figure-number="06"
+      figure-title="Hydrogen n=2 Energy Hierarchy"
+      figure-slug="hydrogen-n2-energy-hierarchy"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/02-degenerate-perturbation-theory-and-fine-structure-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-06b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    Hydrogen n=2: Bohr → Fine Structure → Lamb Shift
+  </text>
+
+  <!-- Tier labels -->
+  <text x="108" y="52" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Bohr energy</text>
+  <text x="310" y="52" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Fine structure</text>
+  <text x="540" y="52" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Lamb shift</text>
+
+  <!-- ===== TIER 1: Single Bohr level ===== -->
+  <!-- y center = 210 -->
+  <line x1="60" y1="210" x2="165" y2="210" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="113" y="225" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">E₂⁽⁰⁾</text>
+  <text x="113" y="238" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">= −3.4 eV</text>
+
+  <!-- Magnification break 1→2 (zigzag) -->
+  <line x1="168" y1="200" x2="180" y2="193" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="180" y1="193" x2="175" y2="183" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="175" y1="183" x2="187" y2="176" stroke="#ADADAD" stroke-width="1.5"/>
+  <text x="185" y="170"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#545454">×10⁴</text>
+  <line x1="168" y1="220" x2="180" y2="227" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="180" y1="227" x2="175" y2="237" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="175" y1="237" x2="187" y2="244" stroke="#ADADAD" stroke-width="1.5"/>
+
+  <!-- Fan lines tier 1→2 -->
+  <line x1="165" y1="210" x2="195" y2="155" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="165" y1="210" x2="195" y2="255" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- ===== TIER 2: Fine structure doublet ===== -->
+  <!-- j=3/2 at y=135, j=1/2 at y=265 — gap ~ 130px representing 4.5e-5 eV -->
+  <line x1="195" y1="135" x2="400" y2="135" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="403" y="139"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">2p₃/₂  (j=3/2)</text>
+
+  <!-- j=1/2 level (degenerate 2s+2p at this resolution) -->
+  <line x1="195" y1="265" x2="400" y2="265" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="403" y="269"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">2s₁/₂ = 2p₁/₂  (j=1/2)</text>
+
+  <!-- Gap bracket tier 2 -->
+  <line x1="188" y1="135" x2="188" y2="265" stroke="#C8102E" stroke-width="1"/>
+  <line x1="183" y1="135" x2="193" y2="135" stroke="#C8102E" stroke-width="1"/>
+  <line x1="183" y1="265" x2="193" y2="265" stroke="#C8102E" stroke-width="1"/>
+  <text x="185" y="203" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="8" fill="#C8102E">~4.5×10⁻⁵</text>
+  <text x="185" y="213" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="8" fill="#C8102E">eV</text>
+
+  <!-- Magnification break 2→3 on j=1/2 line (zigzag) -->
+  <line x1="404" y1="258" x2="415" y2="250" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="415" y1="250" x2="410" y2="241" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="410" y1="241" x2="421" y2="232" stroke="#ADADAD" stroke-width="1.5"/>
+  <text x="425" y="225"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#545454">×10</text>
+  <line x1="404" y1="272" x2="415" y2="280" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="415" y1="280" x2="410" y2="289" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="410" y1="289" x2="421" y2="298" stroke="#ADADAD" stroke-width="1.5"/>
+
+  <!-- Fan lines tier 2 j=1/2→tier 3 -->
+  <line x1="400" y1="265" x2="435" y2="230" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="400" y1="265" x2="435" y2="300" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- ===== TIER 3: Lamb shift splitting of j=1/2 ===== -->
+  <!-- 2s_{1/2} above, 2p_{1/2} below — gap ~ 50px representing 4e-6 eV -->
+  <line x1="435" y1="220" x2="625" y2="220" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="630" y="224"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">2s₁/₂</text>
+
+  <line x1="435" y1="310" x2="625" y2="310" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="630" y="314"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">2p₁/₂</text>
+
+  <!-- QED marker / dashed separator -->
+  <line x1="435" y1="265" x2="625" y2="265"
+        stroke="#C8102E" stroke-width="0.75" stroke-dasharray="5 3"/>
+  <text x="530" y="261" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#C8102E">requires QED</text>
+
+  <!-- Gap bracket tier 3 -->
+  <line x1="428" y1="220" x2="428" y2="310" stroke="#787878" stroke-width="1"/>
+  <line x1="423" y1="220" x2="433" y2="220" stroke="#787878" stroke-width="1"/>
+  <line x1="423" y1="310" x2="433" y2="310" stroke="#787878" stroke-width="1"/>
+  <text x="425" y="268" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="8" fill="#787878">~4×10⁻⁶</text>
+  <text x="425" y="278" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="8" fill="#787878">eV</text>
+  <text x="425" y="288" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="8" fill="#787878">(Lamb)</text>
+
+  <!-- Scale summary note -->
+  <rect x="55" y="340" width="580" height="42" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="345" y="358" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">
+    Hierarchy: Bohr scale (eV)  ≫  fine structure (~α²·Ry)  ≫  Lamb shift (~α³·Ry)
+  </text>
+  <text x="345" y="374" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">
+    3.4 eV  :  4.5×10⁻⁵ eV  :  4×10⁻⁶ eV  ≈  10⁵ : 10 : 1
+  </text>
+
+  <!-- caption -->
+  <text x="350" y="408" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    The Lamb shift lifts the accidental Dirac degeneracy between 2s₁/₂ and 2p₁/₂
+  </text>
+</svg>

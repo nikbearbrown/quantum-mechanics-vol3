@@ -1,0 +1,67 @@
+<!-- CAJAL SVG | quantum-mechanics-vol3 | 09-atoms-in-fields | fig 04 | Rotating-Frame Transformation: Lab vs Rotating Frame | 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">Rotating-Frame Transformation: Lab vs Rotating Frame</title>
+  <desc>Two-panel diagram comparing the magnetic resonance field configuration: lab frame (left) shows a large B₀ z-field with a rotating transverse B₁, while at resonance the rotating frame (right) eliminates the z-component and reveals a stationary B₁ field around which the spin undergoes Rabi precession.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Quantum Mechanics — Approximation Methods and Real Systems" book-slug="quantum-mechanics-vol3" chapter="09-atoms-in-fields" figure-number="04" figure-title="Rotating-Frame Transformation: Lab vs Rotating Frame" figure-slug="rotating-frame-transformation" figure-type="geometry" priority="Important" author="Humanitarians AI Incorporated" date-generated="2026-06-06" source-file="pantry/09-atoms-in-fields-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <text x="350" y="28" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e">Rotating-frame transformation: lab vs rotating frame</text>
+
+  <!-- Left panel: Lab frame -->
+  <rect x="32" y="44" width="280" height="340" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="172" y="66" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Lab frame</text>
+
+  <!-- Lab frame: coordinate axes -->
+  <line x1="172" y1="340" x2="172" y2="80" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <line x1="72" y1="250" x2="280" y2="250" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <text x="282" y="254" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="11" fill="#ADADAD" font-style="italic">x</text>
+  <text x="170" y="78" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="11" fill="#ADADAD" font-style="italic">z</text>
+
+  <!-- B0 z-hat arrow (large, vertical) -->
+  <line x1="172" y1="250" x2="172" y2="110" stroke="#2a1a0e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="180" y="108" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#2a1a0e" font-style="italic">B₀ẑ</text>
+
+  <!-- Rotating B1 field: circular arc in xy-plane -->
+  <ellipse cx="172" cy="250" rx="55" ry="18" fill="none" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <!-- B1 arrow tip -->
+  <line x1="172" y1="250" x2="224" y2="240" stroke="#C8860E" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="228" y="237" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#C8860E" font-style="italic">B₁</text>
+  <!-- Rotation arrow indicator -->
+  <path d="M 215,250 A 43,14 0 0 0 172,268" fill="none" stroke="#C8860E" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Spin vector precessing around z -->
+  <line x1="172" y1="250" x2="218" y2="155" stroke="#787878" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Precession cone -->
+  <ellipse cx="172" cy="155" rx="46" ry="12" fill="none" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <text x="225" y="152" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#787878" font-style="italic">S</text>
+
+  <!-- Transform arrow -->
+  <line x1="330" y1="214" x2="370" y2="214" stroke="#545454" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="350" y="208" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">rotating</text>
+  <text x="350" y="228" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">frame</text>
+
+  <!-- Right panel: Rotating frame -->
+  <rect x="388" y="44" width="280" height="340" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="528" y="66" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Rotating frame  (on resonance)</text>
+
+  <!-- Rotating frame: axes -->
+  <line x1="528" y1="340" x2="528" y2="80" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <line x1="428" y1="250" x2="636" y2="250" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <text x="638" y="254" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="11" fill="#ADADAD" font-style="italic">x′</text>
+  <text x="526" y="78" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="11" fill="#ADADAD" font-style="italic">z</text>
+
+  <!-- Effective z-field = 0 at resonance: show as tiny stub -->
+  <line x1="528" y1="250" x2="528" y2="238" stroke="#ADADAD" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <text x="490" y="234" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="11" fill="#ADADAD" font-style="italic">(B₀ − ω/γ)ẑ → 0</text>
+
+  <!-- Stationary B1 arrow (horizontal, x-hat) -->
+  <line x1="528" y1="250" x2="596" y2="250" stroke="#C8860E" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="600" y="247" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#C8860E" font-style="italic">B₁x̂′</text>
+
+  <!-- Spin now precesses around x' (Rabi) -->
+  <line x1="528" y1="250" x2="528" y2="130" stroke="#787878" stroke-width="2" marker-end="url(#arrow)"/>
+  <ellipse cx="528" cy="190" rx="12" ry="40" fill="none" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <text x="543" y="128" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#787878" font-style="italic">S</text>
+  <!-- Rabi precession label -->
+  <text x="528" y="350" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">precesses around B₁ (Rabi)</text>
+</svg>

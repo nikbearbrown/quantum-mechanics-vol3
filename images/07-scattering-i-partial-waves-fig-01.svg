@@ -1,0 +1,121 @@
+<!-- 
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Approximation Methods and Real Systems
+  Book-slug: quantum-mechanics-vol3
+  Chapter: 07-scattering-i-partial-waves
+  Figure: 01 — Scattering Boundary Condition and Wavefunction Geometry
+  Type: geometry
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/07-scattering-i-partial-waves-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-01">
+  <title id="fig-title-01">Scattering boundary condition and wavefunction geometry</title>
+  <desc>Incident plane wave propagating along z-hat scatters off a central target, producing outgoing spherical wavefronts with angular modulation f(theta); the asymptotic region at large r is indicated by a dashed circle.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Approximation Methods and Real Systems"
+      book-slug="quantum-mechanics-vol3"
+      chapter="07-scattering-i-partial-waves"
+      figure-number="01"
+      figure-title="Scattering Boundary Condition and Wavefunction Geometry"
+      figure-slug="scattering-boundary-condition-wavefunction-geometry"
+      figure-type="geometry"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/07-scattering-i-partial-waves-cajal.md"/>
+  </metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#787878"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="28" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">Scattering boundary condition</text>
+
+  <!-- Plot region -->
+  <rect x="32" y="44" width="636" height="340" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Asymptotic dashed circle, centered at (350, 214), radius ~145 -->
+  <circle cx="350" cy="214" r="145" fill="none" stroke="#ADADAD" stroke-width="0.75" stroke-dasharray="4 3"/>
+
+  <!-- Incident plane wave lines (vertical parallel lines moving rightward, left side) -->
+  <!-- Lines at x = 60,80,100,120,140,160,180, spanning y = 90 to 340 -->
+  <line x1="82" y1="85" x2="82" y2="340" stroke="#2a1a0e" stroke-width="1.2"/>
+  <line x1="103" y1="85" x2="103" y2="340" stroke="#2a1a0e" stroke-width="1.2"/>
+  <line x1="124" y1="85" x2="124" y2="340" stroke="#2a1a0e" stroke-width="1.2"/>
+  <line x1="145" y1="85" x2="145" y2="340" stroke="#2a1a0e" stroke-width="1.2"/>
+  <line x1="166" y1="85" x2="166" y2="340" stroke="#2a1a0e" stroke-width="1.2"/>
+  <line x1="187" y1="85" x2="187" y2="340" stroke="#2a1a0e" stroke-width="1.2"/>
+  <!-- Arrow showing propagation direction -->
+  <line x1="115" y1="390" x2="190" y2="390" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Scatterer: filled gray disc at center (350, 214) -->
+  <circle cx="350" cy="214" r="14" fill="#ADADAD" stroke="#787878" stroke-width="1"/>
+
+  <!-- Outgoing concentric arcs, centered at scatterer -->
+  <!-- Arc thickness tapered by angle: thicker near theta=0 (forward, right) -->
+  <!-- Large arcs on right (forward direction) -->
+  <!-- Forward-sector arcs: strong -->
+  <path d="M 390,214 A 40,40 0 0 0 382,191" fill="none" stroke="#C8102E" stroke-width="2.2"/>
+  <path d="M 430,214 A 80,80 0 0 0 414,167" fill="none" stroke="#C8102E" stroke-width="1.8"/>
+  <path d="M 470,214 A 120,120 0 0 0 446,143" fill="none" stroke="#C8102E" stroke-width="1.4"/>
+  <!-- Side arcs: medium -->
+  <path d="M 390,214 A 40,40 0 0 1 382,237" fill="none" stroke="#C8102E" stroke-width="2.2"/>
+  <path d="M 430,214 A 80,80 0 0 1 414,261" fill="none" stroke="#C8102E" stroke-width="1.8"/>
+  <path d="M 470,214 A 120,120 0 0 1 446,285" fill="none" stroke="#C8102E" stroke-width="1.4"/>
+  <!-- Upper arcs (theta ~ 90) -->
+  <path d="M 382,191 A 40,40 0 0 0 350,174" fill="none" stroke="#C8102E" stroke-width="1.2"/>
+  <path d="M 414,167 A 80,80 0 0 0 350,134" fill="none" stroke="#C8102E" stroke-width="0.9"/>
+  <path d="M 446,143 A 120,120 0 0 0 350,94" fill="none" stroke="#C8102E" stroke-width="0.7"/>
+  <!-- Lower arcs -->
+  <path d="M 382,237 A 40,40 0 0 1 350,254" fill="none" stroke="#C8102E" stroke-width="1.2"/>
+  <path d="M 414,261 A 80,80 0 0 1 350,294" fill="none" stroke="#C8102E" stroke-width="0.9"/>
+  <path d="M 446,285 A 120,120 0 0 1 350,334" fill="none" stroke="#C8102E" stroke-width="0.7"/>
+
+  <!-- z-hat axis arrow (horizontal, rightward) -->
+  <line x1="220" y1="214" x2="510" y2="214" stroke="#2a1a0e" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="490" y1="214" x2="620" y2="214" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Radial arrow r -->
+  <line x1="350" y1="214" x2="466" y2="124" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Theta angle arc -->
+  <path d="M 410,214 A 60,60 0 0 0 393,178" fill="none" stroke="#545454" stroke-width="1"/>
+
+  <!-- Labels -->
+  <!-- z-hat axis label -->
+  <text x="634" y="210" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#2a1a0e" font-style="italic">ẑ</text>
+
+  <!-- r label -->
+  <text x="422" y="155" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#2a1a0e" font-style="italic">r</text>
+
+  <!-- theta label -->
+  <text x="416" y="196" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454" font-style="italic">θ</text>
+
+  <!-- Region annotations -->
+  <text x="120" y="72" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Incident plane wave</text>
+  <text x="330" y="248" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Scatterer</text>
+  <text x="540" y="108" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Outgoing spherical</text>
+  <text x="540" y="121" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">wavefronts  f(θ)</text>
+
+  <!-- Asymptotic region label -->
+  <text x="440" y="370" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" font-style="italic">Asymptotic region</text>
+
+  <!-- Propagation direction label -->
+  <text x="193" y="385" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">propagation</text>
+
+  <!-- Annotation dots -->
+  <circle cx="115" cy="214" r="4" fill="#2a1a0e"/>
+  <circle cx="350" cy="214" r="4" fill="#2a1a0e"/>
+  <circle cx="470" cy="148" r="4" fill="#2a1a0e"/>
+</svg>

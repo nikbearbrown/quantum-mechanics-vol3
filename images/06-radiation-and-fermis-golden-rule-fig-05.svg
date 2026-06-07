@@ -1,0 +1,221 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 06-radiation-and-fermis-golden-rule
+  Figure:  05 — Einstein A/B Ratio: Three Emission/Absorption Processes
+  Type:    diagram (triptych)
+  Priority: Important
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/06-radiation-and-fermis-golden-rule-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-06-05">
+  <title id="fig-title-06-05">Einstein A and B coefficients: three-panel triptych showing absorption (rate ∝ u(ω)), stimulated emission (rate ∝ u(ω)), and spontaneous emission (rate independent of u(ω))</title>
+  <desc>Horizontal triptych with two-level energy diagrams. Panel 1 (absorption): one photon in, population moves up. Panel 2 (stimulated emission): one photon in, two photons out, population moves down. Panel 3 (spontaneous emission): no photon in, one photon out spontaneously. Rate indicators show field-dependent vs. field-independent rates.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="06-radiation-and-fermis-golden-rule"
+      figure-number="05"
+      figure-title="Einstein A/B Triptych"
+      figure-slug="einstein-ab-triptych"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/06-radiation-and-fermis-golden-rule-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-06-05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arr-up" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arr-down" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    Einstein A and B Coefficients: Three Radiative Processes
+  </text>
+
+  <!-- Panel dividers -->
+  <line x1="234" y1="40" x2="234" y2="380" stroke="#D4D4D4" stroke-width="1"/>
+  <line x1="467" y1="40" x2="467" y2="380" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- ===== PANEL 1: Absorption ===== -->
+  <rect x="22" y="40" width="212" height="340" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="128" y="58" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="12" fill="#2a1a0e">Absorption</text>
+
+  <!-- Two energy levels: E1 at y=280, E2 at y=130 -->
+  <line x1="50" y1="280" x2="212" y2="280" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="34" y="284"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">E₁</text>
+  <line x1="50" y1="130" x2="212" y2="130" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="34" y="134"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">E₂</text>
+
+  <!-- Incoming photon (wavy arrow) -->
+  <!-- Wavy path from left -->
+  <path d="M 22,205 C 30,195 35,215 43,205 C 51,195 56,215 64,205 C 72,195 77,215 85,205"
+        fill="none" stroke="#C8860E" stroke-width="2"/>
+  <polygon points="85,201 93,205 85,209" fill="#C8860E"/>
+  <!-- ω label on photon -->
+  <text x="54" y="193"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#C8860E">ℏω</text>
+
+  <!-- Population dot at E1, moving up to E2 -->
+  <circle cx="128" cy="280" r="8" fill="#2a1a0e"/>
+  <line x1="128" y1="272" x2="128" y2="138"
+        stroke="#2a1a0e" stroke-width="2" marker-end="url(#arr-up)"/>
+  <circle cx="128" cy="130" r="8" fill="#2a1a0e" fill-opacity="0.4"/>
+
+  <!-- Rate indicator: depends on u(ω) -->
+  <rect x="40" y="315" width="176" height="40" rx="0"
+        fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="128" y="331" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">Rate: B₁₂ · u(ω)</text>
+  <!-- Wave motif for u(ω) -->
+  <path d="M 50,346 C 55,342 58,350 63,346 C 68,342 71,350 76,346 C 81,342 84,350 89,346"
+        fill="none" stroke="#C8860E" stroke-width="1"/>
+  <text x="128" y="352" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">field-density dependent</text>
+
+  <!-- ===== PANEL 2: Stimulated Emission ===== -->
+  <rect x="234" y="40" width="233" height="340" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="350" y="58" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="12" fill="#2a1a0e">Stimulated Emission</text>
+
+  <!-- Two energy levels -->
+  <line x1="262" y1="280" x2="458" y2="280" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="248" y="284"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">E₁</text>
+  <line x1="262" y1="130" x2="458" y2="130" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="248" y="134"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">E₂</text>
+
+  <!-- Incoming photon -->
+  <path d="M 240,205 C 248,195 253,215 261,205 C 269,195 274,215 282,205 C 290,195 295,215 303,205"
+        fill="none" stroke="#C8860E" stroke-width="2"/>
+  <polygon points="303,201 311,205 303,209" fill="#C8860E"/>
+  <text x="270" y="193"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#C8860E">ℏω</text>
+
+  <!-- TWO outgoing photons (both going right) -->
+  <!-- First outgoing -->
+  <path d="M 370,195 C 378,185 383,205 391,195 C 399,185 404,205 412,195 C 420,185 425,205 433,195"
+        fill="none" stroke="#C8102E" stroke-width="2"/>
+  <polygon points="433,191 441,195 433,199" fill="#C8102E"/>
+  <text x="390" y="183"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#C8102E">ℏω</text>
+
+  <!-- Second outgoing (slightly below) -->
+  <path d="M 370,218 C 378,208 383,228 391,218 C 399,208 404,228 412,218 C 420,208 425,228 433,218"
+        fill="none" stroke="#C8102E" stroke-width="2"/>
+  <polygon points="433,214 441,218 433,222" fill="#C8102E"/>
+  <text x="390" y="234"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#C8102E">ℏω</text>
+  <text x="444" y="205"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#C8102E">×2</text>
+
+  <!-- Population dot at E2, moving down to E1 -->
+  <circle cx="350" cy="130" r="8" fill="#2a1a0e"/>
+  <line x1="350" y1="138" x2="350" y2="272"
+        stroke="#2a1a0e" stroke-width="2" marker-end="url(#arr-down)"/>
+  <circle cx="350" cy="280" r="8" fill="#2a1a0e" fill-opacity="0.4"/>
+
+  <!-- Rate indicator -->
+  <rect x="252" y="315" width="196" height="40" rx="0"
+        fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="350" y="331" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">Rate: B₂₁ · u(ω)</text>
+  <path d="M 265,346 C 270,342 273,350 278,346 C 283,342 286,350 291,346"
+        fill="none" stroke="#C8860E" stroke-width="1"/>
+  <text x="350" y="352" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">field-density dependent</text>
+
+  <!-- ===== PANEL 3: Spontaneous Emission ===== -->
+  <rect x="467" y="40" width="211" height="340" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="572" y="58" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="12" fill="#2a1a0e">Spontaneous Emission</text>
+
+  <!-- Two energy levels -->
+  <line x1="495" y1="280" x2="658" y2="280" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="481" y="284"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">E₁</text>
+  <line x1="495" y1="130" x2="658" y2="130" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="481" y="134"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">E₂</text>
+
+  <!-- NO incoming photon — empty wavy region -->
+  <text x="520" y="205"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#ADADAD">(no field)</text>
+
+  <!-- Single outgoing photon in random direction -->
+  <path d="M 600,180 C 608,170 613,190 621,180 C 629,170 634,190 642,180 C 650,170 655,190 663,180"
+        fill="none" stroke="#787878" stroke-width="2"/>
+  <polygon points="663,176 671,180 663,184" fill="#787878"/>
+  <text x="625" y="168"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#787878">ℏω</text>
+
+  <!-- Population dot at E2, moving down to E1 spontaneously -->
+  <circle cx="572" cy="130" r="8" fill="#2a1a0e"/>
+  <line x1="572" y1="138" x2="572" y2="272"
+        stroke="#787878" stroke-width="2" marker-end="url(#arr-down)"/>
+  <circle cx="572" cy="280" r="8" fill="#2a1a0e" fill-opacity="0.4"/>
+
+  <!-- Rate indicator: field-INDEPENDENT -->
+  <rect x="485" y="315" width="192" height="40" rx="0"
+        fill="#FFFFFF" stroke="#C8102E" stroke-width="1"/>
+  <text x="572" y="331" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">Rate: A₂₁</text>
+  <!-- No wave motif — explicitly absent -->
+  <line x1="500" y1="346" x2="530" y2="346" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="497" y1="343" x2="533" y2="349" stroke="#C8102E" stroke-width="1.5"/>
+  <text x="572" y="352" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">field-density INDEPENDENT</text>
+
+  <!-- Caption and A/B ratio note -->
+  <text x="350" y="393" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    Einstein showed A/B = ℏω³/π²c³ from detailed balance with the Planck distribution
+  </text>
+  <text x="350" y="408" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    At high frequency or low temperature, spontaneous (A) dominates over stimulated (B·u)
+  </text>
+</svg>

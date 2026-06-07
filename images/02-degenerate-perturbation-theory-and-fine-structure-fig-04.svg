@@ -1,0 +1,154 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 02-degenerate-perturbation-theory-and-fine-structure
+  Figure:  04 — Linear Stark Effect: n=2 Level Splitting
+  Type:    diagram
+  Priority: Critical
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/02-degenerate-perturbation-theory-and-fine-structure-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-04b">
+  <title id="fig-title-04b">Linear Stark effect: fourfold degenerate n=2 hydrogen level splits into three levels under electric field</title>
+  <desc>Two-column level diagram. Left column shows the fourfold degenerate n=2 level. Right column (field applied) shows three levels: upper shifted by +3a₀eE, middle doubly degenerate at E₂⁰, lower shifted by −3a₀eE. An inset shows the linear dependence on field strength.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="02-degenerate-perturbation-theory-and-fine-structure"
+      figure-number="04"
+      figure-title="Linear Stark Effect: n=2 Level Splitting"
+      figure-slug="linear-stark-effect-n2-splitting"
+      figure-type="diagram"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/02-degenerate-perturbation-theory-and-fine-structure-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-04b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arr-field" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#787878"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    Linear Stark Effect: Splitting of the Hydrogen n=2 Manifold
+  </text>
+
+  <!-- Vertical energy axis -->
+  <line x1="60" y1="60" x2="60" y2="380"
+        stroke="#ADADAD" stroke-width="1" marker-end="url(#arr-04b)"/>
+  <text x="50" y="55" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">E</text>
+
+  <!-- ======== LEFT COLUMN: Unperturbed ======== -->
+  <text x="165" y="56" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">No field</text>
+
+  <!-- Fourfold degenerate level at E_2^(0) — y=210 -->
+  <line x1="100" y1="210" x2="235" y2="210" stroke="#2a1a0e" stroke-width="2.5"/>
+  <!-- thickness marker (4 states) -->
+  <text x="165" y="225" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">(×4 degenerate)</text>
+  <text x="165" y="200" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#2a1a0e">E₂⁽⁰⁾</text>
+
+  <!-- ======== Field arrow between columns ======== -->
+  <line x1="248" y1="210" x2="305" y2="210"
+        stroke="#787878" stroke-width="1.5" marker-end="url(#arr-field)"/>
+  <text x="276" y="204"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#787878">E field</text>
+  <text x="276" y="215"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#787878">applied</text>
+
+  <!-- ======== RIGHT COLUMN: Perturbed (3 levels) ======== -->
+  <text x="480" y="56" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">With field</text>
+
+  <!-- UPPER level: +3a₀eE  y = 210 - 110 = 100 -->
+  <line x1="315" y1="100" x2="540" y2="100" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="548" y="104"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">+3a₀eE</text>
+
+  <!-- MIDDLE level: doubly degenerate  y=210 (doubled bar) -->
+  <line x1="315" y1="205" x2="540" y2="205" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="315" y1="215" x2="540" y2="215" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="548" y="214"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">0  (×2)</text>
+
+  <!-- LOWER level: -3a₀eE  y = 210 + 110 = 320 -->
+  <line x1="315" y1="320" x2="540" y2="320" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="548" y="324"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">−3a₀eE</text>
+
+  <!-- Fan lines from left level to right levels -->
+  <line x1="235" y1="210" x2="315" y2="100" stroke="#D4D4D4" stroke-width="1"/>
+  <line x1="235" y1="210" x2="315" y2="210" stroke="#D4D4D4" stroke-width="1"/>
+  <line x1="235" y1="210" x2="315" y2="320" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- Symmetric bracket on right side -->
+  <!-- Upper bracket line -->
+  <line x1="556" y1="100" x2="572" y2="100" stroke="#C8102E" stroke-width="1"/>
+  <line x1="572" y1="100" x2="572" y2="210" stroke="#C8102E" stroke-width="1"/>
+  <line x1="556" y1="210" x2="572" y2="210" stroke="#C8102E" stroke-width="1"/>
+  <!-- midpoint tick -->
+  <line x1="569" y1="155" x2="575" y2="155" stroke="#C8102E" stroke-width="1"/>
+  <text x="578" y="159"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#C8102E">3a₀eE</text>
+  <!-- Lower bracket line -->
+  <line x1="556" y1="210" x2="572" y2="210" stroke="#C8102E" stroke-width="1"/>
+  <line x1="572" y1="210" x2="572" y2="320" stroke="#C8102E" stroke-width="1"/>
+  <line x1="556" y1="320" x2="572" y2="320" stroke="#C8102E" stroke-width="1"/>
+  <line x1="569" y1="265" x2="575" y2="265" stroke="#C8102E" stroke-width="1"/>
+  <text x="578" y="269"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#C8102E">3a₀eE</text>
+
+  <!-- ======== INSET: linear E-field dependence ======== -->
+  <rect x="100" y="310" width="160" height="90" rx="0"
+        fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="180" y="325" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">Splitting vs. field</text>
+  <!-- mini axes -->
+  <line x1="115" y1="387" x2="252" y2="387" stroke="#ADADAD" stroke-width="1"
+        marker-end="url(#arr-04b)"/>
+  <line x1="115" y1="387" x2="115" y2="332" stroke="#ADADAD" stroke-width="1"
+        marker-end="url(#arr-04b)"/>
+  <text x="256" y="390"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#545454">E</text>
+  <text x="108" y="332"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#545454">Δ</text>
+  <!-- linear rise -->
+  <line x1="115" y1="387" x2="248" y2="340" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- caption -->
+  <text x="350" y="406" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    Two good states shift ±3a₀eE; two orthogonal good states remain at E₂⁽⁰⁾ (doubly degenerate)
+  </text>
+</svg>

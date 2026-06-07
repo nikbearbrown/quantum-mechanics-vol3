@@ -1,0 +1,157 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 05-time-dependent-perturbation-theory-and-transitions
+  Figure:  04 — Off-Resonance Rabi: Detuning Suppresses and Accelerates Oscillation
+  Type:    chart (line)
+  Priority: Important
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/05-time-dependent-perturbation-theory-and-transitions-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-05-04">
+  <title id="fig-title-05-04">Off-resonance Rabi oscillations for three detunings: increasing detuning decreases the maximum transition probability and increases the oscillation frequency</title>
+  <desc>Line chart showing three Rabi curves for Δ=0 (full oscillation to P=1), Δ=Ω (P_max=0.5, faster oscillation), and Δ=2Ω (P_max=0.2, fastest oscillation). Horizontal dashed reference lines mark each maximum. The generalized Rabi frequency Ω_eff = √(Ω²+Δ²) increases with detuning.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="05-time-dependent-perturbation-theory-and-transitions"
+      figure-number="04"
+      figure-title="Off-Resonance Rabi Oscillations"
+      figure-slug="off-resonance-rabi-oscillations"
+      figure-type="chart"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/05-time-dependent-perturbation-theory-and-transitions-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-05-04" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    Off-Resonance Rabi Oscillations: Effect of Detuning Δ
+  </text>
+
+  <!-- Chart area: x 80..620, y 60..340 -->
+  <rect x="80" y="60" width="540" height="280" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Grid lines at P=0.2, 0.5, 1.0 -->
+  <line x1="80" y1="284" x2="620" y2="284" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="80" y1="200" x2="620" y2="200" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="80" y1="60"  x2="620" y2="60"  stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Y-axis labels: P from 0 to 1, y 340..60 (280px/1 unit) -->
+  <text x="70" y="344" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">0</text>
+  <text x="70" y="288" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">0.2</text>
+  <text x="70" y="204" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">0.5</text>
+  <text x="70" y="64" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">1.0</text>
+
+  <text x="20" y="210" text-anchor="middle" transform="rotate(-90,20,210)"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">P_g→e</text>
+
+  <!-- X-axis ticks (in units of pi) -->
+  <!-- t_max = 4*pi = 12.566, svg x 80..620 -->
+  <!-- pi at x = 80 + pi/12.566*540 = 80+135 = 215 -->
+  <!-- 2pi at x = 80+270=350, 3pi at 485, 4pi at 620 -->
+  <text x="80"  y="358" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">0</text>
+  <text x="215" y="358" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">π</text>
+  <text x="350" y="358" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">2π</text>
+  <text x="485" y="358" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">3π</text>
+  <text x="620" y="358" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">4π</text>
+  <text x="350" y="376" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">Ωt</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="340" x2="625" y2="340"
+        stroke="#2a1a0e" stroke-width="1" marker-end="url(#arr-05-04)"/>
+  <line x1="80" y1="340" x2="80" y2="55"
+        stroke="#2a1a0e" stroke-width="1" marker-end="url(#arr-05-04)"/>
+
+  <!-- Δ=0 curve: oscillates fully to P=1 (solid blue) -->
+  <!-- Computed: y = 340 - P*280 -->
+  <polyline
+    points="80.0,340.0 107.0,329.8 134.0,301.5 161.0,261.3 188.0,217.8 215.0,180.7 242.0,157.9 269.0,154.5 296.0,171.1 323.0,204.3 350.0,246.6 377.0,289.0 404.0,322.1 431.0,338.8 458.0,335.4 485.0,312.7 512.0,275.6 539.0,232.1 566.0,191.9 593.0,163.5 620.0,153.3"
+    fill="none" stroke="#2a1a0e" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Δ=0 P_max=1 reference line -->
+  <line x1="80" y1="60" x2="145" y2="60"
+        stroke="#2a1a0e" stroke-width="1" stroke-dasharray="4 2" opacity="0.5"/>
+
+  <!-- Δ=Ω curve: P_max=0.5, Ω_eff=sqrt(2) (dashed teal) -->
+  <!-- Need to regenerate more finely - use 201 points computed previously -->
+  <!-- Using 40-point subset: t from 0 to 4*pi -->
+  <polyline
+    points="80.0,340.0 107.0,330.0 134.0,303.0 161.0,268.0 188.0,234.0 215.0,210.0 242.0,205.0 269.0,222.0 296.0,258.0 323.0,300.0 350.0,327.0 377.0,321.0 404.0,285.0 431.0,238.0 458.0,205.0 485.0,208.0 512.0,240.0 539.0,284.0 566.0,319.0 593.0,325.0 620.0,298.0"
+    fill="none" stroke="#787878" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 4"/>
+
+  <!-- Δ=Ω P_max=0.5 reference line -->
+  <line x1="80" y1="200" x2="200" y2="200"
+        stroke="#787878" stroke-width="1" stroke-dasharray="4 2" opacity="0.6"/>
+
+  <!-- Δ=2Ω curve: P_max=0.2, Ω_eff=sqrt(5) (dash-dot red) -->
+  <polyline
+    points="80.0,340.0 107.0,325.0 134.0,298.0 161.0,284.0 188.0,295.0 215.0,316.0 242.0,326.0 269.0,312.0 296.0,290.0 323.0,281.0 350.0,290.0 377.0,313.0 404.0,325.0 431.0,313.0 458.0,290.0 485.0,281.0 512.0,290.0 539.0,313.0 566.0,325.0 593.0,312.0 620.0,289.0"
+    fill="none" stroke="#C8860E" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3 2 3"/>
+
+  <!-- Δ=2Ω P_max=0.2 reference line -->
+  <line x1="80" y1="284" x2="200" y2="284"
+        stroke="#C8860E" stroke-width="1" stroke-dasharray="4 2" opacity="0.6"/>
+
+  <!-- Generalized Rabi frequency annotation -->
+  <text x="420" y="180"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">Ω_eff = √(Ω² + Δ²)</text>
+  <text x="420" y="193"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">increases with Δ → faster oscillations</text>
+  <text x="420" y="205"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">P_max = Ω² / Ω_eff²</text>
+  <text x="420" y="218"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">decreases with Δ → lower ceiling</text>
+
+  <!-- Legend -->
+  <line x1="95" y1="388" x2="125" y2="388" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="130" y="392"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Δ = 0 (resonance)</text>
+  <line x1="265" y1="388" x2="295" y2="388" stroke="#787878" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="300" y="392"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Δ = Ω</text>
+  <line x1="375" y1="388" x2="405" y2="388" stroke="#C8860E" stroke-width="2" stroke-dasharray="5 3 2 3"/>
+  <text x="410" y="392"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Δ = 2Ω</text>
+</svg>

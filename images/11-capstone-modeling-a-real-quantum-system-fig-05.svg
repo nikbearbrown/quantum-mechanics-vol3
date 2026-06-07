@@ -1,0 +1,54 @@
+<!-- CAJAL SVG | quantum-mechanics-vol3 | 11-capstone-modeling-a-real-quantum-system | fig 05 | Rutherford Scattering: Born Approximation Polar Map | 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-05">
+  <title id="fig-title-05">Rutherford Scattering: Born Approximation Polar Map</title>
+  <desc>Polar diagram of the Rutherford differential cross-section dσ/dΩ = (Z₁Z₂e²/4E)²/sin⁴(θ/2) for alpha particles on gold at 5.5 MeV, plotted on a logarithmic radial scale. The curve peaks sharply in the forward direction and falls steeply toward backscattering; five Geiger–Marsden experimental points are shown as open circles on the theory curve.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Quantum Mechanics — Approximation Methods and Real Systems" book-slug="quantum-mechanics-vol3" chapter="11-capstone-modeling-a-real-quantum-system" figure-number="05" figure-title="Rutherford Scattering: Born Approximation Polar Map" figure-slug="rutherford-scattering-born-polar-map" figure-type="chart" priority="Important" author="Humanitarians AI Incorporated" date-generated="2026-06-06" source-file="pantry/11-capstone-modeling-a-real-quantum-system-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <text x="350" y="28" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e">Rutherford scattering: Born approximation polar map</text>
+  <rect x="32" y="44" width="636" height="360" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Reference circles (log scale decades) -->
+  <circle cx="350" cy="215" r="35.3" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <circle cx="350" cy="215" r="71.9" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <circle cx="350" cy="215" r="108.6" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <circle cx="350" cy="215" r="145.2" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Forward/backward axis (vertical) -->
+  <line x1="350" y1="50" x2="350" y2="380" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <!-- Side axis (horizontal) -->
+  <line x1="185" y1="215" x2="515" y2="215" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 2"/>
+
+  <!-- Theory polar curve (right side) -->
+  <polyline points="376.9,62.4 379.8,74.7 382.3,85.3 384.5,94.6 386.4,103.0 388.0,110.6 389.4,117.5 390.5,123.9 391.5,129.9 392.3,135.5 392.9,140.7 393.3,145.7 393.6,150.3 393.8,154.8 393.8,158.9 393.7,162.9 393.5,166.7 393.2,170.2 392.8,173.6 392.4,176.9 391.8,179.9 391.2,182.8 390.4,185.6 389.7,188.2 388.9,190.7 388.0,193.1 387.1,195.3 386.1,197.4 385.1,199.4 384.1,201.2 383.0,203.0 381.9,204.6 380.8,206.2 379.7,207.6 378.6,208.9 377.5,210.2 376.3,211.3 375.2,212.4 374.0,213.3 372.9,214.2 371.8,215.0 370.7,215.7 369.6,216.4 368.5,216.9 367.5,217.5 366.5,217.9 365.5,218.3 364.5,218.6 363.5,218.9 362.6,219.1 361.7,219.3 360.8,219.4 360.0,219.5 359.2,219.5 358.4,219.5 357.7,219.5 357.0,219.4 356.6,219.5 356.5,219.7 356.3,219.9 356.1,220.1 355.9,220.4 355.8,220.6 355.6,220.8 355.4,220.9 355.1,221.1 354.9,221.3 354.7,221.5 354.5,221.6 354.2,221.8 354.0,221.9 353.8,222.1 353.5,222.2 353.3,222.3 353.0,222.4 352.7,222.5 352.5,222.6 352.2,222.7 351.9,222.8 351.7,222.8 351.4,222.9" fill="none" stroke="#2a1a0e" stroke-width="1.8"/>
+  <!-- Theory polar curve (left side, mirror) -->
+  <polyline points="376.9,367.6 379.8,355.3 382.3,344.7 384.5,335.4 386.4,327.0 388.0,319.4 389.4,312.5 390.5,306.1 391.5,300.1 392.3,294.5 392.9,289.3 393.3,284.3 393.6,279.7 393.8,275.2 393.8,271.1 393.7,267.1 393.5,263.3 393.2,259.8 392.8,256.4 392.4,253.1 391.8,250.1 391.2,247.2 390.4,244.4 389.7,241.8 388.9,239.3 388.0,236.9 387.1,234.7 386.1,232.6 385.1,230.6 384.1,228.8 383.0,227.0 381.9,225.4 380.8,223.8 379.7,222.4 378.6,221.1 377.5,219.8 376.3,218.7 375.2,217.6 374.0,216.7 372.9,215.8 371.8,215.0 370.7,214.3 369.6,213.6 368.5,213.1 367.5,212.5 366.5,212.1 365.5,211.7 364.5,211.4 363.5,211.1 362.6,210.9 361.7,210.7 360.8,210.6 360.0,210.5 359.2,210.5 358.4,210.5 357.7,210.5 357.0,210.6 356.6,210.5 356.5,210.3 356.3,210.1 356.1,209.9 355.9,209.6 355.8,209.4 355.6,209.2 355.4,209.1 355.1,208.9 354.9,208.7 354.7,208.5 354.5,208.4 354.2,208.2 354.0,208.1 353.8,207.9 353.5,207.8 353.3,207.7 353.0,207.6 352.7,207.5 352.5,207.4 352.2,207.3 351.9,207.2 351.7,207.2 351.4,207.1" fill="none" stroke="#2a1a0e" stroke-width="1.8"/>
+
+  <!-- Experimental points right side -->
+  <circle cx="392.9" cy="140.7" r="5" fill="none" stroke="#C8860E" stroke-width="1.8"/>
+  <circle cx="393.0" cy="172.0" r="5" fill="none" stroke="#C8860E" stroke-width="1.8"/>
+  <circle cx="388.0" cy="193.1" r="5" fill="none" stroke="#C8860E" stroke-width="1.8"/>
+  <circle cx="371.8" cy="215.0" r="5" fill="none" stroke="#C8860E" stroke-width="1.8"/>
+  <circle cx="355.7" cy="220.7" r="5" fill="none" stroke="#C8860E" stroke-width="1.8"/>
+  <circle cx="392.9" cy="289.3" r="5" fill="none" stroke="#C8860E" stroke-width="1.8"/>
+  <circle cx="393.0" cy="258.0" r="5" fill="none" stroke="#C8860E" stroke-width="1.8"/>
+  <circle cx="388.0" cy="236.9" r="5" fill="none" stroke="#C8860E" stroke-width="1.8"/>
+  <circle cx="371.8" cy="215.0" r="5" fill="none" stroke="#C8860E" stroke-width="1.8"/>
+  <circle cx="355.7" cy="209.3" r="5" fill="none" stroke="#C8860E" stroke-width="1.8"/>
+  <!-- Nucleus marker -->
+  <circle cx="350" cy="215" r="4" fill="#2a1a0e"/>
+
+  <!-- Direction labels -->
+  <text x="350" y="46" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">forward (θ = 0)</text>
+  <text x="350" y="392" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">backward (θ = π)</text>
+  <text x="519" y="219" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">θ = π/2</text>
+
+  <!-- Log scale label -->
+  <text x="495" y="74" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">log radial scale</text>
+  <text x="495" y="86" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">dσ/dΩ ∝ sin⁻⁴(θ/2)</text>
+
+  <!-- Legend -->
+  <line x1="38" y1="368" x2="58" y2="368" stroke="#2a1a0e" stroke-width="1.8"/>
+  <text x="64" y="372" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Born/Rutherford theory</text>
+  <circle cx="48" cy="385" r="5" fill="none" stroke="#C8860E" stroke-width="1.8"/>
+  <text x="64" y="389" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Geiger–Marsden data (θ = 30°–135°)</text>
+</svg>

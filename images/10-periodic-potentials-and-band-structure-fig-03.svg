@@ -1,0 +1,27 @@
+<!-- CAJAL SVG | quantum-mechanics-vol3 | 10-periodic-potentials-and-band-structure | fig 03 | Metal, Semiconductor, and Insulator Band Filling | 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Metal, Semiconductor, and Insulator Band Filling</title>
+  <desc>Three-panel comparison of band filling: metal (left) has a half-filled band with the Fermi level cutting through it; semiconductor (center) has a fully filled valence band and empty conduction band separated by a gap of 1–2 eV; insulator (right) has the same structure but a much wider gap of 5–10 eV.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Quantum Mechanics — Approximation Methods and Real Systems" book-slug="quantum-mechanics-vol3" chapter="10-periodic-potentials-and-band-structure" figure-number="03" figure-title="Metal, Semiconductor, and Insulator Band Filling" figure-slug="metal-semiconductor-insulator-band-filling" figure-type="geometry" priority="Critical" author="Humanitarians AI Incorporated" date-generated="2026-06-06" source-file="pantry/10-periodic-potentials-and-band-structure-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <text x="350" y="30" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e">Metal, semiconductor, and insulator band filling</text>
+  <rect x="50" y="44" width="170" height="340" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="70" y="155" width="130" height="160" fill="none" stroke="#2a1a0e" stroke-width="1"/><rect x="70" y="235" width="130" height="80" fill="#009E73" opacity="0.5"/><line x1="60" y1="235" x2="210" y2="235" stroke="#C8102E" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="135" y="400" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Metal</text>
+  <rect x="240" y="44" width="170" height="340" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="260" y="55" width="130" height="90" fill="none" stroke="#2a1a0e" stroke-width="1"/><rect x="260" y="175" width="130" height="105" fill="#009E73" opacity="0.5" stroke="#2a1a0e" stroke-width="1"/><line x1="250" y1="160" x2="400" y2="160" stroke="#C8102E" stroke-width="1.5" stroke-dasharray="5 3"/><line x1="385" y1="145" x2="385" y2="175" stroke="#D4D4D4" stroke-width="0.75"/><text x="388" y="164" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">~1–2 eV</text>
+  <text x="325" y="400" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Semiconductor</text>
+  <rect x="430" y="44" width="170" height="340" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="450" y="60" width="130" height="70" fill="none" stroke="#2a1a0e" stroke-width="1"/><rect x="450" y="220" width="130" height="80" fill="#009E73" opacity="0.5" stroke="#2a1a0e" stroke-width="1"/><line x1="440" y1="175" x2="590" y2="175" stroke="#C8102E" stroke-width="1.5" stroke-dasharray="5 3"/><line x1="575" y1="130" x2="575" y2="220" stroke="#D4D4D4" stroke-width="0.75"/><text x="578" y="179" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">~5–10 eV</text>
+  <text x="515" y="400" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Insulator</text>
+  <line x1="220" y1="44" x2="220" y2="384" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="410" y1="44" x2="410" y2="384" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="38" y1="360" x2="38" y2="60" stroke="#545454" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="28" y="210" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454" transform="rotate(-90,28,210)" font-style="italic">E</text>
+  <rect x="624" y="160" width="14" height="14" fill="#009E73" opacity="0.5"/>
+  <text x="642" y="172" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">filled band</text>
+  <line x1="624" y1="195" x2="638" y2="195" stroke="#C8102E" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="642" y="199" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Fermi level</text>
+
+</svg>

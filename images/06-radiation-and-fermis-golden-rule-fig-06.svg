@@ -1,0 +1,177 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 06-radiation-and-fermis-golden-rule
+  Figure:  06 — Electric-Dipole Approximation: Long-Wavelength Limit and Breakdown
+  Type:    diagram
+  Priority: Supplementary
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/06-radiation-and-fermis-golden-rule-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-06-06">
+  <title id="fig-title-06-06">Electric-dipole approximation validity: left panel shows λ≫a₀ where A≈constant across the atom; right panel shows λ≈a₀ where the approximation breaks down</title>
+  <desc>Two-panel schematic. Left: hydrogen atom (small circle) inside a slowly varying electromagnetic wave — wave barely changes across the atom. Right: same atom with a short-wavelength photon — wave completes a full cycle across the atomic diameter, invalidating the dipole approximation.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="06-radiation-and-fermis-golden-rule"
+      figure-number="06"
+      figure-title="Electric-Dipole Approximation Validity"
+      figure-slug="electric-dipole-approximation-validity"
+      figure-type="diagram"
+      priority="Supplementary"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/06-radiation-and-fermis-golden-rule-cajal.md"/>
+  </metadata>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    Electric-Dipole Approximation: When It Works and When It Breaks Down
+  </text>
+
+  <!-- Panel divider -->
+  <line x1="350" y1="40" x2="350" y2="390" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- ===== LEFT PANEL: Valid dipole (λ ≫ a₀) ===== -->
+  <rect x="22" y="40" width="318" height="350" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="181" y="58" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#2a1a0e">Dipole approximation valid</text>
+  <text x="181" y="72" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">λ ≫ a₀  (ka₀ ≪ 1)</text>
+
+  <!-- Long-wavelength EM wave (background sinusoid — very slow variation) -->
+  <!-- Show ~1/2 cycle across entire panel width, representing λ >> atom size -->
+  <path d="M 22,210 C 80,155 150,265 220,210 C 290,155 340,230 340,210"
+        fill="none" stroke="#2a1a0e" stroke-width="1" opacity="0.3"/>
+  <path d="M 22,260 C 80,205 150,315 220,260 C 290,205 340,280 340,260"
+        fill="none" stroke="#2a1a0e" stroke-width="1" opacity="0.3"/>
+  <text x="295" y="130"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#ADADAD">EM wave</text>
+  <text x="295" y="142"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#ADADAD">(λ = 500 nm)</text>
+
+  <!-- Atom (small circle, much smaller than wavelength) -->
+  <circle cx="181" cy="215" r="20" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Nucleus dot -->
+  <circle cx="181" cy="215" r="3" fill="#2a1a0e"/>
+  <!-- a₀ label -->
+  <line x1="181" y1="215" x2="201" y2="215" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="205" y="219"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="8" fill="#545454">a₀</text>
+
+  <!-- Flat approximation line for A(r,t) ≈ A(0,t) across atom -->
+  <line x1="145" y1="244" x2="217" y2="244"
+        stroke="#C8860E" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="155" y="261"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#C8860E">A(r,t) ≈ A(0,t)</text>
+  <text x="155" y="273"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8860E">constant across atom</text>
+
+  <!-- Scale comparison -->
+  <!-- Wave bar (long) -->
+  <line x1="50" y1="320" x2="310" y2="320" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="50" y1="315" x2="50" y2="325" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="310" y1="315" x2="310" y2="325" stroke="#ADADAD" stroke-width="1.5"/>
+  <text x="180" y="316" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#ADADAD">λ ~ 500 nm</text>
+
+  <!-- Atom bar (short) -->
+  <line x1="162" y1="338" x2="200" y2="338" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="162" y1="333" x2="162" y2="343" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="200" y1="333" x2="200" y2="343" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="181" y="334" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#2a1a0e">2a₀ ~ 0.1 nm</text>
+
+  <text x="181" y="370" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#2a1a0e">ka₀ ≈ 0.0004 ≪ 1</text>
+  <text x="181" y="383" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">Dipole approximation excellent</text>
+
+  <!-- ===== RIGHT PANEL: Breakdown (λ ≈ a₀) ===== -->
+  <rect x="350" y="40" width="328" height="350" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="514" y="58" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#2a1a0e">Dipole approximation breaks down</text>
+  <text x="514" y="72" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#C8102E">λ ≈ a₀  (ka₀ ~ 1)</text>
+
+  <!-- Short-wavelength EM wave — completes roughly one cycle across atom width (40px) -->
+  <!-- Atom at center ~514, r=20px. Wave with ~40px period (full cycle in 40px) -->
+  <path d="M 360,195 C 373,175 378,215 391,195 C 404,175 409,215 422,195 C 435,175 440,215 453,195 C 466,175 471,215 484,195 C 497,175 502,215 515,195 C 528,175 533,215 546,195 C 559,175 564,215 577,195 C 590,175 595,215 608,195 C 621,175 626,215 668,195"
+        fill="none" stroke="#C8102E" stroke-width="1.5" opacity="0.6"/>
+  <path d="M 360,230 C 373,210 378,250 391,230 C 404,210 409,250 422,230 C 435,210 440,250 453,230 C 466,210 471,250 484,230 C 497,210 502,250 515,230 C 528,210 533,250 546,230 C 559,210 564,250 577,230 C 590,210 595,250 608,230 C 621,210 626,250 668,230"
+        fill="none" stroke="#C8102E" stroke-width="1.5" opacity="0.6"/>
+  <text x="618" y="130"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">hard X-ray</text>
+  <text x="618" y="142"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#C8102E">(λ ≈ 0.05 nm)</text>
+
+  <!-- Same atom (same size as left panel) -->
+  <circle cx="514" cy="215" r="20" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <circle cx="514" cy="215" r="3" fill="#2a1a0e"/>
+  <line x1="514" y1="215" x2="534" y2="215" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="538" y="219"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="8" fill="#545454">a₀</text>
+
+  <!-- NO flat approximation — explicitly absent, instead show varying A across atom -->
+  <line x1="477" y1="244" x2="551" y2="244"
+        stroke="#ADADAD" stroke-width="1" stroke-dasharray="2 2"/>
+  <!-- Wave varies significantly: label -->
+  <text x="514" y="268" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">A(r,t) varies across atom</text>
+  <text x="514" y="280" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">e^(ik·r) ≠ 1</text>
+
+  <!-- !! transition marker -->
+  <text x="514" y="300" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#C8102E">Multipole expansion needed</text>
+
+  <!-- Scale comparison -->
+  <line x1="380" y1="320" x2="640" y2="320" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="380" y1="315" x2="380" y2="325" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="640" y1="315" x2="640" y2="325" stroke="#ADADAD" stroke-width="1.5"/>
+  <text x="510" y="316" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#ADADAD">λ ~ 0.05 nm</text>
+
+  <line x1="494" y1="338" x2="534" y2="338" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="494" y1="333" x2="494" y2="343" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="534" y1="333" x2="534" y2="343" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="514" y="334" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#2a1a0e">2a₀</text>
+
+  <text x="514" y="370" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#C8102E">ka₀ ≈ 4 — dipole fails</text>
+  <text x="514" y="383" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">Threshold: photon energy ~ 3.7 keV</text>
+</svg>

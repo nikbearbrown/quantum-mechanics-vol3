@@ -1,0 +1,53 @@
+<!-- CAJAL SVG | book: quantum-mechanics-vol3 | chapter: 07-scattering-i-partial-waves | fig: 03 | Partial-Wave Cross-Section σₗ vs Phase Shift δₗ | 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Partial-Wave Cross-Section σₗ vs Phase Shift δₗ</title>
+  <desc>Partial-wave cross-section σ_ℓ proportional to sin²(δ_ℓ) plotted against phase shift δ_ℓ from −π to +π, with resonance points at δ_ℓ = ±π/2 marked as red filled circles and Ramsauer–Townsend zeros as open squares.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Quantum Mechanics — Approximation Methods and Real Systems" book-slug="quantum-mechanics-vol3" chapter="07-scattering-i-partial-waves" figure-number="03" figure-title="Partial-Wave Cross-Section σₗ vs Phase Shift δₗ" figure-slug="partial-wave-cross-section-sigma-vs-delta" figure-type="chart" priority="Critical" author="Humanitarians AI Incorporated" date-generated="2026-06-06" source-file="pantry/07-scattering-i-partial-waves-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <text x="350" y="28" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e">Partial-wave cross-section σ<tspan baseline-shift="sub" font-size="10">ℓ</tspan> vs phase shift δ<tspan baseline-shift="sub" font-size="10">ℓ</tspan></text>
+  <!-- Plot region -->
+  <rect x="80" y="44" width="570" height="326" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Unitarity bound dashed line -->
+  <line x1="80" y1="79.1" x2="650" y2="79.1" stroke="#C8860E" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Zero baseline -->
+  <line x1="80" y1="370.0" x2="650" y2="370.0" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Main curve -->
+  <polyline points="80.0,370.0 82.8,369.7 85.7,368.9 88.5,367.4 91.4,365.4 94.2,362.9 97.1,359.8 100.0,356.2 102.8,352.0 105.7,347.4 108.5,342.2 111.3,336.6 114.2,330.6 117.0,324.1 119.9,317.3 122.8,310.0 125.6,302.5 128.5,294.6 131.3,286.5 134.2,278.1 137.0,269.5 139.8,260.7 142.7,251.8 145.6,242.8 148.4,233.7 151.2,224.5 154.1,215.4 156.9,206.3 159.8,197.3 162.7,188.4 165.5,179.6 168.3,171.0 171.2,162.6 174.1,154.5 176.9,146.6 179.8,139.0 182.6,131.8 185.5,125.0 188.3,118.5 191.2,112.5 194.0,106.9 196.8,101.7 199.7,97.1 202.6,92.9 205.4,89.3 208.2,86.2 211.1,83.7 214.0,81.7 216.8,80.2 219.7,79.4 222.5,79.1 225.3,79.4 228.2,80.2 231.1,81.7 233.9,83.7 236.8,86.2 239.6,89.3 242.4,92.9 245.3,97.1 248.1,101.7 251.0,106.9 253.8,112.5 256.7,118.5 259.6,125.0 262.4,131.8 265.2,139.0 268.1,146.6 271.0,154.5 273.8,162.6 276.6,171.0 279.5,179.6 282.4,188.4 285.2,197.3 288.0,206.3 290.9,215.4 293.8,224.5 296.6,233.7 299.5,242.8 302.3,251.8 305.1,260.7 308.0,269.5 310.9,278.1 313.7,286.5 316.6,294.6 319.4,302.5 322.2,310.0 325.1,317.3 327.9,324.1 330.8,330.6 333.6,336.6 336.5,342.2 339.3,347.4 342.2,352.0 345.0,356.2 347.9,359.8 350.8,362.9 353.6,365.4 356.4,367.4 359.3,368.9 362.2,369.7 365.0,370.0 367.9,369.7 370.7,368.9 373.6,367.4 376.4,365.4 379.2,362.9 382.1,359.8 385.0,356.2 387.8,352.0 390.6,347.4 393.5,342.2 396.4,336.6 399.2,330.6 402.0,324.1 404.9,317.3 407.8,310.0 410.6,302.5 413.4,294.6 416.3,286.5 419.1,278.1 422.0,269.5 424.9,260.7 427.7,251.8 430.6,242.8 433.4,233.7 436.2,224.5 439.1,215.4 441.9,206.3 444.8,197.3 447.7,188.4 450.5,179.6 453.4,171.0 456.2,162.6 459.1,154.5 461.9,146.6 464.8,139.0 467.6,131.8 470.5,125.0 473.3,118.5 476.2,112.5 479.0,106.9 481.8,101.7 484.7,97.1 487.6,92.9 490.4,89.3 493.2,86.2 496.1,83.7 499.0,81.7 501.8,80.2 504.6,79.4 507.5,79.1 510.4,79.4 513.2,80.2 516.0,81.7 518.9,83.7 521.8,86.2 524.6,89.3 527.4,92.9 530.3,97.1 533.2,101.7 536.0,106.9 538.8,112.5 541.7,118.5 544.5,125.0 547.4,131.8 550.2,139.0 553.1,146.6 556.0,154.5 558.8,162.6 561.6,171.0 564.5,179.6 567.3,188.4 570.2,197.3 573.0,206.3 575.9,215.4 578.8,224.5 581.6,233.7 584.5,242.8 587.3,251.8 590.2,260.7 593.0,269.5 595.9,278.1 598.7,286.5 601.5,294.6 604.4,302.5 607.2,310.0 610.1,317.3 613.0,324.1 615.8,330.6 618.7,336.6 621.5,342.2 624.4,347.4 627.2,352.0 630.0,356.2 632.9,359.8 635.8,362.9 638.6,365.4 641.5,367.4 644.3,368.9 647.1,369.7 650.0,370.0" fill="none" stroke="#2a1a0e" stroke-width="2"/>
+  <!-- Resonance markers at delta=+-pi/2 -->
+  <circle cx="507.5" cy="79.1" r="5" fill="#C8102E" stroke="none"/>
+  <circle cx="222.5" cy="79.1" r="5" fill="#C8102E" stroke="none"/>
+  <!-- RT-zero markers at delta=0,+-pi -->
+  <rect x="361.0" y="366.0" width="8" height="8" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <rect x="646.0" y="366.0" width="8" height="8" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <rect x="76.0" y="366.0" width="8" height="8" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Axes -->
+  <line x1="80" y1="370" x2="650" y2="370" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="80" y1="370" x2="80" y2="44" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Tick marks -->
+  <line x1="80.0" y1="370" x2="80.0" y2="375" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="222.5" y1="370" x2="222.5" y2="375" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="365.0" y1="370" x2="365.0" y2="375" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="507.5" y1="370" x2="507.5" y2="375" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="650.0" y1="370" x2="650.0" y2="375" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="80" y1="370.0" x2="75" y2="370.0" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="80" y1="79.1" x2="75" y2="79.1" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Tick labels -->
+  <text x="80.0" y="386" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">−π</text>
+  <text x="222.5" y="386" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">−π/2</text>
+  <text x="365.0" y="386" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">0</text>
+  <text x="507.5" y="386" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">+π/2</text>
+  <text x="650.0" y="386" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">+π</text>
+  <text x="72.0" y="374.0" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">0</text>
+  <text x="72.0" y="83.1" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">1</text>
+  <!-- Axis labels -->
+  <text x="365.0" y="412" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454" font-style="italic">δ<tspan baseline-shift="sub" font-size="10">ℓ</tspan></text>
+  <text x="30" y="210" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454" font-style="italic" transform="rotate(-90,30,210)">σ<tspan baseline-shift="sub" font-size="9">ℓ</tspan> / σ<tspan baseline-shift="sub" font-size="9">max</tspan></text>
+  <!-- Legend -->
+  <circle cx="430" cy="340" r="5" fill="#C8102E"/>
+  <text x="440" y="344" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">resonance (δ = ±π/2)</text>
+  <rect x="425" y="353" width="8" height="8" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="440" y="362" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Ramsauer–Townsend zero</text>
+  <!-- Unitarity label -->
+  <text x="646.0" y="74.1" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8860E">unitarity bound</text>
+</svg>

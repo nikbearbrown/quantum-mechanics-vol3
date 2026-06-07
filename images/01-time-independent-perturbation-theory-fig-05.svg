@@ -1,0 +1,168 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 01-time-independent-perturbation-theory
+  Figure:  05 — Dyson Argument: Optimal Truncation of Asymptotic Series
+  Type:    chart (line)
+  Priority: Important
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/01-time-independent-perturbation-theory-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-05">
+  <title id="fig-title-05">Dyson argument: error vs. truncation order for two values of λ, showing optimal truncation N*</title>
+  <desc>Log-scale line chart of |error| vs. truncation order N. Both curves decrease initially then diverge, reaching a minimum at optimal truncation N*. Larger λ has lower N* and diverges faster.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="01-time-independent-perturbation-theory"
+      figure-number="05"
+      figure-title="Dyson Argument: Optimal Truncation"
+      figure-slug="dyson-optimal-truncation"
+      figure-type="chart"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/01-time-independent-perturbation-theory-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    Dyson Argument: Optimal Truncation of Asymptotic Series
+  </text>
+
+  <!-- Chart area -->
+  <rect x="80" y="55" width="560" height="285" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Grid lines (horizontal at log10 = -2,-1,0,1,2) -->
+  <line x1="80" y1="308" x2="640" y2="308" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="80" y1="245" x2="640" y2="245" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="80" y1="182" x2="640" y2="182" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="80" y1="118" x2="640" y2="118" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="80" y1="55"  x2="640" y2="55"  stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+
+  <!-- Y-axis labels (log10) -->
+  <text x="70" y="312" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">10⁻²</text>
+  <text x="70" y="249" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">10⁻¹</text>
+  <text x="70" y="186" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">10⁰</text>
+  <text x="70" y="122" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">10¹</text>
+  <text x="70" y="59" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">10²</text>
+
+  <!-- Y axis label -->
+  <text x="20" y="210" text-anchor="middle" transform="rotate(-90,20,210)"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">|Error| (log scale)</text>
+
+  <!-- X-axis ticks -->
+  <text x="80"  y="356" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">0</text>
+  <text x="174" y="356" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">2</text>
+  <text x="267" y="356" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">4</text>
+  <text x="360" y="356" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">6</text>
+  <text x="453" y="356" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">8</text>
+  <text x="547" y="356" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">10</text>
+  <text x="640" y="356" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">12</text>
+  <text x="360" y="375" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">Truncation order N</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="340" x2="640" y2="340" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="80" y1="340" x2="80" y2="55" stroke="#2a1a0e" stroke-width="1"
+        marker-end="url(#arr-05)"/>
+
+  <!-- SMALL LAMBDA curve (λ=0.1): points computed -->
+  <polyline
+    points="80.0,181.7 126.7,245.0 173.3,270.2 220.0,284.3 266.7,290.4 313.3,290.4 360.0,285.4 406.7,276.1 453.3,263.2 500.0,247.0 546.7,228.0 593.3,206.3 640.0,182.2"
+    fill="none" stroke="#2a1a0e" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- LARGE LAMBDA curve (λ=0.3): clipped at top of chart area y=55 -->
+  <polyline
+    points="80.0,181.7 126.7,214.8 173.3,209.8 220.0,193.6 266.7,169.5 313.3,139.3 360.0,104.1 406.7,64.6 453.3,55.0 500.0,55.0 546.7,55.0 593.3,55.0 640.0,55.0"
+    fill="none" stroke="#C8102E" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 3"/>
+
+  <!-- N* markers for small lambda (N=4) -->
+  <line x1="267" y1="55" x2="267" y2="340"
+        stroke="#2a1a0e" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="267" cy="290" r="5" fill="#2a1a0e"/>
+  <text x="272" y="282"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#2a1a0e">N* = 4</text>
+
+  <!-- N* marker for large lambda (N=1) -->
+  <line x1="127" y1="55" x2="127" y2="340"
+        stroke="#C8102E" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="127" cy="215" r="5" fill="#C8102E"/>
+  <text x="132" y="207"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#C8102E">N* = 1</text>
+
+  <!-- "adding terms helps" annotation left of Nstar for small lambda -->
+  <text x="168" y="275"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">each term</text>
+  <text x="168" y="286"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">improves</text>
+
+  <!-- "adding terms hurts" annotation right of Nstar for small lambda -->
+  <text x="325" y="275"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">each term</text>
+  <text x="325" y="286"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">worsens</text>
+
+  <!-- Legend -->
+  <line x1="450" y1="88" x2="490" y2="88" stroke="#2a1a0e" stroke-width="2"/>
+  <circle cx="470" cy="88" r="3" fill="#2a1a0e"/>
+  <text x="496" y="92"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">λ = 0.1 (small coupling)</text>
+  <line x1="450" y1="108" x2="490" y2="108" stroke="#C8102E" stroke-width="2" stroke-dasharray="6 3"/>
+  <circle cx="470" cy="108" r="3" fill="#C8102E"/>
+  <text x="496" y="112"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">λ = 0.3 (larger coupling)</text>
+
+  <!-- caption -->
+  <text x="350" y="406" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    Larger λ shifts N* leftward: the series is useful for fewer terms before divergence dominates
+  </text>
+</svg>

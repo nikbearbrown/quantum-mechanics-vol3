@@ -1,0 +1,81 @@
+<!-- 
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Approximation Methods and Real Systems
+  Book-slug: quantum-mechanics-vol3
+  Chapter: 07-scattering-i-partial-waves
+  Figure: 02 — Phase Shift — Free vs Phase-Shifted Radial Wave
+  Type: line-chart
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/07-scattering-i-partial-waves-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Phase shift: free vs phase-shifted radial wave</title>
+  <desc>Two sub-panels compare the free radial wave sin(kr) with the phase-shifted wave sin(kr+delta) for attractive (delta>0, top) and repulsive (delta&lt;0, bottom) potentials, with the potential range a marked.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Approximation Methods and Real Systems"
+      book-slug="quantum-mechanics-vol3"
+      chapter="07-scattering-i-partial-waves"
+      figure-number="02"
+      figure-title="Phase Shift — Free vs Phase-Shifted Radial Wave"
+      figure-slug="phase-shift-free-vs-phase-shifted-radial-wave"
+      figure-type="line-chart"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/07-scattering-i-partial-waves-cajal.md"/>
+  </metadata>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+  </defs>
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <text x="350" y="28" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e">Phase shift: radial wavefunction deformation</text>
+
+  <!-- Top sub-panel (delta > 0, attractive) -->
+  <rect x="80" y="52" width="570" height="146" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Interior shading r &lt; a -->
+  <rect x="80" y="52" width="135.7" height="146" fill="#ADADAD" opacity="0.15"/>
+  <!-- Free wave top -->
+  <polyline points="80.0,125.0 87.1,117.7 94.2,110.6 101.4,103.7 108.5,97.2 115.6,91.1 122.8,85.7 129.9,80.9 137.0,76.9 144.1,73.7 151.2,71.4 158.4,70.0 165.5,69.5 172.6,70.0 179.8,71.5 186.9,73.9 194.0,77.1 201.1,81.2 208.2,86.0 215.4,91.5 222.5,97.6 229.6,104.1 236.8,111.1 243.9,118.2 251.0,125.5 258.1,132.7 265.2,139.8 272.4,146.7 279.5,153.2 286.6,159.2 293.8,164.6 300.9,169.4 308.0,173.4 315.1,176.5 322.2,178.8 329.4,180.1 336.5,180.5 343.6,179.9 350.8,178.4 357.9,176.0 365.0,172.7 372.1,168.5 379.2,163.6 386.4,158.1 393.5,152.0 400.6,145.4 407.8,138.5 414.9,131.3 422.0,124.1 429.1,116.8 436.2,109.7 443.4,102.9 450.5,96.4 457.6,90.4 464.8,85.0 471.9,80.3 479.0,76.4 486.1,73.3 493.2,71.1 500.4,69.9 507.5,69.5 514.6,70.2 521.8,71.7 528.9,74.2 536.0,77.6 543.1,81.8 550.2,86.7 557.4,92.3 564.5,98.4 571.6,105.0 578.8,112.0 585.9,119.1 593.0,126.4 600.1,133.6 607.2,140.7 614.4,147.6 621.5,154.0 628.6,159.9 635.8,165.3 642.9,169.9 650.0,173.8" fill="none" stroke="#787878" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Shifted wave top (delta>0) -->
+  <polyline points="80.0,77.0 87.1,73.7 94.2,71.4 101.4,70.0 108.5,69.5 115.6,70.0 122.8,71.4 129.9,73.8 137.0,77.0 144.1,81.1 151.2,85.9 158.4,91.4 165.5,97.5 172.6,104.0 179.8,110.9 186.9,118.0 194.0,125.3 201.1,132.6 208.2,139.7 215.4,146.6 222.5,153.1 229.6,159.1 236.8,164.5 243.9,169.3 251.0,173.3 258.1,176.4 265.2,178.7 272.4,180.1 279.5,180.5 286.6,179.9 293.8,178.4 300.9,176.0 308.0,172.7 315.1,168.6 322.2,163.8 329.4,158.2 336.5,152.1 343.6,145.6 350.8,138.6 357.9,131.5 365.0,124.2 372.1,117.0 379.2,109.9 386.4,103.0 393.5,96.5 400.6,90.5 407.8,85.1 414.9,80.4 422.0,76.5 429.1,73.4 436.2,71.2 443.4,69.9 450.5,69.5 457.6,70.1 464.8,71.7 471.9,74.2 479.0,77.5 486.1,81.7 493.2,86.6 500.4,92.1 507.5,98.3 514.6,104.9 521.8,111.8 528.9,119.0 536.0,126.2 543.1,133.5 550.2,140.6 557.4,147.4 564.5,153.9 571.6,159.8 578.8,165.2 585.9,169.8 593.0,173.7 600.1,176.8 607.2,178.9 614.4,180.2 621.5,180.5 628.6,179.8 635.8,178.2 642.9,175.6 650.0,172.3" fill="none" stroke="#2a1a0e" stroke-width="1.8"/>
+  <!-- Range boundary a -->
+  <line x1="215.7" y1="52" x2="215.7" y2="198" stroke="#C8860E" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Central axis top panel -->
+  <line x1="80" y1="125.0" x2="650" y2="125.0" stroke="#D4D4D4" stroke-width="0.5"/>
+  <!-- Phase arrow top: free zero at z_free, shifted zero at z_shift_pos (shifted LEFT = advanced) -->
+  <line x1="364.2" y1="125.0" x2="250.5" y2="125.0" stroke="#545454" stroke-width="1" marker-end="url(#arrow)"/>
+  <!-- Labels top -->
+  <text x="213.7" y="66" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8860E" text-anchor="end" font-style="italic">a</text>
+  <text x="85" y="66" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">δ &gt; 0 (attractive)</text>
+  <text x="307.4" y="119.0" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="11" fill="#545454" text-anchor="middle" font-style="italic">δₗ</text>
+
+  <!-- Bottom sub-panel (delta &lt; 0, repulsive) -->
+  <rect x="80" y="230" width="570" height="146" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="80" y="230" width="135.7" height="146" fill="#ADADAD" opacity="0.15"/>
+  <polyline points="80.0,303.0 87.1,295.7 94.2,288.6 101.4,281.7 108.5,275.2 115.6,269.1 122.8,263.7 129.9,258.9 137.0,254.9 144.1,251.7 151.2,249.4 158.4,248.0 165.5,247.5 172.6,248.0 179.8,249.5 186.9,251.9 194.0,255.1 201.1,259.2 208.2,264.0 215.4,269.5 222.5,275.6 229.6,282.1 236.8,289.1 243.9,296.2 251.0,303.5 258.1,310.7 265.2,317.8 272.4,324.7 279.5,331.2 286.6,337.2 293.8,342.6 300.9,347.4 308.0,351.4 315.1,354.5 322.2,356.8 329.4,358.1 336.5,358.5 343.6,357.9 350.8,356.4 357.9,354.0 365.0,350.7 372.1,346.5 379.2,341.6 386.4,336.1 393.5,330.0 400.6,323.4 407.8,316.5 414.9,309.3 422.0,302.1 429.1,294.8 436.2,287.7 443.4,280.9 450.5,274.4 457.6,268.4 464.8,263.0 471.9,258.3 479.0,254.4 486.1,251.3 493.2,249.1 500.4,247.9 507.5,247.5 514.6,248.2 521.8,249.7 528.9,252.2 536.0,255.6 543.1,259.8 550.2,264.7 557.4,270.3 564.5,276.4 571.6,283.0 578.8,290.0 585.9,297.1 593.0,304.4 600.1,311.6 607.2,318.7 614.4,325.6 621.5,332.0 628.6,337.9 635.8,343.3 642.9,347.9 650.0,351.8" fill="none" stroke="#787878" stroke-width="1" stroke-dasharray="4 3"/>
+  <polyline points="80.0,351.0 87.1,347.0 94.2,342.2 101.4,336.7 108.5,330.7 115.6,324.1 122.8,317.2 129.9,310.1 137.0,302.8 144.1,295.6 151.2,288.5 158.4,281.6 165.5,275.1 172.6,269.0 179.8,263.6 186.9,258.8 194.0,254.8 201.1,251.6 208.2,249.3 215.4,247.9 222.5,247.5 229.6,248.0 236.8,249.5 243.9,251.9 251.0,255.2 258.1,259.3 265.2,264.1 272.4,269.6 279.5,275.7 286.6,282.3 293.8,289.2 300.9,296.4 308.0,303.6 315.1,310.9 322.2,318.0 329.4,324.9 336.5,331.3 343.6,337.3 350.8,342.7 357.9,347.5 365.0,351.4 372.1,354.6 379.2,356.8 386.4,358.1 393.5,358.5 400.6,357.9 407.8,356.4 414.9,353.9 422.0,350.6 429.1,346.4 436.2,341.5 443.4,336.0 450.5,329.9 457.6,323.3 464.8,316.3 471.9,309.2 479.0,301.9 486.1,294.7 493.2,287.6 500.4,280.7 507.5,274.3 514.6,268.3 521.8,262.9 528.9,258.3 536.0,254.3 543.1,251.3 550.2,249.1 557.4,247.8 564.5,247.5 571.6,248.2 578.8,249.8 585.9,252.3 593.0,255.7 600.1,259.9 607.2,264.8 614.4,270.4 621.5,276.5 628.6,283.2 635.8,290.1 642.9,297.3 650.0,304.6" fill="none" stroke="#2a1a0e" stroke-width="1.8"/>
+  <line x1="215.7" y1="230" x2="215.7" y2="376" stroke="#C8860E" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="80" y1="303.0" x2="650" y2="303.0" stroke="#D4D4D4" stroke-width="0.5"/>
+  <!-- Phase arrow bottom: free at z_free, shifted at z_shift_neg (shifted RIGHT = retarded) -->
+  <line x1="250.5" y1="303.0" x2="307.4" y2="303.0" stroke="#545454" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="213.7" y="244" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8860E" text-anchor="end" font-style="italic">a</text>
+  <text x="85" y="244" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">δ &lt; 0 (repulsive)</text>
+  <text x="279.0" y="297.0" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="11" fill="#545454" text-anchor="middle" font-style="italic">δₗ</text>
+
+  <!-- Shared x-axis label -->
+  <text x="650" y="400" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454" text-anchor="end" font-style="italic">r</text>
+  <!-- Legend -->
+  <line x1="390" y1="215" x2="420" y2="215" stroke="#787878" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="425" y="219" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">sin(kr)  (free)</text>
+  <line x1="390" y1="228" x2="420" y2="228" stroke="#2a1a0e" stroke-width="1.8"/>
+  <text x="425" y="232" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">sin(kr + δ)  (phase-shifted)</text>
+</svg>

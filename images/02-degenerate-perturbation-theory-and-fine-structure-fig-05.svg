@@ -1,0 +1,183 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 02-degenerate-perturbation-theory-and-fine-structure
+  Figure:  05 — Fine Structure: Three Perturbations and Coverage
+  Type:    diagram
+  Priority: Important
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/02-degenerate-perturbation-theory-and-fine-structure-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-05b">
+  <title id="fig-title-05b">Hydrogen fine structure: three perturbations and their state-type coverage</title>
+  <desc>Three-row grid. Each row shows one fine-structure correction: relativistic kinetic (all states), spin-orbit (l≠0 only), and Darwin term (l=0 only). Coverage bars reveal the complementarity of spin-orbit and Darwin: they partition the spectrum.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="02-degenerate-perturbation-theory-and-fine-structure"
+      figure-number="05"
+      figure-title="Fine Structure: Three Perturbations Coverage"
+      figure-slug="fine-structure-three-perturbations"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/02-degenerate-perturbation-theory-and-fine-structure-cajal.md"/>
+  </metadata>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    Hydrogen Fine Structure: Perturbation Coverage by State Type
+  </text>
+
+  <!-- Column headers -->
+  <text x="165" y="52" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">Physical origin</text>
+  <text x="460" y="52" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">States affected</text>
+
+  <!-- Column divider -->
+  <line x1="290" y1="58" x2="290" y2="390" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- Coverage bar axis labels (shared) -->
+  <text x="310" y="72" font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">ℓ=0</text>
+  <text x="610" y="72" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">ℓ≠0</text>
+
+  <!-- ===== ROW 1: Relativistic kinetic correction ===== -->
+  <rect x="32" y="80" width="250" height="95" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Icon: p^4 momentum symbol (two overlapping square paths) -->
+  <text x="157" y="107" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="26" fill="#2a1a0e">p⁴</text>
+  <text x="157" y="130" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Relativistic kinetic</text>
+  <text x="157" y="144" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">correction (−p⁴/8m³c²)</text>
+  <text x="157" y="167" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">Affects all states</text>
+
+  <!-- Coverage bar: FULL — all l -->
+  <rect x="300" y="100" width="300" height="35" rx="0" fill="#2a1a0e" fill-opacity="0.6"/>
+  <text x="450" y="122" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#FFFFFF">all ℓ</text>
+  <!-- empty part: none -->
+  <rect x="300" y="145" width="300" height="14" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="450" y="157" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#545454">full coverage</text>
+
+  <!-- Row separator 1-2 -->
+  <line x1="32" y1="175" x2="660" y2="175" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- ===== ROW 2: Spin-orbit coupling ===== -->
+  <rect x="32" y="180" width="250" height="95" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Icon: L and S interlocking arrows -->
+  <text x="100" y="220" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="18" fill="#2a1a0e">L</text>
+  <!-- interlocking -->
+  <line x1="118" y1="212" x2="140" y2="220" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="155" y="224" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="18" fill="#2a1a0e">S</text>
+  <text x="157" y="242" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Spin-orbit coupling</text>
+  <text x="157" y="255" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">(L·S / r³ term)</text>
+  <text x="157" y="268" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">Vanishes at ℓ=0</text>
+
+  <!-- Coverage bar: l=0 empty, l≠0 filled -->
+  <!-- l=0 region: x 300..380, l≠0 region: x 380..600 -->
+  <rect x="300" y="200" width="80" height="35" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="340" y="222" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#ADADAD">zero</text>
+  <rect x="380" y="200" width="220" height="35" rx="0" fill="#C8102E" fill-opacity="0.7"/>
+  <text x="490" y="222" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#FFFFFF">ℓ ≠ 0 only</text>
+  <rect x="300" y="245" width="300" height="14" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="340" y="257" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#ADADAD">ℓ=0: zero</text>
+  <text x="490" y="257" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#545454">ℓ≠0: active</text>
+
+  <!-- Row separator 2-3 -->
+  <line x1="32" y1="275" x2="660" y2="275" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- ===== ROW 3: Darwin term ===== -->
+  <rect x="32" y="280" width="250" height="95" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Icon: smeared dot (Zitterbewegung) -->
+  <circle cx="110" cy="322" r="18" fill="none" stroke="#2a1a0e" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="110" cy="322" r="4" fill="#2a1a0e" fill-opacity="0.5"/>
+  <circle cx="121" cy="315" r="2" fill="#2a1a0e" fill-opacity="0.4"/>
+  <circle cx="100" cy="330" r="2" fill="#2a1a0e" fill-opacity="0.4"/>
+  <circle cx="124" cy="330" r="2" fill="#2a1a0e" fill-opacity="0.3"/>
+  <circle cx="96" cy="313" r="2" fill="#2a1a0e" fill-opacity="0.3"/>
+  <text x="157" y="337" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Darwin term</text>
+  <text x="157" y="350" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">(Zitterbewegung)</text>
+  <text x="157" y="363" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">Only ℓ=0 states</text>
+
+  <!-- Coverage bar: l=0 filled, l≠0 empty -->
+  <rect x="300" y="300" width="80" height="35" rx="0" fill="#787878" fill-opacity="0.7"/>
+  <text x="340" y="322" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#FFFFFF">ℓ=0</text>
+  <rect x="380" y="300" width="220" height="35" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="490" y="322" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#ADADAD">zero</text>
+  <rect x="300" y="345" width="300" height="14" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="340" y="357" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#545454">ℓ=0: active</text>
+  <text x="490" y="357" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#ADADAD">ℓ≠0: zero</text>
+
+  <!-- Row separator 3-bottom -->
+  <line x1="32" y1="375" x2="660" y2="375" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- Complementarity callout arrow -->
+  <text x="625" y="205" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">mirror</text>
+  <line x1="625" y1="225" x2="625" y2="305" stroke="#C8860E" stroke-width="1.5"
+        stroke-dasharray="4 2"/>
+  <polygon points="619,302 625,315 631,302" fill="#C8860E"/>
+  <polygon points="619,228 625,215 631,228" fill="#C8860E"/>
+
+  <!-- caption -->
+  <text x="350" y="406" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    Spin-orbit and Darwin are complementary: together they cover all states; neither covers both
+  </text>
+</svg>

@@ -1,0 +1,171 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 03-the-variational-principle
+  Figure:  05 — LCAO Bonding vs. Antibonding: Electron Density Between Nuclei
+  Type:    diagram (wavefunction profile)
+  Priority: Important
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/03-the-variational-principle-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-05c">
+  <title id="fig-title-05c">LCAO electron density along the internuclear axis: bonding orbital has density buildup between protons; antibonding orbital has a node at the midpoint</title>
+  <desc>Two-panel profile plot. Left panel (bonding): density peaks between two proton positions due to constructive interference. Right panel (antibonding): density goes to zero at the midpoint (node) and localizes on outer sides of each proton.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="03-the-variational-principle"
+      figure-number="05"
+      figure-title="LCAO Bonding vs. Antibonding Density"
+      figure-slug="lcao-bonding-antibonding-density"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/03-the-variational-principle-cajal.md"/>
+  </metadata>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    LCAO: Electron Density Along the Internuclear Axis
+  </text>
+
+  <!-- Panel divider -->
+  <line x1="350" y1="40" x2="350" y2="310" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- ===== LEFT PANEL: Bonding ===== -->
+  <!-- Chart region x: 20..330, y:55..290 -->
+  <rect x="20" y="55" width="315" height="235" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Panel label -->
+  <text x="177" y="78" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="12" fill="#2a1a0e">Bonding orbital ψ₊</text>
+  <text x="177" y="93" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">constructive interference at midpoint</text>
+
+  <!-- Baseline axis -->
+  <line x1="20" y1="280" x2="335" y2="280" stroke="#ADADAD" stroke-width="1"/>
+
+  <!-- Proton ticks below baseline -->
+  <line x1="160" y1="278" x2="160" y2="290" stroke="#2a1a0e" stroke-width="2"/>
+  <line x1="230" y1="278" x2="230" y2="290" stroke="#2a1a0e" stroke-width="2"/>
+  <!-- Proton dots -->
+  <circle cx="160" cy="285" r="4" fill="#2a1a0e"/>
+  <circle cx="230" cy="285" r="4" fill="#2a1a0e"/>
+  <!-- midpoint indicator -->
+  <line x1="195" y1="278" x2="195" y2="285" stroke="#ADADAD" stroke-width="0.75" stroke-dasharray="2 2"/>
+
+  <!-- Bonding density filled area -->
+  <!-- Points from computed: 20,260 38,260 55,260 72,259 90,258 108,255 125,246 142,223 160,160 178,207 195,218 212,207 230,160 248,223 265,246 282,255 300,258 318,259 335,260 -->
+  <!-- BUT we offset y by 20 to shift from y=260 to y=280 (baseline) -->
+  <!-- Offset: add 20 to all y values -->
+  <polygon
+    points="20,280 38,280 55,280 72,279 90,278 108,275 125,266 142,243 160,180 178,227 195,238 212,227 230,180 248,243 265,266 282,275 300,278 318,279 335,280 335,280 20,280"
+    fill="#2a1a0e" fill-opacity="0.20" stroke="none"/>
+  <polyline
+    points="20,280 38,280 55,280 72,279 90,278 108,275 125,266 142,243 160,180 178,227 195,238 212,227 230,180 248,243 265,266 282,275 300,278 318,279 335,280"
+    fill="none" stroke="#2a1a0e" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Peak marker between protons -->
+  <line x1="195" y1="238" x2="195" y2="228" stroke="#C8860E" stroke-width="1.5"/>
+  <polygon points="190,230 195,220 200,230" fill="#C8860E"/>
+  <text x="195" y="216" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8860E">buildup</text>
+
+  <!-- Label x axis -->
+  <text x="177" y="302" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Position along internuclear axis</text>
+
+  <!-- ===== RIGHT PANEL: Antibonding ===== -->
+  <rect x="360" y="55" width="315" height="235" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="517" y="78" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="12" fill="#2a1a0e">Antibonding orbital ψ₋</text>
+  <text x="517" y="93" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">destructive interference — node at midpoint</text>
+
+  <!-- Baseline -->
+  <line x1="360" y1="280" x2="675" y2="280" stroke="#ADADAD" stroke-width="1"/>
+
+  <!-- Proton ticks -->
+  <line x1="460" y1="278" x2="460" y2="290" stroke="#2a1a0e" stroke-width="2"/>
+  <line x1="530" y1="278" x2="530" y2="290" stroke="#2a1a0e" stroke-width="2"/>
+  <circle cx="460" cy="285" r="4" fill="#2a1a0e"/>
+  <circle cx="530" cy="285" r="4" fill="#2a1a0e"/>
+  <!-- midpoint -->
+  <line x1="495" y1="278" x2="495" y2="285" stroke="#ADADAD" stroke-width="0.75" stroke-dasharray="2 2"/>
+
+  <!-- Antibonding density filled area -->
+  <!-- Computed points (offset +20 to y): 250->270,260->280, etc. -->
+  <!-- Points: 360,280 378,280 395,279 412,279 430,276 448,269 465,250 482,198 495,280 508,198 525,250 542,269 560,276 578,279 595,279 612,280 630,280 -->
+  <!-- Anti original y: 260 260 259 259 256 249 230 178 260 216 230 249 256 259 259 260 260 -->
+  <!-- Add offset: but node at 260 should map to 280 (baseline) -->
+  <!-- The anti y values (after offset +20): 280,280,279,279,276,269,250,198,280,236,250,269,276,279,279,280,280 -->
+  <!-- BUT y=37 (original anti peak) should be 37+20=57 (high density outside protons) -->
+  <!-- Recheck: original anti selected pts were at y=260,260,259,259,256,249,230,178,37,216,260,216,37,178,230,249,256,259,259,260,260 -->
+  <!-- So the peaks at y=37 are the outer lobes! y_svg = 37+20 = 57 -->
+  <polygon
+    points="360,280 378,280 395,279 412,279 430,276 448,269 465,250 482,198 495,57 508,236 525,280 542,236 560,57 578,198 595,250 612,269 630,276 648,279 665,279 675,280 675,280 360,280"
+    fill="#787878" fill-opacity="0.20" stroke="none"/>
+  <polyline
+    points="360,280 378,280 395,279 412,279 430,276 448,269 465,250 482,198 495,57 508,236 525,280 542,236 560,57 578,198 595,250 612,269 630,276 648,279 665,279 675,280"
+    fill="none" stroke="#787878" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- NODE marker at x=495 (midpoint) -->
+  <circle cx="495" cy="280" r="6" fill="none" stroke="#C8102E" stroke-width="2"/>
+  <text x="495" y="298" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">node</text>
+
+  <!-- Outer lobe markers -->
+  <text x="420" y="75" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">outer lobe</text>
+  <text x="575" y="75" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">outer lobe</text>
+
+  <text x="517" y="302" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Position along internuclear axis</text>
+
+  <!-- ===== CAPTION ===== -->
+  <text x="350" y="330" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    Bonding: charge piled between nuclei screens repulsion and lowers energy
+  </text>
+  <text x="350" y="346" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    Antibonding: node removes charge from between nuclei — total energy is higher
+  </text>
+
+  <!-- Legend -->
+  <rect x="200" y="358" width="14" height="14" fill="#2a1a0e" fill-opacity="0.2"
+        stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="220" y="370"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">ψ₊ bonding density</text>
+  <rect x="350" y="358" width="14" height="14" fill="#787878" fill-opacity="0.2"
+        stroke="#787878" stroke-width="1.5"/>
+  <text x="370" y="370"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">ψ₋ antibonding density</text>
+  <circle cx="520" cy="365" r="5" fill="none" stroke="#C8102E" stroke-width="1.5"/>
+  <text x="530" y="370"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">node</text>
+</svg>

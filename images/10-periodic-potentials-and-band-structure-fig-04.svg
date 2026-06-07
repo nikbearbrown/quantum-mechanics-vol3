@@ -1,0 +1,49 @@
+<!-- CAJAL SVG | quantum-mechanics-vol3 | 10-periodic-potentials-and-band-structure | fig 04 | Tight-Binding Dispersion and Effective Mass Curvature | 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">Tight-Binding Dispersion and Effective Mass Curvature</title>
+  <desc>Tight-binding dispersion E(k) = E₀ − 2t cos(ka) over the first Brillouin zone from −π/a to +π/a. The band minimum at k=0 has positive curvature (m*>0, shown with gray dashed parabola) and the band maxima at k=±π/a have negative curvature (m*&lt;0, shown with red dashed parabola).</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Quantum Mechanics — Approximation Methods and Real Systems" book-slug="quantum-mechanics-vol3" chapter="10-periodic-potentials-and-band-structure" figure-number="04" figure-title="Tight-Binding Dispersion and Effective Mass Curvature" figure-slug="tight-binding-dispersion-effective-mass" figure-type="chart" priority="Important" author="Humanitarians AI Incorporated" date-generated="2026-06-06" source-file="pantry/10-periodic-potentials-and-band-structure-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <text x="350" y="28" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e">Tight-binding dispersion and effective mass curvature</text>
+  <rect x="80" y="50" width="570" height="320" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Zero-energy baseline -->
+  <line x1="80" y1="356.1" x2="650" y2="356.1" stroke="#D4D4D4" stroke-width="0.5"/>
+  <!-- Main cosine curve -->
+  <polyline points="80.0,77.8 91.4,78.9 102.8,82.2 114.2,87.6 125.6,95.0 137.0,104.4 148.4,115.5 159.8,128.3 171.2,142.4 182.6,157.7 194.0,174.0 205.4,190.9 216.8,208.2 228.2,225.7 239.6,243.0 251.0,260.0 262.4,276.2 273.8,291.5 285.2,305.6 296.6,318.4 308.0,329.5 319.4,338.9 330.8,346.3 342.2,351.7 353.6,355.0 365.0,356.1 376.4,355.0 387.8,351.7 399.2,346.3 410.6,338.9 422.0,329.5 433.4,318.4 444.8,305.6 456.2,291.5 467.6,276.2 479.0,260.0 490.4,243.0 501.8,225.7 513.2,208.2 524.6,190.9 536.0,174.0 547.4,157.7 558.8,142.4 570.2,128.3 581.6,115.5 593.0,104.4 604.4,95.0 615.8,87.6 627.2,82.2 638.6,78.9 650.0,77.8" fill="none" stroke="#2a1a0e" stroke-width="2.2"/>
+  <!-- Parabola at minimum (positive curvature, m*>0) -->
+  <polyline points="279.5,155.2 288.0,166.9 296.6,177.4 305.1,186.7 313.7,194.7 322.2,201.5 330.8,207.1 339.3,211.4 347.9,214.5 356.4,216.3 365.0,217.0 373.6,216.3 382.1,214.5 390.7,211.4 399.2,207.1 407.8,201.5 416.3,194.7 424.8,186.7 433.4,177.4 441.9,166.9 450.5,155.2" fill="none" stroke="#787878" stroke-width="1.8" stroke-dasharray="5 3"/>
+  <!-- Parabola at maxima (negative curvature, m*&lt;0) -->
+  <polyline points="564.5,139.6 570.2,131.7 575.9,124.2 581.6,117.4 587.3,111.1 593.0,105.3 598.7,100.1 604.4,95.4 610.1,91.3 615.8,87.7 621.5,84.7 627.2,82.2 632.9,80.3 638.6,78.9 644.3,78.1 650.0,77.8" fill="none" stroke="#C8102E" stroke-width="1.8" stroke-dasharray="5 3"/>
+  <polyline points="80.0,77.8 85.7,78.1 91.4,78.9 97.1,80.3 102.8,82.2 108.5,84.7 114.2,87.7 119.9,91.3 125.6,95.4 131.3,100.1 137.0,105.3 142.7,111.1 148.4,117.4 154.1,124.2 159.8,131.7 165.5,139.6" fill="none" stroke="#C8102E" stroke-width="1.8" stroke-dasharray="5 3"/>
+  <!-- Band minimum marker (filled circle, positive m*) -->
+  <circle cx="365.0" cy="217.0" r="6" fill="#787878" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Band maximum markers (open circles, negative m*) -->
+  <circle cx="650.0" cy="77.8" r="6" fill="none" stroke="#C8102E" stroke-width="1.8"/>
+  <circle cx="80.0" cy="77.8" r="6" fill="none" stroke="#C8102E" stroke-width="1.8"/>
+  <!-- Axes -->
+  <line x1="80" y1="370" x2="650" y2="370" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="80" y1="370" x2="80" y2="50" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="80.0" y1="370" x2="80.0" y2="375" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="80.0" y="386" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">-π</text>
+  <line x1="222.5" y1="370" x2="222.5" y2="375" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="222.5" y="386" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">-π/2</text>
+  <line x1="365.0" y1="370" x2="365.0" y2="375" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="365.0" y="386" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">0</text>
+  <line x1="507.5" y1="370" x2="507.5" y2="375" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="507.5" y="386" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">π/2</text>
+  <line x1="650.0" y1="370" x2="650.0" y2="375" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="650.0" y="386" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">π</text>
+  <text x="365.0" y="410" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454" font-style="italic">ka</text>
+  <text x="25" y="210" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454" transform="rotate(-90,25,210)">E(k)</text>
+  <!-- Effective mass annotations -->
+  <text x="375.0" y="207.0" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">m* &gt; 0</text>
+  <text x="570.0" y="67.8" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E">m* &lt; 0</text>
+  <!-- Legend -->
+  <line x1="420" y1="335" x2="450" y2="335" stroke="#2a1a0e" stroke-width="2.2"/>
+  <text x="456" y="339" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">E(k) = E₀ − 2t cos(ka)</text>
+  <line x1="420" y1="351" x2="450" y2="351" stroke="#787878" stroke-width="1.8" stroke-dasharray="5 3"/>
+  <text x="456" y="355" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">parabola (m* &gt; 0) near min</text>
+  <line x1="420" y1="367" x2="450" y2="367" stroke="#C8102E" stroke-width="1.8" stroke-dasharray="5 3"/>
+  <text x="456" y="371" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">parabola (m* &lt; 0) near max</text>
+</svg>

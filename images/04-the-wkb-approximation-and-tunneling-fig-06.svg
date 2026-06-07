@@ -1,0 +1,200 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 04-the-wkb-approximation-and-tunneling
+  Figure:  06 — Tunneling in Four Physical Contexts
+  Type:    diagram (2×2 panel)
+  Priority: Supplementary
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/04-the-wkb-approximation-and-tunneling-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-04-06">
+  <title id="fig-title-04-06">Quantum tunneling in four physical contexts: STM, alpha decay, stellar fusion, and flash memory — all sharing the same e^(−2γ) exponential structure</title>
+  <desc>2×2 grid. Each panel shows the same motif: a barrier hill and a particle passing through it. Panel 1 (STM): tip-gap-surface with current arrow. Panel 2 (alpha decay): nucleus with Coulomb barrier and emitted particle. Panel 3 (stellar fusion): two approaching protons with barrier. Panel 4 (flash memory): layered MOS structure with tunneling arrow.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="04-the-wkb-approximation-and-tunneling"
+      figure-number="06"
+      figure-title="Tunneling Across Physical Contexts"
+      figure-slug="tunneling-physical-contexts"
+      figure-type="diagram"
+      priority="Supplementary"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/04-the-wkb-approximation-and-tunneling-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-04-06" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arr-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    The Gamow Exponential Across Physical Contexts
+  </text>
+
+  <!-- Grid lines -->
+  <line x1="350" y1="40" x2="350" y2="400" stroke="#D4D4D4" stroke-width="1"/>
+  <line x1="32"  y1="220" x2="668" y2="220" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- ===== PANEL 1 (top-left): STM ===== -->
+  <rect x="32" y="40" width="318" height="180" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="191" y="58" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#2a1a0e">Scanning Tunneling Microscope</text>
+
+  <!-- STM: conical tip above flat surface, gap, current arrow -->
+  <!-- Tip (inverted triangle) -->
+  <polygon points="140,70 210,70 175,130" fill="#ADADAD" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Vacuum gap -->
+  <text x="191" y="162" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#787878">vacuum gap</text>
+  <!-- Surface (flat rectangle) -->
+  <rect x="85" y="170" width="212" height="28" rx="0" fill="#ADADAD" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Current arrow (tunneling) through gap -->
+  <line x1="175" y1="130" x2="175" y2="167"
+        stroke="#2a1a0e" stroke-width="2" marker-end="url(#arr-04-06)" stroke-dasharray="3 2"/>
+  <!-- Barrier silhouette (schematic hill shape) -->
+  <text x="191" y="140" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#787878">e^(−2γ)</text>
+  <!-- STM context label -->
+  <text x="191" y="210" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">I ∝ e^(−2κd)  (κ ∝ √φ_work)</text>
+
+  <!-- ===== PANEL 2 (top-right): Alpha decay ===== -->
+  <rect x="350" y="40" width="318" height="180" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="509" y="58" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#2a1a0e">Alpha Decay</text>
+
+  <!-- Nucleus (large circle) -->
+  <circle cx="480" cy="130" r="35" fill="#ADADAD" fill-opacity="0.5" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Coulomb barrier (curved hill shape on right side of nucleus) -->
+  <polyline points="515,130 530,110 550,90 565,85 575,92 580,110 578,130 570,150 555,162 535,168 515,165"
+            fill="#787878" fill-opacity="0.25" stroke="#2a1a0e" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Alpha particle emerging (small filled circle) -->
+  <circle cx="610" cy="130" r="8" fill="#2a1a0e"/>
+  <!-- Arrow: alpha particle trajectory -->
+  <line x1="588" y1="130" x2="600" y2="130"
+        stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arr-04-06)"/>
+  <!-- Energy line -->
+  <line x1="460" y1="130" x2="640" y2="130"
+        stroke="#C8860E" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="509" y="210" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">T ∝ e^(−2γ_Coulomb)</text>
+
+  <!-- ===== PANEL 3 (bottom-left): Stellar fusion ===== -->
+  <rect x="32" y="220" width="318" height="180" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="191" y="238" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#2a1a0e">Stellar Fusion (pp chain)</text>
+
+  <!-- Two approaching protons -->
+  <circle cx="95" cy="310" r="12" fill="#ADADAD" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="95" y="314" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="8" fill="#2a1a0e">p</text>
+  <circle cx="152" cy="310" r="12" fill="#ADADAD" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="152" y="314" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="8" fill="#2a1a0e">p</text>
+
+  <!-- Arrows approaching each other -->
+  <line x1="108" y1="310" x2="138" y2="310"
+        stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arr-04-06)"/>
+  <line x1="139" y1="310" x2="109" y2="310"
+        stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arr-04-06)"/>
+
+  <!-- Coulomb barrier (hill between protons) -->
+  <polyline points="107,310 120,285 164,285 175,310"
+            fill="#787878" fill-opacity="0.20" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="141" y="282" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#787878">Coulomb barrier</text>
+
+  <!-- Deuteron (fused) on right -->
+  <circle cx="265" cy="310" r="14" fill="#2a1a0e" fill-opacity="0.4" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="265" y="315" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="8" fill="#FFFFFF">d</text>
+  <!-- Arrow through barrier -->
+  <line x1="178" y1="310" x2="248" y2="310"
+        stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arr-04-06)" stroke-dasharray="4 2"/>
+
+  <!-- Energy line -->
+  <line x1="80" y1="310" x2="285" y2="310"
+        stroke="#C8860E" stroke-width="1" stroke-dasharray="3 2"/>
+
+  <text x="191" y="392" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">Gamow peak: thermal+tunneling compromise</text>
+
+  <!-- ===== PANEL 4 (bottom-right): Flash memory ===== -->
+  <rect x="350" y="220" width="318" height="180" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="509" y="238" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#2a1a0e">Flash Memory (Fowler-Nordheim)</text>
+
+  <!-- MOS stack: metal / thin SiO2 / floating gate / SiO2 / channel -->
+  <!-- Metal electrode (top) -->
+  <rect x="400" y="255" width="218" height="22" rx="0" fill="#ADADAD" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="509" y="270" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#FFFFFF">Metal gate</text>
+
+  <!-- Thin tunnel oxide (SiO2, ~2nm) -->
+  <rect x="400" y="277" width="218" height="16" rx="0" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="509" y="289" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#545454">thin SiO₂ (tunnel oxide)</text>
+
+  <!-- Floating gate -->
+  <rect x="400" y="293" width="218" height="22" rx="0" fill="#787878" fill-opacity="0.5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="509" y="308" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#FFFFFF">Floating gate</text>
+
+  <!-- Thick oxide -->
+  <rect x="400" y="315" width="218" height="16" rx="0" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="509" y="327" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#545454">thick oxide</text>
+
+  <!-- Channel (bottom) -->
+  <rect x="400" y="331" width="218" height="20" rx="0" fill="#ADADAD" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="509" y="345" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="8" fill="#FFFFFF">Channel (Si)</text>
+
+  <!-- Tunneling arrow crossing the thin oxide (vertical) -->
+  <line x1="509" y1="350" x2="509" y2="295"
+        stroke="#2a1a0e" stroke-width="2" marker-end="url(#arr-04-06)" stroke-dasharray="4 2"/>
+
+  <text x="509" y="392" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">Fowler-Nordheim: J ∝ E² e^(−b/E)</text>
+
+  <!-- Shared label: e^(-2γ) unifying motif -->
+  <rect x="32" y="405" width="636" height="14" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="350" y="416" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#2a1a0e">
+    Unifying theme: all four are governed by the Gamow exponential T ∝ e^(−2γ) — the barrier integral is what changes
+  </text>
+</svg>

@@ -1,0 +1,50 @@
+<!-- CAJAL SVG | quantum-mechanics-vol3 | 11-capstone-modeling-a-real-quantum-system | fig 02 | Six Candidate Systems Mapped to Small-Parameter ε | 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Six Candidate Systems Mapped to Small-Parameter ε</title>
+  <desc>Six-row panel comparing candidate quantum systems: left column shows a minimal schematic icon for each system, right column shows a horizontal bar whose length encodes the small parameter ε, color-coded green for ε&lt;0.3 (valid) and amber for ε≥0.3 (caution). A dashed vertical line marks the ε=0.3 threshold.</desc>
+  <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Quantum Mechanics — Approximation Methods and Real Systems" book-slug="quantum-mechanics-vol3" chapter="11-capstone-modeling-a-real-quantum-system" figure-number="02" figure-title="Six Candidate Systems Mapped to Small-Parameter ε" figure-slug="six-candidate-systems-small-parameter" figure-type="chart" priority="Critical" author="Humanitarians AI Incorporated" date-generated="2026-06-06" source-file="pantry/11-capstone-modeling-a-real-quantum-system-cajal.md"/></metadata>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <text x="350" y="28" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e">Six candidate systems mapped to small-parameter ε</text>
+  <!-- Column headers -->
+  <text x="130" y="55" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">System</text>
+  <text x="440" y="55" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Small parameter ε</text>
+  <!-- Threshold line (epsilon = 0.3) -->
+  <line x1="368.0" y1="60" x2="368.0" y2="400" stroke="#787878" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <text x="368.0" y="55" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#787878">ε = 0.3</text>
+  <rect x="100" y="74" width="22" height="36" fill="#ADADAD" stroke="#2a1a0e" stroke-width="1"/><rect x="138" y="74" width="22" height="36" fill="#ADADAD" stroke="#2a1a0e" stroke-width="1"/><text x="130" y="97" text-anchor="middle" font-family="'JetBrains Mono'" font-size="9" fill="#545454">gap</text>
+  <text x="220" y="97" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">WKB STM</text>
+  <rect x="260" y="82" width="18.0" height="20" fill="#009E73" opacity="0.7"/>
+  <text x="284.0" y="97" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">ε = 0.050</text>
+  <line x1="50" y1="120" x2="660" y2="120" stroke="#D4D4D4" stroke-width="0.5"/>
+  <circle cx="130" cy="147" r="16" fill="none" stroke="#2a1a0e" stroke-width="1"/><ellipse cx="130" cy="147" rx="16" ry="6" fill="none" stroke="#ADADAD" stroke-width="0.75"/>
+  <text x="220" y="152" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">QD spherical box</text>
+  <rect x="260" y="137" width="144.0" height="20" fill="#C8860E" opacity="0.7"/>
+  <text x="410.0" y="152" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">ε = 0.400</text>
+  <line x1="50" y1="175" x2="660" y2="175" stroke="#D4D4D4" stroke-width="0.5"/>
+  <polyline points="102.0,250.0 103.4,236.6 104.9,225.6 106.3,216.8 107.7,210.0 109.2,204.8 110.6,201.0 112.1,198.5 113.5,196.9 114.9,196.2 116.4,196.0 117.8,196.3 119.2,197.0 120.7,197.9 122.1,198.8 123.5,199.7 125.0,200.6 126.4,201.2 127.8,201.7 129.3,202.0 130.7,202.0 132.2,201.7 133.6,201.2 135.0,200.6 136.5,199.7 137.9,198.8 139.3,197.9 140.8,197.0 142.2,196.3 143.6,196.0 145.1,196.2 146.5,196.9 147.9,198.5 149.4,201.0 150.8,204.8 152.3,210.0 153.7,216.8 155.1,225.6 156.6,236.6 158.0,250.0" fill="none" stroke="#2a1a0e" stroke-width="1.2"/>
+  <text x="220" y="207" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Ammonia maser</text>
+  <rect x="260" y="192" width="0.4" height="20" fill="#009E73" opacity="0.7"/>
+  <text x="266.4" y="207" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">ε = 0.001</text>
+  <line x1="50" y1="230" x2="660" y2="230" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="108" y1="257" x2="152" y2="257" stroke="#ADADAD" stroke-width="1.5"/><line x1="130" y1="275" x2="130" y2="239" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="220" y="262" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">NMR Rabi</text>
+  <rect x="260" y="247" width="1.1" height="20" fill="#009E73" opacity="0.7"/>
+  <text x="267.1" y="262" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">ε = 0.003</text>
+  <line x1="50" y1="285" x2="660" y2="285" stroke="#D4D4D4" stroke-width="0.5"/>
+  <circle cx="130" cy="312" r="4" fill="#2a1a0e"/><circle cx="150" cy="304" r="6" fill="none" stroke="#787878" stroke-width="1"/><circle cx="112" cy="322" r="6" fill="none" stroke="#787878" stroke-width="1"/>
+  <text x="220" y="317" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Variational He</text>
+  <rect x="260" y="302" width="108.0" height="20" fill="#C8860E" opacity="0.7"/>
+  <text x="374.0" y="317" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">ε = 0.300</text>
+  <line x1="50" y1="340" x2="660" y2="340" stroke="#D4D4D4" stroke-width="0.5"/>
+  <path d="M 130,387 Q 142,372 160,352" fill="none" stroke="#ADADAD" stroke-width="1.2"/><path d="M 130,387 Q 130,367 130,347" fill="none" stroke="#545454" stroke-width="1.2"/><path d="M 130,387 Q 118,372 100,352" fill="none" stroke="#ADADAD" stroke-width="1.2"/><circle cx="130" cy="387" r="3" fill="#2a1a0e"/>
+  <text x="220" y="372" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Born Rutherford</text>
+  <rect x="260" y="357" width="54.0" height="20" fill="#009E73" opacity="0.7"/>
+  <text x="320.0" y="372" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">ε = 0.150</text>
+  <rect x="50" y="65" width="610" height="330" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="60" y="398" width="12" height="10" fill="#009E73" opacity="0.7"/>
+  <text x="76" y="407" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">ε &lt; 0.3  (valid)</text>
+  <rect x="180" y="398" width="12" height="10" fill="#C8860E" opacity="0.7"/>
+  <text x="196" y="407" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">ε ≥ 0.3  (caution)</text>
+
+</svg>

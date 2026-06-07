@@ -1,0 +1,177 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 04-the-wkb-approximation-and-tunneling
+  Figure:  04 — Gamow Factor and Tunneling Transmission Coefficient
+  Type:    diagram
+  Priority: Critical
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/04-the-wkb-approximation-and-tunneling-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-04-04">
+  <title id="fig-title-04-04">Quantum tunneling: incoming wave partially reflects and partially transmits through a barrier; transmitted amplitude is e^(−γ) where γ is the Gamow integral</title>
+  <desc>Left panel: potential barrier with shaded forbidden region, incoming/reflected waves on the left, transmitted wave (smaller amplitude) on the right, and decaying exponential inside the barrier. A Gamow integral bracket spans a to b. Right panel: three barrier shapes at equal height showing rectangular, triangular, and Coulomb profiles.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="04-the-wkb-approximation-and-tunneling"
+      figure-number="04"
+      figure-title="Gamow Factor and Tunneling Transmission"
+      figure-slug="gamow-factor-tunneling"
+      figure-type="diagram"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/04-the-wkb-approximation-and-tunneling-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-04-04" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+    <clipPath id="clip-4-4">
+      <rect x="32" y="38" width="430" height="310"/>
+    </clipPath>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    Gamow Factor: Tunneling Through a Potential Barrier
+  </text>
+
+  <!-- ===== LEFT PANEL (65% width): Main tunneling schematic ===== -->
+  <!-- x: 32..462, y: 38..348 -->
+  <rect x="32" y="38" width="430" height="310" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Barrier shaded region (a to b, forbidden zone) -->
+  <!-- Turning points: a at x=172, b at x=322 -->
+  <rect x="172" y="38" width="150" height="310" fill="#787878" fill-opacity="0.18"/>
+
+  <!-- Potential barrier V(x) — smooth hill shape -->
+  <polyline clip-path="url(#clip-4-4)"
+    points="32,220 80,218 130,215 172,212 185,180 200,130 225,80 247,58 270,52 293,58 315,80 337,130 352,180 365,212 400,215 430,218 462,220"
+    fill="none" stroke="#2a1a0e" stroke-width="2" stroke-linejoin="round"/>
+  <text x="247" y="50"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#2a1a0e">V(x)</text>
+
+  <!-- Energy line E -->
+  <line x1="32" y1="215" x2="462" y2="215"
+        stroke="#C8860E" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="466" y="219"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#C8860E">E</text>
+
+  <!-- Turning point markers a and b -->
+  <line x1="172" y1="38" x2="172" y2="348"
+        stroke="#ADADAD" stroke-width="1" stroke-dasharray="3 2"/>
+  <line x1="322" y1="38" x2="322" y2="348"
+        stroke="#ADADAD" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="172" y="358" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">a</text>
+  <text x="322" y="358" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">b</text>
+
+  <!-- INCOMING wave (left of a, larger amplitude) -->
+  <polyline clip-path="url(#clip-4-4)"
+    points="32,215 48,235 58,270 68,265 78,228 88,200 98,200 108,218 118,245 128,260 138,245 148,218 158,200 168,205 172,215"
+    fill="none" stroke="#2a1a0e" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- REFLECTED wave (left of a, smaller amplitude, same phase region, offset slightly) -->
+  <polyline clip-path="url(#clip-4-4)"
+    points="32,215 45,222 55,232 65,230 75,220 85,210 95,210 105,216 115,225 125,232 135,225 145,218 155,212 162,212 172,215"
+    fill="none" stroke="#ADADAD" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="3 2"/>
+
+  <!-- DECAYING exponential inside barrier -->
+  <polyline clip-path="url(#clip-4-4)"
+    points="172,215 185,213 205,211 230,210 260,210 290,210 310,210 322,215"
+    fill="none" stroke="#C8860E" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="4 2"/>
+
+  <!-- TRANSMITTED wave (right of b, smaller amplitude than incoming) -->
+  <polyline clip-path="url(#clip-4-4)"
+    points="322,215 335,223 345,232 355,230 365,220 375,211 385,211 395,217 405,225 415,230 425,225 435,218 445,214 455,214 462,215"
+    fill="none" stroke="#2a1a0e" stroke-width="1" stroke-linejoin="round"/>
+
+  <!-- Gamow bracket a to b -->
+  <line x1="247" y1="320" x2="172" y2="320" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="247" y1="320" x2="322" y2="320" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="172" y1="315" x2="172" y2="325" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="322" y1="315" x2="322" y2="325" stroke="#C8102E" stroke-width="1.5"/>
+  <text x="247" y="338" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#C8102E">γ = ∫ₐᵇ κ(x) dx</text>
+
+  <!-- T ~ e^(-2γ) annotation -->
+  <text x="390" y="290"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">T ∝ e^(−2γ)</text>
+
+  <!-- Wave labels -->
+  <text x="70" y="285"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#2a1a0e">incoming</text>
+  <text x="70" y="195"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#ADADAD">reflected</text>
+  <text x="380" y="195"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">transmitted</text>
+  <text x="247" y="200" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8860E">decaying</text>
+
+  <!-- ===== RIGHT PANEL: Three barrier shapes ===== -->
+  <rect x="470" y="38" width="200" height="310" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="570" y="55" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Barrier shapes:</text>
+  <text x="570" y="67" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">same height → different γ</text>
+
+  <!-- Rectangular barrier -->
+  <text x="490" y="100"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">Rectangular</text>
+  <polyline points="480,125 480,80 640,80 640,125"
+            fill="#2a1a0e" fill-opacity="0.25" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="470" y1="125" x2="660" y2="125" stroke="#C8860E" stroke-width="1" stroke-dasharray="3 2"/>
+
+  <!-- Triangular barrier -->
+  <text x="490" y="180"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">Triangular</text>
+  <polyline points="480,205 560,158 640,205"
+            fill="#2a1a0e" fill-opacity="0.25" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="470" y1="205" x2="660" y2="205" stroke="#C8860E" stroke-width="1" stroke-dasharray="3 2"/>
+
+  <!-- Coulomb barrier -->
+  <text x="490" y="255"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#545454">Coulomb (1/r)</text>
+  <!-- Coulomb-like: steep rise on left, slow decay on right, asymmetric -->
+  <polyline points="480,285 490,220 510,175 530,165 550,175 565,200 580,225 605,265 630,285"
+            fill="#2a1a0e" fill-opacity="0.25" stroke="#2a1a0e" stroke-width="1.5"
+            stroke-linejoin="round"/>
+  <line x1="470" y1="285" x2="660" y2="285" stroke="#C8860E" stroke-width="1" stroke-dasharray="3 2"/>
+
+  <!-- Caption -->
+  <text x="350" y="393" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    All three shapes give T ∝ e^(−2γ); only the shape of V(x) between a and b changes γ
+  </text>
+  <text x="350" y="408" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    Exponential sensitivity to barrier thickness and height is the universal tunneling signature
+  </text>
+</svg>

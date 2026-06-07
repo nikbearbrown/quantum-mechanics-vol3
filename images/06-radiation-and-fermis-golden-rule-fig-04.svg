@@ -1,0 +1,199 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 06-radiation-and-fermis-golden-rule
+  Figure:  04 — Hydrogen Electric-Dipole Transitions: Allowed and Forbidden Paths
+  Type:    diagram
+  Priority: Critical
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/06-radiation-and-fermis-golden-rule-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-06-04">
+  <title id="fig-title-06-04">Hydrogen electric-dipole selection rules: allowed (Δℓ=±1) transitions drawn as solid arrows; forbidden transitions absent; 2s is metastable with no E1 decay path to 1s</title>
+  <desc>Energy level diagram for n=1,2,3 hydrogen states arranged by n (vertical) and ℓ (horizontal). Solid arrows connect allowed E1 transitions. No arrow is drawn for forbidden transitions. The 2s level is marked as metastable.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="06-radiation-and-fermis-golden-rule"
+      figure-number="04"
+      figure-title="Hydrogen E1 Transition Diagram"
+      figure-slug="hydrogen-e1-transition-diagram"
+      figure-type="diagram"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/06-radiation-and-fermis-golden-rule-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-06-04" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arr-sky" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#787878"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    Hydrogen Electric-Dipole Selection Rules: Δℓ = ±1
+  </text>
+
+  <!-- ℓ labels at top -->
+  <text x="175" y="50" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="12" fill="#545454">ℓ = 0 (s)</text>
+  <text x="350" y="50" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="12" fill="#545454">ℓ = 1 (p)</text>
+  <text x="525" y="50" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="12" fill="#545454">ℓ = 2 (d)</text>
+
+  <!-- ℓ column lines (faint) -->
+  <line x1="175" y1="55" x2="175" y2="385" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="350" y1="55" x2="350" y2="385" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="525" y1="55" x2="525" y2="385" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+  <!-- Energy axis (left) -->
+  <line x1="60" y1="60" x2="60" y2="380"
+        stroke="#ADADAD" stroke-width="1" marker-end="url(#arr-06-04)"/>
+  <text x="52" y="56" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">E</text>
+
+  <!-- n labels (right) -->
+  <text x="645" y="360" text-anchor="start"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">n=1</text>
+  <text x="645" y="235" text-anchor="start"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">n=2</text>
+  <text x="645" y="128" text-anchor="start"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">n=3</text>
+
+  <!-- n=1 levels: only 1s at y=350 -->
+  <line x1="140" y1="350" x2="210" y2="350" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="90" y="354"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">1s</text>
+
+  <!-- n=2 levels: 2s at y=228, 2p at y=240 (slightly different to show near-degeneracy in fine structure, but for E1 diagram use same y) -->
+  <!-- Use y=232 for both 2s and 2p -->
+  <!-- 2s (ℓ=0) -->
+  <line x1="140" y1="232" x2="210" y2="232" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="90" y="236"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">2s</text>
+  <!-- METASTABLE marker on 2s -->
+  <circle cx="215" cy="232" r="7" fill="#C8860E"/>
+  <text x="226" y="236"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8860E">metastable</text>
+
+  <!-- 2p (ℓ=1) -->
+  <line x1="315" y1="232" x2="385" y2="232" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="393" y="236"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">2p</text>
+
+  <!-- n=3 levels: 3s at y=118, 3p at y=122, 3d at y=126 (all near same energy) -->
+  <!-- Use same y=120 for all three -->
+  <!-- 3s (ℓ=0) -->
+  <line x1="140" y1="120" x2="210" y2="120" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="90" y="124"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">3s</text>
+
+  <!-- 3p (ℓ=1) -->
+  <line x1="315" y1="120" x2="385" y2="120" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="393" y="124"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">3p</text>
+
+  <!-- 3d (ℓ=2) -->
+  <line x1="490" y1="120" x2="560" y2="120" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="568" y="124"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="10" fill="#545454">3d</text>
+
+  <!-- ======= ALLOWED TRANSITIONS (solid arrows) ======= -->
+
+  <!-- 2p → 1s: ℓ=1 to ℓ=0, Δℓ=-1 ✓ -->
+  <line x1="348" y1="232" x2="208" y2="350"
+        stroke="#2a1a0e" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+  <!-- 3p → 1s: Δℓ=-1 ✓ (diagonal: from ℓ=1,n=3 to ℓ=0,n=1) -->
+  <line x1="342" y1="120" x2="202" y2="350"
+        stroke="#2a1a0e" stroke-width="2" marker-end="url(#arr-blue)"/>
+
+  <!-- 3p → 2s: Δℓ=-1 ✓ -->
+  <line x1="330" y1="120" x2="202" y2="232"
+        stroke="#787878" stroke-width="1.5" marker-end="url(#arr-sky)"/>
+
+  <!-- 3d → 2p: Δℓ=-1 ✓ -->
+  <line x1="504" y1="120" x2="382" y2="232"
+        stroke="#787878" stroke-width="1.5" marker-end="url(#arr-sky)"/>
+
+  <!-- ======= FORBIDDEN (no lines drawn, text annotation) ======= -->
+
+  <!-- Annotation: why 2s→1s is forbidden -->
+  <rect x="72" y="278" width="250" height="38" rx="0"
+        fill="#F5F5F5" stroke="#ADADAD" stroke-width="0.75"/>
+  <text x="197" y="294" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#C8102E">2s → 1s: FORBIDDEN</text>
+  <text x="197" y="308" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="9" fill="#545454">Δℓ = 0 violates Δℓ = ±1</text>
+
+  <!-- Dashed absent arrow for 2s→1s (explicitly absent) -->
+  <line x1="175" y1="232" x2="175" y2="350"
+        stroke="#C8102E" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+  <!-- X marker -->
+  <line x1="163" y1="289" x2="187" y2="296" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="187" y1="289" x2="163" y2="296" stroke="#C8102E" stroke-width="1.5"/>
+
+  <!-- Legend -->
+  <rect x="430" y="278" width="220" height="68" rx="0"
+        fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="440" y1="294" x2="468" y2="294" stroke="#2a1a0e" stroke-width="2.5"/>
+  <polygon points="460,290 468,294 460,298" fill="#2a1a0e"/>
+  <text x="475" y="298"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Allowed (Δℓ = ±1)</text>
+
+  <line x1="440" y1="313" x2="468" y2="313" stroke="#787878" stroke-width="1.5"/>
+  <polygon points="460,309 468,313 460,317" fill="#787878"/>
+  <text x="475" y="317"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Slower allowed transition</text>
+
+  <line x1="440" y1="332" x2="468" y2="332" stroke="#C8102E" stroke-width="1" stroke-dasharray="2 3"/>
+  <text x="440" y="332" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E">×</text>
+  <text x="475" y="336"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Forbidden (no E1 path)</text>
+
+  <circle cx="448" cy="349" r="6" fill="#C8860E"/>
+  <text x="475" y="353"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Metastable (no E1 path)</text>
+
+  <!-- Caption -->
+  <text x="350" y="395" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    2s has no allowed one-photon E1 decay — it is metastable until two-photon or collisional decay
+  </text>
+</svg>

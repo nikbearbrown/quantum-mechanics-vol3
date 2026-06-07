@@ -1,0 +1,157 @@
+<!-- ============================================================
+  Book:    Quantum Mechanics — Approximation Methods and Real Systems
+  Chapter: 01-time-independent-perturbation-theory
+  Figure:  03 — Quartic Oscillator First-Order Correction Growth
+  Type:    chart (grouped bar)
+  Priority: Critical
+  Author:  Humanitarians AI Incorporated
+  Date:    2026-06-06
+  Source:  pantry/01-time-independent-perturbation-theory-cajal.md
+  ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Quartic oscillator first-order energy corrections grow quadratically with n</title>
+  <desc>Grouped bar chart for n=0 to 4. Blue bars show unperturbed energies (n+1/2); red bars show first-order corrections (3λ/4)(2n²+2n+1) at λ=0.1. A dashed threshold line marks where the correction equals the level spacing, indicating PT breakdown.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics"
+      book-slug="quantum-mechanics-vol3"
+      chapter="01-time-independent-perturbation-theory"
+      figure-number="03"
+      figure-title="Quartic Oscillator Correction Growth"
+      figure-slug="quartic-oscillator-correction-growth"
+      figure-type="chart"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/01-time-independent-perturbation-theory-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="28" text-anchor="middle"
+        font-family="'EB Garamond','Garamond',Georgia,serif"
+        font-size="14" fill="#2a1a0e">
+    Quartic Oscillator: First-Order Correction vs. Quantum Number
+  </text>
+
+  <!-- Chart area background -->
+  <!-- Plot region: x 80..640, y 55..350  (height 295, width 560) -->
+  <rect x="80" y="55" width="560" height="295" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Grid lines at y values corresponding to energy 0,1,2,3,4.5 -->
+  <!-- y_scale: 295 px / 5.0 units => 59 px/unit; y = 350 - val*59 -->
+  <!-- y=0 => 350, y=1 => 291, y=2 => 232, y=3 => 173, y=4 => 114 -->
+  <line x1="80" y1="291" x2="640" y2="291" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="80" y1="232" x2="640" y2="232" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="80" y1="173" x2="640" y2="173" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="80" y1="114" x2="640" y2="114" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+
+  <!-- Y-axis ticks and labels -->
+  <text x="70" y="354" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">0</text>
+  <text x="70" y="295" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">1</text>
+  <text x="70" y="236" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">2</text>
+  <text x="70" y="177" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">3</text>
+  <text x="70" y="118" text-anchor="end"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">4</text>
+
+  <!-- Y axis label -->
+  <text x="20" y="210" text-anchor="middle" transform="rotate(-90,20,210)"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">Energy (ℏω = 1, λ = 0.1)</text>
+
+  <!-- X axis -->
+  <line x1="80" y1="350" x2="640" y2="350" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Y axis -->
+  <line x1="80" y1="350" x2="80" y2="55" stroke="#2a1a0e" stroke-width="1"
+        marker-end="url(#arr-03)"/>
+
+  <!-- Data (computed): E0[n] = n+0.5, E1[n] = 0.075*(2n^2+2n+1)
+       Scale: y = 350 - val * 59
+       n=0: E0=0.5 y=320.5, E1=0.075 y=345.6
+       n=1: E0=1.5 y=261.5, E1=0.375 y=327.9
+       n=2: E0=2.5 y=202.5, E1=0.975 y=292.5
+       n=3: E0=3.5 y=143.5, E1=1.875 y=239.7
+       n=4: E0=4.5 y=84.5,  E1=3.075 y=168.6
+       Group x positions: n=0: center=150, n=1:258, n=2:366, n=3:474, n=4:582
+       bar width=30, gap between bars=8, group_gap=50
+       Left bar (E0) x = center-19, right bar (E1) x = center+3 -->
+
+  <!-- n=0 -->
+  <rect x="131" y="320" width="30" height="30" fill="#2a1a0e" fill-opacity="0.55"/>
+  <rect x="167" y="345" width="30" height="5" fill="#C8102E"/>
+  <text x="152" y="368" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">n=0</text>
+
+  <!-- n=1 -->
+  <rect x="239" y="261" width="30" height="89" fill="#2a1a0e" fill-opacity="0.55"/>
+  <rect x="275" y="328" width="30" height="22" fill="#C8102E"/>
+  <text x="260" y="368" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">n=1</text>
+
+  <!-- n=2 -->
+  <rect x="347" y="203" width="30" height="147" fill="#2a1a0e" fill-opacity="0.55"/>
+  <rect x="383" y="293" width="30" height="57" fill="#C8102E"/>
+  <text x="368" y="368" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">n=2</text>
+
+  <!-- n=3 -->
+  <rect x="455" y="143" width="30" height="207" fill="#2a1a0e" fill-opacity="0.55"/>
+  <rect x="491" y="240" width="30" height="110" fill="#C8102E"/>
+  <text x="476" y="368" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">n=3</text>
+
+  <!-- n=4 -->
+  <rect x="563" y="84" width="30" height="266" fill="#2a1a0e" fill-opacity="0.55"/>
+  <rect x="599" y="168" width="30" height="182" fill="#C8102E"/>
+  <text x="584" y="368" text-anchor="middle"
+        font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
+        font-size="11" fill="#545454">n=4</text>
+
+  <!-- Threshold dashed line at y=1 (E1=level spacing) -->
+  <line x1="80" y1="291" x2="640" y2="291"
+        stroke="#C8102E" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="644" y="295"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">PT breakdown</text>
+  <text x="644" y="306"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="9" fill="#C8102E">threshold</text>
+
+  <!-- Legend -->
+  <rect x="88" y="60" width="12" height="12" fill="#2a1a0e" fill-opacity="0.55"/>
+  <text x="105" y="71"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">Unperturbed E_n^(0) = n + 1/2</text>
+  <rect x="88" y="78" width="12" height="12" fill="#C8102E"/>
+  <text x="105" y="89"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="10" fill="#545454">First-order correction E_n^(1) = (3λ/4)(2n²+2n+1)</text>
+
+  <!-- caption -->
+  <text x="350" y="406" text-anchor="middle"
+        font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
+        font-size="11" fill="#545454">
+    Correction grows as n² — at n=4 it exceeds the level spacing, marking PT validity limit
+  </text>
+</svg>
