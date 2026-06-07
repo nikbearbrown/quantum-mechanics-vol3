@@ -38,7 +38,7 @@ A scanning tunneling microscope holds a sharp metallic tip within a few ångstr�
 
 $$T(d) \approx e^{-2\kappa d}, \qquad \kappa = \frac{\sqrt{2m_e\phi}}{\hbar}.$$
 
-The tunneling current at small bias is $I \propto V\cdot e^{-2\kappa d}$, and the slope of $\ln I$ vs. $d$ gives $2\kappa$ directly. For typical metal junctions ($\phi \approx 4$ eV), $\kappa \approx 1.0$ Å$^{-1}$, so a 1 Å increase in gap reduces the current by $e^{2.0} \approx 7.4$. This "factor of 7–10 per ångström" rule is the standard calibration of every STM experiment. [verify: Binnig & Rohrer, Nobel Lecture, Rev. Mod. Phys. 59, 615 (1987)]
+The tunneling current at small bias is $I \propto V\cdot e^{-2\kappa d}$, and the slope of $\ln I$ vs. $d$ gives $2\kappa$ directly. For typical metal junctions ($\phi \approx 4$ eV), $\kappa \approx 1.0$ $\text{Å}^{-1}$, so a 1 Å increase in gap reduces the current by $e^{2.0} \approx 7.4$. This "factor of 7–10 per ångström" rule is the standard calibration of every STM experiment. [verify: Binnig & Rohrer, Nobel Lecture, Rev. Mod. Phys. 59, 615 (1987)]
 
 The small-parameter check: the WKB condition $\hbar|dp/dx|/p^2$ inside a rectangular barrier is zero in the interior (constant imaginary momentum) and is only violated at the turning points (the barrier edges). For a barrier much wider than the de Broglie wavelength, the WKB phase integral is accurate; the connection formula corrections at the turning points contribute a multiplicative prefactor of order unity, not an exponential error.
 
@@ -60,7 +60,7 @@ $$E_\text{dot} = E_\text{bulk} + E_{1s,e} + E_{1s,h} - \frac{1.8\,e^2}{4\pi\epsi
 
 For CdSe: $m_e^* = 0.13\,m_e$, $m_h^* = 0.45\,m_e$, $\epsilon_r = 10.6$. [verify: Brus, J. Chem. Phys. 80, 4403 (1984)]
 
-At $R = 1.5$ nm (3 nm diameter dot), the measured first-exciton peak is approximately 2.44 eV; the formula gives roughly 2.8–3.2 eV depending on which effective mass value is used. The dominant error is effective-mass nonparabolicity: the value $m_e^* = 0.13\,m_e$ applies at the band minimum ($k = 0$) but at the wavevectors probed by a 1.5 nm dot ($k \sim \pi/R \approx 2.1$ nm$^{-1}$), the conduction band is noticeably nonparabolic and the effective mass is closer to $0.2\,m_e$. Using the corrected mass brings the error to roughly 14%; a full variational Coulomb treatment reduces it further to 5% for $R \geq 2$ nm.
+At $R = 1.5$ nm (3 nm diameter dot), the measured first-exciton peak is approximately 2.44 eV; the formula gives roughly 2.8–3.2 eV depending on which effective mass value is used. The dominant error is effective-mass nonparabolicity: the value $m_e^* = 0.13\,m_e$ applies at the band minimum ($k = 0$) but at the wavevectors probed by a 1.5 nm dot ($k \sim \pi/R \approx 2.1$ $\text{nm}^{-1}$), the conduction band is noticeably nonparabolic and the effective mass is closer to $0.2\,m_e$. Using the corrected mass brings the error to roughly 14%; a full variational Coulomb treatment reduces it further to 5% for $R \geq 2$ nm.
 
 **The lesson from the failure:** the box gives the correct scaling ($E \propto 1/R^2$) and the right qualitative trend, but the quantitative number is sensitive to the effective mass in a regime where it is not well-defined. The model is right in structure; the input parameter is wrong.
 
@@ -68,7 +68,7 @@ At $R = 1.5$ nm (3 nm diameter dot), the measured first-exciton peak is approxim
 
 ### System C — Ammonia Inversion and the Maser
 
-The nitrogen atom in NH$_3$ sits above or below the plane of the three hydrogen atoms. These two configurations are classically equivalent — degenerate — but quantum tunneling through the barrier mixes them into symmetric ($|+\rangle$) and antisymmetric ($|-\rangle$) eigenstates separated by $2A$, where $A$ is the tunneling matrix element. The Hamiltonian in the $\{|L\rangle, |R\rangle\}$ basis is:
+The nitrogen atom in $\text{NH}_3$ sits above or below the plane of the three hydrogen atoms. These two configurations are classically equivalent — degenerate — but quantum tunneling through the barrier mixes them into symmetric ($|+\rangle$) and antisymmetric ($|-\rangle$) eigenstates separated by $2A$, where $A$ is the tunneling matrix element. The Hamiltonian in the $\{|L\rangle, |R\rangle\}$ basis is:
 
 $$\hat{H} = \begin{pmatrix}E_0 & -A \\ -A & E_0\end{pmatrix},$$
 
@@ -76,17 +76,17 @@ with eigenvalues $E_\pm = E_0 \mp A$ and splitting $\Delta E = 2A$. This is exac
 
 The maser (the microwave analogue of the laser, the original MASER for which Townes received the 1964 Nobel Prize) sorts $|+\rangle$ from $|-\rangle$ molecules using an inhomogeneous electric field (their dipole moments differ in a DC field), then drives stimulated emission $|-\rangle\to|+\rangle$ with a microwave cavity tuned to $\nu = \Delta E/h$.
 
-The NH$_3$ inversion transition occurs at 23.87 GHz, corresponding to $\Delta E \approx 9.94\times10^{-5}$ eV. A simple double-well model (harmonic plus Gaussian barrier) predicts roughly 24% too high — the error lives entirely in the barrier shape, which is exponentially sensitive. With a more realistic potential, agreement is $< 2\%$. [verify: Gordon, Zeiger & Townes, Phys. Rev. 95, 282 (1954)]
+The $\text{NH}_3$ inversion transition occurs at 23.87 GHz, corresponding to $\Delta E \approx 9.94\times10^{-5}$ eV. A simple double-well model (harmonic plus Gaussian barrier) predicts roughly 24% too high — the error lives entirely in the barrier shape, which is exponentially sensitive. With a more realistic potential, agreement is $< 2\%$. [verify: Gordon, Zeiger & Townes, Phys. Rev. 95, 282 (1954)]
 
 ---
 
-### System D — NMR $^1$H Qubit via Rabi Oscillations
+### System D — NMR $^1\text{H}$ Qubit via Rabi Oscillations
 
-A proton in a static field $B_0$ precesses at the Larmor frequency $\nu_0 = \gamma_p B_0/2\pi$, where $\gamma_p = 2.675\times10^8$ rad s$^{-1}$ T$^{-1}$. An oscillating rf field $B_1\cos(\omega t)$ perpendicular to $B_0$ drives spin flips when $\omega \approx 2\pi\nu_0$. In the rotating frame (rotating-wave approximation), the spin undergoes Rabi oscillations at generalized frequency $\tilde{\Omega} = \sqrt{\Omega_R^2 + \delta^2}$ where $\Omega_R = \gamma_p B_1/2$ and $\delta = \omega - 2\pi\nu_0$ is the detuning:
+A proton in a static field $B_0$ precesses at the Larmor frequency $\nu_0 = \gamma_p B_0/2\pi$, where $\gamma_p = 2.675\times10^8$ rad $\text{s}^{-1}$ $\text{T}^{-1}$. An oscillating rf field $B_1\cos(\omega t)$ perpendicular to $B_0$ drives spin flips when $\omega \approx 2\pi\nu_0$. In the rotating frame (rotating-wave approximation), the spin undergoes Rabi oscillations at generalized frequency $\tilde{\Omega} = \sqrt{\Omega_R^2 + \delta^2}$ where $\Omega_R = \gamma_p B_1/2$ and $\delta = \omega - 2\pi\nu_0$ is the detuning:
 
 $$P_\text{flip}(t) = \frac{\Omega_R^2}{\tilde{\Omega}^2}\sin^2\!\left(\frac{\tilde{\Omega}t}{2}\right).$$
 
-At $B_0 = 9.4$ T (a 400 MHz NMR instrument), $B_1 = 10^{-2}$ T gives $\Omega_R = 1.34\times10^6$ rad/s and $t_\pi = \pi/\Omega_R \approx 2.3\,\mu$s. Measured $\pi$-pulse durations in 400 MHz NMR are 1–25 $\mu$s — agreement is essentially exact. [verify: Levitt, Spin Dynamics (Wiley, 2001)]
+At $B_0 = 9.4$ T (a 400 MHz NMR instrument), $B_1 = 10^{-2}$ T gives $\Omega_R = 1.34\times10^6$ rad/s and $t_\pi = \pi/\Omega_R \approx 2.3\,\mu\text{s}$. Measured $\pi$-pulse durations in 400 MHz NMR are 1–25 $\mu\text{s}$ — agreement is essentially exact. [verify: Levitt, Spin Dynamics (Wiley, 2001)]
 
 The RWA small parameter is $\Omega_R/\omega_0 \approx 0.003 \ll 1$ for these fields. The approximation is excellent. Breakdown arises from relaxation ($T_1$, $T_2$), from the Bloch-Siegert shift at large $B_1$, and from the multi-spin complexity of real molecules.
 
@@ -152,7 +152,7 @@ The factor of roughly 8 per ångström emerges from the formula without fitting.
 
 **Setup.** $R = 1.5$ nm, $m_e^* = 0.13\,m_e$, $m_h^* = 0.45\,m_e$, $\epsilon_r = 10.6$, $E_\text{bulk} = 1.74$ eV.
 
-Using $\hbar^2\pi^2/(2m_e a_0^2) = \pi^2\times13.6 = 134.2$ eV·Å$^2$:
+Using $\hbar^2\pi^2/(2m_e a_0^2) = \pi^2\times13.6 = 134.2$ eV·$\text{Å}^2$:
 
 **Electron confinement energy:**
 
@@ -174,7 +174,7 @@ $$E_C = -\frac{1.8\times14.4\,\text{eV·Å}}{10.6\times15\,\text{Å}} = -\frac{2
 
 The measured value for 3 nm CdSe is approximately 2.44 eV. Error: 32%.
 
-The dominant error is effective-mass nonparabolicity. The value $m_e^* = 0.13\,m_e$ applies at $k = 0$; at $k \sim \pi/R \approx 2.1$ nm$^{-1}$ (the wavevector in a 1.5 nm dot), the effective mass is closer to $0.20\,m_e$. Correcting:
+The dominant error is effective-mass nonparabolicity. The value $m_e^* = 0.13\,m_e$ applies at $k = 0$; at $k \sim \pi/R \approx 2.1$ $\text{nm}^{-1}$ (the wavevector in a 1.5 nm dot), the effective mass is closer to $0.20\,m_e$. Correcting:
 
 $$E_{1s,e}^\text{corrected} = 1.28\times\frac{0.13}{0.20} = 0.832\,\text{eV.}$$
 
@@ -211,7 +211,7 @@ A passing project requires Proficient or above on all six criteria.
 **Warm-up**
 
 1. *Difficulty: Warm-up — tests method selection.*
-   For each system below, state which Vol. 3 method is the most appropriate first approach and name the small parameter whose magnitude justifies that choice. Do not compute — just justify. (a) A hydrogen atom in a laboratory electric field of $10^5$ V/m. (b) Electron tunneling through a 3 nm oxide layer with barrier height 3 eV at kinetic energy 0.1 eV below the barrier. (c) Ground-state energy of Li$^+$ ($Z = 3$). (d) Proton-proton scattering at $E = 500$ keV.
+   For each system below, state which Vol. 3 method is the most appropriate first approach and name the small parameter whose magnitude justifies that choice. Do not compute — just justify. (a) A hydrogen atom in a laboratory electric field of $10^5$ V/m. (b) Electron tunneling through a 3 nm oxide layer with barrier height 3 eV at kinetic energy 0.1 eV below the barrier. (c) Ground-state energy of $\text{Li}^+$ ($Z = 3$). (d) Proton-proton scattering at $E = 500$ keV.
    *Tests: recognition of which method is appropriate based on the system's dominant physics and regime.*
 
 2. *Difficulty: Warm-up — tests understanding of the variational upper bound.*
@@ -252,7 +252,7 @@ A passing project requires Proficient or above on all six criteria.
    *Tests: end-to-end modeling discipline across all five moves.*
 
 8. *Difficulty: Synthesis — Rutherford cross-section survey.*
-   Using the Born-approximation Rutherford formula, predict $d\sigma/d\Omega$ for 5.486 MeV alpha particles from $^{241}$Am on gold ($Z = 79$) at $\theta = 30°, 60°, 90°, 120°, 150°$. Tabulate in fm$^2$/sr. (a) Plot $\log(d\sigma/d\Omega)$ vs. $\log\sin(\theta/2)$ and verify the slope is $-4$. (b) At what $\theta$ does $d\sigma/d\Omega = 1$ barn/sr? (c) The alpha particle "touches" the gold nucleus (nuclear radius $\approx 8$ fm) in a head-on collision. At what kinetic energy does this occur? Above this energy, what physically happens to the cross-section?
+   Using the Born-approximation Rutherford formula, predict $d\sigma/d\Omega$ for 5.486 MeV alpha particles from $^{241}\text{Am}$ on gold ($Z = 79$) at $\theta = 30°, 60°, 90°, 120°, 150°$. Tabulate in $\text{fm}^2$/sr. (a) Plot $\log(d\sigma/d\Omega)$ vs. $\log\sin(\theta/2)$ and verify the slope is $-4$. (b) At what $\theta$ does $d\sigma/d\Omega = 1$ barn/sr? (c) The alpha particle "touches" the gold nucleus (nuclear radius $\approx 8$ fm) in a head-on collision. At what kinetic energy does this occur? Above this energy, what physically happens to the cross-section?
    *Tests: numerical command of the Rutherford formula; log-log slope verification; identifying the nuclear-force cutoff.*
 
 **Challenge**
@@ -275,7 +275,7 @@ Norris, D. J., & Bawendi, M. G. (1996). Measurement and assignment of the size-d
 
 Hylleraas, E. A. (1930). Neue Berechnung der Energie des Heliums im Grundzustande. *Zeitschrift für Physik*, 65, 209.
 
-Gordon, J. P., Zeiger, H. J., & Townes, C. H. (1954). Molecular microwave oscillator and new hyperfine structure in the microwave spectrum of NH$_3$. *Physical Review*, 95, 282.
+Gordon, J. P., Zeiger, H. J., & Townes, C. H. (1954). Molecular microwave oscillator and new hyperfine structure in the microwave spectrum of $\text{NH}_3$. *Physical Review*, 95, 282.
 
 Geiger, H., & Marsden, E. (1913). The laws of deflexion of $\alpha$ particles through large angles. *Philosophical Magazine*, 25, 604.
 

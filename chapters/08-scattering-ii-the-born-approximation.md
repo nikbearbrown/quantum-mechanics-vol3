@@ -201,11 +201,11 @@ The form factor approach is the Born approximation at its most useful: any targe
    *Tests: explicit integration; the Coulomb divergence as a physical result.*
 
 5. *Difficulty: Application — Rutherford scattering numerics.*
-   Alpha particles ($Z = 2$, $A = 4$, $E = 8$ MeV) on silver ($Z' = 47$). Using $e^2/(4\pi\epsilon_0) = 1.44$ MeV·fm: (a) compute $d\sigma/d\Omega$ at $\theta = 30°$, $60°$, $90°$, $120°$, $150°$ in fm$^2$/sr; (b) at which angle does the cross-section fall to 1% of its $\theta = 10°$ value? (c) Estimate the angle at which the de Broglie wavelength becomes comparable to the classical distance of closest approach; above this angle, nuclear forces become important and Rutherford fails.
+   Alpha particles ($Z = 2$, $A = 4$, $E = 8$ MeV) on silver ($Z' = 47$). Using $e^2/(4\pi\epsilon_0) = 1.44$ MeV·fm: (a) compute $d\sigma/d\Omega$ at $\theta = 30°$, $60°$, $90°$, $120°$, $150°$ in $\text{fm}^2$/sr; (b) at which angle does the cross-section fall to 1% of its $\theta = 10°$ value? (c) Estimate the angle at which the de Broglie wavelength becomes comparable to the classical distance of closest approach; above this angle, nuclear forces become important and Rutherford fails.
    *Tests: numerical command of the Rutherford formula; identifying the regime of validity.*
 
 6. *Difficulty: Application — nuclear form factor.*
-   For a uniform sphere of radius $R$ and charge distribution $\rho(r) = 3/(4\pi R^3)$ for $r \leq R$, zero otherwise: (a) compute the form factor $F(q) = \int e^{i\mathbf{q}\cdot\mathbf{r}}\rho(r)\,d^3r$ analytically; (b) at what $qR$ does $|F(q)|^2$ first reach zero? (c) If electron scattering off a nucleus first shows a zero in $|F|^2$ at momentum transfer $q_0 = 0.5$ fm$^{-1}$, estimate the nuclear radius. (d) How does the angular distribution $d\sigma/d\Omega \propto |F(q)|^2/q^4$ differ from the point-nucleus Rutherford formula at large $\theta$?
+   For a uniform sphere of radius $R$ and charge distribution $\rho(r) = 3/(4\pi R^3)$ for $r \leq R$, zero otherwise: (a) compute the form factor $F(q) = \int e^{i\mathbf{q}\cdot\mathbf{r}}\rho(r)\,d^3r$ analytically; (b) at what $qR$ does $|F(q)|^2$ first reach zero? (c) If electron scattering off a nucleus first shows a zero in $|F|^2$ at momentum transfer $q_0 = 0.5$ $\text{fm}^{-1}$, estimate the nuclear radius. (d) How does the angular distribution $d\sigma/d\Omega \propto |F(q)|^2/q^4$ differ from the point-nucleus Rutherford formula at large $\theta$?
    *Tests: computing a form factor analytically; extracting radius from the first zero; comparing to point-nucleus prediction.*
 
 **Synthesis**

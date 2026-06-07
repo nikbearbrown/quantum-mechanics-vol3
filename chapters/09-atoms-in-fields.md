@@ -18,7 +18,7 @@ The orbital motion produces a magnetic moment $\boldsymbol{\mu}_L = -(e/2m_e)\ma
 
 $$\boldsymbol{\mu}_S = -\frac{e}{m_e}\mathbf{S}.$$
 
-The factor of 2 difference between orbital and spin contributions is the source of the anomalous Zeeman pattern. It comes from the Dirac equation — the electron is a fundamental spin-$\tfrac{1}{2}$ particle, not a tiny current loop. (The true g-factor is $g_s = 2.002319\ldots$ rather than exactly 2; the small correction is a quantum electrodynamics effect.)
+The factor of 2 difference between orbital and spin contributions is the source of the anomalous Zeeman pattern. It comes from the Dirac equation — the electron is a fundamental $\text{spin-}\tfrac{1}{2}$ particle, not a tiny current loop. (The true g-factor is $g_s = 2.002319\ldots$ rather than exactly 2; the small correction is a quantum electrodynamics effect.)
 
 The perturbation Hamiltonian is:
 
@@ -116,7 +116,7 @@ The splitting is **linear in $\mathcal{E}$** — a **linear Stark effect** — b
 
 The third phenomenon in this chapter is qualitatively different from the first two: it is exact rather than perturbative, and it involves time.
 
-**Setup.** A spin-$\tfrac{1}{2}$ particle in a static field $B_0\hat{z}$ precesses at the **Larmor frequency** $\omega_0 = \gamma B_0$, where $\gamma$ is the gyromagnetic ratio. We add a weak transverse rotating field:
+**Setup.** A $\text{spin-}\tfrac{1}{2}$ particle in a static field $B_0\hat{z}$ precesses at the **Larmor frequency** $\omega_0 = \gamma B_0$, where $\gamma$ is the gyromagnetic ratio. We add a weak transverse rotating field:
 
 $$\mathbf{B}_1(t) = B_1(\hat{x}\cos\omega t + \hat{y}\sin\omega t).$$
 
@@ -203,7 +203,7 @@ For an accurate treatment at $B = 0.5$ T, the Zeeman and fine-structure terms mu
 4. *[$3d_{3/2}$ Zeeman splitting]* A hydrogen atom is in the $3d_{3/2}$ state ($n=3$, $\ell=2$, $j=\tfrac{3}{2}$). (a) Compute $g_J$. (b) List all $m_j$ values and compute the energy shift of each at $B = 2.0$ T. (c) How many distinct spectral lines appear in emission from $3d_{3/2} \to 2p_{1/2}$ in this field? Use $\Delta m_j = 0, \pm 1$; count distinct frequency differences.
 *What this tests: g-factor calculation for $j=\tfrac{3}{2}$; transition counting from the splitting pattern.*
 
-5. *[Off-resonance Rabi oscillations]* A spin-$\tfrac{1}{2}$ nucleus has $\omega_0 = 300$ MHz. A weak oscillating field is applied at $\omega = 300.001$ MHz with $\omega_1 = 2\pi\times 1$ kHz. (a) Compute $\omega - \omega_0$ in Hz. (b) Compute $\Omega = \sqrt{(\omega-\omega_0)^2 + \omega_1^2}$. (c) What is the maximum flip probability $\omega_1^2/\Omega^2$? (d) With a hard $\pi$-pulse of duration $\pi/\omega_1$ applied at this detuning, what fraction of the target spins actually flip?
+5. *[Off-resonance Rabi oscillations]* A $\text{spin-}\tfrac{1}{2}$ nucleus has $\omega_0 = 300$ MHz. A weak oscillating field is applied at $\omega = 300.001$ MHz with $\omega_1 = 2\pi\times 1$ kHz. (a) Compute $\omega - \omega_0$ in Hz. (b) Compute $\Omega = \sqrt{(\omega-\omega_0)^2 + \omega_1^2}$. (c) What is the maximum flip probability $\omega_1^2/\Omega^2$? (d) With a hard $\pi$-pulse of duration $\pi/\omega_1$ applied at this detuning, what fraction of the target spins actually flip?
 *What this tests: off-resonance Rabi formula; practical consequence of frequency error in NMR pulse calibration.*
 
 6. *[Quadratic Stark effect]* The hydrogen ground-state polarizability gives $\Delta E = -(9/2)a_0^3\mathcal{E}^2$ (Gaussian) $= -(9/2)(4\pi\epsilon_0)a_0^3\mathcal{E}^2$ (SI). (a) Express as a polarizability $\alpha_\text{pol}$ via $\Delta E = -\tfrac{1}{2}\alpha_\text{pol}\mathcal{E}^2$. (b) Estimate $\Delta E$ at $\mathcal{E} = 10^7$ V/m. (c) Compare to the fine-structure splitting $\sim 10^{-4}$ eV. Is Stark perturbation theory valid at this field?

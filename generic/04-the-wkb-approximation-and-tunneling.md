@@ -136,7 +136,7 @@ $$\log_{10}\tau_{1/2} \approx A(Z') + \frac{B(Z')}{\sqrt{E_\alpha}}.$$
 
 This is the **Geiger-Nuttall law**: log half-life linear in $1/\sqrt{E_\alpha}$ for fixed daughter charge. The empirical observation from 1911 is derived from the WKB tunneling formula. Every point on the Geiger-Nuttall line is a different nuclide; every nuclide lies on the same straight line.
 
-**Numerics for $^{238}$U.** With the numbers above: $\gamma \approx 43$, $e^{-2\gamma} \approx 4\times10^{-38}$, half-life estimate roughly $5\times10^8$ years. The experimental value is $4.5\times10^9$ years — off by a factor of 10. On a quantity spanning $10^{24}$, this is excellent agreement. The remaining discrepancy comes from the alpha pre-formation probability and from the prefactors we dropped.
+**Numerics for $^{238}\text{U}$.** With the numbers above: $\gamma \approx 43$, $e^{-2\gamma} \approx 4\times10^{-38}$, half-life estimate roughly $5\times10^8$ years. The experimental value is $4.5\times10^9$ years — off by a factor of 10. On a quantity spanning $10^{24}$, this is excellent agreement. The remaining discrepancy comes from the alpha pre-formation probability and from the prefactors we dropped.
 
 ---
 
@@ -144,11 +144,11 @@ This is the **Geiger-Nuttall law**: log half-life linear in $1/\sqrt{E_\alpha}$ 
 
 The Gamow factor is not specific to nuclear physics. The same structure appears across a wide range of phenomena.
 
-**Scanning tunneling microscope.** A metal tip held a few ångströms above a conducting surface. Electrons tunnel through the vacuum gap; the current goes as $I \propto e^{-2\kappa d}$ where $\kappa \approx 1$ Å$^{-1}$ for a typical work function of 4-5 eV. A 1 Å change in tip-surface distance changes the current by $e^2 \approx 7$. A surface feature of sub-ångström height produces a measurable current swing. This exponential transduction turns atomic-scale topography into macroscopic current variation, enabling the STM to image individual atoms. [verify: Binnig & Rohrer, PRL 49, 57 (1982)]
+**Scanning tunneling microscope.** A metal tip held a few ångströms above a conducting surface. Electrons tunnel through the vacuum gap; the current goes as $I \propto e^{-2\kappa d}$ where $\kappa \approx 1$ $\text{Å}^{-1}$ for a typical work function of 4-5 eV. A 1 Å change in tip-surface distance changes the current by $e^2 \approx 7$. A surface feature of sub-ångström height produces a measurable current swing. This exponential transduction turns atomic-scale topography into macroscopic current variation, enabling the STM to image individual atoms. [verify: Binnig & Rohrer, PRL 49, 57 (1982)]
 
 **Stellar fusion.** In the solar core at $kT \sim 1$ keV, the proton-proton Coulomb barrier is of order 1 MeV. Most fusion occurs at the **Gamow peak energy** $E_G$, where the Maxwell-Boltzmann thermal tail (growing with $E$) and the Gamow tunneling factor (decreasing with $E$) together peak. For solar conditions, $E_G \approx 6$ keV — six times $kT$. Every star burns by tunneling. [verify: Atkinson & Houtermans, Z. Phys. 54, 656 (1929)]
 
-**Flash memory.** Electrons tunnel through a thin SiO$_2$ layer under a high electric field, giving a triangular barrier — Fowler-Nordheim tunneling. The write speed and data retention time of every USB stick are controlled by the Gamow factor for that triangular barrier. [verify: Fowler & Nordheim, Proc. R. Soc. A 119, 173 (1928)]
+**Flash memory.** Electrons tunnel through a thin $\text{SiO}_2$ layer under a high electric field, giving a triangular barrier — Fowler-Nordheim tunneling. The write speed and data retention time of every USB stick are controlled by the Gamow factor for that triangular barrier. [verify: Fowler & Nordheim, Proc. R. Soc. A 119, 173 (1928)]
 
 **Cold fusion falsification.** Martin Fleischmann and Stanley Pons claimed in 1989 to have achieved deuterium-deuterium fusion at room temperature. The Gamow factor at $kT \approx 0.025$ eV for a D-D Coulomb barrier gives $\gamma \sim 1000$, so $e^{-2\gamma} \sim 10^{-900}$. Even a factor of $10^{50}$ enhancement from the palladium lattice would leave the claim short by $10^{850}$. Computing the Gamow factor is sufficient to evaluate quantitatively any claim of "novel nuclear effects at ambient conditions."
 
@@ -166,7 +166,7 @@ $$2\int_{r_1}^{r_2}\sqrt{2m\!\left[E - V(r) - \frac{\hbar^2(\ell+\frac{1}{2})^2}
 
 The correction accounts for the additional phase accumulated near the origin, where the centrifugal barrier acts as a hard wall with a half-integer Maslov contribution. [verify: Langer, Phys. Rev. 51, 669 (1937)]
 
-For the Coulomb potential, the Langer-corrected condition gives the exact hydrogen energy levels $E_n = -13.6$ eV$/n^2$. Without the correction, the $\ell = 0$ states are wrong. The correction matters primarily for low-$\ell$ states and is negligible for high-$\ell$ states at large radii, where $\ell(\ell+1) \approx (\ell+\frac{1}{2})^2$ already.
+For the Coulomb potential, the Langer-corrected condition gives the exact hydrogen energy levels $E_n = -13.6$ $\text{eV}/n^2$. Without the correction, the $\ell = 0$ states are wrong. The correction matters primarily for $\text{low-}\ell$ states and is negligible for $\text{high-}\ell$ states at large radii, where $\ell(\ell+1) \approx (\ell+\frac{1}{2})^2$ already.
 
 ---
 
