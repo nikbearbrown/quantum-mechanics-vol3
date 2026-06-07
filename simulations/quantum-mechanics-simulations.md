@@ -139,6 +139,76 @@ Validation Checklist — Time-Independent Perturbation Theory
 > *2:* One specific thing the AI could not determine that required your judgment.
 **Physics-judgment connection:** this validation trains checking a numerical spectrum against a known analytic limit ($n+\tfrac12$ at $\lambda=0$) and against a sign theorem ($E_0^{(2)}<0$) before believing it — the same discipline that, in the capstone, separates a defensible number from a fluent guess.
 
+## Chapter 1 — Anharmonic Oscillator Simulation Rules
+
+- Single HTML file. D3 v7 from CDN. No other dependencies.
+- Single SVG canvas, 1100 × 600.
+  Left half (550 wide): energy level diagram. Horizontal lines at current
+    E_n(lambda) for n = 0..4 from exact diagonalization. Y-axis 0 to 9 
+    (natural units). Label each level with n.
+  Right half (550 wide): plot of E_n(lambda) vs. lambda for the highlighted n.
+    Three curves: first-order PT (dashed teal), second-order PT (dashed orange),
+    exact diagonalization (solid black). X-axis lambda 0 to 0.5.
+- Lambda slider, range 0 to 0.5, default 0.1.
+- n-selector buttons (0, 1, 2, 3, 4).
+- Warning "PT NO LONGER RELIABLE" in red when |E_n^(2)| > (1/4)|E_{n+1}^(0) − E_n^(0)|.
+
+PHYSICS (natural units hbar = m = omega = 1):
+  E_n^(0) = n + 0.5
+  E_n^(1) = (3/4)(2n²+2n+1)
+  E_n^(2) = sum over m in {n±2, n±4} of |<m|x⁴|n>|²/(E_n^(0) − E_m^(0))
+  Exact: diagonalize 30×30 HO basis matrix. Pentadiagonal (bandwidth 4).
+    Jacobi iteration in vanilla JS. Increase to 50×50 for lambda > 0.2.
+
+Sanity checks to console:
+  At lambda=0: exact eigenvalues = n+0.5 within 1e-6.
+  E_0^(2) must be negative (theorem).
+  At lambda=0.1, n=0: first-order estimate 0.575, exact slightly below.
+````
+
+### The Simulation Prompt
+
+````
+Build 02-anharmonic-oscillator.html following CLAUDE.md.
+
+SHOW.
+Quartic oscillator H = H_HO + lambda*x^4 in natural units.
+Unperturbed: E_n^(0) = n + 0.5.
+First-order: E_n^(1) = (3/4)(2n²+2n+1).
+Second-order: sum of squared off-diagonal matrix elements over energy denominators,
+  restricting to m in {n-4, n-2, n+2, n+4}.
+Exact: 30×30 (50×50 for lambda>0.2) matrix diagonalization, Jacobi iteration.
+
+SAY.
+Produce 02-anharmonic-oscillator.html with:
+  Left SVG half: energy levels as horizontal lines at exact E_n(lambda).
+  Right SVG half: three overlaid curves for the selected n.
+  Lambda slider and n buttons below both panels.
+  "PT NO LONGER RELIABLE" warning text at threshold.
+
+CONSTRAIN.
+- Vanilla JS only. No math.js. Implement Jacobi diagonalization directly.
+- At every lambda change, recompute exact eigenvalues and update both panels.
+- Comments at every physics step.
+
+VERIFY.
+(a) At lambda=0: all exact energies match n+0.5 within 1e-6.
+(b) At lambda=0.1, n=0: second-order curve below first-order curve (negative correction).
+(c) Warning fires for n=4 before n=0 as lambda increases.
+(d) For n=2: E_2^(2) is also negative (all states above n=0 have mixed sign,
+    but n=2 should be checked — if negative, all levels checked).
+````
+
+### Exploration Tasks
+
+**Ground-state breakdown.** Slide $\lambda$ from $0$ to $0.5$ with $n = 0$ selected. At what $\lambda$ does first-order PT depart from exact by more than 10%? At what $\lambda$ does the "PT NO LONGER RELIABLE" warning fire? At what $\lambda$ does second-order PT fail the 10% test?
+
+**Excited-state breakdown.** Repeat for $n = 4$. At what $\lambda$ does first-order PT fail? Compare the breakdown $\lambda$ for $n = 4$ versus $n = 0$. By what factor do they differ?
+
+**The always-negative theorem.** At $\lambda = 0.1$, $n = 0$: read the gap between first-order and second-order PT curves. Verify it is negative (second-order curve lies below first-order). Now check $n = 2$: is $E_2^{(2)}$ negative as well? The theorem guarantees this for $n = 0$; for $n = 2$ it depends on which intermediate states dominate.
+
+---
+
 ---
 
 In Chapter 2 we turn to degenerate perturbation theory. When two or more unperturbed levels share an energy, the small denominator in the first-order state formula signals a problem — not a failure of perturbation theory itself, but a wrong choice of basis. The resolution is to diagonalize $\hat{H}'$ within the degenerate subspace before expanding. This approach leads to the linear Stark effect, the hydrogen fine structure, and the removal of accidental degeneracy.
@@ -915,6 +985,91 @@ Validation Checklist — Scattering I: Partial Waves
 > *1:* What AI produced and how you used it.
 > *2:* One specific thing the AI could not determine that required your judgment.
 **Physics-judgment connection:** this validation trains checking a quantum result against its classical counterpart (the factor of four signals genuine wave physics) and against a unitarity identity (the optical theorem) — two independent guards before a cross-section is trusted.
+
+## Chapter 07 — Scattering Partial-Wave Physics Rules
+
+1. S-WAVE PHASE SHIFT for spherical square well (natural units hbar=2m=1, a=1):
+   kappa = sqrt(k^2 + V_0)
+   delta_0 = arctan( (k/kappa) * tan(kappa) ) - k
+   Do NOT use delta_0 = -k (hard sphere); this is the exact well result.
+
+2. S-WAVE CROSS-SECTION:
+   sigma_s = (4*pi / k^2) * sin^2(delta_0)
+   Normalized: sigma_s / (pi * a^2) = 4 * sin^2(delta_0) / k^2
+
+3. SCATTERING LENGTH: a_s = 1 - tan(sqrt(V_0)) / sqrt(V_0)
+   Diverges when V_0 = (pi/2)^2, (3pi/2)^2, ... (new bound state at threshold).
+
+4. RESONANCES: delta_0 = pi/2 + n*pi. Detect: |sin(delta_0) - 1| < 0.01.
+
+5. RAMSAUER-TOWNSEND ZEROS: delta_0 = n*pi (n != 0). Detect: |sin(delta_0)| < 0.01.
+
+6. INTERIOR SOLUTION (r < 1): u_in(r) = B * sin(kappa * r),
+   B = sin(k + delta_0) / sin(kappa)
+
+7. BRANCH TRACKING: arctan returns [-pi/2, pi/2]. Track continuity of
+   delta_0(k) and add n*pi corrections as needed to keep it continuous.
+
+FAILURE MODES:
+(a) arctan branch jumps at resonances. Handle by checking tan(kappa) > 1e6.
+(b) Threshold V_0 = (pi/2)^2 in natural units. Below: a_s negative. Above: positive.
+(c) For V_0 = 0, delta_0 = 0 for all k. Verify as sanity check.
+````
+
+### The Simulation Prompt
+
+````
+Read CLAUDE.md, DESIGN.md, and PROJECT.md first.
+
+Build 07-partial-waves.html: single self-contained HTML using D3 v7 from CDN
+and d3-simple-slider. No other dependencies.
+
+LAYOUT: Two SVG panels 550×450 each inside a 1150×500 container.
+
+LEFT PANEL — Radial wavefunction.
+x-axis: r from 0 to 8 (natural units, a=1). y-axis: u(r) from -1.5 to 1.5.
+  Line 1 (dashed gray): u_free = sin(k*r) for all r
+  Line 2 (solid blue): sin(kappa*r)*B for 0<r<1; sin(k*r + delta_0) for r>1
+  (B = sin(k + delta_0) / sin(kappa) per CLAUDE.md rule 6)
+  Yellow shading for interior r < 1. Red dashed vertical line at r = 1.
+  Text below: "δ₀ = [val] rad" and "aₛ = [val]", live.
+
+RIGHT PANEL — sigma vs. k*a.
+x-axis: k*a from 0.01 to 6. y-axis: sigma/pi*a^2 from 0 to 8.
+  Solid black: 4*sin²(δ₀(k)) / k²
+  Dashed red: 4/k² (unitarity bound)
+  Dotted gray: y = 1 (classical)
+  Vertical orange line at current k*a.
+  Red triangles at resonance k values; blue circles at RT zeros.
+  Recompute markers when V_0 changes (scan 500 k values from 0.01 to 6).
+
+CONTROLS (below panels):
+  V_0 slider: 0 to 25, step 0.05, default 5.0
+  k*a slider: 0.01 to 6, step 0.01, default 1.0
+  Live readouts: delta_0, sin²(delta_0), sigma_tot/pi, a_s
+
+SANITY CHECKS to console on load and slider change:
+  - V_0=0: delta_0 = 0 for all k. Log "PASS/FAIL".
+  - V_0=(pi/2)^2=2.467: a_s diverges. Log a_s value.
+  - Optical theorem: sigma_tot = (4*pi/k^2)*sin^2(delta_0).
+    Log "Optical theorem check: [computed] vs [formula]".
+
+Comments at every physics step. Pure functions for delta_0 and sigma.
+````
+
+### Exploration Tasks
+
+**The factor of four.** Set $V_0 = 0$ (no well, pure hard sphere). At $ka = 0.1$, read $\sigma_\text{tot}/\pi a^2$. Confirm it is close to 4. Drag $ka$ to 5: the ratio should approach 2. Watch the transition between the $ka \ll 1$ and $ka \gg 1$ regimes.
+
+**Bound-state threshold.** Slowly increase $V_0$ past $(π/2)^2 \approx 2.47$. Watch the scattering length readout (below the left panel) diverge and change sign. Before threshold: negative $a_s$. After: positive. The cross-section $\sigma_\text{tot} = 4\pi a_s^2$ diverges at the threshold — a new bound state has appeared.
+
+**Resonance and interior wave.** Set $V_0 = 10$. Find the first resonance peak by dragging the $ka$ slider until the cross-section hits the unitarity bound. Look at the interior wave in the left panel: at resonance ($\delta_0 = \pi/2$), the interior amplitude is maximized and the exterior amplitude is minimal. The quasi-bound state is momentarily "trapped."
+
+**Ramsauer-Townsend zero.** Set $V_0 = 15$ and find a blue circle marker on the right panel. Drag $ka$ to that energy. The cross-section is nearly zero — the attractive well has pushed $\delta_0$ through a full $\pi$, and the s-wave scatters as though there were no potential at all.
+
+**Optical theorem check.** At any $V_0$ and $ka$, the console should report the optical theorem check passing. Confirm it is always "PASS."
+
+---
 
 ---
 
