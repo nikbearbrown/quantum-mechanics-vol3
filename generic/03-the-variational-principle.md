@@ -152,6 +152,9 @@ Adding the proton-proton repulsion $e^2/(4\pi\epsilon_0 R)$ to get the total ene
 
 **Why does only one orbital bind?** The bonding orbital $|+\rangle$ builds up electron density between the two protons — the wave function adds constructively in the midplane. That density is simultaneously attracted to both nuclei, pulling them together. The antibonding orbital $|-\rangle$ has a nodal plane between the protons where the wave function vanishes by destructive interference; the electron density is pushed outward, providing no bonding contribution and effectively increasing repulsion.
 
+![LCAO bonding vs. antibonding electron density: two side-by-side panels showing the probability distribution along the proton-proton axis — bonding peaks between the nuclei, antibonding has a node at the midplane with density pushed to the outer sides](../images/03-the-variational-principle-fig-05.png)
+*Figure 3.5 — Bonding and antibonding electron density: constructive interference concentrates charge between the nuclei for the bonding orbital; destructive interference leaves a node at the midplane for the antibonding orbital.*
+
 There is also a kinetic energy contribution. The bonding orbital is smooth and spread over a larger volume; its kinetic energy is lower. The antibonding orbital has sharper curvature around the nodal plane; its kinetic energy is higher. Both contributions — reduced potential energy from density between nuclei, and reduced kinetic energy from delocalization — work in the same direction for the bonding case. Every covalent bond in chemistry is a version of this story.
 
 ---
@@ -161,6 +164,9 @@ There is also a kinetic energy contribution. The bonding orbital is smooth and s
 **The bound is one-sided.** The variational principle gives a guaranteed upper bound and nothing else. It does not tell us how far below $E_V^*$ the true ground state lies. A poor trial function can give a tight bound while the wave function itself is quite wrong.
 
 This matters for applications. The energy is a bilinear functional of the wave function, and a first-order error in $\psi$ produces only a second-order error in $\langle\hat{H}\rangle$. The energy converges to $E_0$ at a quadratic rate in the wave-function error. A wave function that is $10\%$ wrong in shape can still recover $99\%$ of the binding energy. If we need the wave function itself — to compute transition matrix elements, electron densities, or response properties — a tight variational energy is not sufficient evidence of wave-function quality. These two convergences must be tracked separately.
+
+![Energy vs. wavefunction convergence: two side-by-side panels showing the variational energy curve with a flat minimum (zero slope at ε=0) and the wavefunction error rising linearly away from the minimum — the quadratic vs. linear convergence contrast](../images/03-the-variational-principle-fig-06.png)
+*Figure 3.6 — Energy converges faster than the wavefunction: a first-order error in the trial state produces only a second-order error in the energy, so a tight variational bound does not guarantee an accurate wavefunction.*
 
 **Excited states require extra work.** The theorem directly bounds only the ground state. To bound an excited-state energy, we need either knowledge of the exact ground state (to impose the orthogonality constraint $\langle\psi|\psi_0\rangle = 0$) or a symmetry that excludes the ground state from the trial space. If the ground state is even-parity, a trial function in the odd-parity sector cannot overlap with it, and $\langle\hat{H}\rangle \geq E_1$. Symmetry is the operative tool in practice.
 

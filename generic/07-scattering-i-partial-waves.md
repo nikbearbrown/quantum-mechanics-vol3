@@ -14,6 +14,9 @@ $$\psi(\mathbf{r}) \overset{r\to\infty}{\longrightarrow} e^{ikz} + f(\theta)\,\f
 
 The first term is the incident plane wave; the second is an outgoing spherical wave with angular modulation $f(\theta)$. We assume azimuthal symmetry (central potential), so there is no $\phi$ dependence. The single complex function $f(\theta)$ is called the **scattering amplitude**, and from it we can determine the total cross-section, the differential cross-section, and resonance properties.
 
+![Scattering boundary condition: incident plane wave, central scatterer, outgoing spherical wavefronts](../images/07-scattering-i-partial-waves-fig-01.png)
+*Figure 7.1 — Scattering geometry showing the incident plane wave, the scatterer at the origin, and outgoing spherical wavefronts with angular modulation $f(\theta)$ in the far field.*
+
 The probability current in the incident wave is $j_\text{inc} = \hbar k/m$. The current scattered into solid angle $d\Omega$ is proportional to $|f(\theta)|^2$. Their ratio defines the **differential cross-section**:
 
 $$\frac{d\sigma}{d\Omega} = |f(\theta)|^2.$$
@@ -44,7 +47,13 @@ $$\sigma_\text{tot} = \frac{4\pi}{k^2}\sum_{\ell=0}^\infty(2\ell+1)\sin^2\delta_
 
 Each partial wave contributes $\sigma_\ell = (4\pi/k^2)(2\ell+1)\sin^2\delta_\ell$, which is bounded by the **unitarity limit** $4\pi(2\ell+1)/k^2$. No such bound exists in classical mechanics.
 
+![Partial-wave cross-section σ_ℓ ∝ sin²δ_ℓ vs. phase shift δ_ℓ, showing unitarity maximum at δ_ℓ = π/2](../images/07-scattering-i-partial-waves-fig-03.png)
+*Figure 7.3 — Partial-wave cross-section $\sigma_\ell \propto \sin^2\delta_\ell$ as a function of phase shift $\delta_\ell \in [-\pi,\pi]$, reaching the unitarity bound at $\delta_\ell = \pm\pi/2$ (resonance) and vanishing at $\delta_\ell = 0, \pm\pi$ (Ramsauer-Townsend zeros).*
+
 The phase shift has a direct physical interpretation: it is the phase by which the potential has shifted the outgoing wave relative to a free particle. An attractive potential draws the wave closer to the origin, advancing the phase, so $\delta_\ell > 0$. A repulsive potential pushes the wave outward, so $\delta_\ell < 0$.
+
+![Free radial wave vs. phase-shifted wave for attractive (top) and repulsive (bottom) potentials](../images/07-scattering-i-partial-waves-fig-02.png)
+*Figure 7.2 — Free radial wave $\sin(kr)$ (dashed) compared to the phase-shifted wave $\sin(kr+\delta_\ell)$ (solid) for an attractive potential ($\delta_\ell>0$, top) and a repulsive potential ($\delta_\ell<0$, bottom), with the potential range $a$ marked.*
 
 ---
 
@@ -94,6 +103,9 @@ $$\tan\delta_0(k) = \frac{\Gamma/2}{E_R - E},$$
 
 where $\Gamma$ is the width of the resonance. The s-wave cross-section near the resonance is a Breit-Wigner Lorentzian in energy, peaking at $4\pi/k_R^2$ at $E = E_R$. Narrow resonances correspond to long-lived quasi-bound states; wide resonances correspond to weakly-trapped states that escape quickly. The analogy with a driven oscillator is useful: the cross-section peaks when the incoming energy matches the natural frequency of a quasi-stationary state inside the potential.
 
+![Breit-Wigner resonance: narrow and wide Lorentzian cross-sections σ_0(E) near resonance energy E_R](../images/07-scattering-i-partial-waves-fig-06.png)
+*Figure 7.6 — Breit-Wigner resonance profile: s-wave cross-section $\sigma_0(E)$ as a function of energy near $E_R$, showing a narrow resonance (solid) at the unitarity limit and a broader resonance (dashed, $\Gamma'=3\Gamma$) with lower peak and wider width, illustrating the inverse relationship between width and quasi-bound-state lifetime.*
+
 ---
 
 ## Worked Example — Hard-Sphere Scattering at Low and High Energy
@@ -118,6 +130,9 @@ $$\sigma_\text{tot} \approx \frac{4\pi}{k^2}\sum_{\ell=0}^{ka}(2\ell+1)\cdot\fra
 
 This is twice the geometric cross-section. The extra $\pi a^2$ contribution is diffractive: blocking the beam requires the forward-scattered wave to interfere destructively with the incident wave and create a shadow. That forward-scattered wave carries probability and contributes $\pi a^2$ to the total cross-section in addition to the $\pi a^2$ from sideways scattering. A shadow requires scattering, and the scattering that produces the shadow is counted just as much as the scattering that deflects particles sideways. This is the quantum version of Babinet's principle.
 
+![Hard-sphere total cross-section σ_tot/(πa²) vs. ka, starting at 4, oscillating, and approaching 2 at high energy](../images/07-scattering-i-partial-waves-fig-04.png)
+*Figure 7.4 — Hard-sphere total cross-section $\sigma_\text{tot}/(\pi a^2)$ vs. $ka$, starting at the low-energy limit of 4 (isotropic s-wave), oscillating through intermediate energies, and asymptoting to the high-energy limit of 2 (forward diffraction).*
+
 **Square-well phase shift for reference.** For a finite spherical square well of depth $V_0$ and radius $a$, the interior wave vector is $\kappa = \sqrt{k^2 + 2mV_0/\hbar^2}$. Matching the logarithmic derivative at $r = a$:
 
 $$\delta_0 = \arctan\!\left(\frac{k}{\kappa}\tan(\kappa a)\right) - ka.$$
@@ -127,6 +142,9 @@ The scattering length at $k \to 0$:
 $$a_s = a\!\left[1 - \frac{\tan(\kappa_0 a)}{\kappa_0 a}\right], \qquad \kappa_0 = \sqrt{2mV_0/\hbar^2}.$$
 
 When $\kappa_0 a = (n + 1/2)\pi$, we have $\tan(\kappa_0 a) \to \infty$ and $a_s \to \pm\infty$. A new bound state appears at threshold, the cross-section diverges, and the wave can barely distinguish the potential from a true bound state.
+
+![Scattering length a_s vs. well depth V_0, showing divergences at bound-state thresholds](../images/07-scattering-i-partial-waves-fig-05.png)
+*Figure 7.5 — Scattering length $a_s$ of the spherical square well as a function of well depth $V_0$ (in natural units), diverging to $\pm\infty$ each time a new bound state appears at threshold, with sign-change zeros between successive divergences.*
 
 ---
 

@@ -95,6 +95,9 @@ $$W = e\mathcal{E}\begin{pmatrix} 0 & -3a_0 & 0 & 0 \\ -3a_0 & 0 & 0 & 0 \\ 0 & 
 
 This matrix block-diagonalizes immediately. The lower $2\times 2$ block is zero: $|2p_{\pm 1}\rangle$ do not shift. The upper $2\times 2$ has eigenvalues $\pm 3a_0\,e\mathcal{E}$, with eigenstates $(|2s\rangle \mp |2p_0\rangle)/\sqrt{2}$.
 
+![4×4 Stark perturbation matrix showing two nonzero off-diagonal entries at (1,2) and (2,1) and the 2×2 block-diagonal structure](../images/09-atoms-in-fields-fig-06.png)
+*Figure 9.6 — Block structure of the $4\times4$ Stark perturbation matrix $W$ for the hydrogen $n=2$ manifold: two nonzero entries at the $(|2s\rangle,|2p_0\rangle)$ positions (highlighted) reveal the active $2\times2$ mixing block, while the $|2p_{\pm1}\rangle$ sector is identically zero.*
+
 The $n=2$ level splits into **three lines** from four states:
 
 - Up by $+3a_0\,e\mathcal{E}$: eigenstate $(|2s\rangle - |2p_0\rangle)/\sqrt{2}$
@@ -130,6 +133,9 @@ where $\omega_1 = \gamma B_1$ is the **Rabi frequency**.
 
 **At resonance** ($\omega = \omega_0$): the $\hat{S}_z$ term vanishes. The Hamiltonian reduces to a pure transverse field $-\hbar\omega_1\hat{S}_{x'}$, and the spin precesses around $\hat{x}'$ at frequency $\omega_1$. In the lab frame, starting from spin-up, the spin oscillates between up and down — **Rabi oscillations**:
 
+![Two-panel diagram: lab frame showing B_0 along z and rotating B_1 in xy-plane (left); rotating frame showing stationary B_1 along x' and vanishing effective z-field at resonance (right)](../images/09-atoms-in-fields-fig-04.png)
+*Figure 9.4 — Rotating-frame transformation: in the lab frame (left) the transverse field $B_1$ rotates in the $xy$-plane; in the rotating frame (right) $B_1$ is stationary along $\hat{x}'$ and the effective $z$-component $(B_0-\omega/\gamma)\hat{z}$ vanishes at resonance, leaving the spin to precess around $\hat{x}'$ at the Rabi frequency $\omega_1$.*
+
 $$P_\downarrow(t) = \sin^2\!\left(\frac{\omega_1 t}{2}\right).$$
 
 At time $t = \pi/\omega_1$ (a "$\pi$ pulse") the spin has completely flipped. This is the basis of Rabi's 1938 molecular-beam experiment: the RF frequency is swept; when $\omega = \omega_0$, the spin flips and the beam is deflected. The resonance appears as a sharp dip in the detector count.
@@ -139,6 +145,9 @@ At time $t = \pi/\omega_1$ (a "$\pi$ pulse") the spin has completely flipped. Th
 $$P_\downarrow(t) = \frac{\omega_1^2}{\Omega^2}\sin^2\!\left(\frac{\Omega t}{2}\right), \qquad \Omega = \sqrt{(\omega-\omega_0)^2 + \omega_1^2}.$$
 
 Far from resonance, $\Omega \gg \omega_1$ and the flip probability is small.
+
+![Rabi oscillations P_↓(t): full swing on resonance (δ=0), reduced amplitude at δ=ω₁, small rapid oscillations at δ=3ω₁](../images/09-atoms-in-fields-fig-05.png)
+*Figure 9.5 — Rabi oscillations: spin-flip probability $P_\downarrow(t)$ for on-resonance driving ($\delta=0$, full 0-to-1 swing), slight detuning ($\delta=\omega_1$, maximum $1/2$), and large detuning ($\delta=3\omega_1$, maximum $1/10$), with the $\pi$-pulse time $t=\pi/\omega_1$ marked.*
 
 **The Bloch equations and relaxation.** In a macroscopic sample, the bulk magnetization $\mathbf{M}$ obeys:
 

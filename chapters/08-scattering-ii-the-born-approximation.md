@@ -176,6 +176,9 @@ The first zero of $|F(q)|^2$ occurs at $qR \sim 4.49$ for a uniform sphere (the 
 
 The form factor approach is the Born approximation at its most useful: any target whose charge distribution can be Fourier-transformed can be analyzed this way. It applies to nuclei, protons, neutrons, and in a generalized sense to inelastic processes where the target transitions between quantum states. Deep inelastic scattering — the experiments that established the quark substructure of protons at SLAC in the late 1960s — used exactly this logic.
 
+![Nuclear form factor |F(q)|² vs. dimensionless momentum transfer qR for a uniform sphere, showing oscillating diffraction pattern with first zero at qR ≈ 4.49](../images/08-scattering-ii-the-born-approximation-fig-05.png)
+*Figure 8.5 — Nuclear form factor $|F(q)|^2$ for a uniform sphere as a function of $qR$, starting at unity, oscillating with decreasing envelope, and reaching its first zero at $qR\approx4.49$; the position of this zero gives the nuclear radius $R$ from electron-scattering data.*
+
 ---
 
 ## Exercises

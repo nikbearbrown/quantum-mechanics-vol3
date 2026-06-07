@@ -105,9 +105,15 @@ The population oscillates between 0 and 1. At $t = \pi/\Omega$ — a $\pi$-**pul
 
 **Off resonance** ($\Delta \neq 0$): the maximum achievable probability is $\Omega^2/(\Omega^2+\Delta^2) < 1$. Full population transfer is impossible away from resonance. The oscillation is faster (frequency $\Omega_\text{gen} > \Omega$) but shallower. Resonance is required for complete inversion.
 
+![Off-resonance Rabi oscillations: three curves for Δ=0 (reaches P=1, period 2π/Ω), Δ=Ω (suppressed to P_max=0.5, faster), and Δ=2Ω (further suppressed to P_max≈0.2, fastest), with horizontal reference lines at each maximum](../images/05-time-dependent-perturbation-theory-and-transitions-fig-04.png)
+*Figure 5.4 — Off-resonance Rabi oscillations: detuning both caps the maximum probability at Ω²/(Ω²+Δ²) and increases the oscillation frequency to the generalized Rabi frequency √(Ω²+Δ²).*
+
 **Comparison to first-order PT at resonance.** PT gives $P^\text{PT}_{g\to e}(t) = (\Omega t/2)^2$ — a parabola. The exact formula gives $\sin^2(\Omega t/2)$ — a bounded oscillation. For $\Omega t \ll 1$, expanding $\sin^2 x \approx x^2$ shows they agree. For $\Omega t \sim 1$, they diverge. At the first $\pi$-pulse ($\Omega t = \pi$): exact $P = 1$; PT predicts $(\pi/2)^2 \approx 2.47$. PT has predicted a probability of 247%.
 
 The reason PT fails is worth stating precisely. PT assumes the amplitude in $|i\rangle$ is constant — $c_i(t) \approx 1$ — even as probability drains out of it. The exact solution feeds the depleted $|i\rangle$ population back in during the return half of the Rabi cycle; PT misses the return entirely. The regime of validity is $\Omega t \ll 1$: small coupling times short time. Outside that window, the Rabi formula is required.
+
+![Rabi oscillation vs. PT parabola at resonance: exact sin²(Ωt/2) bounded between 0 and 1 vs. the PT parabola (Ωt/2)² that rises above P=1 before the first π-pulse, with a shaded breakdown region above P=1](../images/05-time-dependent-perturbation-theory-and-transitions-fig-03.png)
+*Figure 5.3 — Rabi oscillation vs. first-order perturbation theory: the exact formula is bounded and oscillates; the PT parabola predicts unphysical probabilities above 1 once Ωt approaches π.*
 
 <!-- → [CHART: Rabi oscillation vs. PT parabola — two-panel figure: (left) on resonance, showing sin²(Ωt/2) and (Ωt/2)² on the same axes with a dashed horizontal line at P=1, the PT curve rising above it, and a red label "PT invalid" after the crossing; (right) off resonance at Δ=2Ω, showing the capped oscillation at max P=1/5 from the Rabi formula vs. the PT approximation; this is the central diagnostic figure of the chapter] -->
 
@@ -149,6 +155,9 @@ $$\Gamma_{i\to f} = \frac{2\pi}{\hbar}|V_{fi}|^2\,\rho(E_f)\Big|_{E_f = E_i + \h
 This is Fermi's golden rule. It gives the *rate* (probability per unit time) of an irreversible transition, rather than the oscillating probability of the two-level problem. The discreteness of the initial problem — coherent Rabi oscillations — has collapsed into an exponential decay. The lifetime $\tau = 1/\Gamma$ of the excited state is the inverse transition rate.
 
 The transition from Rabi oscillation to Fermi golden rule decay is not a sudden change of physics. It is what happens as the number of available final states grows: the oscillations of the individual transition amplitudes add up destructively at all times except the first, leaving only the initial linear rise. A discrete problem with many modes is an intermediate case — almost continuum but not quite, showing oscillatory behavior at long times that a true continuum would not.
+
+![Continuum limit: three vertically stacked panels for N=2, N=10, and N=50 final states — the top panel shows coherent Rabi oscillation, the middle shows partially washed-out oscillations with an emerging linear trend, and the bottom shows smooth near-linear growth matching the Fermi golden-rule W·t line](../images/05-time-dependent-perturbation-theory-and-transitions-fig-05.png)
+*Figure 5.5 — Coherent oscillations collapsing into irreversible linear growth: as the density of final states increases from N=2 to N=50, the Rabi oscillations average away and the total transition probability converges to the Fermi golden-rule prediction.*
 
 Chapter 6 derives Fermi's golden rule formally and applies it to atomic emission. The key point here is recognizing where it comes from: the same first-order formula, applied to a continuum rather than a single final state.
 

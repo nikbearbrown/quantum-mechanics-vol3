@@ -77,6 +77,9 @@ has eigenvalues $\pm 3a_0 e\mathcal{E}$ and eigenvectors $(|2s\rangle \mp |2p_0\
 
 Three lines from four states. The middle line contains two states — hence its double intensity. The shifts are exactly symmetric (same up and down) because the $2\times2$ block is traceless: both diagonal entries vanish. The two shifted good states are probability clouds asymmetric along $\hat{z}$: one has more electron density above the nucleus, the other below. An asymmetric charge distribution couples to an electric field at first order. The $|2p_{\pm1}\rangle$ states are azimuthally symmetric about $\hat{z}$ and cannot polarize along it at first order.
 
+![Linear Stark effect: fourfold-degenerate n=2 level fanning into three lines — upper shifted by +3a₀eε, doubly-degenerate middle unshifted, lower shifted by −3a₀eε — with a small inset showing splitting growing linearly with field strength](../images/02-degenerate-perturbation-theory-and-fine-structure-fig-04.png)
+*Figure 2.4 — Linear Stark effect level splitting: the n=2 manifold splits symmetrically into three energies, with the doubly-degenerate middle line accounting for the double intensity observed by Stark in 1913.*
+
 We can compare this to the ground state: $\langle 1s|e\mathcal{E}\hat{z}|1s\rangle = 0$ by parity. There is no partner at the same energy to mix with at first order. The ground state acquires a second-order (quadratic) shift — proportional to $\mathcal{E}^2$, tiny for ordinary laboratory fields. The linear Stark effect of $n=2$ versus the quadratic Stark effect of $n=1$ is a direct consequence of degeneracy.
 
 <!-- → [FIGURE: energy-level diagram of the hydrogen n=2 Stark effect — showing all four states degenerate at ε=0 on the left, then splitting into three lines as ε increases on the right; label the good states (|2s⟩ ± |2p₀⟩)/√2 with their ±3a₀eε shifts, and the two unsplit |2p±₁⟩ states; note the double intensity of the middle line] -->
@@ -127,6 +130,9 @@ $$\hat{H}'_\text{Darwin} = \frac{\pi\hbar^2}{2m^2c^2}\cdot\frac{e^2}{4\pi\epsilo
 The delta function means the Darwin correction is nonzero **only for** $\ell = 0$ **states**, because only $s$-wave functions have $|\psi(0)|^2 \neq 0$.
 
 The complementarity is worth noting: spin-orbit vanishes for $\ell = 0$; Darwin vanishes for $\ell \neq 0$. They partition the corrections between $s$-states and all others.
+
+![Three fine-structure perturbations and their state coverage: relativistic kinetic affects all states (full bar), spin-orbit affects only ℓ≠0 (partial bar), Darwin affects only ℓ=0 (mirror-image partial bar) — the complementarity of the last two is visually obvious](../images/02-degenerate-perturbation-theory-and-fine-structure-fig-05.png)
+*Figure 2.5 — Three perturbations and their coverage: the relativistic kinetic term shifts every level; spin-orbit and Darwin are complementary, each covering exactly the states the other misses.*
 
 <!-- → [TABLE: summary of the three fine-structure perturbations — columns: name, operator, which states it affects (ℓ=0, ℓ≠0, all), physical origin, order in α²; this is the reference table for the three-correction structure] -->
 
@@ -183,6 +189,9 @@ Each step is roughly an order of magnitude smaller. The fine-structure formula m
 
 ![n=2 hydrogen energy-level diagram showing three stages — (1) the unperturbed level with all 8 states degenerate, (2) after fine structure…](../images/02-degenerate-perturbation-theory-and-fine-structure-fig-03.png)
 *Figure 2.3 — n=2 hydrogen energy-level diagram showing three stages — (1) the unperturbed level with all 8 states degenerate, (2) after fine structure…*
+
+![Hydrogen n=2 energy hierarchy on a logarithmic scale: three tiers showing the Bohr level, fine-structure splitting of ~4.5×10⁻⁵ eV separating 2p₃/₂ from the j=½ pair, and the Lamb shift of ~4×10⁻⁶ eV lifting 2s₁/₂ above 2p₁/₂](../images/02-degenerate-perturbation-theory-and-fine-structure-fig-06.png)
+*Figure 2.6 — Hydrogen n=2 energy hierarchy: three orders of magnitude separate the Bohr energy, the fine-structure splitting, and the Lamb shift, with the QED boundary marked at the third tier.*
 
 ---
 

@@ -34,6 +34,9 @@ The integer $n$ is the band index. At a given crystal momentum $k$, multiple sol
 
 Bloch derived this result in 1928 as part of his PhD thesis under Heisenberg. The finding — that a periodic potential produces propagating rather than scattered waves — was unexpected, since physicists had expected electrons to bounce off every atom.
 
+![Two-panel comparison: free plane wave with uniform amplitude (left) vs. Bloch wave with amplitude modulated by the periodic lattice envelope u(x) (right)](../images/10-periodic-potentials-and-band-structure-fig-05.png)
+*Figure 10.5 — A free plane wave $e^{ikx}$ (left) carries uniform amplitude, while a Bloch wave $e^{ikx}u_{n,k}(x)$ (right) has the same carrier frequency but its amplitude is modulated by the lattice-periodic function $u_{n,k}(x)$, shown here with lattice sites marked below each panel.*
+
 ---
 
 ## The Kronig-Penney Model
@@ -129,6 +132,9 @@ $$E(k) \approx (E_0 - 2t) + ta^2k^2 = E_\text{bottom} + \frac{\hbar^2k^2}{2m^*},
 
 Strong hopping (large $t$) means a light effective mass — the electron propagates easily. Near the band top, $m^* < 0$: an electron behaves as a **hole**, a positively charged quasiparticle that moves opposite to the applied force.
 
+![Tight-binding cosine dispersion E(k) over the first Brillouin zone, with parabolic approximations at the band minimum (positive curvature, m*>0) and band maximum (negative curvature, m*<0)](../images/10-periodic-potentials-and-band-structure-fig-04.png)
+*Figure 10.4 — Tight-binding dispersion $E(k)=E_0-2t\cos(ka)$ over $k\in[-\pi/a,\pi/a]$: the positive-curvature parabolic fit at the band minimum (dashed, $m^*>0$) and the negative-curvature fit at the band maximum (dashed, $m^*<0$) illustrate the sign change of the effective mass across the band.*
+
 ---
 
 ## Metals, Insulators, and Semiconductors
@@ -142,6 +148,9 @@ Band filling is governed by the Pauli exclusion principle: each $k$-state holds 
 **Band overlap** (graphite, the semimetals): the top of one band and the bottom of the next overlap in energy; the Fermi level cuts through both. **Semimetal**.
 
 The three models — Kronig-Penney, NFE, tight-binding — describe the same physics from different starting points. Kronig-Penney interpolates between the limits as $P$ varies: at $P = 0$ it is NFE; as $P \to \infty$ it approaches isolated atoms. Real materials sit between the extremes. Density functional theory (DFT) handles them self-consistently, but the Bloch-wave structure is the same.
+
+![Three-panel band-filling comparison: metal with Fermi level inside a half-filled band, semiconductor with Fermi level in a small gap, insulator with Fermi level in a wide gap](../images/10-periodic-potentials-and-band-structure-fig-03.png)
+*Figure 10.3 — Band-filling classification: a metal has its Fermi level cutting through a partially filled band (left); a semiconductor has a fully filled valence band and a small gap (center); an insulator has the same structure with a much wider gap (right).*
 
 <!-- → [FIGURE: Band-filling schematic — three panels showing metal (Fermi level in band), semiconductor (small gap), and insulator (large gap), each with Fermi level marked] -->
 

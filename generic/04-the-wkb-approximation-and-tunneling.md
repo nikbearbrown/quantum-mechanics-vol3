@@ -36,6 +36,9 @@ $$\psi_\text{WKB}(x) \approx \frac{A}{\sqrt{|p(x)|}}\,\exp\!\left[\frac{1}{\hbar
 
 **The** $1/\sqrt{p}$ **factor has a physical interpretation.** The classical probability of finding the particle near $x$ is proportional to the time it spends there — proportional to $1/v \propto 1/p$. So $|\psi|^2 \propto 1/p$: the wave function is large where the classical particle moves slowly, small where it moves fast. The amplitude tracks classical mechanics; the phase oscillates quantum-mechanically. This is the sense in which the approximation is "semiclassical."
 
+![WKB wavefunction: oscillating with amplitude envelope ∝ 1/√p in the classically allowed region (swelling near turning points, contracting near the potential minimum) and exponentially decaying tails in the forbidden zones on both sides](../images/04-the-wkb-approximation-and-tunneling-fig-01.png)
+*Figure 4.1 — WKB wavefunction in allowed and forbidden regions: amplitude is large where the classical particle moves slowly (near turning points) and small where it moves fast, with exponential decay outside the classical turning points a and b.*
+
 The expansion is controlled by $\hbar$ relative to the classical action $\int p\,dx$. When $\int p\,dx \gg \hbar$ — when the particle traverses many de Broglie wavelengths — the higher-order terms are small and the approximation is reliable.
 
 ---
@@ -56,6 +59,9 @@ $$\text{Ai}(z) \sim \begin{cases} \frac{1}{2\sqrt{\pi}}|z|^{-1/4}\cos\!\left(\tf
 
 The $\pi/4$ phase shift on the allowed side is the **Maslov index** — a topological property of the connection across a turning point, not a fitting parameter. Each turning point contributes this phase shift. Matching the Airy asymptotics to the WKB solutions on each side gives the connection formulas that thread solutions through the turning points.
 
+![Airy function connection at a classical turning point: linearized potential through x₀, oscillatory Ai(z) with π/4 phase shift on the allowed side, smooth single-lobe decay on the forbidden side, with a shaded matching zone centered on x₀](../images/04-the-wkb-approximation-and-tunneling-fig-02.png)
+*Figure 4.2 — Classical turning point and Airy function connection: the Maslov π/4 phase shift emerges from matching the Airy function asymptotics across the intermediate zone where neither WKB form is valid.*
+
 ---
 
 ## Bound States: Bohr-Sommerfeld
@@ -73,6 +79,9 @@ $$\frac{2\pi E}{\omega} = \left(n+\frac{1}{2}\right)h \quad\Longrightarrow\quad 
 This is the *exact* quantum-mechanical spectrum — not an approximation. The same exactness holds for the Coulomb potential and hydrogen. These are potentials with hidden algebraic symmetries (the Fock $\mathrm{SU}(2)$ symmetry for the oscillator, the Runge-Lenz vector for hydrogen) that cause the WKB expansion to terminate. For most other potentials, Bohr-Sommerfeld is a leading-order estimate that improves at large $n$.
 
 The $1/2$ in the Bohr-Sommerfeld condition is not a small correction. For $n = 0$, it is the only term — without it, the predicted ground-state energy is zero. The zero-point energy of the harmonic oscillator is a Maslov correction.
+
+![Bohr-Sommerfeld phase-space orbits: three nested ellipses for n=0, 1, 2 in the (x, p) plane with shaded interiors showing enclosed area ∝ (n+½)h, and classical turning points marked where p=0](../images/04-the-wkb-approximation-and-tunneling-fig-03.png)
+*Figure 4.3 — Bohr-Sommerfeld quantization in phase space: the enclosed area of each elliptical orbit equals (n+½)h, with the n=0 ellipse nonzero — the entire zero-point energy is a Maslov correction.*
 
 ---
 
@@ -120,6 +129,9 @@ Second, the barrier shape enters automatically. Any $V(x)$ receives the same tre
 
 Third, in the thick-barrier limit $\gamma \gg 1$, the exponential carries essentially all the information. The $O(1)$ prefactors from connection-formula details are swamped by the exponential.
 
+![Gamow factor tunneling diagram: potential barrier above the energy line with shaded forbidden zone, incoming and reflected waves on the left, decaying exponential inside the barrier, transmitted wave of smaller amplitude on the right, and a three-barrier comparison strip showing rectangular, triangular, and Coulomb shapes](../images/04-the-wkb-approximation-and-tunneling-fig-04.png)
+*Figure 4.4 — Tunneling transmission and the Gamow factor: the transmitted amplitude is exponentially suppressed by e^{−2γ}, where γ is the integral of √(2m(V−E)) over the forbidden region — the same formula regardless of barrier shape.*
+
 ---
 
 ## Alpha Decay and the Geiger-Nuttall Law
@@ -138,6 +150,9 @@ This is the **Geiger-Nuttall law**: log half-life linear in $1/\sqrt{E_\alpha}$ 
 
 **Numerics for** $^{238}\text{U}$. With the numbers above: $\gamma \approx 43$, $e^{-2\gamma} \approx 4\times10^{-38}$, half-life estimate roughly $5\times10^8$ years. The experimental value is $4.5\times10^9$ years — off by a factor of 10. On a quantity spanning $10^{24}$, this is excellent agreement. The remaining discrepancy comes from the alpha pre-formation probability and from the prefactors we dropped.
 
+![Geiger-Nuttall law: scatter plot of log₁₀(half-life) vs. 1/√E_α with six to eight data points lying on a straight line, two distinguished points marking the short-lived and long-lived extremes, and the best-fit Geiger-Nuttall line through all points spanning ~33 decades on the vertical axis](../images/04-the-wkb-approximation-and-tunneling-fig-05.png)
+*Figure 4.5 — Geiger-Nuttall law: log half-life is linear in 1/√E_α across 33 decades of dynamic range, the entire span explained by the exponential sensitivity of the Gamow tunneling factor.*
+
 ---
 
 ## The Exponential in Other Contexts
@@ -151,6 +166,9 @@ The Gamow factor is not specific to nuclear physics. The same structure appears 
 **Flash memory.** Electrons tunnel through a thin $\text{SiO}_2$ layer under a high electric field, giving a triangular barrier — Fowler-Nordheim tunneling. The write speed and data retention time of every USB stick are controlled by the Gamow factor for that triangular barrier. [verify: Fowler & Nordheim, Proc. R. Soc. A 119, 173 (1928)]
 
 **Cold fusion falsification.** Martin Fleischmann and Stanley Pons claimed in 1989 to have achieved deuterium-deuterium fusion at room temperature. The Gamow factor at $kT \approx 0.025$ eV for a D-D Coulomb barrier gives $\gamma \sim 1000$, so $e^{-2\gamma} \sim 10^{-900}$. Even a factor of $10^{50}$ enhancement from the palladium lattice would leave the claim short by $10^{850}$. Computing the Gamow factor is sufficient to evaluate quantitatively any claim of "novel nuclear effects at ambient conditions."
+
+![Four physical contexts for the Gamow exponential: a 2×2 grid of schematic panels — STM tip over a surface with a vacuum gap, alpha particle exiting a Coulomb barrier from a nucleus, two protons approaching a Coulomb hill in stellar fusion, and a layered flash-memory structure with a thin SiO₂ tunneling layer](../images/04-the-wkb-approximation-and-tunneling-fig-06.png)
+*Figure 4.6 — The Gamow exponential across physical contexts: STM, alpha decay, stellar fusion, and flash memory all share the same e^{−2γ} structure — only the barrier geometry and particle mass change.*
 
 ---
 

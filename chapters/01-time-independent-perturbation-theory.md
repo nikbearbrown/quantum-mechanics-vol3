@@ -20,6 +20,9 @@ $$E_n = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \cdots, \qquad |n\
 
 Substituting into $\hat{H}|n\rangle = E_n|n\rangle$ and collecting terms at each power of $\lambda$ generates a sequence of equations, one for each order. We adopt the normalization convention $\langle n^{(0)}|n^{(k)}\rangle = 0$ for all $k \geq 1$: the correction kets are orthogonal to the zeroth-order state.
 
+![Perturbation series structure: zeroth-, first-, and second-order tiers with lambda-power labels and staggered state-to-energy feed](../images/01-time-independent-perturbation-theory-fig-01.png)
+*Figure 1.1 — Perturbation series structure: the three-tier hierarchy showing how the state at order k feeds the energy at order k+1, with the normalization constraint at first order.*
+
 ---
 
 ## First-Order Energy Correction
@@ -48,6 +51,9 @@ $$\boxed{|n^{(1)}\rangle = \sum_{m \neq n}\frac{\langle m^{(0)}|\hat{H}'|n^{(0)}
 
 The perturbation mixes unperturbed states together. The amount of mixing between $|m\rangle$ and $|n\rangle$ depends on two things: how strongly the perturbation connects them (the numerator) and how far apart they are in energy (the denominator). States with a small energy gap mix the most.
 
+![Off-diagonal coupling and small-denominator breakdown: energy levels with mixing arrows whose thickness encodes mixing strength, and a breakdown marker on the near-degenerate pair](../images/01-time-independent-perturbation-theory-fig-02.png)
+*Figure 1.2 — State mixing mechanism: arrow thickness encodes mixing amplitude, with distant levels mixing weakly and the near-degenerate pair signaling the divergence that demands the degenerate treatment of Chapter 2.*
+
 Note the denominator: when $E_m^{(0)} \to E_n^{(0)}$, the formula diverges. This does not mean perturbation theory itself has failed; it means the basis choice within the nearly-degenerate subspace was wrong. The resolution — choosing the correct basis before expanding — is degenerate perturbation theory, the subject of Chapter 2.
 
 ---
@@ -61,6 +67,9 @@ $$\boxed{E_n^{(2)} = \sum_{m \neq n}\frac{|\langle m^{(0)}|\hat{H}'|n^{(0)}\rang
 The numerator is a squared absolute value and is always non-negative. The denominator changes sign depending on whether state $m$ lies above or below state $n$ in energy. For the **ground state**, every other state sits above it, so every denominator is negative, every term is negative, and therefore:
 
 > **The second-order correction to the ground-state energy is always negative, for any perturbation whatsoever.**
+
+![Second-order energy correction sign: two-panel diagram showing all mixing arrows pointing down for the ground state versus mixed up/down contributions for an excited state](../images/01-time-independent-perturbation-theory-fig-04.png)
+*Figure 1.4 — Second-order sign structure: the ground state receives only negative contributions (all levels above), while excited states receive mixed contributions whose net sign is not guaranteed.*
 
 This result holds regardless of the specific form of the perturbation. Whatever we add to the ground-state Hamiltonian — a quartic potential, an electric field, a magnetic field — the second-order correction pushes the ground-state energy down.
 
@@ -90,6 +99,9 @@ $$E_n^{(1)} = \frac{3\lambda}{4}(2n^2 + 2n + 1).$$
 
 For the ground state ($n = 0$): $E_0^{(1)} = 3\lambda/4$. For $n = 4$: $E_4^{(1)} = 30.75\lambda$ — an order of magnitude larger at the same $\lambda$. The correction grows as $n^2$, so perturbation theory is less reliable for highly excited states, whose wave functions extend further and sample the $\hat{x}^4$ term more strongly.
 
+![Quartic oscillator first-order energy corrections: grouped bar chart for n=0 through 4 showing unperturbed energies and corrections growing quadratically, with a dashed threshold at correction equal to level spacing](../images/01-time-independent-perturbation-theory-fig-03.png)
+*Figure 1.3 — Quartic oscillator energy corrections: the first-order correction grows as n², so the perturbative expansion loses control at lower coupling for higher quantum numbers.*
+
 **When does it break?** A useful diagnostic is the ratio $|E_n^{(1)}|/\hbar\omega$. When this ratio approaches 1, the first-order correction has become comparable to the level spacing and the expansion is no longer controlled. For $n = 0$ in natural units, this occurs around $\lambda \sim 0.3$–$0.4$; for $n = 4$ it happens around $\lambda \sim 0.05$–$0.10$. The second-order correction is negative for the ground state (as the theorem requires), and its magnitude provides a sharper breakdown diagnostic: when $|E_n^{(2)}|$ becomes comparable to $|E_{n+1}^{(0)} - E_n^{(0)}|$, the expansion is unreliable.
 
 ---
@@ -107,6 +119,9 @@ Freeman Dyson made this argument in 1952 for quantum electrodynamics: flip the s
 **And yet the series is useful.** Truncating at the optimal order — the term where the partial-sum error is minimized before the factorial growth takes over — gives a result that is exponentially close to the true energy. The error at optimal truncation is of order $e^{-\text{const}/\lambda}$: exponentially small, invisible to any finite-order expansion.
 
 Two practical conclusions follow. First, the fact that successive terms keep decreasing does not guarantee convergence — they can decrease for many orders before turning around. Optimal truncation, not convergence, is the appropriate criterion. Second, the near-degeneracy problem is more dangerous in practice than the divergence problem: a small denominator $E_n^{(0)} - E_m^{(0)}$ can make the second-order term large even at tiny $\lambda$. We should always check $|\langle m|\hat{H}'|n\rangle|/|E_n^{(0)} - E_m^{(0)}|$ before trusting first-order results.
+
+![Dyson argument: log-scale error vs. truncation order N showing the U-shaped curve that descends to an optimal truncation N* then turns upward, for two values of lambda](../images/01-time-independent-perturbation-theory-fig-05.png)
+*Figure 1.5 — Optimal truncation of a divergent asymptotic series: the error decreases to a minimum at N* before factorial growth takes over, and larger coupling shifts N* to lower order.*
 
 ---
 

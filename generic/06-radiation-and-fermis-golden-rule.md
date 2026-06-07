@@ -100,6 +100,9 @@ The transition matrix element is now $\langle f|e\hat{\vec{r}}|i\rangle$ — the
 
 The approximation fails when $ka_0 \sim 1$, i.e., $E_{\mathrm{photon}} \sim \hbar c/a_0 \approx 3.7$ keV — hard X-rays and above. For X-ray transitions, magnetic-dipole (M1) and electric-quadrupole (E2) corrections become important, suppressed relative to E1 by additional powers of $ka_0$.
 
+![Electric-dipole approximation validity: two panels — left shows a small atom sitting inside a long-wavelength EM wave (λ≫a₀, nearly flat over the atom), right shows the same atom with a short-wavelength hard X-ray photon (λ≈a₀, completing a full oscillation across the atom)](../images/06-radiation-and-fermis-golden-rule-fig-06.png)
+*Figure 6.6 — Long-wavelength limit and its breakdown: the dipole approximation A(r,t)≈A(0,t) holds when the photon wavelength greatly exceeds the atomic size; it fails for hard X-rays above ~3.7 keV where ka₀≈1.*
+
 ---
 
 ## Selection Rules Are Calculations
@@ -147,6 +150,9 @@ These results follow from two calculations — a parity argument and an azimutha
 
 **Forbidden means slow, not impossible.** The $2s \to 1s$ transition has $\Delta\ell = 0$ and is electric-dipole forbidden. It occurs via two-photon decay, with both photons carrying angular momentum, and has lifetime $\approx 0.12$ s — eight orders of magnitude longer than the allowed $2p \to 1s$ transition. The 21-cm hydrogen hyperfine line (magnetic dipole, $\Delta\ell = 0$) has a lifetime of $\sim 10^7$ years. Both transitions occur; they are slow.
 
+![Hydrogen electric-dipole transitions from n=1,2,3: energy levels arranged by n (vertical) and ℓ (horizontal, s left to d right), with solid arrows for allowed Δℓ=±1 transitions (2p→1s, 3p→1s, 3p→2s, 3d→2p) and no arrows for forbidden transitions, with the 2s level marked as metastable](../images/06-radiation-and-fermis-golden-rule-fig-04.png)
+*Figure 6.4 — Hydrogen electric-dipole transition diagram: solid arrows connect levels satisfying Δℓ=±1; the absence of an arrow from 2s to 1s marks it as metastable, with no E1 decay path available.*
+
 ---
 
 ## The Einstein A and B Coefficients
@@ -164,6 +170,9 @@ Using the golden rule with the photon density of states $\rho_{\mathrm{photon}}(
 $$\boxed{A_{21} = \frac{\omega^3}{3\pi\epsilon_0\hbar c^3}\,|\langle 1|e\hat{\vec{r}}|2\rangle|^2.}$$
 
 The factor of 3 comes from the isotropic average over polarizations: $\langle|\hat{z}|^2\rangle_{\mathrm{avg}} = |\langle\vec{r}\rangle|^2/3$.
+
+![Einstein A/B triptych: three side-by-side two-level diagrams — absorption (one photon in, population moves up), stimulated emission (one photon in, two out, population moves down), spontaneous emission (no photon in, one photon out in a random direction) — with rate indicators showing field-density dependence for the first two and field-independence for the third](../images/06-radiation-and-fermis-golden-rule-fig-05.png)
+*Figure 6.5 — Three radiative processes: absorption and stimulated emission both scale with the field energy density u(ω); spontaneous emission proceeds at rate A₂₁ independent of the field, explaining why lasers require population inversion.*
 
 ---
 

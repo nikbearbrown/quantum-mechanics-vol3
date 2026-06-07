@@ -30,6 +30,9 @@ A complete quantum model involves five moves, in order. Skipping any one produce
 
 Each system maps to a different method. Choose one for the project in Exercise 11.7, or propose an alternative subject to the feasibility check in Exercise 11.3.
 
+![Six candidate systems (STM barrier, quantum dot, ammonia, NMR spin, helium, Rutherford) paired with horizontal bars encoding their small-parameter values](../images/11-capstone-modeling-a-real-quantum-system-fig-02.png)
+*Figure 11.2 — Six candidate systems ranked by the magnitude of their approximation's small parameter $\epsilon$: shorter bars (green) indicate $\epsilon\ll1$ and a well-controlled approximation; longer bars (orange) signal $\epsilon\sim0.3$–$1$ and a regime where the method requires more care.*
+
 ---
 
 ### System A — STM Tunneling Current via WKB
@@ -128,6 +131,9 @@ At $\theta = 90°$ for $E = 5.5$ MeV and gold: $d\sigma/d\Omega = (2\times79\tim
 
 The agreement between the Born approximation and the classical result is exact — a consequence of the special structure of the $1/r$ potential. The formula predicts an infinite forward cross-section ($\theta\to0$), correctly: the Coulomb potential has infinite range and deflects even infinitely distant particles by some infinitesimal angle. In practice, atomic screening cuts this off.
 
+![Polar diagram of Rutherford differential cross-section dσ/dΩ ∝ 1/sin⁴(θ/2), strongly forward-peaked, with Geiger-Marsden experimental data points](../images/11-capstone-modeling-a-real-quantum-system-fig-05.png)
+*Figure 11.5 — Polar plot of the Rutherford differential cross-section $d\sigma/d\Omega\propto\sin^{-4}(\theta/2)$ for 5.5 MeV alpha particles on gold, on a logarithmic radial scale; open circles mark the Geiger-Marsden experimental distribution, confirming the $1/\sin^4(\theta/2)$ angular dependence across four decades.*
+
 ---
 
 ## Worked Example A: WKB STM Tunneling
@@ -143,6 +149,9 @@ $$\kappa = \frac{\sqrt{2m_e\phi}}{\hbar} = 0.5123\,\text{Å}^{-1}\times\sqrt{\ph
 **Current ratio:** $I(d_1)/I(d_2) = T_1/T_2 = e^{2.05} \approx 7.8$.
 
 The factor of roughly 8 per ångström emerges from the formula without fitting. The rule of thumb is confirmed.
+
+![WKB tunneling current on a log scale vs. tip-sample distance d, showing a straight line with experimental data points near d = 5–7 Å](../images/11-capstone-modeling-a-real-quantum-system-fig-03.png)
+*Figure 11.3 — WKB prediction for STM tunneling current $I\propto e^{-2\kappa d}$ plotted on a logarithmic scale versus tip-sample distance $d$; the straight line confirms the exponential law, and experimental data points at representative gap widths agree with the predicted slope $2\kappa\approx2.05\,\text{Å}^{-1}$.*
 
 **On the prefactor.** At $V = 0.1$ V with a typical conductance prefactor $G_0 \sim 10^{-4}$ S, the WKB estimate gives $I \sim G_0 V T \sim 10^{-4}\times0.1\times3.5\times10^{-5} \approx 0.35$ pA. Real STM currents at this geometry are 0.1–1 nA, roughly $10^3$ times larger. The exponential (the slope $d\ln I/dd = -2\kappa$) is accurately predicted. The absolute magnitude requires the Tersoff-Hamann treatment of the density of states. The WKB approximation gives the exponential reliably; the prefactor is a separate and harder problem.
 
@@ -181,6 +190,9 @@ $$E_{1s,e}^\text{corrected} = 1.28\times\frac{0.13}{0.20} = 0.832\,\text{eV.}$$
 Revised gap: $1.74 + 0.832 + 0.37 - 0.163 = 2.78$ eV. Error reduced to 14%. A full variational Coulomb treatment reduces it further to $\sim5\%$ for $R \geq 2$ nm. [verify: Norris & Bawendi, Phys. Rev. B 53, 16338 (1996)]
 
 The box model gives the right scaling ($E \propto 1/R^2$) and the right qualitative trend. The quantitative failure traces to a single input parameter — the effective mass — being used outside the regime where it was measured.
+
+![CdSe quantum dot band gap vs. radius: spherical-box theory curve (blue) overestimates at small R, experimental data points (orange) for R = 1.2–3 nm, and horizontal dashed line at the bulk gap 1.74 eV](../images/11-capstone-modeling-a-real-quantum-system-fig-04.png)
+*Figure 11.4 — CdSe quantum dot optical band gap as a function of dot radius $R$: the spherical-box prediction (solid curve) overestimates the measured values at small $R$ due to effective-mass nonparabolicity, approaching the bulk gap of 1.74 eV (dashed line) at large $R$.*
 
 <!-- → [FIGURE: quantum dot band gap vs. radius — showing the spherical-box prediction curve alongside experimental data points from Norris-Bawendi for CdSe; x-axis R from 1 to 5 nm, y-axis E_dot from 1.7 to 3.5 eV; the theory curve should overestimate at small R where effective mass nonparabolicity is largest; annotate the 3 nm point showing the 32% error with simple m* and the 14% error with corrected m*] -->
 
