@@ -1,8 +1,8 @@
-# TIKTOC.md — Quantum Mechanics Vol. 3: Approximation Methods and Real Systems
+# BLUEPRINT.md — Quantum Mechanics Vol. 3: Approximation Methods and Real Systems
 
 **Series:** Quantum Mechanics+1 — A Simulation-First Undergraduate Series (Vol 3 of 5)
 **Author:** Nik Bear Brown · Humanitarians AI
-**Status:** Seeded from the series TIKTOC; chapters are titled stubs.
+**Status:** Seeded from the series BLUEPRINT; chapters are titled stubs.
 
 ---
 
@@ -42,4 +42,4 @@ Carried from Volume 2 (Volume 1: ODEs, complex numbers, intro mechanics/waves). 
 Wave-function-first like Griffiths, scoped to a single course, with a built simulation as the unit of intuition in every chapter.
 
 ---
-*Full series map, cross-volume prerequisites, the Volume 5 mirror index, and the comparison to other QM textbooks live in `physics-quantum-mechanics-sri/TIKTOC-series.md`.*
+*Full series map, cross-volume prerequisites, the Volume 5 mirror index, and the comparison to other QM textbooks live in `physics-quantum-mechanics-sri/BLUEPRINT-series.md`.*
