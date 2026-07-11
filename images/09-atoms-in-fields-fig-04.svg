@@ -19,13 +19,13 @@
 
   <!-- B0 z-hat arrow (large, vertical) -->
   <line x1="172" y1="250" x2="172" y2="110" stroke="#2a1a0e" stroke-width="2.5" marker-end="url(#arrow)"/>
-  <text x="180" y="108" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#2a1a0e" font-style="italic">B₀ẑ</text>
+  <text x="180" y="108" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#2a1a0e" font-style="italic">B<tspan dy="0.3em" font-size="0.75em">0</tspan><tspan dy="-0.3em"></tspan>ẑ</text>
 
   <!-- Rotating B1 field: circular arc in xy-plane -->
   <ellipse cx="172" cy="250" rx="55" ry="18" fill="none" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="4 2"/>
   <!-- B1 arrow tip -->
   <line x1="172" y1="250" x2="224" y2="240" stroke="#C8860E" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="228" y="237" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#C8860E" font-style="italic">B₁</text>
+  <text x="228" y="237" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#C8860E" font-style="italic">B<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
   <!-- Rotation arrow indicator -->
   <path d="M 215,250 A 43,14 0 0 0 172,268" fill="none" stroke="#C8860E" stroke-width="1" marker-end="url(#arrow)"/>
 
@@ -52,16 +52,16 @@
 
   <!-- Effective z-field = 0 at resonance: show as tiny stub -->
   <line x1="528" y1="250" x2="528" y2="238" stroke="#ADADAD" stroke-width="1.5" stroke-dasharray="2 2"/>
-  <text x="490" y="234" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="11" fill="#ADADAD" font-style="italic">(B₀ − ω/γ)ẑ → 0</text>
+  <text x="490" y="234" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="11" fill="#ADADAD" font-style="italic">(B<tspan dy="0.3em" font-size="0.75em">0</tspan><tspan dy="-0.3em"></tspan> − ω/γ)ẑ → 0</text>
 
   <!-- Stationary B1 arrow (horizontal, x-hat) -->
   <line x1="528" y1="250" x2="596" y2="250" stroke="#C8860E" stroke-width="2.5" marker-end="url(#arrow)"/>
-  <text x="600" y="247" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#C8860E" font-style="italic">B₁x̂′</text>
+  <text x="600" y="247" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#C8860E" font-style="italic">B<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>x̂′</text>
 
   <!-- Spin now precesses around x' (Rabi) -->
   <line x1="528" y1="250" x2="528" y2="130" stroke="#787878" stroke-width="2" marker-end="url(#arrow)"/>
   <ellipse cx="528" cy="190" rx="12" ry="40" fill="none" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 2"/>
   <text x="543" y="128" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#787878" font-style="italic">S</text>
   <!-- Rabi precession label -->
-  <text x="528" y="350" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">precesses around B₁ (Rabi)</text>
+  <text x="528" y="350" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">precesses around B<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan> (Rabi)</text>
 </svg>

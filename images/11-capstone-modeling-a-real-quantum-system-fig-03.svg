@@ -48,7 +48,7 @@
   <text x="365.0" y="410" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454" font-style="italic">d  (Å)</text>
   <text x="25" y="210" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454" transform="rotate(-90,25,210)">I(d)  (log scale)</text>
   <!-- Slope annotation -->
-  <text x="640.0" y="289.8" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">slope = −2κ = −2.05 Å⁻¹</text>
+  <text x="640.0" y="289.8" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">slope = −2κ = −2.05 Å<tspan dy="-0.5em" font-size="0.75em">-1</tspan><tspan dy="0.5em"></tspan></text>
   <text x="640.0" y="303.8" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">factor ~8 per Å</text>
   <!-- Legend -->
   <line x1="390" y1="310" x2="420" y2="310" stroke="#2a1a0e" stroke-width="2.2"/>

@@ -62,11 +62,11 @@
   <line x1="50" y1="280" x2="212" y2="280" stroke="#2a1a0e" stroke-width="2.5"/>
   <text x="34" y="284"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="9" fill="#545454">E₁</text>
+        font-size="9" fill="#545454">E<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
   <line x1="50" y1="130" x2="212" y2="130" stroke="#2a1a0e" stroke-width="2.5"/>
   <text x="34" y="134"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="9" fill="#545454">E₂</text>
+        font-size="9" fill="#545454">E<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- Incoming photon (wavy arrow) -->
   <!-- Wavy path from left -->
@@ -89,7 +89,7 @@
         fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
   <text x="128" y="331" text-anchor="middle"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="10" fill="#545454">Rate: B₁₂ · u(ω)</text>
+        font-size="10" fill="#545454">Rate: B<tspan dy="0.3em" font-size="0.75em">12</tspan><tspan dy="-0.3em"></tspan> · u(ω)</text>
   <!-- Wave motif for u(ω) -->
   <path d="M 50,346 C 55,342 58,350 63,346 C 68,342 71,350 76,346 C 81,342 84,350 89,346"
         fill="none" stroke="#C8860E" stroke-width="1"/>
@@ -107,11 +107,11 @@
   <line x1="262" y1="280" x2="458" y2="280" stroke="#2a1a0e" stroke-width="2.5"/>
   <text x="248" y="284"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="9" fill="#545454">E₁</text>
+        font-size="9" fill="#545454">E<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
   <line x1="262" y1="130" x2="458" y2="130" stroke="#2a1a0e" stroke-width="2.5"/>
   <text x="248" y="134"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="9" fill="#545454">E₂</text>
+        font-size="9" fill="#545454">E<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- Incoming photon -->
   <path d="M 240,205 C 248,195 253,215 261,205 C 269,195 274,215 282,205 C 290,195 295,215 303,205"
@@ -152,7 +152,7 @@
         fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
   <text x="350" y="331" text-anchor="middle"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="10" fill="#545454">Rate: B₂₁ · u(ω)</text>
+        font-size="10" fill="#545454">Rate: B<tspan dy="0.3em" font-size="0.75em">21</tspan><tspan dy="-0.3em"></tspan> · u(ω)</text>
   <path d="M 265,346 C 270,342 273,350 278,346 C 283,342 286,350 291,346"
         fill="none" stroke="#C8860E" stroke-width="1"/>
   <text x="350" y="352" text-anchor="middle"
@@ -169,11 +169,11 @@
   <line x1="495" y1="280" x2="658" y2="280" stroke="#2a1a0e" stroke-width="2.5"/>
   <text x="481" y="284"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="9" fill="#545454">E₁</text>
+        font-size="9" fill="#545454">E<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
   <line x1="495" y1="130" x2="658" y2="130" stroke="#2a1a0e" stroke-width="2.5"/>
   <text x="481" y="134"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="9" fill="#545454">E₂</text>
+        font-size="9" fill="#545454">E<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- NO incoming photon — empty wavy region -->
   <text x="520" y="205"
@@ -199,7 +199,7 @@
         fill="#FFFFFF" stroke="#C8102E" stroke-width="1"/>
   <text x="572" y="331" text-anchor="middle"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="10" fill="#545454">Rate: A₂₁</text>
+        font-size="10" fill="#545454">Rate: A<tspan dy="0.3em" font-size="0.75em">21</tspan><tspan dy="-0.3em"></tspan></text>
   <!-- No wave motif — explicitly absent -->
   <line x1="500" y1="346" x2="530" y2="346" stroke="#C8102E" stroke-width="1.5"/>
   <line x1="497" y1="343" x2="533" y2="349" stroke="#C8102E" stroke-width="1.5"/>
@@ -211,7 +211,7 @@
   <text x="350" y="393" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
         font-size="11" fill="#545454">
-    Einstein showed A/B = ℏω³/π²c³ from detailed balance with the Planck distribution
+    Einstein showed A/B = ℏω<tspan dy="-0.5em" font-size="0.75em">3</tspan><tspan dy="0.5em"></tspan>/π<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>c<tspan dy="-0.5em" font-size="0.75em">3</tspan><tspan dy="0.5em"></tspan> from detailed balance with the Planck distribution
   </text>
   <text x="350" y="408" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"

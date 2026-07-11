@@ -1,0 +1,41 @@
+<svg role="img" aria-labelledby="t-radiation-processes" viewBox="0 0 560 416" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-radiation-processes">Absorption, stimulated emission, and spontaneous emission</title>
+  <desc>Three side-by-side two-level diagrams: absorption lifts an electron up while consuming a photon; stimulated emission produces a second coherent photon when one is present; spontaneous emission emits a photon with no incoming field.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="ar-rp" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+    <marker id="arR-rp" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="416" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Three radiative processes</text>
+  <rect x="28" y="52" width="504" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- panel 1: absorption -->
+  <text x="115" y="80" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Absorption</text>
+  <line x1="70" y1="250" x2="160" y2="250" stroke="#2a1a0e" stroke-width="2"/>
+  <line x1="70" y1="140" x2="160" y2="140" stroke="#2a1a0e" stroke-width="2"/>
+  <circle cx="115" cy="250" r="4" fill="#2a1a0e"/>
+  <line x1="115" y1="246" x2="115" y2="144" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-rp)"/>
+  <path d="M40,300 q6,-8 12,0 q6,8 12,0 q6,-8 12,0" fill="none" stroke="#787878" stroke-width="1.5"/>
+  <line x1="78" y1="300" x2="100" y2="278" stroke="#787878" stroke-width="1.5" marker-end="url(#ar-rp)"/>
+  <text x="40" y="320" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">photon in</text>
+  <!-- panel 2: stimulated emission -->
+  <text x="285" y="80" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Stimulated emission</text>
+  <line x1="240" y1="250" x2="330" y2="250" stroke="#2a1a0e" stroke-width="2"/>
+  <line x1="240" y1="140" x2="330" y2="140" stroke="#2a1a0e" stroke-width="2"/>
+  <circle cx="285" cy="140" r="4" fill="#2a1a0e"/>
+  <line x1="285" y1="144" x2="285" y2="246" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-rp)"/>
+  <path d="M210,108 q6,-8 12,0 q6,8 12,0 q6,-8 12,0" fill="none" stroke="#787878" stroke-width="1.5"/>
+  <path d="M210,124 q6,-8 12,0 q6,8 12,0 q6,-8 12,0" fill="none" stroke="#787878" stroke-width="1.5"/>
+  <text x="244" y="332" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">2 coherent photons</text>
+  <!-- panel 3: spontaneous emission -->
+  <text x="455" y="80" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Spontaneous</text>
+  <line x1="410" y1="250" x2="500" y2="250" stroke="#2a1a0e" stroke-width="2"/>
+  <line x1="410" y1="140" x2="500" y2="140" stroke="#2a1a0e" stroke-width="2"/>
+  <circle cx="455" cy="140" r="4" fill="#2a1a0e"/>
+  <line x1="455" y1="144" x2="455" y2="246" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-rp)"/>
+  <path d="M470,110 q6,-8 12,0 q6,8 12,0 q6,-8 12,0" fill="none" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="468" y1="120" x2="478" y2="112" stroke="#C8102E" stroke-width="1.4" marker-end="url(#arR-rp)"/>
+  <text x="410" y="332" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">rate ∝ A coeff.</text>
+  <text x="28" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">Einstein A and B coefficients: stimulated emission yields a clone</tspan><tspan x="28" dy="15">of the incident photon (the laser principle).</tspan></text>
+  
+</svg>

@@ -1,0 +1,31 @@
+<svg role="img" aria-labelledby="t-variational-principle" viewBox="0 0 560 416" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-variational-principle">The variational principle: trial energy bounds the ground state from above</title>
+  <desc>A curve of the trial energy expectation value as a function of a variational parameter sits everywhere above the true ground-state energy, touching its minimum at the best parameter; the minimum is an upper bound on the ground-state energy.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="ar-vp" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="416" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Variational principle: ⟨H⟩ ≥ E₀</text>
+  <rect x="28" y="52" width="504" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- axes -->
+  <line x1="80" y1="300" x2="500" y2="300" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-vp)"/>
+  <line x1="80" y1="300" x2="80" y2="70" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-vp)"/>
+  <text x="468" y="320" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">parameter α</text>
+  <text x="56" y="80" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">⟨H⟩</text>
+  <!-- E0 line (true ground state) -->
+  <line x1="80" y1="262" x2="500" y2="262" stroke="#787878" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="430" y="278" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">E₀ (true)</text>
+  <!-- variational curve E(alpha) >= E0, min touches near E0 -->
+  <path d="M110,110 Q180,260 270,238 Q360,260 460,140" fill="none" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="300" y="120" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">E(α) = ⟨ψ(α)|H|ψ(α)⟩</text>
+  <!-- minimum marker (must-look, red) -->
+  <circle cx="252" cy="240" r="5" fill="#C8102E"/>
+  <line x1="252" y1="240" x2="252" y2="300" stroke="#C8102E" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="200" y="332" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">α* (best trial)</text>
+  <!-- gap between min and E0 -->
+  <line x1="252" y1="240" x2="252" y2="262" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar-vp)"/>
+  <text x="262" y="256" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">≥ 0</text>
+  <text x="28" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">Any trial state gives ⟨H⟩ ≥ E₀; minimizing over α gives</tspan><tspan x="28" dy="15">the tightest upper bound the trial family allows.</tspan></text>
+  
+</svg>

@@ -1,0 +1,40 @@
+<svg role="img" aria-labelledby="t-scattering-geometry" viewBox="0 0 560 416" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-scattering-geometry">Scattering geometry: incident plane wave to scattered spherical wave</title>
+  <desc>A set of straight vertical wavefronts representing an incident plane wave travels rightward toward a small scatterer at the origin; beyond it, concentric circular arcs represent the outgoing scattered spherical wave, with the scattering angle theta measured from the forward direction and a detector at angle theta.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="ar-sg" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="416" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Scattering geometry</text>
+  <rect x="28" y="52" width="504" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- incident plane wavefronts -->
+  <g stroke="#787878" stroke-width="1.5">
+    <line x1="60" y1="120" x2="60" y2="280"/>
+    <line x1="90" y1="120" x2="90" y2="280"/>
+    <line x1="120" y1="120" x2="120" y2="280"/>
+    <line x1="150" y1="120" x2="150" y2="280"/>
+  </g>
+  <line x1="60" y1="200" x2="200" y2="200" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-sg)"/>
+  <text x="64" y="112" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">e^{ikz}  (incident)</text>
+  <!-- scatterer -->
+  <circle cx="280" cy="200" r="9" fill="#2a1a0e"/>
+  <text x="270" y="232" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">V(r)</text>
+  <!-- outgoing spherical arcs -->
+  <g fill="none" stroke="#787878" stroke-width="1.4">
+    <path d="M280,140 A60,60 0 0 1 280,260"/>
+    <path d="M280,118 A82,82 0 0 1 280,282"/>
+    <path d="M280,98 A102,102 0 0 1 280,302"/>
+  </g>
+  <!-- forward axis and scattering angle -->
+  <line x1="280" y1="200" x2="500" y2="200" stroke="#ADADAD" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="280" y1="200" x2="470" y2="120" stroke="#C8102E" stroke-width="1.8" marker-end="url(#ar-sg)"/>
+  <path d="M330,200 A50,50 0 0 0 318,179" fill="none" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="338" y="186" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">θ</text>
+  <text x="412" y="108" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">f(θ) e^{ikr}∕r</text>
+  <!-- detector -->
+  <rect x="466" y="106" width="16" height="22" fill="#FFFFFF" stroke="#2a1a0e"/>
+  <text x="430" y="142" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">detector</text>
+  <text x="28" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">ψ → e^{ikz} + f(θ) e^{ikr}∕r ;  dσ∕dΩ = |f(θ)|².</tspan><tspan x="28" dy="15">The amplitude f(θ) carries all the scattering physics.</tspan></text>
+  
+</svg>

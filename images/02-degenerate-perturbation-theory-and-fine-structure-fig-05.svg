@@ -59,13 +59,13 @@
   <!-- Icon: p^4 momentum symbol (two overlapping square paths) -->
   <text x="157" y="107" text-anchor="middle"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="26" fill="#2a1a0e">p⁴</text>
+        font-size="26" fill="#2a1a0e">p<tspan dy="-0.5em" font-size="0.75em">4</tspan><tspan dy="0.5em"></tspan></text>
   <text x="157" y="130" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
         font-size="10" fill="#545454">Relativistic kinetic</text>
   <text x="157" y="144" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="9" fill="#545454">correction (−p⁴/8m³c²)</text>
+        font-size="9" fill="#545454">correction (−p<tspan dy="-0.5em" font-size="0.75em">4</tspan><tspan dy="0.5em"></tspan>/8m<tspan dy="-0.5em" font-size="0.75em">3</tspan><tspan dy="0.5em"></tspan>c<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>)</text>
   <text x="157" y="167" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
         font-size="9" fill="#545454">Affects all states</text>
@@ -100,7 +100,7 @@
         font-size="10" fill="#545454">Spin-orbit coupling</text>
   <text x="157" y="255" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="9" fill="#545454">(L·S / r³ term)</text>
+        font-size="9" fill="#545454">(L·S / r<tspan dy="-0.5em" font-size="0.75em">3</tspan><tspan dy="0.5em"></tspan> term)</text>
   <text x="157" y="268" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
         font-size="9" fill="#545454">Vanishes at ℓ=0</text>

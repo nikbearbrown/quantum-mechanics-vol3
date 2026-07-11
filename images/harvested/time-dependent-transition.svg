@@ -1,0 +1,32 @@
+<svg role="img" aria-labelledby="t-time-dependent-transition" viewBox="0 0 560 448" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-time-dependent-transition">Time-dependent transition between two states under a perturbation</title>
+  <desc>Two energy levels i and f; a time-dependent perturbation drives a transition between them, and a plot shows the transition probability oscillating in time, peaking sharply when the driving frequency matches the level spacing.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="ar-tdt" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+    <marker id="arR-tdt" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="448" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Driven transition |i⟩ → |f⟩</text>
+  <rect x="28" y="52" width="504" height="336" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- left: two levels with transition arrow -->
+  <line x1="70" y1="270" x2="180" y2="270" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="70" y="288" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|i⟩  Eᵢ</text>
+  <line x1="70" y1="120" x2="180" y2="120" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="70" y="112" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|f⟩  E_f</text>
+  <line x1="125" y1="270" x2="125" y2="120" stroke="#C8102E" stroke-width="1.8" marker-end="url(#arR-tdt)"/>
+  <text x="132" y="200" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#C8102E">ℏω = E_f − Eᵢ</text>
+  <!-- right: P_if(t) plot -->
+  <line x1="250" y1="290" x2="500" y2="290" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-tdt)"/>
+  <line x1="250" y1="290" x2="250" y2="100" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-tdt)"/>
+  <text x="488" y="308" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">t</text>
+  <text x="226" y="110" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">P_if</text>
+  <!-- Rabi oscillation -->
+  <path d="M250,290 Q290,120 330,290 Q370,120 410,290 Q450,120 490,290" fill="none" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="330" y="135" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Rabi flopping</text>
+  <!-- formula -->
+  <text x="60" y="350" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">P_if(t) = |⟨f|U(t)|i⟩|²</text>
+  <text x="60" y="370" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">cᶠ⁽¹⁾(t) = (−i∕ℏ)∫₀ᵗ ⟨f|H′|i⟩ e^{iω_fi t′} dt′</text>
+  <text x="28" y="408" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">First-order time-dependent theory: the transition amplitude is</tspan><tspan x="28" dy="15">the time integral of the perturbation matrix element.</tspan></text>
+  
+</svg>

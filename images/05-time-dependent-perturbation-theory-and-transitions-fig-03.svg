@@ -146,11 +146,11 @@
   <line x1="380" y1="310" x2="415" y2="310" stroke="#2a1a0e" stroke-width="2.5"/>
   <text x="420" y="314"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="10" fill="#545454">Exact Rabi: sin²(Ωt/2)</text>
+        font-size="10" fill="#545454">Exact Rabi: sin<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>(Ωt/2)</text>
   <line x1="380" y1="328" x2="415" y2="328" stroke="#C8102E" stroke-width="2" stroke-dasharray="8 4"/>
   <text x="420" y="332"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="10" fill="#545454">First-order PT: (Ωt/2)²</text>
+        font-size="10" fill="#545454">First-order PT: (Ωt/2)<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan></text>
 
   <!-- Caption -->
   <text x="350" y="395" text-anchor="middle"

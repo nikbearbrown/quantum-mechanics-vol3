@@ -1,0 +1,37 @@
+<svg role="img" aria-labelledby="t-atoms-in-fields" viewBox="0 0 560 416" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-atoms-in-fields">Zeeman and Stark splitting of an atomic level in external fields</title>
+  <desc>A single atomic level splits in two ways: under a magnetic field the Zeeman effect spreads it into equally spaced sublevels labelled by m, growing linearly with field; under an electric field the Stark effect shifts the level, here quadratically.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="ar-aif" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="416" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Atoms in fields: Zeeman &amp; Stark shifts</text>
+  <rect x="28" y="52" width="504" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- ZEEMAN panel (left) -->
+  <text x="175" y="84" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Zeeman (magnetic B)</text>
+  <line x1="90" y1="320" x2="290" y2="320" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-aif)"/>
+  <text x="255" y="338" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">B</text>
+  <line x1="90" y1="320" x2="90" y2="100" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-aif)"/>
+  <text x="66" y="110" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">E</text>
+  <!-- linear fan-out from a single level -->
+  <line x1="90" y1="210" x2="280" y2="150" stroke="#787878" stroke-width="1.8"/>
+  <line x1="90" y1="210" x2="280" y2="210" stroke="#787878" stroke-width="1.8"/>
+  <line x1="90" y1="210" x2="280" y2="270" stroke="#787878" stroke-width="1.8"/>
+  <text x="286" y="154" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">m=+1</text>
+  <text x="286" y="214" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">m=0</text>
+  <text x="286" y="274" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">m=−1</text>
+  <text x="100" y="200" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">ΔE = μ_B g m B</text>
+  <!-- STARK panel (right) -->
+  <text x="425" y="84" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Stark (electric E)</text>
+  <line x1="340" y1="320" x2="510" y2="320" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-aif)"/>
+  <text x="478" y="338" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">ℰ</text>
+  <line x1="340" y1="320" x2="340" y2="100" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-aif)"/>
+  <!-- quadratic shift down (red, must-look) -->
+  <line x1="340" y1="170" x2="500" y2="170" stroke="#ADADAD" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="346" y="164" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">unshifted</text>
+  <path d="M340,170 Q420,180 500,260" fill="none" stroke="#C8102E" stroke-width="2"/>
+  <text x="410" y="252" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">ΔE ∝ −ℰ²</text>
+  <text x="28" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">A magnetic field splits levels linearly in m (Zeeman); an electric field</tspan><tspan x="28" dy="15">shifts them, quadratically for non-degenerate states (Stark).</tspan></text>
+  
+</svg>

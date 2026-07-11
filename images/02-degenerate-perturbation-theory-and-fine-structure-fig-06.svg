@@ -58,7 +58,7 @@
   <line x1="60" y1="210" x2="165" y2="210" stroke="#2a1a0e" stroke-width="2.5"/>
   <text x="113" y="225" text-anchor="middle"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="10" fill="#545454">E₂⁽⁰⁾</text>
+        font-size="10" fill="#545454">E<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>⁽<tspan dy="-0.5em" font-size="0.75em">0</tspan><tspan dy="0.5em"></tspan>⁾</text>
   <text x="113" y="238" text-anchor="middle"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
         font-size="9" fill="#545454">= −3.4 eV</text>
@@ -69,7 +69,7 @@
   <line x1="175" y1="183" x2="187" y2="176" stroke="#ADADAD" stroke-width="1.5"/>
   <text x="185" y="170"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="8" fill="#545454">×10⁴</text>
+        font-size="8" fill="#545454">×10<tspan dy="-0.5em" font-size="0.75em">4</tspan><tspan dy="0.5em"></tspan></text>
   <line x1="168" y1="220" x2="180" y2="227" stroke="#ADADAD" stroke-width="1.5"/>
   <line x1="180" y1="227" x2="175" y2="237" stroke="#ADADAD" stroke-width="1.5"/>
   <line x1="175" y1="237" x2="187" y2="244" stroke="#ADADAD" stroke-width="1.5"/>
@@ -83,13 +83,13 @@
   <line x1="195" y1="135" x2="400" y2="135" stroke="#2a1a0e" stroke-width="2"/>
   <text x="403" y="139"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="9" fill="#545454">2p₃/₂  (j=3/2)</text>
+        font-size="9" fill="#545454">2p<tspan dy="0.3em" font-size="0.75em">3</tspan><tspan dy="-0.3em"></tspan>/<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>  (j=3/2)</text>
 
   <!-- j=1/2 level (degenerate 2s+2p at this resolution) -->
   <line x1="195" y1="265" x2="400" y2="265" stroke="#2a1a0e" stroke-width="2"/>
   <text x="403" y="269"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="9" fill="#545454">2s₁/₂ = 2p₁/₂  (j=1/2)</text>
+        font-size="9" fill="#545454">2s<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>/<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan> = 2p<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>/<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>  (j=1/2)</text>
 
   <!-- Gap bracket tier 2 -->
   <line x1="188" y1="135" x2="188" y2="265" stroke="#C8102E" stroke-width="1"/>
@@ -97,7 +97,7 @@
   <line x1="183" y1="265" x2="193" y2="265" stroke="#C8102E" stroke-width="1"/>
   <text x="185" y="203" text-anchor="end"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="8" fill="#C8102E">~4.5×10⁻⁵</text>
+        font-size="8" fill="#C8102E">~4.5×10<tspan dy="-0.5em" font-size="0.75em">-5</tspan><tspan dy="0.5em"></tspan></text>
   <text x="185" y="213" text-anchor="end"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
         font-size="8" fill="#C8102E">eV</text>
@@ -122,12 +122,12 @@
   <line x1="435" y1="220" x2="625" y2="220" stroke="#2a1a0e" stroke-width="2"/>
   <text x="630" y="224"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="9" fill="#545454">2s₁/₂</text>
+        font-size="9" fill="#545454">2s<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>/<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
 
   <line x1="435" y1="310" x2="625" y2="310" stroke="#2a1a0e" stroke-width="2"/>
   <text x="630" y="314"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="9" fill="#545454">2p₁/₂</text>
+        font-size="9" fill="#545454">2p<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>/<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- QED marker / dashed separator -->
   <line x1="435" y1="265" x2="625" y2="265"
@@ -142,7 +142,7 @@
   <line x1="423" y1="310" x2="433" y2="310" stroke="#787878" stroke-width="1"/>
   <text x="425" y="268" text-anchor="end"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="8" fill="#787878">~4×10⁻⁶</text>
+        font-size="8" fill="#787878">~4×10<tspan dy="-0.5em" font-size="0.75em">-6</tspan><tspan dy="0.5em"></tspan></text>
   <text x="425" y="278" text-anchor="end"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
         font-size="8" fill="#787878">eV</text>
@@ -155,18 +155,18 @@
   <text x="345" y="358" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
         font-size="10" fill="#545454">
-    Hierarchy: Bohr scale (eV)  ≫  fine structure (~α²·Ry)  ≫  Lamb shift (~α³·Ry)
+    Hierarchy: Bohr scale (eV)  ≫  fine structure (~α<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>·Ry)  ≫  Lamb shift (~α<tspan dy="-0.5em" font-size="0.75em">3</tspan><tspan dy="0.5em"></tspan>·Ry)
   </text>
   <text x="345" y="374" text-anchor="middle"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
         font-size="9" fill="#545454">
-    3.4 eV  :  4.5×10⁻⁵ eV  :  4×10⁻⁶ eV  ≈  10⁵ : 10 : 1
+    3.4 eV  :  4.5×10<tspan dy="-0.5em" font-size="0.75em">-5</tspan><tspan dy="0.5em"></tspan> eV  :  4×10<tspan dy="-0.5em" font-size="0.75em">-6</tspan><tspan dy="0.5em"></tspan> eV  ≈  10<tspan dy="-0.5em" font-size="0.75em">5</tspan><tspan dy="0.5em"></tspan> : 10 : 1
   </text>
 
   <!-- caption -->
   <text x="350" y="408" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
         font-size="11" fill="#545454">
-    The Lamb shift lifts the accidental Dirac degeneracy between 2s₁/₂ and 2p₁/₂
+    The Lamb shift lifts the accidental Dirac degeneracy between 2s<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>/<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan> and 2p<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>/<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>
   </text>
 </svg>

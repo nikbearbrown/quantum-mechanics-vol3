@@ -1,0 +1,12 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol3/youtube/medhavy-vol3-stm-tunneling/media/videos/vox_scenes/1080p24/partial_movie_files/B03_STMRun/2183452429_4175605409_223132457.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol3/youtube/medhavy-vol3-stm-tunneling/media/videos/vox_scenes/1080p24/partial_movie_files/B03_STMRun/2352976354_1385031503_607070525.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol3/youtube/medhavy-vol3-stm-tunneling/media/videos/vox_scenes/1080p24/partial_movie_files/B03_STMRun/2352976354_3877489562_2123312478.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol3/youtube/medhavy-vol3-stm-tunneling/media/videos/vox_scenes/1080p24/partial_movie_files/B03_STMRun/2352976354_1318527980_2478514066.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol3/youtube/medhavy-vol3-stm-tunneling/media/videos/vox_scenes/1080p24/partial_movie_files/B03_STMRun/2352976354_1957789023_2788015378.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol3/youtube/medhavy-vol3-stm-tunneling/media/videos/vox_scenes/1080p24/partial_movie_files/B03_STMRun/2352976354_2589408347_1396597338.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol3/youtube/medhavy-vol3-stm-tunneling/media/videos/vox_scenes/1080p24/partial_movie_files/B03_STMRun/2352976354_2537507530_324307991.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol3/youtube/medhavy-vol3-stm-tunneling/media/videos/vox_scenes/1080p24/partial_movie_files/B03_STMRun/2352976354_4240856199_2705834141.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol3/youtube/medhavy-vol3-stm-tunneling/media/videos/vox_scenes/1080p24/partial_movie_files/B03_STMRun/2352976354_3173679635_4187114688.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol3/youtube/medhavy-vol3-stm-tunneling/media/videos/vox_scenes/1080p24/partial_movie_files/B03_STMRun/2352976354_170777208_4242920881.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol3/youtube/medhavy-vol3-stm-tunneling/media/videos/vox_scenes/1080p24/partial_movie_files/B03_STMRun/2352976354_545666046_3611295808.mp4'

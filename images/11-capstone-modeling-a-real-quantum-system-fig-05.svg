@@ -44,7 +44,7 @@
 
   <!-- Log scale label -->
   <text x="495" y="74" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">log radial scale</text>
-  <text x="495" y="86" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">dσ/dΩ ∝ sin⁻⁴(θ/2)</text>
+  <text x="495" y="86" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">dσ/dΩ ∝ sin<tspan dy="-0.5em" font-size="0.75em">-4</tspan><tspan dy="0.5em"></tspan>(θ/2)</text>
 
   <!-- Legend -->
   <line x1="38" y1="368" x2="58" y2="368" stroke="#2a1a0e" stroke-width="1.8"/>

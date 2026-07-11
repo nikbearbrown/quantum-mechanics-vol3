@@ -1,0 +1,32 @@
+<svg role="img" aria-labelledby="t-bloch-waves" viewBox="0 0 560 416" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-bloch-waves">Bloch waves in a lattice</title>
+  <desc>A free plane wave with uniform amplitude compared to a Bloch wave whose plane-wave carrier is modulated by a lattice-periodic envelope; lattice sites are marked at regular spacing a beneath both, illustrating that the Bloch wave repeats its amplitude pattern every lattice period.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="ar-bw" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="416" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Bloch waves in a lattice: ψ = e^{ikx} u(x)</text>
+  <rect x="28" y="52" width="504" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- top: free plane wave -->
+  <text x="44" y="86" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Free plane wave  e^{ikx}</text>
+  <line x1="60" y1="120" x2="510" y2="120" stroke="#ADADAD" stroke-width="1"/>
+  <path d="M60,120 Q83,90 106,120 Q129,150 152,120 Q175,90 198,120 Q221,150 244,120 Q267,90 290,120 Q313,150 336,120 Q359,90 382,120 Q405,150 428,120 Q451,90 474,120" fill="none" stroke="#787878" stroke-width="2"/>
+  <!-- bottom: bloch wave with periodic envelope -->
+  <text x="44" y="210" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Bloch wave  e^{ikx} u(x),  u(x+a)=u(x)</text>
+  <line x1="60" y1="250" x2="510" y2="250" stroke="#ADADAD" stroke-width="1"/>
+  <!-- periodic envelope (dashed, period 2 carrier wavelengths = a) -->
+  <path d="M60,250 Q105,212 150,250 Q195,288 240,250 Q285,212 330,250 Q375,288 420,250 Q465,212 510,250" fill="none" stroke="#ADADAD" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <path d="M60,250 Q105,238 150,250 Q195,262 240,250 Q285,238 330,250 Q375,262 420,250 Q465,238 510,250" fill="none" stroke="#ADADAD" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <!-- modulated carrier (red must-look): amplitude follows envelope -->
+  <path d="M60,250 Q71,232 83,250 Q94,268 105,250 Q116,224 128,250 Q139,276 150,250 Q161,232 173,250 Q184,268 195,250 Q206,224 218,250 Q229,276 240,250 Q251,232 263,250 Q274,268 285,250 Q296,224 308,250 Q319,276 330,250 Q341,232 353,250 Q364,268 375,250 Q386,224 398,250 Q409,276 420,250 Q431,232 443,250 Q454,268 465,250 Q476,224 488,250 Q499,276 510,250" fill="none" stroke="#C8102E" stroke-width="2"/>
+  <!-- lattice sites at period a -->
+  <g fill="#2a1a0e">
+    <circle cx="60" cy="300" r="4"/><circle cx="150" cy="300" r="4"/><circle cx="240" cy="300" r="4"/><circle cx="330" cy="300" r="4"/><circle cx="420" cy="300" r="4"/><circle cx="510" cy="300" r="4"/>
+  </g>
+  <line x1="60" y1="318" x2="150" y2="318" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar-bw)"/>
+  <line x1="150" y1="318" x2="60" y2="318" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar-bw)"/>
+  <text x="96" y="334" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">a</text>
+  <text x="28" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">Same carrier frequency as the free wave, but the amplitude is</tspan><tspan x="28" dy="15">modulated by the lattice-periodic envelope u(x).</tspan></text>
+  
+</svg>

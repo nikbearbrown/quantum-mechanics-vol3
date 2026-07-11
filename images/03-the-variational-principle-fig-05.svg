@@ -46,7 +46,7 @@
   <!-- Panel label -->
   <text x="177" y="78" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="12" fill="#2a1a0e">Bonding orbital ψ₊</text>
+        font-size="12" fill="#2a1a0e">Bonding orbital ψ<tspan dy="0.3em" font-size="0.75em">+</tspan><tspan dy="-0.3em"></tspan></text>
   <text x="177" y="93" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
         font-size="10" fill="#545454">constructive interference at midpoint</text>
@@ -91,7 +91,7 @@
 
   <text x="517" y="78" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="12" fill="#2a1a0e">Antibonding orbital ψ₋</text>
+        font-size="12" fill="#2a1a0e">Antibonding orbital ψ<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan></text>
   <text x="517" y="93" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
         font-size="10" fill="#545454">destructive interference — node at midpoint</text>
@@ -158,12 +158,12 @@
         stroke="#2a1a0e" stroke-width="1.5"/>
   <text x="220" y="370"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="10" fill="#545454">ψ₊ bonding density</text>
+        font-size="10" fill="#545454">ψ<tspan dy="0.3em" font-size="0.75em">+</tspan><tspan dy="-0.3em"></tspan> bonding density</text>
   <rect x="350" y="358" width="14" height="14" fill="#787878" fill-opacity="0.2"
         stroke="#787878" stroke-width="1.5"/>
   <text x="370" y="370"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="10" fill="#545454">ψ₋ antibonding density</text>
+        font-size="10" fill="#545454">ψ<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan> antibonding density</text>
   <circle cx="520" cy="365" r="5" fill="none" stroke="#C8102E" stroke-width="1.5"/>
   <text x="530" y="370"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"

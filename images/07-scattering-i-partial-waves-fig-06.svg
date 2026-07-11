@@ -5,7 +5,7 @@
   <metadata><cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0" book="Quantum Mechanics — Approximation Methods and Real Systems" book-slug="quantum-mechanics-vol3" chapter="07-scattering-i-partial-waves" figure-number="06" figure-title="Breit–Wigner Resonance σ₀(E) near E_R" figure-slug="breit-wigner-resonance" figure-type="chart" priority="Supplementary" author="Humanitarians AI Incorporated" date-generated="2026-06-06" source-file="pantry/07-scattering-i-partial-waves-cajal.md"/></metadata>
   <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/></marker></defs>
   <rect width="700" height="420" fill="#FFFFFF"/>
-  <text x="350" y="28" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e">Breit–Wigner resonance: σ₀(E) near E<tspan baseline-shift="sub" font-size="10">R</tspan></text>
+  <text x="350" y="28" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e">Breit–Wigner resonance: σ<tspan dy="0.3em" font-size="0.75em">0</tspan><tspan dy="-0.3em"></tspan>(E) near E<tspan baseline-shift="sub" font-size="10">R</tspan></text>
   <rect x="80" y="50" width="570" height="320" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
   <!-- Background cross-section line -->
   <line x1="80" y1="364.2" x2="650" y2="364.2" stroke="#ADADAD" stroke-width="0.75"/>
@@ -38,9 +38,9 @@
   <text x="365.0" y="386" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454" font-style="italic">E<tspan baseline-shift="sub" font-size="9">R</tspan></text>
   <!-- Axis labels -->
   <text x="365.0" y="410" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454" font-style="italic">E</text>
-  <text x="25" y="210" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454" transform="rotate(-90,25,210)">σ₀(E)</text>
+  <text x="25" y="210" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454" transform="rotate(-90,25,210)">σ<tspan dy="0.3em" font-size="0.75em">0</tspan><tspan dy="-0.3em"></tspan>(E)</text>
   <!-- Unitarity label -->
-  <text x="646.0" y="74.1" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8860E">4π/k<tspan baseline-shift="sub" font-size="8">R</tspan>² (unitarity)</text>
+  <text x="646.0" y="74.1" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8860E">4π/k<tspan baseline-shift="sub" font-size="8">R</tspan><tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> (unitarity)</text>
   <!-- Legend -->
   <line x1="430" y1="320" x2="460" y2="320" stroke="#2a1a0e" stroke-width="2.2"/>
   <text x="466" y="324" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">narrow  Γ</text>

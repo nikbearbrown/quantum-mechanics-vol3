@@ -162,7 +162,7 @@
   <rect x="400" y="277" width="218" height="16" rx="0" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1"/>
   <text x="509" y="289" text-anchor="middle"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="8" fill="#545454">thin SiO₂ (tunnel oxide)</text>
+        font-size="8" fill="#545454">thin SiO<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan> (tunnel oxide)</text>
 
   <!-- Floating gate -->
   <rect x="400" y="293" width="218" height="22" rx="0" fill="#787878" fill-opacity="0.5" stroke="#2a1a0e" stroke-width="1"/>
@@ -188,7 +188,7 @@
 
   <text x="509" y="392" text-anchor="middle"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="9" fill="#545454">Fowler-Nordheim: J ∝ E² e^(−b/E)</text>
+        font-size="9" fill="#545454">Fowler-Nordheim: J ∝ E<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> e^(−b/E)</text>
 
   <!-- Shared label: e^(-2γ) unifying motif -->
   <rect x="32" y="405" width="636" height="14" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>

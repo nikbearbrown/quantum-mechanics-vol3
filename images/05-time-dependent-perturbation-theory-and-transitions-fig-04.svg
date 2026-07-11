@@ -130,13 +130,13 @@
   <!-- Generalized Rabi frequency annotation -->
   <text x="420" y="180"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="10" fill="#545454">Ω_eff = √(Ω² + Δ²)</text>
+        font-size="10" fill="#545454">Ω_eff = √(Ω<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> + Δ<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>)</text>
   <text x="420" y="193"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
         font-size="9" fill="#545454">increases with Δ → faster oscillations</text>
   <text x="420" y="205"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
-        font-size="10" fill="#545454">P_max = Ω² / Ω_eff²</text>
+        font-size="10" fill="#545454">P_max = Ω<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> / Ω_eff<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan></text>
   <text x="420" y="218"
         font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
         font-size="9" fill="#545454">decreases with Δ → lower ceiling</text>

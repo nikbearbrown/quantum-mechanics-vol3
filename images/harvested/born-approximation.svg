@@ -1,0 +1,35 @@
+<svg role="img" aria-labelledby="t-born-approximation" viewBox="0 0 560 416" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-born-approximation">Born approximation: scattering amplitude as the Fourier transform of the potential</title>
+  <desc>An incident wave vector k and a scattered wave vector k-prime differ by a momentum transfer vector q; the first Born scattering amplitude is proportional to the Fourier transform of the potential evaluated at q.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="ar-ba" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+    <marker id="arR-ba" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="416" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Born approximation: momentum transfer q = k − k′</text>
+  <rect x="28" y="52" width="504" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- scatterer at center -->
+  <circle cx="240" cy="220" r="8" fill="#2a1a0e"/>
+  <text x="226" y="252" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">V(r)</text>
+  <!-- incident k -->
+  <line x1="100" y1="220" x2="232" y2="220" stroke="#2a1a0e" stroke-width="1.8" marker-end="url(#ar-ba)"/>
+  <text x="140" y="212" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">k</text>
+  <!-- scattered k' -->
+  <line x1="248" y1="220" x2="380" y2="130" stroke="#2a1a0e" stroke-width="1.8" marker-end="url(#ar-ba)"/>
+  <text x="340" y="128" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">k′</text>
+  <!-- angle -->
+  <path d="M290,220 A50,50 0 0 0 274,186" fill="none" stroke="#787878" stroke-width="1"/>
+  <text x="296" y="200" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">θ</text>
+  <!-- momentum transfer vector triangle (q = k - k') -->
+  <line x1="232" y1="320" x2="364" y2="320" stroke="#2a1a0e" stroke-width="1.6" marker-end="url(#ar-ba)"/>
+  <text x="290" y="338" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">k</text>
+  <line x1="364" y1="320" x2="430" y2="275" stroke="#2a1a0e" stroke-width="1.6" marker-end="url(#ar-ba)"/>
+  <text x="400" y="300" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">−k′</text>
+  <line x1="232" y1="320" x2="430" y2="275" stroke="#C8102E" stroke-width="2" marker-end="url(#arR-ba)"/>
+  <text x="310" y="290" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#C8102E">q</text>
+  <!-- formula -->
+  <text x="60" y="92" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">f(θ) = −(m∕2πℏ²) ∫ e^{−iq·r} V(r) d³r ,   q = 2k sin(θ∕2)</text>
+  <text x="28" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">In first Born order the amplitude is the Fourier transform of V at the</tspan><tspan x="28" dy="15">momentum transfer q — valid for weak potentials.</tspan></text>
+  
+</svg>

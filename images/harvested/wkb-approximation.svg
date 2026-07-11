@@ -1,0 +1,29 @@
+<svg role="img" aria-labelledby="t-wkb-approximation" viewBox="0 0 560 416" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-wkb-approximation">WKB wavefunction in a slowly varying potential well</title>
+  <desc>A smooth potential well with a horizontal energy line crossing it at two turning points; inside, the WKB wavefunction oscillates with an amplitude envelope proportional to one over the square root of the local momentum, swelling near the turning points where the particle moves slowly.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="ar-wa" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="416" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">WKB wave in a slowly varying potential</text>
+  <rect x="28" y="52" width="504" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <line x1="70" y1="310" x2="510" y2="310" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-wa)"/>
+  <text x="500" y="328" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">x</text>
+  <!-- potential well V(x) -->
+  <path d="M100,90 Q160,300 290,300 Q420,300 480,90" fill="none" stroke="#787878" stroke-width="2"/>
+  <text x="450" y="110" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">V(x)</text>
+  <!-- energy line E -->
+  <line x1="120" y1="180" x2="460" y2="180" stroke="#2a1a0e" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="78" y="184" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">E</text>
+  <!-- turning points a and b -->
+  <line x1="146" y1="180" x2="146" y2="310" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="434" y1="180" x2="434" y2="310" stroke="#ADADAD" stroke-width="1"/>
+  <text x="138" y="328" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">a</text>
+  <text x="430" y="328" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">b</text>
+  <!-- WKB oscillation with amplitude ~ 1/sqrt(p): larger near turning pts, smaller in middle -->
+  <path d="M146,230 Q160,200 175,230 Q190,260 205,232 Q222,206 238,232 Q254,256 270,234 Q286,212 302,234 Q318,254 334,232 Q350,210 366,232 Q382,258 398,230 Q416,200 434,230" fill="none" stroke="#C8102E" stroke-width="2"/>
+  <text x="300" y="170" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#C8102E" text-anchor="middle">ψ_WKB ∝ 1∕√p(x) · cos(∫p dx∕ℏ)</text>
+  <text x="28" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">Amplitude is largest where the particle moves slowly (near a, b)</tspan><tspan x="28" dy="15">and smallest where it moves fast (well centre).</tspan></text>
+  
+</svg>

@@ -1,0 +1,32 @@
+<svg role="img" aria-labelledby="t-wkb-tunneling" viewBox="0 0 560 416" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-wkb-tunneling">WKB tunneling through a thick barrier</title>
+  <desc>A wave of fixed amplitude approaches a potential barrier from the left, decays exponentially inside the classically forbidden region, and emerges on the right with a much smaller amplitude; the transmission is the exponential of minus twice the integral of the imaginary momentum across the barrier.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="ar-wt" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="416" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">WKB tunneling through a thick barrier</text>
+  <rect x="28" y="52" width="504" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <line x1="60" y1="300" x2="510" y2="300" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-wt)"/>
+  <text x="500" y="318" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">x</text>
+  <!-- barrier -->
+  <rect x="220" y="110" width="120" height="190" fill="#FFFFFF" stroke="#787878" stroke-width="2"/>
+  <text x="280" y="100" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">V₀</text>
+  <!-- energy line -->
+  <line x1="60" y1="210" x2="510" y2="210" stroke="#2a1a0e" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="64" y="204" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">E</text>
+  <!-- incident wave (full amplitude) -->
+  <path d="M70,210 Q85,178 100,210 Q115,242 130,210 Q145,178 160,210 Q175,242 190,210 Q205,182 220,210" fill="none" stroke="#2a1a0e" stroke-width="2"/>
+  <!-- decaying inside barrier -->
+  <path d="M220,210 C250,205 270,200 290,205 C310,209 325,207 340,209" fill="none" stroke="#C8102E" stroke-width="2"/>
+  <text x="280" y="240" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E" text-anchor="middle">e^(−∫|p|dx∕ℏ)</text>
+  <!-- small transmitted wave -->
+  <path d="M340,209 Q352,200 364,209 Q376,218 388,209 Q400,200 412,209 Q424,218 436,209" fill="none" stroke="#C8102E" stroke-width="2"/>
+  <text x="430" y="194" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E">transmitted</text>
+  <!-- formula box -->
+  <rect x="120" y="320" width="320" height="0" fill="none"/>
+  <text x="100" y="124" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">T ≈ exp[ −(2∕ℏ)∫ₐᵇ √(2m(V−E)) dx ]</text>
+  <text x="28" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">The transmitted amplitude is exponentially small in the barrier action</tspan><tspan x="28" dy="15">— the origin of the huge spread in α-decay rates.</tspan></text>
+  
+</svg>

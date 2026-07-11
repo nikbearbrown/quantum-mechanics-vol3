@@ -1,0 +1,34 @@
+<svg role="img" aria-labelledby="t-fine-structure" viewBox="0 0 640 416" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-fine-structure">Fine structure of the hydrogen n=2 level</title>
+  <desc>The hydrogen n=2 Bohr level, degenerate at the gross-structure scale, splits under relativistic and spin-orbit corrections into the 2S½, 2P½, and 2P₃⁄₂ fine-structure levels separated by energies of order alpha-squared times the Bohr energy.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="ar-fs" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="416" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Fine structure of hydrogen (n = 2)</text>
+  <rect x="28" y="52" width="600" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="120" y="92" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Bohr (gross)</text>
+  <text x="410" y="92" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">+ fine structure</text>
+  <!-- gross level -->
+  <line x1="60" y1="180" x2="180" y2="180" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="60" y="170" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">n = 2  (−3.4 eV)</text>
+  <!-- split levels (energy order: 2P3/2 highest, 2S1/2 = 2P1/2 lower) -->
+  <line x1="360" y1="150" x2="480" y2="150" stroke="#C8102E" stroke-width="2.5"/>
+  <text x="486" y="154" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">2P₃⁄₂  (j=3⁄2)</text>
+  <line x1="360" y1="210" x2="480" y2="210" stroke="#787878" stroke-width="2"/>
+  <text x="486" y="214" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">2S₁⁄₂, 2P₁⁄₂  (j=1⁄2)</text>
+  <!-- connectors -->
+  <line x1="180" y1="180" x2="360" y2="150" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="180" y1="180" x2="360" y2="210" stroke="#ADADAD" stroke-width="1"/>
+  <!-- splitting magnitude -->
+  <line x1="345" y1="150" x2="345" y2="210" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar-fs)"/>
+  <line x1="345" y1="210" x2="345" y2="150" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar-fs)"/>
+  <text x="248" y="184" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">~ 4.5×10⁻⁵ eV</text>
+  <!-- formula -->
+  <rect x="100" y="282" width="360" height="40" fill="#FFFFFF" stroke="#D4D4D4"/>
+  <text x="112" y="299" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">E_fs ∕ E_n ~ α²  (α ≈ 1∕137)</text>
+  <text x="112" y="316" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">depends on j, not ℓ separately</text>
+  <text x="28" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">Relativistic kinetic + spin-orbit corrections shift levels by order α² E_n,</tspan><tspan x="28" dy="15">splitting by total angular momentum j.</tspan></text>
+  
+</svg>

@@ -68,7 +68,7 @@
   <!-- Level 1 (top, far) — y=80 -->
   <line x1="260" y1="85" x2="380" y2="85" stroke="#2a1a0e" stroke-width="2"/>
   <text x="390" y="89" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="11" fill="#545454">|m₄⟩  (far above n)</text>
+        font-size="11" fill="#545454">|m<tspan dy="0.3em" font-size="0.75em">4</tspan><tspan dy="-0.3em"></tspan>⟩  (far above n)</text>
 
   <!-- Level 2 (target state n) — y=195 -->
   <line x1="260" y1="195" x2="380" y2="195" stroke="#C8102E" stroke-width="2.5"/>
@@ -78,7 +78,7 @@
   <!-- Level 3 — near-degenerate partner, y=225 (small gap below n) -->
   <line x1="260" y1="230" x2="380" y2="230" stroke="#2a1a0e" stroke-width="2"/>
   <text x="390" y="234" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="11" fill="#545454">|m₂⟩  (near-degenerate)</text>
+        font-size="11" fill="#545454">|m<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>⟩  (near-degenerate)</text>
 
   <!-- small-gap indicator -->
   <line x1="240" y1="195" x2="240" y2="230" stroke="#787878" stroke-width="0.75" stroke-dasharray="2 2"/>
@@ -92,7 +92,7 @@
   <!-- Level 4 (bottom, far) — y=330 -->
   <line x1="260" y1="335" x2="380" y2="335" stroke="#2a1a0e" stroke-width="2"/>
   <text x="390" y="339" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif"
-        font-size="11" fill="#545454">|m₁⟩  (far below n)</text>
+        font-size="11" fill="#545454">|m<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>⟩  (far below n)</text>
 
   <!-- ~~~~ Mixing arrows ~~~~ -->
 

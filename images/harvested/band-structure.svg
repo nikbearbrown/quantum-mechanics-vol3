@@ -1,0 +1,35 @@
+<svg role="img" aria-labelledby="t-band-structure" viewBox="0 0 560 416" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-band-structure">Periodic potential and band structure: allowed bands and forbidden gaps</title>
+  <desc>An energy dispersion in the reduced Brillouin zone showing two allowed bands separated by a forbidden energy gap; the lower band is shaded as allowed, the gap is marked at the zone boundary k equals pi over a, where the free-electron parabola is split open.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="ar-bs" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="416" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Band structure: allowed bands, forbidden gap</text>
+  <rect x="28" y="52" width="504" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- axes -->
+  <line x1="100" y1="310" x2="100" y2="80" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-bs)"/>
+  <line x1="100" y1="310" x2="500" y2="310" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-bs)"/>
+  <text x="74" y="90" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">E</text>
+  <text x="488" y="328" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">k</text>
+  <!-- zone center 0 and boundary pi/a -->
+  <text x="92" y="328" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">0</text>
+  <line x1="420" y1="80" x2="420" y2="310" stroke="#ADADAD" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="402" y="328" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">π∕a</text>
+  <!-- lower band (allowed) -->
+  <path d="M100,270 Q260,266 420,200" fill="none" stroke="#2a1a0e" stroke-width="2.2"/>
+  <rect x="100" y="200" width="320" height="70" fill="#787878" opacity="0.18"/>
+  <text x="150" y="252" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">band 1 (allowed)</text>
+  <!-- gap at boundary (red must-look) -->
+  <line x1="420" y1="200" x2="420" y2="150" stroke="#C8102E" stroke-width="3"/>
+  <text x="428" y="180" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#C8102E">E_gap</text>
+  <text x="428" y="196" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">(forbidden)</text>
+  <!-- upper band -->
+  <path d="M420,150 Q260,144 100,110" fill="none" stroke="#2a1a0e" stroke-width="2.2"/>
+  <text x="150" y="130" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">band 2 (allowed)</text>
+  <!-- KP relation -->
+  <text x="100" y="76" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">cos(ka) = cos(αa) + (P∕αa) sin(αa)</text>
+  <text x="28" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">Where |RHS| ≤ 1 a real k exists (allowed band); where |RHS| &gt; 1</tspan><tspan x="28" dy="15">no propagating state exists (forbidden gap).</tspan></text>
+  
+</svg>

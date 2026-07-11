@@ -1,0 +1,38 @@
+<svg role="img" aria-labelledby="t-fermis-golden-rule" viewBox="0 0 560 416" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-fermis-golden-rule">Fermi's golden rule: transition rate into a continuum density of states</title>
+  <desc>A single initial discrete state couples to a dense band of final states forming a continuum; the transition rate equals two pi over h-bar times the squared coupling matrix element times the density of final states at the resonant energy.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 3</provenance></metadata>
+  <defs>
+    <marker id="arR-fgr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="416" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Fermi's golden rule</text>
+  <rect x="28" y="52" width="504" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- initial state -->
+  <line x1="70" y1="200" x2="170" y2="200" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="70" y="190" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|i⟩  Eᵢ</text>
+  <!-- continuum of final states: many close levels -->
+  <text x="400" y="92" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">continuum |f⟩, density ρ(E)</text>
+  <g stroke="#787878" stroke-width="1.4">
+    <line x1="360" y1="120" x2="470" y2="120"/>
+    <line x1="360" y1="138" x2="470" y2="138"/>
+    <line x1="360" y1="156" x2="470" y2="156"/>
+    <line x1="360" y1="174" x2="470" y2="174"/>
+    <line x1="360" y1="192" x2="470" y2="192"/>
+    <line x1="360" y1="210" x2="470" y2="210"/>
+    <line x1="360" y1="228" x2="470" y2="228"/>
+    <line x1="360" y1="246" x2="470" y2="246"/>
+    <line x1="360" y1="264" x2="470" y2="264"/>
+  </g>
+  <!-- resonant final level highlighted -->
+  <line x1="360" y1="200" x2="470" y2="200" stroke="#C8102E" stroke-width="2.5"/>
+  <text x="476" y="204" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">E_f = Eᵢ</text>
+  <!-- transition arrow -->
+  <line x1="170" y1="200" x2="356" y2="200" stroke="#C8102E" stroke-width="1.8" marker-end="url(#arR-fgr)"/>
+  <text x="220" y="190" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#C8102E">Γ</text>
+  <!-- formula box -->
+  <rect x="120" y="288" width="320" height="34" fill="#FFFFFF" stroke="#D4D4D4"/>
+  <text x="132" y="310" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">Γ_i→f = (2π∕ℏ) |⟨f|H′|i⟩|² ρ(E_f)</text>
+  <text x="28" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454"><tspan x="28" dy="0">A constant rate emerges once the final states form a continuum:</tspan><tspan x="28" dy="15">rate ∝ coupling² × density of states at resonance.</tspan></text>
+  
+</svg>
